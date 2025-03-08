@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twilightforest"
+    }
+  ],
+  "ingredient": {
+    "item": "twilightforest:knightmetal_ingot"
+  },
+  "result": {
+    "fluid": "sakuratinker:molten_knightmetal",
+    "amount": 90
+  },
+  "temperature": 750,
+  "time": 20
+}

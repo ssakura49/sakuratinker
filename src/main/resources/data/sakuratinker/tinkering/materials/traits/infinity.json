@@ -1,0 +1,28 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "sakuratinker:omnipotence"
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "sakuratinker:null_almighty"
+      },
+      {
+        "level": 1,
+        "name": "sakuratinker:celestial"
+      },
+      {
+        "level": 1,
+        "name": "sakuratinker:gale"
+      },
+      {
+        "level": 1,
+        "name": "sakuratinker:eternity"
+      }
+    ]
+  }
+}

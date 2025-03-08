@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "ingredient": {
+    "item": "irons_spellbooks:arcane_salvage"
+  },
+  "result": {
+    "fluid": "sakuratinker:molten_arcane_salvage",
+    "amount": 90
+  },
+  "temperature": 750,
+  "time": 20
+}

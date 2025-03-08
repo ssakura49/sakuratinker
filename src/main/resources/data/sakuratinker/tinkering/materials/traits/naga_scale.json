@@ -1,0 +1,12 @@
+{
+  "default": [
+      {
+        "level": 1,
+        "name": "sakuratinker:precipitate"
+      },
+    {
+      "level": 1,
+      "name": "sakuratinker:twilit"
+    }
+  ]
+}

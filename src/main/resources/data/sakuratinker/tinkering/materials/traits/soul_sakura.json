@@ -1,0 +1,20 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "sakuratinker:ruination"
+    },
+    {
+      "level": 1,
+      "name": "sakuratinker:mortal_wound"
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "sakuratinker:storm_veil"
+      }
+    ]
+  }
+}

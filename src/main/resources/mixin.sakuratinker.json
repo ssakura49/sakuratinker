@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "package": "com.ssakura49.sakuratinker.common.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "PlayerMixin"
+  ],
+  "client": [],
+  "server": []
+}

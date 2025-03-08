@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "cast_consumed": false,
+  "fluid": {
+    "name": "sakuratinker:molten_arcane_salvage",
+    "amount": 90
+  },
+  "result": "irons_spellbooks:arcane_salvage",
+  "cooling_time": 40
+}

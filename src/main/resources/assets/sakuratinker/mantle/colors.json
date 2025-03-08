@@ -1,0 +1,21 @@
+{
+  "modifier.sakuratinker": {
+    "twilit": "#298900",
+    "synergy": "32cd32",
+    "stalwart": "8fbc8f",
+    "superheat": "ffd83a"
+  },
+
+  "material.sakuratinker": {
+    "test": "#9700BD",
+    "youkai": "#B400F5",
+    "etherium": "#E0FFFF",
+    "arcane_salvage": "#E0FFFF",
+    "infinity": "#9700BD",
+    "soul_sakura":"#FFC0CB",
+    "steeleaf": "32cd32",
+    "naga_scale": "255b21",
+    "knightmetal": "8fbc8f",
+    "fiery": "ffd83a"
+  }
+}

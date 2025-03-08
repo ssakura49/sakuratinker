@@ -1,0 +1,16 @@
+{
+  "default": [
+    {
+      "level": 2,
+      "name": "sakuratinker:solid"
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "sakuratinker:celestial"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "sakuratinker:knightmetal",
+  "temperature": 800,
+  "result": {
+    "fluid": "sakuratinker:molten_knightmetal",
+    "amount": 90
+  }
+}
