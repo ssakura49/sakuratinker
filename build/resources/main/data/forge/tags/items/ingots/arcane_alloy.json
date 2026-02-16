@@ -1,0 +1,6 @@
+{
+    "replace": false,
+    "values": [
+      { "id": "sakuratinker:arcane_alloy", "required":false}
+    ]
+  }

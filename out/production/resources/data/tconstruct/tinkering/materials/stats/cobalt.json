@@ -1,0 +1,25 @@
+{
+  "stats": {
+    "sakuratinker:charm_core": {},
+    "sakuratinker:charm_chain": {
+      "movement_speed": 0.4,
+      "health": 16,
+      "armor": 0.1,
+      "toughness": 0.1,
+      "attack": 0.15
+    },
+    "sakuratinker:energy_unit": {
+      "energy_storage": 50000,
+      "durability": 30
+    },
+    "sakuratinker:laser_medium": {
+      "range": 15,
+      "cooldown": 0.6
+    },
+    "sakuratinker:spell_cloth": {
+      "spell_power": 0.25,
+      "spell_reduce": 0.15,
+      "cast_time": 0.15
+    }
+  }
+}

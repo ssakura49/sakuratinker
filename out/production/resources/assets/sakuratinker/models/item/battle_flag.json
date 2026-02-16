@@ -1,0 +1,44 @@
+{
+    "loader": "tconstruct:tool",
+    "parent": "forge:item/default-tool",
+    "textures": {
+      "head": "sakuratinker:item/tool/battle_flag/head",
+      "head_broken": "sakuratinker:item/tool/battle_flag/head_broken",
+      "flag_1": "sakuratinker:item/tool/battle_flag/flag_1",
+      "flag_2": "sakuratinker:item/tool/battle_flag/flag_2",
+      "handle_1": "sakuratinker:item/tool/battle_flag/handle_1",
+      "handle_2": "sakuratinker:item/tool/battle_flag/handle_2",
+
+      "large_head": "sakuratinker:item/tool/battle_flag/head",
+      "large_head_broken": "sakuratinker:item/tool/battle_flag/head_broken",
+      "large_flag_1": "sakuratinker:item/tool/battle_flag/flag_1",
+      "large_flag_2": "sakuratinker:item/tool/battle_flag/flag_2",
+      "large_handle_1": "sakuratinker:item/tool/battle_flag/handle_1",
+      "large_handle_2": "sakuratinker:item/tool/battle_flag/handle_2"
+    },
+  "modifier_roots": {
+    "small": [
+      "sakuratinker:item/tool/great_sword/modifiers/"
+    ],
+    "large": [
+      "sakuratinker:item/tool/great_sword/large/modifiers/"
+    ]
+  },
+  "large": true,
+  "large_offset": [ -2, 2],
+    "parts": [
+      { "name": "head", "index": 0, "broken": "head_broken" },
+      { "name": "flag_1", "index": 1 },
+      { "name": "flag_2", "index": 2 },
+      { "name": "handle_1", "index": 3 },
+      { "name": "handle_2", "index": 4 }
+    ],
+    "overrides": [
+      {
+        "predicate": {
+          "tconstruct:charging": 2
+        },
+        "model": "sakuratinker:item/tool/battle_flag/battle_flag_blocking"
+      }
+    ]
+  }
