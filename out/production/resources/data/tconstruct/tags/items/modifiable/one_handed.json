@@ -1,0 +1,10 @@
+{ 
+"replace": false,
+  "values": [
+    "sakuratinker:swift_sword",
+    "sakuratinker:vampire_knife",
+    "sakuratinker:laser_gun",
+    "sakuratinker:shuriken",
+    "sakuratinker:tinker_arrow"
+  ]
+}

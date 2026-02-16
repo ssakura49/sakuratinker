@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "sakuratinker:charm_chain",
+    "sakuratinker:charm_core",
+    "sakuratinker:swift_blade",
+    "sakuratinker:swift_guard",
+    "sakuratinker:barrel",
+    "sakuratinker:energy_unit",
+    "sakuratinker:laser_medium",
+    "sakuratinker:blade",
+    "sakuratinker:arrow_head",
+    "sakuratinker:arrow_shaft",
+    "sakuratinker:fletching",
+    "sakuratinker:flag",
+    "sakuratinker:blade_box",
+    { "id": "sakuratinker:phantom_core", "required":false},
+    { "id": "sakuratinker:spell_cloth", "required":false},
+    { "id": "sakuratinker:book_cover", "required":false},
+    "sakuratinker:axle",
+    "sakuratinker:yoyo_body",
+    "sakuratinker:yoyo_ring",
+    "sakuratinker:chord",
+    "sakuratinker:scythe_blade",
+    { "id": "sakuratinker:soul_gatherer", "required":false},
+    "sakuratinker:alchemical_core",
+    "sakuratinker:range_core"
+
+  ]
+}

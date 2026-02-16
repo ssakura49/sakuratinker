@@ -1,0 +1,130 @@
+{
+  "mappings": {
+    "com/ssakura49/sakuratinker/mixin/GuiGraphicsMixin": {
+      "renderTooltipInternal": "Lnet/minecraft/client/gui/GuiGraphics;m_280497_(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;)V",
+      "Lcom/mojang/blaze3d/vertex/PoseStack;popPose()V": "Lcom/mojang/blaze3d/vertex/PoseStack;m_85849_()V"
+    },
+    "com/ssakura49/sakuratinker/mixin/FontMixin": {
+      "drawInBatch(Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)I": "Lnet/minecraft/client/gui/Font;m_272191_(Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)I"
+    },
+    "com/ssakura49/sakuratinker/mixin/TextColorMixin": {
+      "<init>(ILjava/lang/String;)V": "Lnet/minecraft/network/chat/TextColor;<init>(ILjava/lang/String;)V"
+    },
+    "com/ssakura49/sakuratinker/mixin/LivingEntityMixin": {
+      "getDamageAfterArmorAbsorb": "Lnet/minecraft/world/entity/LivingEntity;m_21161_(Lnet/minecraft/world/damagesource/DamageSource;F)F"
+    },
+    "com/ssakura49/sakuratinker/mixin/EmptyGlyphAccessor": {
+      "left": "f_95205_:F",
+      "renderTypes": "f_283799_:Lnet/minecraft/client/gui/font/GlyphRenderTypes;",
+      "v0": "f_95203_:F",
+      "u0": "f_95201_:F",
+      "v1": "f_95204_:F",
+      "right": "f_95206_:F",
+      "up": "f_95207_:F",
+      "u1": "f_95202_:F",
+      "down": "f_95208_:F"
+    },
+    "com/ssakura49/sakuratinker/mixin/ClientTextTooltipAccessor": {
+      "text": "f_169936_:Lnet/minecraft/util/FormattedCharSequence;"
+    },
+    "com/ssakura49/sakuratinker/mixin/StyleMixin": {
+      "applyFormat": "Lnet/minecraft/network/chat/Style;m_131157_(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/Style;"
+    },
+    "com/ssakura49/sakuratinker/mixin/ItemRendererMixin": {
+      "Lcom/mojang/blaze3d/vertex/PoseStack;pushPose()V": "Lcom/mojang/blaze3d/vertex/PoseStack;m_85836_()V",
+      "render": "Lnet/minecraft/client/renderer/entity/ItemRenderer;m_115143_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;ZLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/client/resources/model/BakedModel;)V"
+    },
+    "com/ssakura49/sakuratinker/mixin/GameRendererMixin": {
+      "bobHurt": "Lnet/minecraft/client/renderer/GameRenderer;m_109117_(Lcom/mojang/blaze3d/vertex/PoseStack;F)V"
+    },
+    "com/ssakura49/sakuratinker/mixin/LevelRendererMixin": {
+      "renderLevel": "Lnet/minecraft/client/renderer/LevelRenderer;m_109599_(Lcom/mojang/blaze3d/vertex/PoseStack;FJZLnet/minecraft/client/Camera;Lnet/minecraft/client/renderer/GameRenderer;Lnet/minecraft/client/renderer/LightTexture;Lorg/joml/Matrix4f;)V"
+    },
+    "com/ssakura49/sakuratinker/mixin/LivingEntityAccessor": {
+      "lastHurtByPlayerTime": "f_20889_:I",
+      "deathScore": "f_20897_:I",
+      "noActionTime": "f_20891_:I",
+      "lastHurt": "f_20898_:F",
+      "dead": "f_20890_:Z",
+      "DATA_HEALTH_ID": "f_20961_:Lnet/minecraft/network/syncher/EntityDataAccessor;",
+      "lastDamageSource": "f_20958_:Lnet/minecraft/world/damagesource/DamageSource;",
+      "lastHurtByPlayer": "f_20888_:Lnet/minecraft/world/entity/player/Player;",
+      "lastDamageStamp": "f_20930_:J",
+      "activeEffects": "f_20945_:Ljava/util/Map;"
+    },
+    "com/ssakura49/sakuratinker/mixin/tinker/BulkQuiverModuleMixin": {
+      "Lnet/minecraft/world/item/ItemStack;shrink(I)V": "Lnet/minecraft/world/item/ItemStack;m_41774_(I)V"
+    },
+    "com/ssakura49/sakuratinker/mixin/tinker/TrickQuiverModuleMixin": {
+      "Lnet/minecraft/world/item/ItemStack;shrink(I)V": "Lnet/minecraft/world/item/ItemStack;m_41774_(I)V"
+    },
+    "com/ssakura49/sakuratinker/mixin/ItemRendererAccessor": {
+      "renderQuadList": "m_115162_(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Ljava/util/List;Lnet/minecraft/world/item/ItemStack;II)V"
+    }
+  },
+  "data": {
+    "searge": {
+      "com/ssakura49/sakuratinker/mixin/GuiGraphicsMixin": {
+        "renderTooltipInternal": "Lnet/minecraft/client/gui/GuiGraphics;m_280497_(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;)V",
+        "Lcom/mojang/blaze3d/vertex/PoseStack;popPose()V": "Lcom/mojang/blaze3d/vertex/PoseStack;m_85849_()V"
+      },
+      "com/ssakura49/sakuratinker/mixin/FontMixin": {
+        "drawInBatch(Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)I": "Lnet/minecraft/client/gui/Font;m_272191_(Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)I"
+      },
+      "com/ssakura49/sakuratinker/mixin/TextColorMixin": {
+        "<init>(ILjava/lang/String;)V": "Lnet/minecraft/network/chat/TextColor;<init>(ILjava/lang/String;)V"
+      },
+      "com/ssakura49/sakuratinker/mixin/LivingEntityMixin": {
+        "getDamageAfterArmorAbsorb": "Lnet/minecraft/world/entity/LivingEntity;m_21161_(Lnet/minecraft/world/damagesource/DamageSource;F)F"
+      },
+      "com/ssakura49/sakuratinker/mixin/EmptyGlyphAccessor": {
+        "left": "f_95205_:F",
+        "renderTypes": "f_283799_:Lnet/minecraft/client/gui/font/GlyphRenderTypes;",
+        "v0": "f_95203_:F",
+        "u0": "f_95201_:F",
+        "v1": "f_95204_:F",
+        "right": "f_95206_:F",
+        "up": "f_95207_:F",
+        "u1": "f_95202_:F",
+        "down": "f_95208_:F"
+      },
+      "com/ssakura49/sakuratinker/mixin/ClientTextTooltipAccessor": {
+        "text": "f_169936_:Lnet/minecraft/util/FormattedCharSequence;"
+      },
+      "com/ssakura49/sakuratinker/mixin/StyleMixin": {
+        "applyFormat": "Lnet/minecraft/network/chat/Style;m_131157_(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/Style;"
+      },
+      "com/ssakura49/sakuratinker/mixin/ItemRendererMixin": {
+        "Lcom/mojang/blaze3d/vertex/PoseStack;pushPose()V": "Lcom/mojang/blaze3d/vertex/PoseStack;m_85836_()V",
+        "render": "Lnet/minecraft/client/renderer/entity/ItemRenderer;m_115143_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;ZLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/client/resources/model/BakedModel;)V"
+      },
+      "com/ssakura49/sakuratinker/mixin/GameRendererMixin": {
+        "bobHurt": "Lnet/minecraft/client/renderer/GameRenderer;m_109117_(Lcom/mojang/blaze3d/vertex/PoseStack;F)V"
+      },
+      "com/ssakura49/sakuratinker/mixin/LevelRendererMixin": {
+        "renderLevel": "Lnet/minecraft/client/renderer/LevelRenderer;m_109599_(Lcom/mojang/blaze3d/vertex/PoseStack;FJZLnet/minecraft/client/Camera;Lnet/minecraft/client/renderer/GameRenderer;Lnet/minecraft/client/renderer/LightTexture;Lorg/joml/Matrix4f;)V"
+      },
+      "com/ssakura49/sakuratinker/mixin/LivingEntityAccessor": {
+        "lastHurtByPlayerTime": "f_20889_:I",
+        "deathScore": "f_20897_:I",
+        "noActionTime": "f_20891_:I",
+        "lastHurt": "f_20898_:F",
+        "dead": "f_20890_:Z",
+        "DATA_HEALTH_ID": "f_20961_:Lnet/minecraft/network/syncher/EntityDataAccessor;",
+        "lastDamageSource": "f_20958_:Lnet/minecraft/world/damagesource/DamageSource;",
+        "lastHurtByPlayer": "f_20888_:Lnet/minecraft/world/entity/player/Player;",
+        "lastDamageStamp": "f_20930_:J",
+        "activeEffects": "f_20945_:Ljava/util/Map;"
+      },
+      "com/ssakura49/sakuratinker/mixin/tinker/BulkQuiverModuleMixin": {
+        "Lnet/minecraft/world/item/ItemStack;shrink(I)V": "Lnet/minecraft/world/item/ItemStack;m_41774_(I)V"
+      },
+      "com/ssakura49/sakuratinker/mixin/tinker/TrickQuiverModuleMixin": {
+        "Lnet/minecraft/world/item/ItemStack;shrink(I)V": "Lnet/minecraft/world/item/ItemStack;m_41774_(I)V"
+      },
+      "com/ssakura49/sakuratinker/mixin/ItemRendererAccessor": {
+        "renderQuadList": "m_115162_(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Ljava/util/List;Lnet/minecraft/world/item/ItemStack;II)V"
+      }
+    }
+  }
+}

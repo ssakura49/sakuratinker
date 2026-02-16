@@ -1,0 +1,19 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "soul_gatherer": "sakuratinker:item/tool/tinker_wand/soul_gatherer",
+    "large_plate": "sakuratinker:item/tool/tinker_wand/large_plate",
+    "tough_handle": "sakuratinker:item/tool/tinker_wand/tough_handle",
+    "tough_binding": "sakuratinker:item/tool/tinker_wand/tough_binding"
+  },
+  "modifier_roots": [
+    "sakuratinker:item/tool/tinker_wand/modifiers/"
+  ],
+  "parts": [
+    { "name": "soul_gatherer", "index": 0 },
+    { "name": "large_plate", "index": 1 },
+    { "name": "tough_handle", "index": 2 },
+    { "name": "tough_binding", "index": 3 }
+  ]
+}

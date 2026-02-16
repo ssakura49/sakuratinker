@@ -1,0 +1,12 @@
+{
+    "replace": false,
+    "values": [
+      "sakuratinker:terracryst_ore",
+      "sakuratinker:terracryst_ore_deepslate",
+      "sakuratinker:eezo_ore",
+      "sakuratinker:prometheum_ore",
+      "sakuratinker:prometheum_ore_deepslate",
+      "sakuratinker:orichalcum_ore",
+      "sakuratinker:orichalcum_ore_deepslate"
+    ]
+}

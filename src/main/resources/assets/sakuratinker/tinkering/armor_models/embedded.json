@@ -1,0 +1,25 @@
+{
+    "layers": [
+      {
+        "type": "tconstruct:material",
+        "index": 0,
+        "prefix": "sakuratinker:embedded/upper_"
+      },
+      {
+        "type": "tconstruct:material",
+        "index": 1,
+        "prefix": "sakuratinker:embedded/middle_"
+      },
+      {
+        "type": "tconstruct:material",
+        "index": 2,
+        "prefix": "sakuratinker:embedded/under_"
+      },
+      {
+        "type": "tconstruct:material",
+        "index": 3,
+        "prefix": "sakuratinker:embedded/maille_"
+      },
+      "tconstruct:trim"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "sakuratinker:item/material/goozma",
+      "halo": "sakuratinker:item/misc/halo_goozma"
+  },
+  "loader": "sakuratinker:halo",
+  "halo": {
+  "texture": "#halo",
+  "color": -1,
+  "size": 12,
+  "pulse": true,
+    "rotate": false,
+    "rotation_speed": 0.8
+}
+}

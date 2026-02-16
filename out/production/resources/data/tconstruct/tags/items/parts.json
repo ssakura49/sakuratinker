@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "sakuratinker:charm_chain",
+    "sakuratinker:charm_core",
+    "sakuratinker:swift_blade",
+    "sakuratinker:swift_guard",
+    "sakuratinker:barrel",
+    "sakuratinker:energy_unit",
+    "sakuratinker:laser_medium",
+    "sakuratinker:blade",
+    "sakuratinker:arrow_head",
+    "sakuratinker:arrow_shaft",
+    "sakuratinker:fletching",
+    "sakuratinker:book_cover",
+    "sakuratinker:spell_cloth",
+    "sakuratinker:flag"
+  ]
+}

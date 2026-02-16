@@ -1,0 +1,16 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "sakuratinker:item/material/colorful_ingot",
+      "halo": "sakuratinker:item/misc/halo"
+  },
+  "loader": "sakuratinker:halo",
+  "halo": {
+  "texture": "#halo",
+  "color": -16777216,
+  "size": 10,
+  "pulse": true,
+    "rotate": false,
+    "rotation_speed": 0.8
+}
+}

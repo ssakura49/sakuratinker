@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "#sakuratinker:casts/single_use/charm_chain",
+    "#sakuratinker:casts/single_use/charm_core",
+    "#sakuratinker:casts/single_use/swift_blade",
+    "#sakuratinker:casts/single_use/swift_guard",
+    "#sakuratinker:casts/single_use/barrel",
+    "#sakuratinker:casts/single_use/energy_unit",
+    "#sakuratinker:casts/single_use/laser_medium",
+    "#sakuratinker:casts/single_use/blade",
+    "#sakuratinker:casts/single_use/arrow_head",
+    "#sakuratinker:casts/single_use/arrow_shaft",
+    "#sakuratinker:casts/single_use/book_cover",
+    "#sakuratinker:casts/single_use/spell_cloth",
+    "#sakuratinker:casts/single_use/great_blade",
+    "#sakuratinker:casts/single_use/shell",
+    "#sakuratinker:casts/single_use/flag"
+  ]
+}

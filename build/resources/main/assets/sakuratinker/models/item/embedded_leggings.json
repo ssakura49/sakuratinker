@@ -1,0 +1,15 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default",
+  "textures": {
+    "leggings1": "sakuratinker:item/tool/armor/embedded/leggings/leggings1",
+    "leggings2":  "sakuratinker:item/tool/armor/embedded/leggings/leggings2",
+    "leggings3": "sakuratinker:item/tool/armor/embedded/leggings/leggings3"
+  },
+  "modifier_roots": [ "sakuratinker:item/tool/armor/embedded/leggings/modifiers/" ],
+  "parts": [
+  { "name": "leggings1", "index": 0 },
+  { "name": "leggings2",   "index": 1 },
+  { "name": "leggings3",    "index": 2 }
+  ]
+}

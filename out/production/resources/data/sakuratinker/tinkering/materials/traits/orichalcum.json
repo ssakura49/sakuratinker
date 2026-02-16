@@ -1,0 +1,10 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 2,
+        "name": "sakuratinker:shielding"
+      }
+    ]
+  }
+}

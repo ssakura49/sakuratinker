@@ -1,0 +1,15 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default",
+  "textures": {
+    "boots1": "sakuratinker:item/tool/armor/embedded/boots/boots1",
+    "boots2":  "sakuratinker:item/tool/armor/embedded/boots/boots2",
+    "boots3": "sakuratinker:item/tool/armor/embedded/boots/boots3"
+  },
+  "modifier_roots": [ "sakuratinker:item/tool/armor/embedded/boots/modifiers/" ],
+  "parts": [
+  { "name": "boots1", "index": 0 },
+  { "name": "boots2",   "index": 1 },
+  { "name": "boots3",    "index": 2 }
+  ]
+}

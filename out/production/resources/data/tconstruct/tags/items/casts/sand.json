@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "sakuratinker:charm_chain_sand_cast",
+    "sakuratinker:charm_core_sand_cast",
+    "sakuratinker:swift_blade_sand_cast",
+    "sakuratinker:swift_guard_sand_cast",
+    "sakuratinker:barrel_sand_cast",
+    "sakuratinker:energy_unit_sand_cast",
+    "sakuratinker:laser_medium_sand_cast",
+    "sakuratinker:blade_sand_cast",
+    "sakuratinker:arrow_head_sand_cast",
+    "sakuratinker:arrow_shaft_sand_cast",
+    {"id" : "sakuratinker:book_cover_sand_cast", "required":false},
+    {"id" : "sakuratinker:book_cover_sand_cast", "required":false},
+    "sakuratinker:great_blade_sand_cast",
+    "sakuratinker:shell_sand_cast",
+    "sakuratinker:flag_sand_cast"
+  ]
+}

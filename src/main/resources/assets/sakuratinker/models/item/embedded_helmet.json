@@ -1,0 +1,15 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default",
+  "textures": {
+    "head1": "sakuratinker:item/tool/armor/embedded/helmet/head1",
+    "head2":  "sakuratinker:item/tool/armor/embedded/helmet/head2",
+    "head3": "sakuratinker:item/tool/armor/embedded/helmet/head3"
+  },
+  "modifier_roots": [ "sakuratinker:item/tool/armor/embedded/helmet/modifiers/" ],
+  "parts": [
+  { "name": "head1", "index": 0 },
+  { "name": "head2",   "index": 1 },
+  { "name": "head3",    "index": 2 }
+  ]
+}

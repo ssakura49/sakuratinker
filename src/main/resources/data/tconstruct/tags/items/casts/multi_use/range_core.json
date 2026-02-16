@@ -1,0 +1,6 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "sakuratinker:range_core_cast", "required":false}
+  ]
+}

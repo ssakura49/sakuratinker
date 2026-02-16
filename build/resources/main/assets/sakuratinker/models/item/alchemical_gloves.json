@@ -1,0 +1,17 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "limb": "sakuratinker:item/tool/alchemical_gloves/limb",
+    "grip": "sakuratinker:item/tool/alchemical_gloves/grip",
+    "core": "sakuratinker:item/tool/alchemical_gloves/core"
+  },
+  "modifier_roots": [
+    "sakuratinker:item/tool/alchemical_gloves/modifiers/"
+  ],
+  "parts": [
+    { "name": "limb", "index": 0},
+    { "name": "grip", "index": 1},
+    { "name": "core", "index": 2}
+  ]
+}

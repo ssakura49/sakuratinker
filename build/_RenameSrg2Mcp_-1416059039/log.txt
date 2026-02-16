@@ -1,0 +1,15 @@
+Java Launcher: C:\Program Files\Java\jdk-17\bin\java.exe
+Arguments: '--task, SRG_TO_MCP, --input, C:\Users\言樱\.gradle\caches\modules-2\files-2.1\curse.maven\tinkers-thinking-850772\6183807\a94c35fb7df55959f596e75b5cfaa97ee2e8aae8\tinkers-thinking-850772-6183807.jar, --output, C:\Users\言樱\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\tinkers-thinking-850772\6183807_mapped_parchment_2023.09.03-1.20.1\tinkers-thinking-850772-6183807_mapped_parchment_2023.09.03-1.20.1.jar, --mcp, C:\Users\言樱\.gradle\caches\parchmentgradle\org\parchmentmc\data\parchment-1.20.1\2023.09.03\parchment-1.20.1-2023.09.03.zip, --strip-signatures'
+Classpath:
+ - C:\Users\言樱\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\installertools\1.4.4\installertools-1.4.4-fatjar.jar
+Working directory: F:\Game\MC\mods\sakuratinker\build\_RenameSrg2Mcp_-1416059039
+Main class: net.minecraftforge.installertools.ConsoleTool
+====================================
+Task: SRG_TO_MCP
+Input:  C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\modules-2\files-2.1\curse.maven\tinkers-thinking-850772\6183807\a94c35fb7df55959f596e75b5cfaa97ee2e8aae8\tinkers-thinking-850772-6183807.jar
+Output: C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\tinkers-thinking-850772\6183807_mapped_parchment_2023.09.03-1.20.1\tinkers-thinking-850772-6183807_mapped_parchment_2023.09.03-1.20.1.jar
+MCP:    C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\parchmentgradle\org\parchmentmc\data\parchment-1.20.1\2023.09.03\parchment-1.20.1-2023.09.03.zip
+Loading MCP Data
+Processing ZIP file
+Stripped Manifest of sha digests
+Process complete

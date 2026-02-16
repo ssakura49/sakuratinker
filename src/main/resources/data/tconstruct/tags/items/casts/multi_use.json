@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "#tconstruct:casts/multi_use/charm_chain",
+    "#tconstruct:casts/multi_use/charm_core",
+    "#tconstruct:casts/multi_use/swift_blade",
+    "#tconstruct:casts/multi_use/swift_guard",
+    "#tconstruct:casts/multi_use/barrel",
+    "#tconstruct:casts/multi_use/energy_unit",
+    "#tconstruct:casts/multi_use/laser_medium",
+    "#tconstruct:casts/multi_use/blade",
+    "#tconstruct:casts/multi_use/arrow_head",
+    "#tconstruct:casts/multi_use/arrow_shaft",
+    "#tconstruct:casts/multi_use/book_cover",
+    "#tconstruct:casts/multi_use/spell_cloth",
+    "#tconstruct:casts/multi_use/great_blade",
+    "#tconstruct:casts/multi_use/shell",
+    "#tconstruct:casts/multi_use/flag",
+    "#tconstruct:casts/multi_use/phantom_core",
+    "#tconstruct:casts/multi_use/axle",
+    "#tconstruct:casts/multi_use/yoyo_ring",
+    "#tconstruct:casts/multi_use/chord",
+    "#tconstruct:casts/multi_use/yoyo_body",
+    "#tconstruct:casts/multi_use/scythe_blade",
+    "#tconstruct:casts/multi_use/soul_gatherer",
+    "#tconstruct:casts/multi_use/alchemical_core",
+    "#tconstruct:casts/multi_use/range_core"
+  ]
+}

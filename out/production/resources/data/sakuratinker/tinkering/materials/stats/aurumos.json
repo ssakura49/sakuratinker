@@ -1,0 +1,37 @@
+{
+  "stats": {
+    "tconstruct:binding": {},
+    "tconstruct:handle": {
+      "durability": 0.6,
+      "mining_speed": 0.15,
+      "melee_speed": 0.2,
+      "melee_damage": 0.15
+    },
+    "tconstruct:head": {
+      "durability": 966,
+      "mining_speed": 4.0,
+      "mining_tier": "minecraft:diamond",
+      "melee_attack": 6.0
+    },
+    "tconstruct:limb": {
+      "durability": 1000,
+      "draw_speed": 0.3,
+      "velocity": 0.2,
+      "accuracy": 0.25
+    },
+    "sakuratinker:energy_unit": {
+      "energy_storage": 60000,
+      "durability": 0.8
+    },
+    "sakuratinker:laser_medium": {
+      "range": 30,
+      "cooldown": 0.5
+    },
+    "sakuratinker:flag": {
+      "range": 12,
+      "attack_buff_time": 320,
+      "defence_buff_time": 160,
+      "charge_time": 100
+    }
+  }
+}

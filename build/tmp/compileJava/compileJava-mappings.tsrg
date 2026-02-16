@@ -1,0 +1,9 @@
+com/ssakura49/sakuratinker/mixin/GuiGraphicsMixin pose f_279612_
+com/ssakura49/sakuratinker/mixin/GuiGraphicsMixin bufferSource f_279627_
+com/ssakura49/sakuratinker/mixin/ItemRendererMixin minecraft f_265848_
+com/ssakura49/sakuratinker/mixin/LevelRendererMixin renderBuffers f_109464_
+com/ssakura49/sakuratinker/mixin/FontMixin drawInBatch8xOutline (Lnet/minecraft/util/FormattedCharSequence;FFIILorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;I)V m_168645_
+com/ssakura49/sakuratinker/mixin/GuiGraphicsMixin guiWidth ()I m_280182_
+com/ssakura49/sakuratinker/mixin/GuiGraphicsMixin guiHeight ()I m_280206_
+com/ssakura49/sakuratinker/mixin/GuiGraphicsMixin pose ()Lcom/mojang/blaze3d/vertex/PoseStack; m_280168_
+com/ssakura49/sakuratinker/mixin/GuiGraphicsMixin flushIfUnmanaged ()V m_286081_

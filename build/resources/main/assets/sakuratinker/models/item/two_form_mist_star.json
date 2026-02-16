@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "sakuratinker:item/material/two_form_mist_star"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "sakuratinker:phantom_core_red_sand_cast", "required":false},
+    { "id": "sakuratinker:phantom_core_sand_cast", "required":false}
+  ]
+}

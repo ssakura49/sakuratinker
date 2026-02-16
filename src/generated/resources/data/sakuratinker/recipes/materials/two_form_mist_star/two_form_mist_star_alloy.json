@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 90,
+      "fluid": "sakuratinker:molten_wu_yu"
+    },
+    {
+      "amount": 90,
+      "fluid": "sakuratinker:molten_south_star"
+    }
+  ],
+  "result": {
+    "amount": 90,
+    "fluid": "sakuratinker:molten_two_form_mist_star"
+  },
+  "temperature": 3000
+}

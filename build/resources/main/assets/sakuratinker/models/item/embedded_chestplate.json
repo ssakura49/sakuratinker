@@ -1,0 +1,15 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default",
+  "textures": {
+    "chestplate1": "sakuratinker:item/tool/armor/embedded/chestplate/chestplate1",
+    "chestplate2":  "sakuratinker:item/tool/armor/embedded/chestplate/chestplate2",
+    "chestplate3": "sakuratinker:item/tool/armor/embedded/chestplate/chestplate3"
+  },
+  "modifier_roots": [ "sakuratinker:item/tool/armor/embedded/chestplate/modifiers/" ],
+  "parts": [
+  { "name": "chestplate1", "index": 0 },
+  { "name": "chestplate2",   "index": 1 },
+  { "name": "chestplate3",    "index": 2 }
+  ]
+}

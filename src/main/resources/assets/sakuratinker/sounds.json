@@ -1,0 +1,44 @@
+{
+	"celestial_blade" : {
+		"sounds" : [
+			{
+				"name": "sakuratinker:celestial_blade",
+				"volume": 1
+			}
+		]
+	},
+	"laser_shoot" : {
+		"sounds" : [
+			{
+				"name": "sakuratinker:laser_shoot",
+				"volume": 1
+			}
+		]
+	},
+	"time_stop": {
+    "sounds" : [
+	  		{
+				"name": "sakuratinker:time_stop",
+				"volume": 1
+			}
+    ]
+    },
+	"entity.yoyo.throw": {
+    	"category": "entities",
+    	"sounds": [
+      		{
+        		"type": "event",
+        		"name": "minecraft:entity.fishing_bobber.throw"
+      		}
+    	],
+    	"subtitle": "entity.yoyo.throw.subtitle"
+    },
+	"zap": {
+		"sounds": [
+			{
+				"name": "sakuratinker:zap"
+			}
+		],
+		"subtitle": "sakuratinker.zap.subtitle"
+	}
+}

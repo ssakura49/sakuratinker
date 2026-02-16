@@ -1,0 +1,493 @@
+{
+  "parts": [
+    {
+      "path": "sakuratinker:item/tool/part/charm_chain/charm_chain",
+      "stat_type": "sakuratinker:charm_chain"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/charm_core/charm_core",
+      "stat_type": "sakuratinker:charm_core"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_charm/charm_chain",
+      "stat_type": "sakuratinker:charm_chain"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_charm/charm_core",
+      "stat_type": "sakuratinker:charm_core"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/swift_blade/swift_blade",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/swift_guard/swift_guard",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "sakuratinker:item/tool/swift_sword/blade",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/swift_sword/binding",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "sakuratinker:item/tool/swift_sword/guard",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "sakuratinker:item/tool/swift_sword/handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "sakuratinker:item/tool/swift_sword/broken_blade",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/great_sword/head",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/great_sword/plate_1",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/great_sword/plate_2",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/great_sword/tough_binding",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "sakuratinker:item/tool/great_sword/tough_handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "sakuratinker:item/tool/great_sword/head_broken",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/great_blade/great_blade",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/blade_convergence/blade",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/blade_convergence/plate",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/blade_convergence/handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "sakuratinker:item/tool/blade_convergence/broken_blade",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/vampire_knife/blade1",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/vampire_knife/blade2",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/vampire_knife/blade3",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/vampire_knife/blade_box",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/blade_box/blade_box",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/barrel/barrel",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/energy_unit/energy_unit",
+      "stat_type": "sakuratinker:energy_unit"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/laser_medium/laser_medium",
+      "stat_type": "sakuratinker:laser_medium"
+    },
+    {
+      "path": "sakuratinker:item/tool/laser_gun/barrel",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/laser_gun/broken_barrel",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/laser_gun/energy_unit",
+      "stat_type": "sakuratinker:energy_unit"
+    },
+    {
+      "path": "sakuratinker:item/tool/laser_gun/laser_medium",
+      "stat_type": "sakuratinker:laser_medium"
+    },
+    {
+      "path": "sakuratinker:item/tool/laser_gun/tough_handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "sakuratinker:item/tool/shuriken/blade_1",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/shuriken/blade_2",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/shuriken/blade_3",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/shuriken/blade_4",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/blade/blade",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/arrow_head/arrow_head",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/arrow_shaft/arrow_shaft",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/fletching/fletching",
+      "stat_type": "sakuratinker:fletching"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_arrow/arrow_head",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_arrow/arrow_shaft",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_arrow/fletching",
+      "stat_type": "sakuratinker:fletching"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/book_cover/book_cover",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/spell_cloth/spell_cloth",
+      "stat_type": "sakuratinker:spell_cloth"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_spell_book/book_cover",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_spell_book/binding",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_spell_book/spell_cloth",
+      "stat_type": "sakuratinker:spell_cloth"
+    },
+
+
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:tinker_armor/embedded/upper_armor",
+      "stat_type": "tconstruct:armor_plating"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:tinker_armor/embedded/upper_leggings",
+      "stat_type": "tconstruct:armor_plating"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:tinker_armor/embedded/middle_armor",
+      "stat_type": "tconstruct:armor_plating"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:tinker_armor/embedded/middle_leggings",
+      "stat_type": "tconstruct:armor_plating"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:tinker_armor/embedded/under_armor",
+      "stat_type": "tconstruct:armor_maille"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:tinker_armor/embedded/under_leggings",
+      "stat_type": "tconstruct:armor_maille"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:tinker_armor/embedded/maille_wings",
+      "stat_type": "tconstruct:armor_maille"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/helmet/head1",
+      "stat_type": "tconstruct:plating_helmet"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/helmet/head2",
+      "stat_type": "tconstruct:plating_helmet"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/helmet/head3",
+      "stat_type": "tconstruct:maille"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/chestplate/chestplate1",
+      "stat_type": "tconstruct:plating_chestplate"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/chestplate/chestplate2",
+      "stat_type": "tconstruct:plating_chestplate"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/chestplate/chestplate3",
+      "stat_type": "tconstruct:maille"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/leggings/leggings1",
+      "stat_type": "tconstruct:plating_leggings"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/leggings/leggings2",
+      "stat_type": "tconstruct:plating_leggings"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/leggings/leggings3",
+      "stat_type": "tconstruct:maille"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/boots/boots1",
+      "stat_type": "tconstruct:plating_boots"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/boots/boots2",
+      "stat_type": "tconstruct:plating_boots"
+    },
+    {
+      "allow_animated": false,
+      "path": "sakuratinker:item/tool/armor/embedded/boots/boots3",
+      "stat_type": "tconstruct:maille"
+    },
+
+
+
+    {
+      "path": "sakuratinker:item/tool/grappling_hook/blade",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/grappling_hook/blade_broken",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/grappling_hook/bowstring",
+      "stat_type": "tconstruct:bowstring"
+    },
+    {
+      "path": "sakuratinker:item/tool/grappling_hook/limb1",
+      "stat_type": "tconstruct:limb"
+    },
+    {
+      "path": "sakuratinker:item/tool/grappling_hook/limb2",
+      "stat_type": "tconstruct:limb"
+    },
+    {
+      "path": "sakuratinker:item/tool/grappling_hook/handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "sakuratinker:item/tool/power_bank/shell",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "sakuratinker:item/tool/power_bank/battery_1",
+      "stat_type": "sakuratinker:energy_unit"
+    },
+    {
+      "path": "sakuratinker:item/tool/power_bank/battery_2",
+      "stat_type": "sakuratinker:energy_unit"
+    },
+    {
+      "path": "sakuratinker:item/tool/power_bank/battery_3",
+      "stat_type": "sakuratinker:energy_unit"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/shell/shell",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/flag/flag",
+      "stat_type": "sakuratinker:flag"
+    },
+
+
+    {
+      "path": "sakuratinker:item/tool/battle_flag/head",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/battle_flag/head_broken",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/battle_flag/flag",
+      "stat_type": "sakuratinker:flag"
+    },
+    {
+      "path": "sakuratinker:item/tool/battle_flag/flag_broken",
+      "stat_type": "sakuratinker:flag"
+    },
+    {
+      "path": "sakuratinker:item/tool/battle_flag/handle_1",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "sakuratinker:item/tool/battle_flag/handle_2",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "sakuratinker:item/tool/first_fractal/head",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/first_fractal/head_broken",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/first_fractal/binding",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "sakuratinker:item/tool/first_fractal/handle",
+      "stat_type": "tconstruct:handle"
+    },
+
+
+
+
+
+    {
+      "path": "sakuratinker:item/tool/yoyo/body_1",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/yoyo/body_2",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/yoyo/axle",
+      "stat_type": "sakuratinker:axle"
+    },
+    {
+      "path": "sakuratinker:item/tool/yoyo/chord",
+      "stat_type": "sakuratinker:chord"
+    },
+    {
+      "path": "sakuratinker:item/tool/yoyo/ring",
+      "stat_type": "sakuratinker:yoyo_ring"
+    },
+
+    {
+      "path": "sakuratinker:item/tool/part/axle/axle",
+      "stat_type": "sakuratinker:axle"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/chord/chord",
+      "stat_type": "sakuratinker:chord"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/yoyo_ring/yoyo_ring",
+      "stat_type": "sakuratinker:yoyo_ring"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/yoyo_body/yoyo_body",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/scythe/scythe_blade",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/scythe/scythe_blade_broken",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/scythe_blade/scythe_blade",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/part/soul_gatherer/soul_gatherer",
+      "stat_type": "sakuratinker:soul_gatherer"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_wand/soul_gatherer",
+      "stat_type": "sakuratinker:soul_gatherer"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_wand/large_plate",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_wand/tough_handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_wand/tough_binding",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_bullet/bullet_1",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_bullet/bullet_2",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "sakuratinker:item/tool/revolver/grip",
+      "stat_type": "tconstruct:grip"
+    },
+    {
+      "path": "sakuratinker:item/tool/revolver/limb",
+      "stat_type": "tconstruct:limb"
+    },
+    {
+      "path": "sakuratinker:item/tool/revolver/handle",
+      "stat_type": "tconstruct:handle"
+    }
+  ],
+  "replace": false
+}

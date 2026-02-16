@@ -1,0 +1,15 @@
+Java Launcher: C:\Program Files\Java\jdk-17\bin\java.exe
+Arguments: '--task, SRG_TO_MCP, --input, C:\Users\言樱\.gradle\caches\modules-2\files-2.1\curse.maven\enigmatic-legacy-336184\5600004\8aa671114aee6d8ec1e3aac5c13dab84224bf2bb\enigmatic-legacy-336184-5600004.jar, --output, C:\Users\言樱\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\enigmatic-legacy-336184\5600004_mapped_parchment_2023.09.03-1.20.1\enigmatic-legacy-336184-5600004_mapped_parchment_2023.09.03-1.20.1.jar, --mcp, C:\Users\言樱\.gradle\caches\parchmentgradle\org\parchmentmc\data\parchment-1.20.1\2023.09.03\parchment-1.20.1-2023.09.03.zip, --strip-signatures'
+Classpath:
+ - C:\Users\言樱\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\installertools\1.4.4\installertools-1.4.4-fatjar.jar
+Working directory: F:\Game\MC\mods\sakuratinker\build\_RenameSrg2Mcp_1402358971
+Main class: net.minecraftforge.installertools.ConsoleTool
+====================================
+Task: SRG_TO_MCP
+Input:  C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\modules-2\files-2.1\curse.maven\enigmatic-legacy-336184\5600004\8aa671114aee6d8ec1e3aac5c13dab84224bf2bb\enigmatic-legacy-336184-5600004.jar
+Output: C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\enigmatic-legacy-336184\5600004_mapped_parchment_2023.09.03-1.20.1\enigmatic-legacy-336184-5600004_mapped_parchment_2023.09.03-1.20.1.jar
+MCP:    C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\parchmentgradle\org\parchmentmc\data\parchment-1.20.1\2023.09.03\parchment-1.20.1-2023.09.03.zip
+Loading MCP Data
+Processing ZIP file
+Stripped Manifest of sha digests
+Process complete

@@ -1,0 +1,46 @@
+{
+    "translation_key": "item.sakuratinker.vampire_knife",
+    "icon": {
+      "item": "sakuratinker:vampire_knife",
+      "nbt": "{Damage:0,tic_broken:0b,tic_display:1b,tic_materials:[\"tconstruct:ui_render#head\",\"tconstruct:ui_render#handle\",\"tconstruct:ui_render#extra\",\"tconstruct:ui_render#large\",\"tconstruct:ui_render#extra_large\"]}"
+    },
+    "sortIndex": 4,
+    "input_slots": [
+      {
+        "icon": "tconstruct:small_blade",
+        "translation_key": "item.tconstruct.small_blade",
+        "x": 28,
+        "y": 32,
+        "filter": {
+          "item": "tconstruct:small_blade"
+        }
+      },
+      {
+        "icon": "tconstruct:small_blade",
+        "translation_key": "item.tconstruct.small_blade",
+        "x": 48,
+        "y": 32,
+        "filter": {
+          "item": "tconstruct:small_blade"
+        }
+      },
+      {
+        "icon": "tconstruct:small_blade",
+        "translation_key": "item.tconstruct.small_blade",
+        "x": 48,
+        "y": 52,
+        "filter": {
+          "item": "tconstruct:small_blade"
+        }
+      },
+      {
+        "icon": "sakuratinker:blade_box",
+        "translation_key": "item.sakuratinker.blade_box",
+        "x": 28,
+        "y": 52,
+        "filter": {
+          "item": "sakuratinker:blade_box"
+        }
+      }
+    ]
+  }

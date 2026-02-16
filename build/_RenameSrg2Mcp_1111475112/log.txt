@@ -1,0 +1,15 @@
+Java Launcher: C:\Program Files\Java\jdk-17\bin\java.exe
+Arguments: '--task, SRG_TO_MCP, --input, C:\Users\言樱\.gradle\caches\modules-2\files-2.1\curse.maven\etst-lib-1206379\6321272\e25476baadd03e33cd4982ded649ae4f1e28549\etst-lib-1206379-6321272.jar, --output, C:\Users\言樱\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\etst-lib-1206379\6321272_mapped_official_1.20.1\etst-lib-1206379-6321272_mapped_official_1.20.1.jar, --mcp, C:\Users\言樱\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\mapping\1.20.1\mapping-1.20.1-mapping.zip, --strip-signatures'
+Classpath:
+ - C:\Users\言樱\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\installertools\1.4.4\installertools-1.4.4-fatjar.jar
+Working directory: F:\Game\MC\mods\sakuratinker\build\_RenameSrg2Mcp_1111475112
+Main class: net.minecraftforge.installertools.ConsoleTool
+====================================
+Task: SRG_TO_MCP
+Input:  C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\modules-2\files-2.1\curse.maven\etst-lib-1206379\6321272\e25476baadd03e33cd4982ded649ae4f1e28549\etst-lib-1206379-6321272.jar
+Output: C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\etst-lib-1206379\6321272_mapped_official_1.20.1\etst-lib-1206379-6321272_mapped_official_1.20.1.jar
+MCP:    C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\forge_gradle\mcp_repo\net\minecraft\mapping\1.20.1\mapping-1.20.1-mapping.zip
+Loading MCP Data
+Processing ZIP file
+Stripped Manifest of sha digests
+Process complete

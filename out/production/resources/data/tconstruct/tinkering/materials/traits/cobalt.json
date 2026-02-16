@@ -1,0 +1,16 @@
+{
+  "perStat": {
+    "sakuratinker:charm": [
+      {
+        "name": "sakuratinker:light_weight_curio",
+        "level": 1
+      }
+    ],
+    "sakuratinker:spell_cloth": [
+      {
+        "level": 2,
+        "name": "sakuratinker:spell_power"
+      }
+    ]
+  }
+}

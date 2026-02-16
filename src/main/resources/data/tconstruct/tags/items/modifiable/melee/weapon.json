@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "sakuratinker:swift_sword",
+    "sakuratinker:vampire_knife",
+    "sakuratinker:blade_convergence",
+    "sakuratinker:laser_gun",
+    "sakuratinker:shuriken",
+    "sakuratinker:tinker_arrow",
+    { "id": "sakuratinker:tinker_spell_book", "required":false},
+    "sakuratinker:grappling_hook",
+    "sakuratinker:battle_flag",
+    { "id": "sakuratinker:first_fractal", "required":false},
+    "sakuratinker:yoyo",
+    { "id": "sakuratinker:tinker_wand", "required":false},
+    "sakuratinker:tinker_bullet",
+    "sakuratinker:revolver",
+    "sakuratinker:blade_convergence"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+    "replace": false,
+    "values": [
+      { "id": "sakuratinker:youkai_ingot", "required":false}
+    ]
+  }

@@ -1,0 +1,44 @@
+{
+    "loader": "tconstruct:tool",
+    "parent": "forge:item/default-tool",
+    "textures": {
+      "head": "sakuratinker:item/tool/great_sword/head",
+      "head_broken": "sakuratinker:item/tool/great_sword/head_broken",
+      "plate_1": "sakuratinker:item/tool/great_sword/plate_1",
+      "plate_2": "sakuratinker:item/tool/great_sword/plate_2",
+      "tough_binding": "sakuratinker:item/tool/great_sword/tough_binding",
+      "tough_handle": "sakuratinker:item/tool/great_sword/tough_handle",
+
+      "large_head": "sakuratinker:item/tool/great_sword/head",
+      "large_broken_head": "sakuratinker:item/tool/great_sword/head_broken",
+      "large_plate_1": "sakuratinker:item/tool/great_sword/plate_1",
+      "large_plate_2": "sakuratinker:item/tool/great_sword/plate_2",
+      "large_tough_binding": "sakuratinker:item/tool/great_sword/tough_binding",
+      "large_tough_handle": "sakuratinker:item/tool/great_sword/tough_handle"
+    },
+    "modifier_roots": {
+      "small": [
+      "sakuratinker:item/tool/great_sword/modifiers/"
+      ],
+      "large": [
+      "sakuratinker:item/tool/great_sword/large/modifiers/"
+      ]
+    },
+    "large": true,
+    "large_offset": [ -2, 2],
+    "parts": [
+      { "name": "head", "index": 0, "broken": "head_broken" },
+      { "name": "plate_1", "index": 1 },
+      { "name": "plate_2", "index": 3 },
+      { "name": "tough_binding", "index": 4 },
+      { "name": "tough_handle", "index": 2 }
+    ],
+    "overrides": [
+      {
+        "predicate": {
+          "tconstruct:charging": 2
+        },
+        "model": "sakuratinker:item/tool/great_sword/great_sword_blocking"
+      }
+    ]
+  }

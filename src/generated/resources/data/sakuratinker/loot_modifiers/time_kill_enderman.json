@@ -1,0 +1,13 @@
+{
+  "type": "sakuratinker:loot_time_kill",
+  "conditions": [
+    {
+      "condition": "minecraft:killed_by_player"
+    }
+  ],
+  "max_time": 5000,
+  "min_time": 3000,
+  "target_entity": "minecraft:enderman",
+  "target_item": "sakuratinker:wu_yu",
+  "weapon": "minecraft:netherite_sword"
+}

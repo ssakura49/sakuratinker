@@ -1,0 +1,33 @@
+{
+  "required": true,
+  "package": "com.ssakura49.sakuratinker.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "sakuratinker.refmap.json",
+  "mixins": [
+    "ChatFormattingMixin",
+    "ForgeEventFactoryMixin",
+    "LivingEntityAccessor",
+    "LivingEntityMixin",
+    "StyleMixin",
+    "TextColorMixin",
+    "tinker.BulkQuiverModuleMixin",
+    "tinker.TrickQuiverModuleMixin"
+  ],
+  "client": [
+    "ClientTextTooltipAccessor",
+    "EmptyGlyphAccessor",
+    "FontMixin",
+    "GameRendererMixin",
+    "GuiGraphicsMixin",
+    "ItemRendererAccessor",
+    "ItemRendererMixin",
+    "LevelRendererMixin",
+    "VertexFormatElementUsageMixin"
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.7"
+}

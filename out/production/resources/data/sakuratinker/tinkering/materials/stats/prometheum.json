@@ -1,0 +1,57 @@
+{
+  "stats": {
+    "tconstruct:binding": {},
+    "tconstruct:handle": {
+      "durability": 0.2,
+      "mining_speed": 0.1,
+      "melee_speed": 0.15,
+      "melee_damage": 0.1
+    },
+    "tconstruct:head": {
+      "durability": 456,
+      "mining_speed": 5.0,
+      "mining_tier": "minecraft:iron",
+      "melee_attack": 4.0
+    },
+    "tconstruct:maille": {},
+    "tconstruct:plating_helmet": {
+      "armor": 2.0,
+      "durability": 660,
+      "knockback_resistance": 0.1,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_chestplate": {
+      "armor": 4.0,
+      "durability": 1260,
+      "knockback_resistance": 0.1,
+      "toughness": 4.0
+    },
+    "tconstruct:plating_leggings": {
+      "armor": 3.0,
+      "durability": 768,
+      "knockback_resistance": 0.1,
+      "toughness": 3.0
+    },
+    "tconstruct:plating_boots": {
+      "armor": 2.0,
+      "durability": 564,
+      "knockback_resistance": 0.1,
+      "toughness": 2.0
+    },
+    "sakuratinker:charm_core": {},
+    "sakuratinker:charm_chain": {
+      "movement_speed": -0.1,
+      "health": 24,
+      "armor": 0.15,
+      "toughness": 0.15,
+      "damage": 0.1,
+      "arrow_damage": 0.1
+    },
+    "sakuratinker:flag": {
+      "range": 12,
+      "attack_buff_time": 20,
+      "defence_buff_time": 20,
+      "charge_time": 20
+    }
+  }
+}

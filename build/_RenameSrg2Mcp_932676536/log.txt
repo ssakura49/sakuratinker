@@ -1,0 +1,15 @@
+Java Launcher: C:\Program Files\Java\jdk-17\bin\java.exe
+Arguments: '--task, SRG_TO_MCP, --input, C:\Users\言樱\.gradle\caches\modules-2\files-2.1\slimeknights.tconstruct\TConstruct\1.20.1-3.9.2.40\fd0f5ba347336e70d4443556cd8675e8b591e6b5\TConstruct-1.20.1-3.9.2.40.jar, --output, C:\Users\言樱\.gradle\caches\forge_gradle\deobf_dependencies\slimeknights\tconstruct\TConstruct\1.20.1-3.9.2.40_mapped_parchment_2023.09.03-1.20.1\TConstruct-1.20.1-3.9.2.40_mapped_parchment_2023.09.03-1.20.1.jar, --mcp, C:\Users\言樱\.gradle\caches\parchmentgradle\org\parchmentmc\data\parchment-1.20.1\2023.09.03\parchment-1.20.1-2023.09.03.zip, --strip-signatures'
+Classpath:
+ - C:\Users\言樱\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\installertools\1.4.4\installertools-1.4.4-fatjar.jar
+Working directory: F:\Game\MC\mods\sakuratinker\build\_RenameSrg2Mcp_932676536
+Main class: net.minecraftforge.installertools.ConsoleTool
+====================================
+Task: SRG_TO_MCP
+Input:  C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\modules-2\files-2.1\slimeknights.tconstruct\TConstruct\1.20.1-3.9.2.40\fd0f5ba347336e70d4443556cd8675e8b591e6b5\TConstruct-1.20.1-3.9.2.40.jar
+Output: C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\forge_gradle\deobf_dependencies\slimeknights\tconstruct\TConstruct\1.20.1-3.9.2.40_mapped_parchment_2023.09.03-1.20.1\TConstruct-1.20.1-3.9.2.40_mapped_parchment_2023.09.03-1.20.1.jar
+MCP:    C:\Users\￨ﾨﾀ￦ﾨﾱ\.gradle\caches\parchmentgradle\org\parchmentmc\data\parchment-1.20.1\2023.09.03\parchment-1.20.1-2023.09.03.zip
+Loading MCP Data
+Processing ZIP file
+Stripped Manifest of sha digests
+Process complete
