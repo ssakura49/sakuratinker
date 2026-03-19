@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "sakuratinker:wu_yu",
+  "result": {
+    "amount": 90,
+    "fluid": "sakuratinker:molten_wu_yu"
+  },
+  "temperature": 2000
+}

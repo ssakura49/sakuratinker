@@ -50,6 +50,18 @@
     },
     {
       "identifier": {
+        "group": "com.ssakura49.tinkercuriolib",
+        "artifact": "tinkercuriolib"
+      },
+      "version": {
+        "range": "[1.0,)",
+        "artifactVersion": "1.0"
+      },
+      "path": "META-INF/jarjar/tinkercuriolib-1.0.jar",
+      "isObfuscated": false
+    },
+    {
+      "identifier": {
         "group": "io.github.llamalad7",
         "artifact": "mixinextras-forge"
       },

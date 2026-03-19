@@ -3,11 +3,12 @@ package com.ssakura49.sakuratinker.library.tinkering.tools.item;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-import com.ssakura49.sakuratinker.library.hooks.curio.behavior.CurioAttributeModifierHook;
-import com.ssakura49.sakuratinker.library.hooks.curio.interation.CurioInventoryTickModifierHook;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STHooks;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
 import com.ssakura49.sakuratinker.utils.SafeClassUtil;
+import com.ssakura49.tinkercuriolib.hook.TCLibHooks;
+import com.ssakura49.tinkercuriolib.hook.behavior.CurioAttributeModifierHook;
+import com.ssakura49.tinkercuriolib.hook.interation.CurioInventoryTickModifierHook;
 import io.redspace.ironsspellbooks.api.magic.SpellSelectionManager;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.api.spells.*;
@@ -170,7 +171,7 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         ToolStack tool = ToolStack.from(stack);
         for (ModifierEntry entry : tool.getModifierList()) {
-            CurioInventoryTickModifierHook hook = (CurioInventoryTickModifierHook) entry.getHook(STHooks.CURIO_TICK);
+            CurioInventoryTickModifierHook hook = (CurioInventoryTickModifierHook) entry.getHook(TCLibHooks.CURIO_TICK);
             hook.onCurioTick(tool, entry, slotContext, slotContext.entity(), stack);
         }
     }
@@ -196,7 +197,7 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
             map.put(AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier(uuid, "cast_time_reduce_bonus", (double) (Float) toolStats.get(STToolStats.CAST_TIME) * 0.1f, AttributeModifier.Operation.MULTIPLY_BASE));
         }
         for (ModifierEntry entry : toolStack.getModifierList()) {
-            CurioAttributeModifierHook hook = (CurioAttributeModifierHook) entry.getHook(STHooks.CURIO_ATTRIBUTE);
+            CurioAttributeModifierHook hook = (CurioAttributeModifierHook) entry.getHook(TCLibHooks.CURIO_ATTRIBUTE);
             hook.modifyCurioAttribute(toolStack, entry, slotContext, uuid, map::put);
         }
 //        for (ModifierEntry entry : toolStack.getModifierList()) {

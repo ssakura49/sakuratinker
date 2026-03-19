@@ -6,8 +6,20 @@
     },
     "result": {
       "fluid": "sakuratinker:molten_orichalcum",
-      "amount": 90
+      "amount": 180
     },
+    "byproducts": [
+    {
+      "amount": 180,
+      "rate": "metal",
+      "fluid": "sakuratinker:molten_prometheum"
+    },
+    {
+      "amount": 180,
+      "rate": "metal",
+      "fluid": "tconstruct:molten_gold"
+    }
+  ],
     "temperature": 1000,
     "time": 100
   }

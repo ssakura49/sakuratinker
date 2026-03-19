@@ -3,8 +3,8 @@ package com.ssakura49.sakuratinker.common.tools.item;
 import com.google.common.collect.Multimap;
 import com.ssakura49.sakuratinker.STConfig;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
-import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableCurioItem;
 import com.ssakura49.sakuratinker.utils.tinker.TooltipUtil;
+import com.ssakura49.tinkercuriolib.tools.item.ModifiableCurioItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -29,7 +29,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.UUID;
 
-public class TinkerCharm extends ModifiableCurioItem{
+public class TinkerCharm extends ModifiableCurioItem {
     public TinkerCharm(Item.Properties properties, ToolDefinition toolDefinition) {
         super(properties, toolDefinition);
     }

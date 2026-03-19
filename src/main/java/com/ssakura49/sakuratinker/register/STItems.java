@@ -11,8 +11,8 @@ import com.ssakura49.sakuratinker.common.tools.item.*;
 import com.ssakura49.sakuratinker.common.tools.stats.*;
 import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableArrowItem;
 import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableBulletItem;
-import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableCurioItem;
 import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableGunItem;
+import com.ssakura49.tinkercuriolib.tools.item.ModifiableCurioItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
@@ -195,7 +195,7 @@ public class STItems {
     public static final ItemObject<ModifiableArrowItem> tinker_arrow = TINKER_ITEMS.register("tinker_arrow", () -> new TinkerArrow(ToolItem, STToolDefinitions.TINKER_ARROW));
     public static final EnumObject<ArmorItem.Type, ModifiableArmorItem> embeddedArmor = TINKER_ITEMS.registerEnum("embedded", ArmorItem.Type.values(), (type) -> new MultilayerArmorItem(STArmorDefinitions.EMBEDDED, type, ToolItem));
     public static final ItemObject<ModifiableItem> grappling_hook = TINKER_ITEMS.register("grappling_hook", () -> new GrapplingHookItem(ToolItem, STToolDefinitions.HOOK));
-    public static final ItemObject<ModifiableItem> power_bank = TINKER_ITEMS.register("power_bank", () -> new EnergyChargerItem(ToolItem, STToolDefinitions.POWER_BANK));
+    public static final ItemObject<ModifiableCurioItem> power_bank = TINKER_ITEMS.register("power_bank", () -> new EnergyChargerItem(ToolItem, STToolDefinitions.POWER_BANK));
     public static final ItemObject<ModifiableItem> battle_flag = TINKER_ITEMS.register("battle_flag", () -> new BattleFlagItem(ToolItem, STToolDefinitions.BATTLE_FLAG));
     public static final ItemObject<ModifiableItem> yoyo = TINKER_ITEMS.register("yoyo", () -> new YoyoItem(ToolItem, STToolDefinitions.YOYO));
     public static final ItemObject<ModifiableItem> scythe = TINKER_ITEMS.register("scythe", () -> new ScytheItem(ToolItem, STToolDefinitions.SCYTHE));

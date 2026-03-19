@@ -2,9 +2,9 @@ package com.ssakura49.sakuratinker.common.tools.item;
 
 import com.c2h6s.etstlib.util.MathUtil;
 import com.ssakura49.sakuratinker.SakuraTinker;
-import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableCurioItem;
 import com.ssakura49.sakuratinker.register.STModifiers;
 import com.ssakura49.sakuratinker.utils.SafeClassUtil;
+import com.ssakura49.tinkercuriolib.tools.item.ModifiableCurioItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -31,13 +31,11 @@ import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.tools.capability.ToolEnergyCapability;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.helper.TooltipBuilder;
-import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.nbt.IModDataView;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import top.theillusivec4.curios.api.CuriosCapability;
 import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 

@@ -1,7 +1,8 @@
 package com.ssakura49.sakuratinker.common.tinkering.modifiers.curio;
 
 import com.ssakura49.sakuratinker.STConfig;
-import com.ssakura49.sakuratinker.generic.CurioModifier;
+import com.ssakura49.tinkercuriolib.hook.TCLibHooks;
+import com.ssakura49.tinkercuriolib.hook.interation.CurioInventoryTickModifierHook;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -9,13 +10,16 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
+import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.*;
 
-public class JinxDollModifier extends CurioModifier {
+public class JinxDollModifier extends NoLevelsModifier implements CurioInventoryTickModifierHook {
     private static final int DEBUFF_REMOVAL_DELAY = 100;
     private static final int GLOBAL_COOLDOWN = 200;
 
@@ -36,8 +40,9 @@ public class JinxDollModifier extends CurioModifier {
     );
 
     @Override
-    public boolean isNoLevels() {
-        return true;
+    protected void registerHooks(ModuleHookMap.@NotNull Builder builder) {
+        super.registerHooks(builder);
+        builder.addHook(this, TCLibHooks.CURIO_TICK);
     }
 
     @Override

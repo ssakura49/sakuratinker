@@ -1,20 +1,27 @@
 package com.ssakura49.sakuratinker.common.tinkering.modifiers.curio;
 
-import com.ssakura49.sakuratinker.generic.CurioModifier;
+import com.ssakura49.tinkercuriolib.hook.TCLibHooks;
+import com.ssakura49.tinkercuriolib.hook.mining.CurioBreakSpeedModifierHook;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import org.jetbrains.annotations.NotNull;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
+import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
+import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.Optional;
 
-public class DwarvenCurioModifier extends CurioModifier {
+public class DwarvenCurioModifier extends Modifier implements CurioBreakSpeedModifierHook, ConditionalStatModifierHook {
     private static final float BOOST_DISTANCE = 64f;
     private static final float DEBUFF_RANGE = 128f;
     private static final float MINING_BONUS = 6;
@@ -23,6 +30,12 @@ public class DwarvenCurioModifier extends CurioModifier {
     @Override
     public int getPriority() {
         return 85;
+    }
+
+    @Override
+    protected void registerHooks(ModuleHookMap.@NotNull Builder builder) {
+        super.registerHooks(builder);
+        builder.addHook(this, TCLibHooks.CURIO_BREAK_SPEED, ModifierHooks.CONDITIONAL_STAT);
     }
 
 

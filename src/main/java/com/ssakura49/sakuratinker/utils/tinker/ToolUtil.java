@@ -1,6 +1,7 @@
 package com.ssakura49.sakuratinker.utils.tinker;
 
 import com.ssakura49.sakuratinker.SakuraTinker;
+import com.ssakura49.tinkercuriolib.utils.TCToolUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -99,7 +100,7 @@ public class ToolUtil {
         }
 
         if (ModList.get().isLoaded("curios")) {
-            ItemStack curioStack = Curios.getToolStackInCurios(entity, predicate);
+            ItemStack curioStack = TCToolUtil.getToolStackInCurios(entity, predicate);
             if (curioStack != null) {
                 return curioStack;
             }
@@ -115,7 +116,7 @@ public class ToolUtil {
         }
 
         if (ModList.get().isLoaded("curios")) {
-            return Curios.getEquipmentSlotNameInCurios(entity, stack);
+            return TCToolUtil.getEquipmentSlotNameInCurios(entity, stack);
         }
 
         return null;
@@ -207,7 +208,7 @@ public class ToolUtil {
                 tools.add(tool);
             }
         }
-        for (ItemStack stack : ToolUtil.Curios.getStacks(player)) {
+        for (ItemStack stack : TCToolUtil.getStacks(player)) {
             ToolStack tool = getTool(stack);
             if (isNotBrokenOrNull(tool)) {
                 tools.add(tool);
@@ -312,70 +313,70 @@ public class ToolUtil {
         return !player.level().isClientSide && tool.getCurrentDurability() > 0 && player.getAttackStrengthScale(0.5F) > 0.9F;
     }
 
-    public static class Curios {
-        public Curios() {
-        }
-        public static List<ItemStack> getStacks(LivingEntity entity) {
-            List<ItemStack> list = new ArrayList<>();
-
-            CuriosApi.getCuriosInventory(entity).ifPresent(handler -> {
-                handler.getCurios().forEach((id, curios) -> {
-                    for (int i = 0; i < curios.getSlots(); ++i) {
-                        ItemStack stack = curios.getStacks().getStackInSlot(i);
-                        if (!stack.isEmpty() && stack.is(Items.MODIFIABLE)) {
-                            list.add(stack);
-                        }
-                    }
-                });
-            });
-
-            return list;
-        }
-
-        public static List<ItemStack> getAllToolStackInCurios(LivingEntity entity, Predicate<ItemStack> predicate) {
-            List<ItemStack> result = new ArrayList<>();
-            LazyOptional<ICuriosItemHandler> handlerOptional = CuriosApi.getCuriosInventory(entity);
-            if (handlerOptional.isPresent()) {
-                ICuriosItemHandler handler = handlerOptional.orElseThrow(IllegalStateException::new);
-                IItemHandlerModifiable curiosInv = handler.getEquippedCurios();
-                for (int i = 0; i < handler.getSlots(); i++) {
-                    ItemStack curio = curiosInv.getStackInSlot(i);
-                    if (predicate.test(curio)) {
-                        result.add(curio);
-                    }
-                }
-            }
-            return result;
-        }
-
-        public static ItemStack getToolStackInCurios(LivingEntity entity, Predicate<ItemStack> predicate) {
-            LazyOptional<ICuriosItemHandler> handlerOptional = CuriosApi.getCuriosInventory(entity);
-            if (handlerOptional.isPresent()) {
-                ICuriosItemHandler handler = handlerOptional.orElseThrow(IllegalStateException::new);
-                IItemHandlerModifiable curiosInv = handler.getEquippedCurios();
-                for (int i = 0; i < handler.getSlots(); i++) {
-                    ItemStack curio = curiosInv.getStackInSlot(i);
-                    if (predicate.test(curio)) {
-                        return curio;
-                    }
-                }
-            }
-            return null;
-        }
-
-        public static String getEquipmentSlotNameInCurios(LivingEntity entity, ItemStack stack) {
-            LazyOptional<ICuriosItemHandler> handlerOptional = CuriosApi.getCuriosInventory(entity);
-            if (handlerOptional.isPresent()) {
-                ICuriosItemHandler handler = handlerOptional.orElseThrow(IllegalStateException::new);
-                Optional<SlotResult> slotResultOptional = handler.findFirstCurio(curio -> ItemStack.isSameItem(stack, curio)
-                );
-                if (slotResultOptional.isPresent()) {
-                    SlotResult slotResult = slotResultOptional.orElseThrow(IllegalStateException::new);
-                    return slotResult.slotContext().identifier();
-                }
-            }
-            return null;
-        }
-
-    }
+//    public static class Curios {
+//        public Curios() {
+//        }
+//        public static List<ItemStack> getStacks(LivingEntity entity) {
+//            List<ItemStack> list = new ArrayList<>();
+//
+//            CuriosApi.getCuriosInventory(entity).ifPresent(handler -> {
+//                handler.getCurios().forEach((id, curios) -> {
+//                    for (int i = 0; i < curios.getSlots(); ++i) {
+//                        ItemStack stack = curios.getStacks().getStackInSlot(i);
+//                        if (!stack.isEmpty() && stack.is(Items.MODIFIABLE)) {
+//                            list.add(stack);
+//                        }
+//                    }
+//                });
+//            });
+//
+//            return list;
+//        }
+//
+//        public static List<ItemStack> getAllToolStackInCurios(LivingEntity entity, Predicate<ItemStack> predicate) {
+//            List<ItemStack> result = new ArrayList<>();
+//            LazyOptional<ICuriosItemHandler> handlerOptional = CuriosApi.getCuriosInventory(entity);
+//            if (handlerOptional.isPresent()) {
+//                ICuriosItemHandler handler = handlerOptional.orElseThrow(IllegalStateException::new);
+//                IItemHandlerModifiable curiosInv = handler.getEquippedCurios();
+//                for (int i = 0; i < handler.getSlots(); i++) {
+//                    ItemStack curio = curiosInv.getStackInSlot(i);
+//                    if (predicate.test(curio)) {
+//                        result.add(curio);
+//                    }
+//                }
+//            }
+//            return result;
+//        }
+//
+//        public static ItemStack getToolStackInCurios(LivingEntity entity, Predicate<ItemStack> predicate) {
+//            LazyOptional<ICuriosItemHandler> handlerOptional = CuriosApi.getCuriosInventory(entity);
+//            if (handlerOptional.isPresent()) {
+//                ICuriosItemHandler handler = handlerOptional.orElseThrow(IllegalStateException::new);
+//                IItemHandlerModifiable curiosInv = handler.getEquippedCurios();
+//                for (int i = 0; i < handler.getSlots(); i++) {
+//                    ItemStack curio = curiosInv.getStackInSlot(i);
+//                    if (predicate.test(curio)) {
+//                        return curio;
+//                    }
+//                }
+//            }
+//            return null;
+//        }
+//
+//        public static String getEquipmentSlotNameInCurios(LivingEntity entity, ItemStack stack) {
+//            LazyOptional<ICuriosItemHandler> handlerOptional = CuriosApi.getCuriosInventory(entity);
+//            if (handlerOptional.isPresent()) {
+//                ICuriosItemHandler handler = handlerOptional.orElseThrow(IllegalStateException::new);
+//                Optional<SlotResult> slotResultOptional = handler.findFirstCurio(curio -> ItemStack.isSameItem(stack, curio)
+//                );
+//                if (slotResultOptional.isPresent()) {
+//                    SlotResult slotResult = slotResultOptional.orElseThrow(IllegalStateException::new);
+//                    return slotResult.slotContext().identifier();
+//                }
+//            }
+//            return null;
+//        }
+//
+//    }
 }

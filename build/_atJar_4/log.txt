@@ -1,7 +1,7 @@
-Java Launcher: C:\Program Files\Java\jdk-17\bin\java.exe
-Arguments: '--inJar, F:\Game\MC\mods\sakuratinker\build\fg_cache\net\minecraftforge\forge\1.20.1-47.4.0\forge-1.20.1-47.4.0-injected.jar, --outJar, F:\Game\MC\mods\sakuratinker\build\fg_cache\net\minecraftforge\forge\1.20.1-47.4.0_mapped_parchment_2023.09.03-1.20.1\forge-1.20.1-47.4.0_mapped_parchment_2023.09.03-1.20.1.jar, --logFile, accesstransform.log, --atFile, F:\Game\MC\mods\sakuratinker\src\main\resources\META-INF\accesstransformer.cfg, --atFile, F:\Game\MC\mods\sakuratinker\build\_atJar_4\parent_at.cfg'
+Java Launcher: C:\Users\Administrator\.gradle\jdks\eclipse_adoptium-17-amd64-windows\jdk-17.0.17+10\bin\java.exe
+Arguments: '--inJar, E:\.tools\mc\mod\ssakuratinker\build\fg_cache\net\minecraftforge\forge\1.20.1-47.4.0\forge-1.20.1-47.4.0-injected.jar, --outJar, E:\.tools\mc\mod\ssakuratinker\build\fg_cache\net\minecraftforge\forge\1.20.1-47.4.0_mapped_parchment_2023.09.03-1.20.1\forge-1.20.1-47.4.0_mapped_parchment_2023.09.03-1.20.1.jar, --logFile, accesstransform.log, --atFile, E:\.tools\mc\mod\ssakuratinker\src\main\resources\META-INF\accesstransformer.cfg, --atFile, E:\.tools\mc\mod\ssakuratinker\build\_atJar_4\parent_at.cfg'
 Classpath:
- - C:\Users\言樱\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\accesstransformers\8.2.1\accesstransformers-8.2.1-fatjar.jar
-Working directory: F:\Game\MC\mods\sakuratinker\build\_atJar_4
+ - C:\Users\Administrator\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\accesstransformers\8.2.14\accesstransformers-8.2.14-fatjar.jar
+Working directory: E:\.tools\mc\mod\ssakuratinker\build\_atJar_4
 Main class: net.minecraftforge.accesstransformer.TransformerProcessor
 ====================================

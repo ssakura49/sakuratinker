@@ -65,6 +65,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
 @Mod(SakuraTinker.MODID)
@@ -116,15 +119,13 @@ public class SakuraTinker {
         });
         DistExecutor.unsafeRunWhenOn(Dist.DEDICATED_SERVER, () -> () -> {
             modInitialized = true;
-            Timer timer = new Timer();
-            TimerTask task = new TimerTask() {
-                public void run() {
-                    if (!TimeStopUtils.isTimeStop) {
-                        ++TimeContext.Both.timeStopModifyMillis;
-                    }
+            ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+            scheduler.scheduleAtFixedRate(() -> {
+                if (!TimeStopUtils.isTimeStop) {
+                    ++TimeContext.Both.timeStopModifyMillis;
                 }
-            };
-            timer.scheduleAtFixedRate(task, 1L, 1L);
+            }, 1, 1, TimeUnit.MILLISECONDS);
+            Runtime.getRuntime().addShutdownHook(new Thread(scheduler::shutdown));
         });
 
 
@@ -179,11 +180,11 @@ public class SakuraTinker {
             BuddyCardCompat.MODIFIERS.register(modEventBus);
             LOGGER.info("[Sakura Tinker]: Found Buddy Card, integration initializing……");
         }
-        if (SafeClassUtil.GoetyRevelationLoaded) {
-            GRModifiers.MODIFIERS.register(modEventBus);
-            GRModifierEventHandler.init();
-            LOGGER.info("[Sakura Tinker]: Found Goety Revelation, integration initializing……");
-        }
+//        if (SafeClassUtil.GoetyRevelationLoaded) {
+//            GRModifiers.MODIFIERS.register(modEventBus);
+//            GRModifierEventHandler.init();
+//            LOGGER.info("[Sakura Tinker]: Found Goety Revelation, integration initializing……");
+//        }
     }
 
     @SubscribeEvent

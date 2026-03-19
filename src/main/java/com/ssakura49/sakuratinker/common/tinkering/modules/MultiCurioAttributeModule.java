@@ -1,7 +1,7 @@
 package com.ssakura49.sakuratinker.common.tinkering.modules;
 
-import com.ssakura49.sakuratinker.library.hooks.curio.behavior.CurioAttributeModifierHook;
-import com.ssakura49.sakuratinker.library.tinkering.tools.STHooks;
+import com.ssakura49.tinkercuriolib.hook.TCLibHooks;
+import com.ssakura49.tinkercuriolib.hook.behavior.CurioAttributeModifierHook;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -46,7 +46,7 @@ public record MultiCurioAttributeModule(ResourceLocation name, List<AttributeEnt
 
     @Override
     public List<ModuleHook<?>> getDefaultHooks() {
-        return HookProvider.defaultHooks(STHooks.CURIO_ATTRIBUTE);
+        return HookProvider.defaultHooks(TCLibHooks.CURIO_ATTRIBUTE);
     }
 
     public static UUID getUUIDFromString(String str) {

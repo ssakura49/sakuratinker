@@ -1,10 +1,14 @@
 package com.ssakura49.sakuratinker.common.tinkering.modifiers.melee.soulDevourerModifier;
 
 import com.ssakura49.sakuratinker.SakuraTinker;
-import com.ssakura49.sakuratinker.generic.CurioModifier;
+import com.ssakura49.sakuratinker.library.hooks.combat.GenericCombatModifierHook;
+import com.ssakura49.sakuratinker.library.tinkering.tools.STHooks;
 import com.ssakura49.sakuratinker.utils.CommonRGBUtil;
 import com.ssakura49.sakuratinker.utils.component.DynamicComponentUtil;
 import com.ssakura49.sakuratinker.utils.tinker.ToolUtil;
+import com.ssakura49.tinkercuriolib.hook.TCLibHooks;
+import com.ssakura49.tinkercuriolib.hook.combat.CurioDamageTargetPreModifierHook;
+import com.ssakura49.tinkercuriolib.hook.combat.CurioKillTargetModifierHook;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -13,18 +17,45 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.build.ModifierRemovalHook;
+import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifierHook;
+import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
+import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public class SoulDevourerModifier extends CurioModifier {
+public class SoulDevourerModifier extends Modifier implements
+        CurioKillTargetModifierHook,
+        GenericCombatModifierHook,
+        MeleeDamageModifierHook,
+        TooltipModifierHook,
+        CurioDamageTargetPreModifierHook,
+        ModifierRemovalHook
+{
     private static final ResourceLocation SOUL_KILL_COUNT =
             SakuraTinker.location("soul_devourer_kills");
     private static final float BONUS_PER_KILL = 0.0001f;
+
+    @Override
+    protected void registerHooks(ModuleHookMap.@NotNull Builder builder) {
+        super.registerHooks(builder);
+        builder.addHook(this,
+                TCLibHooks.CURIO_KILL_TARGET,
+                STHooks.GENERIC_COMBAT,
+                ModifierHooks.MELEE_DAMAGE,
+                ModifierHooks.TOOLTIP,
+                TCLibHooks.CURIO_DAMAGE_TARGET_PRE,
+                ModifierHooks.REMOVE
+                );
+    }
 
     @Override
     public int getPriority() {
@@ -66,8 +97,9 @@ public class SoulDevourerModifier extends CurioModifier {
     }
 
     @Override
-    public void onModifierRemoved(IToolStackView tool) {
+    public Component onRemoved(IToolStackView tool, Modifier modifier) {
         tool.getPersistentData().remove(SOUL_KILL_COUNT);
+        return null;
     }
 
     @Override

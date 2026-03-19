@@ -1,0 +1,220 @@
+{
+  "values": [
+    {
+      "id": "sakuratinker:aurumos",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:bear_interest",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:eezo",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:nihilite",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:blood_bound_steel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:chimera_gamma",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:echo_slimesteel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:frost_slimesteel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:goozma",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:mycelium_slimesteel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:orichalcum",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:prometheum",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:pyrothium",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:soul_sakura",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:south_star",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:steady_alloy",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:terracryst",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:dragon_sinew",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:gluttonous",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:delusion",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:cold_iron_alloy",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:perfect_buddysteel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:amphithere_feather",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:dragon_ice_steel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:dragon_fire_steel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:dragon_lightning_steel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:elementium",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:elementium",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:terra_steel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:gaia",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:orichalcos",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:youkai",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:fairy_ice_crystal",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:raven_feather",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:fiery_crystal",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:etherium",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:colorful",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:infinity",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:neutron",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:crystal_matrix",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:arcane_alloy",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:pyrothium",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:dread_steel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:cursed_metal",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:unholy_alloy",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:dark_metal",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:buddysteel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:charged_buddysteel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:crimson_buddysteel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:void_buddysteel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:perfect_buddysteel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:true_perfect_buddysteel",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:nefarious",
+      "required": false
+    },
+    {
+      "id": "sakuratinker:apocalyptium",
+      "required": false
+    }
+  ]
+}

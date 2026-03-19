@@ -1,0 +1,24 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "sakuratinker:dreadful_scythe"
+    },
+    {
+      "level": 3,
+      "name": "sakuratinker:dragon_martyr"
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "sakuratinker:fear"
+      },
+      {
+        "level": 3,
+        "name": "sakuratinker:breath_resistance"
+      }
+    ]
+  }
+}

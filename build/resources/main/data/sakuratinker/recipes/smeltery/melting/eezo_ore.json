@@ -8,6 +8,13 @@
       "fluid": "sakuratinker:molten_eezo",
       "amount": 90
     },
+    "byproducts": [
+    {
+      "amount": 90,
+      "rate": "metal",
+      "fluid": "tconstruct:molten_netherite"
+    }
+  ],
     "temperature": 1500,
     "time": 200
   }

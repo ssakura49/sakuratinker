@@ -1,23 +1,12 @@
 package com.ssakura49.sakuratinker.compat.IronSpellBooks.item;
 
-import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.LinkedHashMultimap;
-import com.google.common.collect.Multimap;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSCompat;
-import com.ssakura49.sakuratinker.library.hooks.curio.behavior.CurioAttributeModifierHook;
-import com.ssakura49.sakuratinker.library.tinkering.tools.STHooks;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
 import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableSpellBookItem;
-import com.ssakura49.sakuratinker.utils.SafeClassUtil;
 import com.ssakura49.sakuratinker.utils.tinker.TooltipUtil;
-import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
-import io.redspace.ironsspellbooks.api.spells.SpellRarity;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
@@ -27,13 +16,9 @@ import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHoo
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.helper.TooltipBuilder;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.library.tools.nbt.StatsNBT;
-import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
-import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
-import java.util.UUID;
 
 public class TinkerSpellBook extends ModifiableSpellBookItem {
     private int maxSpellSlots;

@@ -10,16 +10,16 @@
   "group": "netherite_ingot",
   "ingredients": [
     {
-      "item": "irons_spellbooks:arcane_salvage"
+      "item": "irons_spellbooks:mithril_scrap"
     },
     {
-      "item": "irons_spellbooks:arcane_salvage"
+      "item": "irons_spellbooks:mithril_scrap"
     },
     {
-      "item": "irons_spellbooks:arcane_salvage"
+      "item": "irons_spellbooks:mithril_scrap"
     },
     {
-      "item": "irons_spellbooks:arcane_salvage"
+      "item": "irons_spellbooks:mithril_scrap"
     },
     {
       "item": "minecraft:gold_ingot"

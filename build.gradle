@@ -249,6 +249,10 @@ dependencies {
         transitive = false
         jarJar.ranged(it, "[0.3.7,)")
     }
+    implementation fg.deobf(jarJar("com.ssakura49.tinkercuriolib:tinkercuriolib:1.0")) {
+        transitive = false
+        jarJar.ranged(it, "[1.0,)")
+    }
 
     implementation fg.deobf("curse.maven:event-wrapper-1256971:6788387")
     implementation fg.deobf("curse.maven:extrabotany-reburn-1271869:6818025")

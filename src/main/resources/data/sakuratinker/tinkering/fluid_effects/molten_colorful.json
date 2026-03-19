@@ -1,0 +1,30 @@
+{
+  "entity_effects": [
+    {
+      "type": "tconstruct:conditional",
+      "effect": {
+        "type": "tconstruct:damage",
+        "damage": 2.0,
+        "damage_type": {
+          "melee": "tconstruct:fluid_fire_melee",
+          "ranged": "tconstruct:fluid_fire_ranged"
+        }
+      },
+      "target": {
+        "type": "mantle:inverted",
+        "inverted_type": "mantle:fire_immune"
+      }
+    },
+    {
+      "type": "tconstruct:mob_effect",
+      "action": "add",
+      "effect": "minecraft:instant_damage",
+      "level": 1,
+      "time": 40
+    }
+  ],
+  "fluid": {
+    "amount": 10,
+    "fluid": "sakuratinker:molten_colorful"
+  }
+}

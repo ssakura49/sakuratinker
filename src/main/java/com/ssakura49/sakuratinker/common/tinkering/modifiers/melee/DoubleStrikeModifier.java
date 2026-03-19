@@ -19,22 +19,24 @@ public class DoubleStrikeModifier extends BaseModifier {
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
         LivingEntity attacker = context.getAttacker();
         LivingEntity target = context.getLivingTarget();
-        if (target.isAlive() && attacker.getRandom().nextFloat() < 0.20f) {
-            LegacyDamageSource damageSource;
-            if (attacker instanceof Player) {
-                damageSource = LegacyDamageSource.playerAttack((Player)attacker);
-            } else {
-                damageSource = LegacyDamageSource.mobAttack(attacker);
-            }
+        if (target != null) {
+            if (target.isAlive() && attacker.getRandom().nextFloat() < 0.20f) {
+                LegacyDamageSource damageSource;
+                if (attacker instanceof Player) {
+                    damageSource = LegacyDamageSource.playerAttack((Player)attacker);
+                } else {
+                    damageSource = LegacyDamageSource.mobAttack(attacker);
+                }
 
-            ToolAttackUtil.attackEntitySecondary(
-                    damageSource,
-                    damageDealt,
-                    target,
-                    attacker,
-                    false
-            );
-            attacker.level().playSound(null, target.getX(), target.getY(), target.getZ(), SoundEvents.PLAYER_ATTACK_SWEEP, attacker.getSoundSource(), 1.0F, 1.0F);
+                ToolAttackUtil.attackEntitySecondary(
+                        damageSource,
+                        damageDealt,
+                        target,
+                        attacker,
+                        false
+                );
+                attacker.level().playSound(null, target.getX(), target.getY(), target.getZ(), SoundEvents.PLAYER_ATTACK_SWEEP, attacker.getSoundSource(), 1.0F, 1.0F);
+            }
         }
     }
 }

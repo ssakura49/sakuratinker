@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "sakuratinker:wu_yu"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "sakuratinker:molten_wu_yu"
+  },
+  "temperature": 2000,
+  "time": 93
+}

@@ -2,24 +2,28 @@ package com.ssakura49.sakuratinker.common.tinkering.modifiers.curio;
 
 import com.ssakura49.sakuratinker.STConfig;
 import com.ssakura49.sakuratinker.SakuraTinker;
-import com.ssakura49.sakuratinker.generic.CurioModifier;
+import com.ssakura49.tinkercuriolib.hook.TCLibHooks;
+import com.ssakura49.tinkercuriolib.hook.armor.CurioTakeDamagePreModifierHook;
 import net.minecraft.nbt.LongTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
+import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
+import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 
-public class HighFrequencyBarrierModifier extends CurioModifier implements TooltipModifierHook {
+public class HighFrequencyBarrierModifier extends NoLevelsModifier implements CurioTakeDamagePreModifierHook {
     @Override
-    public boolean isNoLevels() {
-        return true;
+    protected void registerHooks(ModuleHookMap.@NotNull Builder builder) {
+        super.registerHooks(builder);
+        builder.addHook(this, TCLibHooks.CURIO_TAKE_DAMAGE_PRE);
     }
-
     private static final ResourceLocation REDUCTION_STACKS_KEY = ResourceLocation.fromNamespaceAndPath(SakuraTinker.MODID, "high_freq_barrier_stacks");
     private static final ResourceLocation LAST_HIT_TIME_KEY = ResourceLocation.fromNamespaceAndPath(SakuraTinker.MODID, "high_freq_barrier_last_hit");
 

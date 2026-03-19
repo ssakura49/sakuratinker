@@ -2,6 +2,7 @@ package com.ssakura49.sakuratinker.network.c2s;
 
 import com.ssakura49.sakuratinker.library.hooks.click.KeyPressModifierHook;
 import com.ssakura49.sakuratinker.utils.tinker.ToolUtil;
+import com.ssakura49.tinkercuriolib.utils.TCToolUtil;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -41,7 +42,7 @@ public class ModifierKeyPressPacket {
                     processItemStack(armor, player);
                 }
 
-                for (ItemStack curio : ToolUtil.Curios.getStacks(player)){
+                for (ItemStack curio : TCToolUtil.getStacks(player)){
                     processItemStack(curio,player);
                 }
             }
