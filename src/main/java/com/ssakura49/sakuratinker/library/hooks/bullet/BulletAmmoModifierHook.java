@@ -4,15 +4,12 @@ import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.common.tools.capability.ToolBulletSlotCapability;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STHooks;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.ItemHandlerHelper;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.item.IModifiable;
-import slimeknights.tconstruct.library.tools.item.IModifiableDisplay;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
@@ -121,14 +118,14 @@ public interface BulletAmmoModifierHook {
 
     /** 获取当前弹仓索引（默认 0） */
     private static int getCurrentChamber(IToolStackView tool, ToolBulletSlotCapability cap) {
-        return tool.getPersistentData().getInt(SakuraTinker.location("current_chamber"));
+        return tool.getPersistentData().getInt(SakuraTinker.getResource("current_chamber"));
     }
 
     /** 推进弹仓（开火或空仓时调用） */
     private static void rotateChamber(IToolStackView tool, ToolBulletSlotCapability cap, int totalSlots) {
         ModDataNBT data = tool.getPersistentData();
-        int current = data.getInt(SakuraTinker.location("current_chamber"));
+        int current = data.getInt(SakuraTinker.getResource("current_chamber"));
         current = (current + 1) % totalSlots;
-        data.putInt(SakuraTinker.location("current_chamber"), current);
+        data.putInt(SakuraTinker.getResource("current_chamber"), current);
     }
 }

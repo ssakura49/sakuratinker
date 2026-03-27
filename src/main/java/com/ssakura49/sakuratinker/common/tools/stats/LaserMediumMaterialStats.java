@@ -69,11 +69,11 @@ public record LaserMediumMaterialStats(float range, float cooldown, int penetrat
                 IntLoadable.FROM_ZERO.defaultField("penetration", 1, true, LaserMediumMaterialStats::penetration),
                 LaserMediumMaterialStats::new
         ));
-        RANGE_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("range"));
-        COOLDOWN_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("cooldown"));
-        PENETRATION = IMaterialStats.makeTooltipKey(SakuraTinker.location("penetration"));
-        DESCRIPTION = ImmutableList.of(IMaterialStats.makeTooltip(SakuraTinker.location("laser_medium.range.description")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("laser_medium.cooldown.description")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("laser_medium.penetration.description")));
+        RANGE_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("range"));
+        COOLDOWN_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("cooldown"));
+        PENETRATION = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("penetration"));
+        DESCRIPTION = ImmutableList.of(IMaterialStats.makeTooltip(SakuraTinker.getResource("laser_medium.range.description")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("laser_medium.cooldown.description")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("laser_medium.penetration.description")));
     }
 }

@@ -10,7 +10,7 @@ import net.minecraft.world.phys.Vec3;
 
 @SerialClass
 public class FlyingHelper extends ConditionalToken {
-    private static final TokenKey<FlyingHelper> KEY = TokenKey.of(SakuraTinker.location("flying"));
+    private static final TokenKey<FlyingHelper> KEY = TokenKey.of(SakuraTinker.getResource("flying"));
 
     private record TokenHolder() implements TokenProvider<FlyingHelper, TokenHolder>, Context {
 

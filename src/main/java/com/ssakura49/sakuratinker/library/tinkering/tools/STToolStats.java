@@ -42,6 +42,6 @@ public class STToolStats {
     }
 
     private static ToolStatId name(String name) {
-        return new ToolStatId(SakuraTinker.MODID, name);
+        return new ToolStatId(SakuraTinker.getResource(name));
     }
 }

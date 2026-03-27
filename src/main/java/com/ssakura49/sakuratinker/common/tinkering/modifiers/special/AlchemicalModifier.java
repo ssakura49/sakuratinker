@@ -2,7 +2,6 @@ package com.ssakura49.sakuratinker.common.tinkering.modifiers.special;
 
 import com.ssakura49.sakuratinker.STConfig;
 import com.ssakura49.sakuratinker.SakuraTinker;
-import com.ssakura49.sakuratinker.generic.BaseModifier;
 import com.ssakura49.sakuratinker.library.hooks.click.KeyPressModifierHook;
 import com.ssakura49.sakuratinker.library.hooks.click.LeftClickModifierHook;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STHooks;
@@ -15,10 +14,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -45,14 +42,9 @@ import slimeknights.tconstruct.library.modifiers.hook.build.ValidateModifierHook
 import slimeknights.tconstruct.library.modifiers.hook.build.VolatileDataModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.DisplayNameModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.SlotStackModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.ranged.ProjectileLaunchModifierHook;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
-import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
-import slimeknights.tconstruct.library.module.HookProvider;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
-import slimeknights.tconstruct.library.tools.capability.EntityModifierCapability;
 import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
 import slimeknights.tconstruct.library.tools.capability.fluid.ToolFluidCapability;
 import slimeknights.tconstruct.library.tools.capability.fluid.ToolTankHelper;
@@ -82,14 +74,14 @@ public class AlchemicalModifier extends NoLevelsModifier implements
     private static final int DEFAULT_TANK_CAPACITY = 5000;
 
     public static final List<ToolTankHelper> ALL_TANKS = List.of(
-            new ToolTankHelper(ToolTankHelper.CAPACITY_STAT, SakuraTinker.location("fluid_1")),
-            new ToolTankHelper(ToolTankHelper.CAPACITY_STAT, SakuraTinker.location("fluid_2")),
-            new ToolTankHelper(ToolTankHelper.CAPACITY_STAT, SakuraTinker.location("fluid_3")),
-            new ToolTankHelper(ToolTankHelper.CAPACITY_STAT, SakuraTinker.location("fluid_4")),
-            new ToolTankHelper(ToolTankHelper.CAPACITY_STAT, SakuraTinker.location("fluid_5"))
+            new ToolTankHelper(ToolTankHelper.CAPACITY_STAT, SakuraTinker.getResource("fluid_1")),
+            new ToolTankHelper(ToolTankHelper.CAPACITY_STAT, SakuraTinker.getResource("fluid_2")),
+            new ToolTankHelper(ToolTankHelper.CAPACITY_STAT, SakuraTinker.getResource("fluid_3")),
+            new ToolTankHelper(ToolTankHelper.CAPACITY_STAT, SakuraTinker.getResource("fluid_4")),
+            new ToolTankHelper(ToolTankHelper.CAPACITY_STAT, SakuraTinker.getResource("fluid_5"))
     );
 
-    public static final ResourceLocation MODE = SakuraTinker.location("mode");
+    public static final ResourceLocation MODE = SakuraTinker.getResource("mode");
 
     public static String selectedSlotKeyId = STKeys.SELECTED_SLOT_KEY_ID;
 
@@ -334,12 +326,12 @@ public class AlchemicalModifier extends NoLevelsModifier implements
         switch (mode) {
             case 1,2,3,4,5 -> helper = ALL_TANKS.get(mode - 1);
             case 6 -> { // 轮询
-                int index = tool.getPersistentData().getInt(SakuraTinker.location("round_robin_index"));
+                int index = tool.getPersistentData().getInt(SakuraTinker.getResource("round_robin_index"));
                 for (int i = 0; i < ALL_TANKS.size(); i++) {
                     int tryIndex = (index + i) % ALL_TANKS.size();
                     if (!ALL_TANKS.get(tryIndex).getFluid(tool).isEmpty()) {
                         helper = ALL_TANKS.get(tryIndex);
-                        tool.getPersistentData().putInt(SakuraTinker.location("round_robin_index"), tryIndex + 1);
+                        tool.getPersistentData().putInt(SakuraTinker.getResource("round_robin_index"), tryIndex + 1);
                         break;
                     }
                 }

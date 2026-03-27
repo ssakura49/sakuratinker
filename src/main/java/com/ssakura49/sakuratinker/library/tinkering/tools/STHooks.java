@@ -36,21 +36,21 @@ public class STHooks {
     public STHooks(){}
 
     static {
-        WEARER_DAMAGE_PRE = ModifierHooks.register(SakuraTinker.location("wearer_damage_pre"), WearerDamagePreHook.class, WearerDamagePreHook.AllMerger::new, new WearerDamagePreHook() {});
-        WEARER_KNOCK_BACK = ModifierHooks.register(SakuraTinker.location("wearer_knock_back"), WearerKnockBackHook.class, WearerKnockBackHook.AllMerger::new, new WearerKnockBackHook() {});
-        WEARER_DAMAGE_TAKE = ModifierHooks.register(SakuraTinker.location("wearer_damage_take"), WearerDamageTakeHook.class, WearerDamageTakeHook.AllMerger::new, new WearerDamageTakeHook() {});
-        WEARER_TAKE_HEAL = ModifierHooks.register(SakuraTinker.location("wearer_take_heal"), WearerTakeHealHook.class, WearerTakeHealHook.AllMerger::new, new WearerTakeHealHook() {});
-        GENERIC_COMBAT = ModifierHooks.register(SakuraTinker.location("generic_combat"), GenericCombatModifierHook.class, GenericCombatModifierHook.AllMerge::new, new GenericCombatModifierHook() {});
-        MELEE_COOLDOWN = ModifierHooks.register(SakuraTinker.location("melee_cooldown"), MeleeCooldownModifierHook.class, MeleeCooldownModifierHook.AllMerger::new, new MeleeCooldownModifierHook() {});
-        HOLDER_DAMAGE_TAKE = ModifierHooks.register(SakuraTinker.location("holder_damage_take"), HolderDamageTakeModifierHook.class, HolderDamageTakeModifierHook.AllMerge::new, new HolderDamageTakeModifierHook() {});
-        SHIELD_BLOCKING = ModifierHooks.register(SakuraTinker.location("shield_blocking"), ShieldBlockingModifierHook.class, ShieldBlockingModifierHook.AllMerge::new, new ShieldBlockingModifierHook() {});
-        MODIFY_DAMAGE_SOURCE = ModifierHooks.register(SakuraTinker.location("modify_damage_source"), ModifyDamageSourceModifierHook.class, ModifyDamageSourceModifierHook.AllMerger::new, new ModifyDamageSourceModifierHook() {});
-        LEFT_CLICK = ModifierHooks.register(SakuraTinker.location("left_click"), LeftClickModifierHook.class, LeftClickModifierHook.AllMerger::new, new LeftClickModifierHook() {});
-        CRITICAL_ATTACK = ModifierHooks.register(SakuraTinker.location("critical_attack"), CriticalAttackModifierHook.class, CriticalAttackModifierHook.FirstMerger::new,(tool, entry, attacker, hand, target, sourceSlot, isFullyCharged, isExtraAttack, isCritical)->isCritical);
-        CAUSE_DAMAGE = ModifierHooks.register(SakuraTinker.location("cause_damage"), CauseDamageModifierHook.class, CauseDamageModifierHook.AllMerger::new, (tool, modifier, event, attacker, target, baseDamage, currentDamage) -> currentDamage);
-        REPLACE_MATERIAL_MODIFIER = ModifierHooks.register(SakuraTinker.location("replace_material_modifier"), ReplaceMaterialModifierHook.class, ReplaceMaterialModifierHook.AllMerger::new, ((context, inputIndex, secondary) -> false));
-        KEY_PRESS = ModifierHooks.register(SakuraTinker.location("key_press"), KeyPressModifierHook.class, KeyPressModifierHook.AllMerger::new, new KeyPressModifierHook() {});
-        BULLET_AMMO = ModifierHooks.register(SakuraTinker.location("bullet_ammo"), BulletAmmoModifierHook.class, BulletAmmoModifierHook.EMPTY);
+        WEARER_DAMAGE_PRE = ModifierHooks.register(SakuraTinker.getResource("wearer_damage_pre"), WearerDamagePreHook.class, WearerDamagePreHook.AllMerger::new, new WearerDamagePreHook() {});
+        WEARER_KNOCK_BACK = ModifierHooks.register(SakuraTinker.getResource("wearer_knock_back"), WearerKnockBackHook.class, WearerKnockBackHook.AllMerger::new, new WearerKnockBackHook() {});
+        WEARER_DAMAGE_TAKE = ModifierHooks.register(SakuraTinker.getResource("wearer_damage_take"), WearerDamageTakeHook.class, WearerDamageTakeHook.AllMerger::new, new WearerDamageTakeHook() {});
+        WEARER_TAKE_HEAL = ModifierHooks.register(SakuraTinker.getResource("wearer_take_heal"), WearerTakeHealHook.class, WearerTakeHealHook.AllMerger::new, new WearerTakeHealHook() {});
+        GENERIC_COMBAT = ModifierHooks.register(SakuraTinker.getResource("generic_combat"), GenericCombatModifierHook.class, GenericCombatModifierHook.AllMerge::new, new GenericCombatModifierHook() {});
+        MELEE_COOLDOWN = ModifierHooks.register(SakuraTinker.getResource("melee_cooldown"), MeleeCooldownModifierHook.class, MeleeCooldownModifierHook.AllMerger::new, new MeleeCooldownModifierHook() {});
+        HOLDER_DAMAGE_TAKE = ModifierHooks.register(SakuraTinker.getResource("holder_damage_take"), HolderDamageTakeModifierHook.class, HolderDamageTakeModifierHook.AllMerge::new, new HolderDamageTakeModifierHook() {});
+        SHIELD_BLOCKING = ModifierHooks.register(SakuraTinker.getResource("shield_blocking"), ShieldBlockingModifierHook.class, ShieldBlockingModifierHook.AllMerge::new, new ShieldBlockingModifierHook() {});
+        MODIFY_DAMAGE_SOURCE = ModifierHooks.register(SakuraTinker.getResource("modify_damage_source"), ModifyDamageSourceModifierHook.class, ModifyDamageSourceModifierHook.AllMerger::new, new ModifyDamageSourceModifierHook() {});
+        LEFT_CLICK = ModifierHooks.register(SakuraTinker.getResource("left_click"), LeftClickModifierHook.class, LeftClickModifierHook.AllMerger::new, new LeftClickModifierHook() {});
+        CRITICAL_ATTACK = ModifierHooks.register(SakuraTinker.getResource("critical_attack"), CriticalAttackModifierHook.class, CriticalAttackModifierHook.FirstMerger::new,(tool, entry, attacker, hand, target, sourceSlot, isFullyCharged, isExtraAttack, isCritical)->isCritical);
+        CAUSE_DAMAGE = ModifierHooks.register(SakuraTinker.getResource("cause_damage"), CauseDamageModifierHook.class, CauseDamageModifierHook.AllMerger::new, (tool, modifier, event, attacker, target, baseDamage, currentDamage) -> currentDamage);
+        REPLACE_MATERIAL_MODIFIER = ModifierHooks.register(SakuraTinker.getResource("replace_material_modifier"), ReplaceMaterialModifierHook.class, ReplaceMaterialModifierHook.AllMerger::new, ((context, inputIndex, secondary) -> false));
+        KEY_PRESS = ModifierHooks.register(SakuraTinker.getResource("key_press"), KeyPressModifierHook.class, KeyPressModifierHook.AllMerger::new, new KeyPressModifierHook() {});
+        BULLET_AMMO = ModifierHooks.register(SakuraTinker.getResource("bullet_ammo"), BulletAmmoModifierHook.class, BulletAmmoModifierHook.EMPTY);
 
     }
 }

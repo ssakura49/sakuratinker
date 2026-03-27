@@ -1,47 +1,23 @@
 package com.ssakura49.sakuratinker.common.tools.item;
 
-import com.Polarice3.Goety.api.items.magic.IWand;
-import com.Polarice3.Goety.api.magic.ISpell;
-import com.Polarice3.Goety.common.magic.spells.wind.FlyingSpell;
-import com.Polarice3.Goety.utils.MathHelper;
-import com.Polarice3.Goety.utils.WandUtil;
-import com.c2h6s.etstlib.util.IToolUuidGetter;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
 import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.api.item.slot.IHasBulletInventory;
 import com.ssakura49.sakuratinker.client.menu.RevolverMenu;
 import com.ssakura49.sakuratinker.common.entity.BulletEntity;
-import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
-import com.ssakura49.sakuratinker.utils.tinker.ItemUtil;
-import com.ssakura49.sakuratinker.utils.tinker.ToolCooldownManager;
-import com.ssakura49.sakuratinker.utils.tinker.ToolUtil;
-import net.minecraft.client.CameraType;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -49,9 +25,7 @@ import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.helper.TooltipBuilder;
@@ -63,10 +37,9 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.modifiers.ability.interaction.BlockingModifier;
 
 import java.util.*;
-import java.util.function.Consumer;
 
 public class RevolverItem extends ModifiableItem implements IHasBulletInventory {
-    private static final ResourceLocation TAG_CURRENT_CHAMBER = SakuraTinker.location("bullet_slot");
+    private static final ResourceLocation TAG_CURRENT_CHAMBER = SakuraTinker.getResource("bullet_slot");
     public static final int MAX_BULLETS = 6;
 
     public RevolverItem(Properties props, ToolDefinition def) {

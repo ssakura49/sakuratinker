@@ -7,7 +7,6 @@ import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
-import slimeknights.mantle.data.loadable.primitive.IntLoadable;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatType;
@@ -61,9 +60,9 @@ public record AlchemicalCoreMaterialStats(float fluidDamage, float cooldown) imp
                 FloatLoadable.ANY.defaultField("cooldown", 0.0f, true, AlchemicalCoreMaterialStats::cooldown),
                 AlchemicalCoreMaterialStats::new
         ));
-        FLUID_DAMAGE_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("fluid_damage"));
-        COOLDOWN_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("cooldown"));
-        DESCRIPTION = ImmutableList.of(IMaterialStats.makeTooltip(SakuraTinker.location("alchemical_core.fluid_damage.description")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("alchemical_core.cooldown.description")));
+        FLUID_DAMAGE_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("fluid_damage"));
+        COOLDOWN_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("cooldown"));
+        DESCRIPTION = ImmutableList.of(IMaterialStats.makeTooltip(SakuraTinker.getResource("alchemical_core.fluid_damage.description")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("alchemical_core.cooldown.description")));
     }
 }

@@ -52,9 +52,9 @@ public record YoYoRingMaterialStats(float maxCollected)implements IMaterialStats
         TYPE = new MaterialStatType<>(ID, new YoYoRingMaterialStats(0), RecordLoadable.create(
                 FloatLoadable.ANY.defaultField("max_collected", 0F, YoYoRingMaterialStats::maxCollected), YoYoRingMaterialStats::new
         ));
-        MAX_COLLECTED = IMaterialStats.makeTooltipKey(SakuraTinker.location("max_collected"));
+        MAX_COLLECTED = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("max_collected"));
         DESCRIPTION = ImmutableList.of(
-                IMaterialStats.makeTooltip(SakuraTinker.location("max_collected"))
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("max_collected"))
         );
     }
 }

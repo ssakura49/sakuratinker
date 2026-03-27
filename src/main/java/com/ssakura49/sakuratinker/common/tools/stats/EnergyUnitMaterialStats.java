@@ -3,7 +3,6 @@ package com.ssakura49.sakuratinker.common.tools.stats;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.ssakura49.sakuratinker.SakuraTinker;
-import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
@@ -53,8 +52,8 @@ public record EnergyUnitMaterialStats(int energyStorage, float durability) imple
         TYPE = new MaterialStatType<>(ID, new EnergyUnitMaterialStats(0, 0.0F), RecordLoadable.create(
                         IntLoadable.FROM_ZERO.defaultField("max_energy", 0, true, EnergyUnitMaterialStats::energyStorage),
                         FloatLoadable.ANY.defaultField("durability", 1.0F, true, EnergyUnitMaterialStats::durability), EnergyUnitMaterialStats::new));
-        ENERGY_STORAGE_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("max_energy"));
+        ENERGY_STORAGE_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("max_energy"));
         DURABILITY_PREFIX = IMaterialStats.makeTooltipKey(TConstruct.getResource("durability"));
-        DESCRIPTION = ImmutableList.of(IMaterialStats.makeTooltip(SakuraTinker.location("energy_unit.energy_storage.description")), IMaterialStats.makeTooltip(TConstruct.getResource("handle.durability.description")));
+        DESCRIPTION = ImmutableList.of(IMaterialStats.makeTooltip(SakuraTinker.getResource("energy_unit.energy_storage.description")), IMaterialStats.makeTooltip(TConstruct.getResource("handle.durability.description")));
     }
 }

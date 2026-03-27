@@ -23,7 +23,7 @@ public class STParticles {
             PARTICLES.register("wisp", WispParticleType::new);
 
     public static void registerParticles(BiConsumer<ParticleType<?>, ResourceLocation> r) {
-        r.accept(WISP.get(), SakuraTinker.location("wisp"));
+        r.accept(WISP.get(), SakuraTinker.getResource("wisp"));
     }
 
     public static class FactoryHandler {

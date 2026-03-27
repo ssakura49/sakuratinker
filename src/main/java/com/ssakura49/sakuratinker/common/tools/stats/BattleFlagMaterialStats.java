@@ -79,15 +79,15 @@ public record BattleFlagMaterialStats(int range, int attackBuffTime, int defence
                 IntLoadable.FROM_ZERO.defaultField("defence_buff_time", 0, true, BattleFlagMaterialStats::defenceBuffTime),
                 IntLoadable.FROM_ZERO.defaultField("charge_time", 0, true, BattleFlagMaterialStats::chargeTime), BattleFlagMaterialStats::new
         ));
-        RANGE = IMaterialStats.makeTooltipKey(SakuraTinker.location("range"));
-        ATTACK_BUFF_TIME = IMaterialStats.makeTooltipKey(SakuraTinker.location("attack_buff_time"));
-        DEFENCE_BUFF_TIME = IMaterialStats.makeTooltipKey(SakuraTinker.location("defence_buff_time"));
-        CHARGE_TIME = IMaterialStats.makeTooltipKey(SakuraTinker.location("charge_time"));
+        RANGE = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("range"));
+        ATTACK_BUFF_TIME = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("attack_buff_time"));
+        DEFENCE_BUFF_TIME = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("defence_buff_time"));
+        CHARGE_TIME = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("charge_time"));
         DESCRIPTION = ImmutableList.of(
-                IMaterialStats.makeTooltip(SakuraTinker.location("range")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("attack_buff_time")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("defence_buff_time")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("charge_time"))
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("range")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("attack_buff_time")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("defence_buff_time")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("charge_time"))
         );
     }
 }

@@ -68,13 +68,13 @@ public record AxleMaterialStats(float time, float attackInterval, float weight) 
                 FloatLoadable.ANY.defaultField("attack_interval", 0F, AxleMaterialStats::attackInterval),
                 FloatLoadable.ANY.defaultField("weight", 0F, AxleMaterialStats::weight), AxleMaterialStats::new
         ));
-        TIME = IMaterialStats.makeTooltipKey(SakuraTinker.location("time"));
-        ATTACK_INTERVAL = IMaterialStats.makeTooltipKey(SakuraTinker.location("attack_interval"));
-        WEIGHT = IMaterialStats.makeTooltipKey(SakuraTinker.location("weight"));
+        TIME = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("time"));
+        ATTACK_INTERVAL = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("attack_interval"));
+        WEIGHT = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("weight"));
         DESCRIPTION = ImmutableList.of(
-                IMaterialStats.makeTooltip(SakuraTinker.location("time")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("attack_interval")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("weight"))
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("time")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("attack_interval")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("weight"))
         );
     }
 }

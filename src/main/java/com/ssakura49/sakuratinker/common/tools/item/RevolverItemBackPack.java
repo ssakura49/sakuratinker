@@ -1,31 +1,14 @@
 package com.ssakura49.sakuratinker.common.tools.item;
 
-import com.Polarice3.Goety.api.items.magic.IWand;
-import com.Polarice3.Goety.api.magic.ISpell;
-import com.Polarice3.Goety.common.magic.spells.wind.FlyingSpell;
-import com.Polarice3.Goety.utils.MathHelper;
-import com.Polarice3.Goety.utils.WandUtil;
-import com.c2h6s.etstlib.util.IToolUuidGetter;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
 import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.client.menu.RevolverMenu;
 import com.ssakura49.sakuratinker.common.entity.BulletEntity;
-import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
 import com.ssakura49.sakuratinker.utils.tinker.ItemUtil;
-import com.ssakura49.sakuratinker.utils.tinker.ToolCooldownManager;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
-import net.minecraft.world.entity.HumanoidArm;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -41,9 +24,7 @@ import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
-import slimeknights.tconstruct.library.modifiers.hook.interaction.GeneralInteractionModifierHook;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.helper.TooltipBuilder;
@@ -53,26 +34,23 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.UUID;
 import java.util.function.Consumer;
 
 public class RevolverItemBackPack extends ModifiableItem {
-    private static final ResourceLocation TAG_CURRENT_CHAMBER = SakuraTinker.location("bullet_slot");
+    private static final ResourceLocation TAG_CURRENT_CHAMBER = SakuraTinker.getResource("bullet_slot");
     public static final int MAX_BULLETS = 6;
 
-    public static final ResourceLocation BULLET_1 = SakuraTinker.location("bullet_1");
-    public static final ResourceLocation BULLET_2 = SakuraTinker.location("bullet_2");
-    public static final ResourceLocation BULLET_3 = SakuraTinker.location("bullet_3");
-    public static final ResourceLocation BULLET_4 = SakuraTinker.location("bullet_4");
-    public static final ResourceLocation BULLET_5 = SakuraTinker.location("bullet_5");
-    public static final ResourceLocation BULLET_6 = SakuraTinker.location("bullet_6");
+    public static final ResourceLocation BULLET_1 = SakuraTinker.getResource("bullet_1");
+    public static final ResourceLocation BULLET_2 = SakuraTinker.getResource("bullet_2");
+    public static final ResourceLocation BULLET_3 = SakuraTinker.getResource("bullet_3");
+    public static final ResourceLocation BULLET_4 = SakuraTinker.getResource("bullet_4");
+    public static final ResourceLocation BULLET_5 = SakuraTinker.getResource("bullet_5");
+    public static final ResourceLocation BULLET_6 = SakuraTinker.getResource("bullet_6");
 
-    public static final ResourceLocation SHOOT = SakuraTinker.location("shoot");
+    public static final ResourceLocation SHOOT = SakuraTinker.getResource("shoot");
 
-    public static final ResourceLocation RELOAD = SakuraTinker.location("reload");
+    public static final ResourceLocation RELOAD = SakuraTinker.getResource("reload");
 
     public RevolverItemBackPack(Properties props, ToolDefinition def) {
         super(props, def);

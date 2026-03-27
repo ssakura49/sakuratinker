@@ -2,14 +2,13 @@ package com.ssakura49.sakuratinker.data.generator.enums;
 
 import com.c2h6s.etstlib.register.EtSTLibModifier;
 import com.ssakura49.sakuratinker.common.tools.stats.FletchingMaterialStats;
-import com.ssakura49.sakuratinker.common.tools.stats.SpellClothMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMaterialStats;
 import com.ssakura49.sakuratinker.compat.Botania.init.BotaniaModifier;
 import com.ssakura49.sakuratinker.compat.BuddyCards.BuddyCardCompat;
 import com.ssakura49.sakuratinker.compat.DreadSteel.DreadSteelCompat;
 import com.ssakura49.sakuratinker.compat.EnigmaticLegacy.ELCompat;
 import com.ssakura49.sakuratinker.compat.ExtraBotany.init.ExtraBotanyModifiers;
 import com.ssakura49.sakuratinker.compat.Goety.init.GoetyModifiers;
-import com.ssakura49.sakuratinker.compat.GoetyRevelation.init.GRModifiers;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSCompat;
 import com.ssakura49.sakuratinker.compat.TwilightForest.TFCompat;
 import com.ssakura49.sakuratinker.compat.YoukaiHomeComing.YKHCCompat;
@@ -86,7 +85,7 @@ public enum EnumMaterialModifier {
     colorful_charm(STMaterialStats.CHARM, entry(STModifiers.Colorization.getId(),1)),
 
     arcane_alloy_armor(MaterialRegistry.ARMOR, entry(ISSCompat.Magician.getId(), 1),entry(ISSCompat.FountainMagic.getId(),1),entry(ISSCompat.ElementalMastery.getId(),1)),
-    arcane_alloy_cloth(SpellClothMaterialStats.ID, entry(STModifiers.SpellPower.getId(),1)),
+    arcane_alloy_cloth(ManuScriptMaterialStats.ID, entry(STModifiers.SpellPower.getId(),1)),
 
     orichalcos_default(null,entry(ExtraBotanyModifiers.Body.getId(),1),entry(STModifiers.Mind.getId(),1),entry(STModifiers.Soul.getId(),1)),
 

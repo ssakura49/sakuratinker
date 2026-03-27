@@ -56,9 +56,9 @@ public record PhantomCoreMaterialStats(float phantom_amount, float range) implem
                 FloatLoadable.ANY.defaultField("range", 1.0f, true, PhantomCoreMaterialStats::range),
                 PhantomCoreMaterialStats::new
         ));
-        AMOUNT_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("phantom_amount"));
-        RANGE_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("range"));
-        DESCRIPTION = ImmutableList.of(IMaterialStats.makeTooltip(SakuraTinker.location("first_fractal.phantom_amount.description")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("first_fractal.range.description")));
+        AMOUNT_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("phantom_amount"));
+        RANGE_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("range"));
+        DESCRIPTION = ImmutableList.of(IMaterialStats.makeTooltip(SakuraTinker.getResource("first_fractal.phantom_amount.description")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("first_fractal.range.description")));
     }
 }

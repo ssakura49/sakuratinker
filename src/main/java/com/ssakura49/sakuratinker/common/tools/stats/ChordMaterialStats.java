@@ -52,9 +52,9 @@ public record ChordMaterialStats(float length) implements IMaterialStats {
         TYPE = new MaterialStatType<>(ID, new ChordMaterialStats(0), RecordLoadable.create(
                 FloatLoadable.ANY.defaultField("length", 0F, ChordMaterialStats::length), ChordMaterialStats::new
         ));
-        LENGTH = IMaterialStats.makeTooltipKey(SakuraTinker.location("length"));
+        LENGTH = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("length"));
         DESCRIPTION = ImmutableList.of(
-                IMaterialStats.makeTooltip(SakuraTinker.location("length"))
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("length"))
         );
     }
 }

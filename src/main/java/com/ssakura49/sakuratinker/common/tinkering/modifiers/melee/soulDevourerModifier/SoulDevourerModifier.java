@@ -41,7 +41,7 @@ public class SoulDevourerModifier extends Modifier implements
         ModifierRemovalHook
 {
     private static final ResourceLocation SOUL_KILL_COUNT =
-            SakuraTinker.location("soul_devourer_kills");
+            SakuraTinker.getResource("soul_devourer_kills");
     private static final float BONUS_PER_KILL = 0.0001f;
 
     @Override

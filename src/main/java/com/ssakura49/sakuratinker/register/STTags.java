@@ -2,8 +2,6 @@ package com.ssakura49.sakuratinker.register;
 
 import com.ssakura49.sakuratinker.SakuraTinker;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -11,8 +9,6 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TagsUpdatedEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
-import slimeknights.tconstruct.TConstruct;
-import slimeknights.tconstruct.common.TinkerTags;
 
 public class STTags {
     static boolean tagsLoaded = false;
@@ -43,7 +39,7 @@ public class STTags {
         }
 
         private static TagKey<Item> local(String name) {
-            return TagKey.create(Registries.ITEM, SakuraTinker.location(name));
+            return TagKey.create(Registries.ITEM, SakuraTinker.getResource(name));
         }
     }
 
@@ -55,7 +51,7 @@ public class STTags {
         public static final TagKey<EntityType<?>> NO_GRAPPLE = local("no_grapple");
 
         private static TagKey<EntityType<?>> local(String name) {
-            return TagKey.create(Registries.ENTITY_TYPE, SakuraTinker.location(name));
+            return TagKey.create(Registries.ENTITY_TYPE, SakuraTinker.getResource(name));
         }
 
         public Entities(){}

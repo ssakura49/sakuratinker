@@ -12,7 +12,7 @@ import net.minecraft.util.Mth;
 import org.jetbrains.annotations.NotNull;
 
 public class TinkerArrowEntityRenderer extends ArrowRenderer<TinkerArrowEntity> {
-    private static final ResourceLocation TEXTURE = SakuraTinker.location("textures/entity/projectiles/arrow.png");
+    private static final ResourceLocation TEXTURE = SakuraTinker.getResource("textures/entity/projectiles/arrow.png");
     public TinkerArrowEntityRenderer(EntityRendererProvider.Context context) {
         super(context);
     }

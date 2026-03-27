@@ -23,7 +23,7 @@ public class STFluidTextureProvider extends AbstractFluidTextureProvider {
     }
 
     public FluidTexture.Builder commonFluid(FluidType fluid) {
-        return super.texture(fluid).textures(SakuraTinker.location("block/fluid/" + ForgeRegistries.FLUID_TYPES.get().getKey(fluid).getPath() + "/"), false, false);
+        return super.texture(fluid).textures(SakuraTinker.getResource("block/fluid/" + ForgeRegistries.FLUID_TYPES.get().getKey(fluid).getPath() + "/"), false, false);
     }
 
     @Override

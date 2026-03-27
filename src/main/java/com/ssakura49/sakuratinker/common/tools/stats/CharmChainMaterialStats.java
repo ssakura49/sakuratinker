@@ -9,7 +9,6 @@ import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
 import slimeknights.mantle.data.loadable.primitive.IntLoadable;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
-import slimeknights.tconstruct.library.materials.stats.IRepairableMaterialStats;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatType;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.library.tools.stat.IToolStat;
@@ -17,7 +16,7 @@ import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 
 import java.util.List;
 
-public record CharmChainMaterialStats(float movement_speed, int health, float armor, float toughness, float damage, float arrow_damage) implements IRepairableMaterialStats {
+public record CharmChainMaterialStats(float movement_speed, int health, float armor, float toughness, float damage, float arrow_damage) implements IMaterialStats {
     public static final MaterialStatsId ID = new MaterialStatsId(SakuraTinker.MODID, "charm_chain");
     public static final MaterialStatType<CharmChainMaterialStats> TYPE;
     private static final String SPEED_BONUS_PREFIX;
@@ -103,19 +102,19 @@ public record CharmChainMaterialStats(float movement_speed, int health, float ar
                 FloatLoadable.ANY.defaultField("toughness", 0.0F, true, CharmChainMaterialStats::toughness),
                 FloatLoadable.ANY.defaultField("damage", 0.0F, true, CharmChainMaterialStats::damage),
                 FloatLoadable.ANY.defaultField("arrow_damage", 0.0F, true, CharmChainMaterialStats::arrow_damage), CharmChainMaterialStats::new));
-        SPEED_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("movement_speed"));
-        HEALTH_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("health"));
-        ARMOR_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("armor"));
-        TOUGHNESS_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("armor_toughness"));
-        DAMAGE_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("damage"));
-        ARROW_DAMAGE_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("arrow_damage"));
+        SPEED_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("movement_speed"));
+        HEALTH_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("health"));
+        ARMOR_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("armor"));
+        TOUGHNESS_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("armor_toughness"));
+        DAMAGE_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("damage"));
+        ARROW_DAMAGE_BONUS_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("arrow_damage"));
         DESCRIPTION = ImmutableList.of(
-                IMaterialStats.makeTooltip(SakuraTinker.location("movement_speed.description")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("health.description")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("armor.description")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("armor_toughness.description")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("damage.description")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("arrow_damage.description"))
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("movement_speed.description")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("health.description")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("armor.description")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("armor_toughness.description")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("damage.description")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("arrow_damage.description"))
         );
     }
 }

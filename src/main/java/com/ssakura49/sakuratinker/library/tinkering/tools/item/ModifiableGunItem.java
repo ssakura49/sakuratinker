@@ -3,18 +3,14 @@ package com.ssakura49.sakuratinker.library.tinkering.tools.item;
 import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.api.item.slot.IHasBulletInventory;
 import com.ssakura49.sakuratinker.common.entity.BulletEntity;
-import com.ssakura49.sakuratinker.common.tools.capability.ToolBulletSlotCapability;
 import com.ssakura49.sakuratinker.library.hooks.bullet.BulletAmmoModifierHook;
 import com.ssakura49.sakuratinker.library.interfaces.projectile.IProjectileBuild;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
@@ -28,7 +24,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import java.util.function.Predicate;
 
 public abstract class ModifiableGunItem extends ModifiableLauncherItem implements IHasBulletInventory {
-    private static final ResourceLocation TAG_CURRENT_CHAMBER = SakuraTinker.location("bullet_slot");
+    private static final ResourceLocation TAG_CURRENT_CHAMBER = SakuraTinker.getResource("bullet_slot");
 
     public ModifiableGunItem(Properties properties, ToolDefinition toolDefinition) {
         super(properties, toolDefinition);

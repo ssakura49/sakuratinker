@@ -20,7 +20,6 @@ public class TrailRenderer {
         var effect = new EntityEffect(fx, level, entity, EntityEffect.AutoRotate.FORWARD);
         effect.setForcedDeath(true);
 
-        // 偏移起点（假设 EntityEffect 有这个方法）
         effect.setOffset(offset);
 
         effect.start();

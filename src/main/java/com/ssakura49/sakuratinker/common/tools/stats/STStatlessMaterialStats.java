@@ -12,14 +12,15 @@ import java.util.List;
 
 public enum STStatlessMaterialStats implements IMaterialStats {
     CHARM_CORE("charm_core"),
-    SHELL("shell");
+    SHELL("shell"),
+    GUTTER("gutter");
 
     private static final List<Component> LOCALIZED = List.of(IMaterialStats.makeTooltip(TConstruct.getResource("extra.no_stats")));
     private static final List<Component> DESCRIPTION = List.of(Component.empty());
     private final MaterialStatType<STStatlessMaterialStats> type;
 
     private STStatlessMaterialStats(String name) {
-        this.type = MaterialStatType.singleton(new MaterialStatsId(SakuraTinker.location(name)), this);
+        this.type = MaterialStatType.singleton(new MaterialStatsId(SakuraTinker.getResource(name)), this);
     }
 
     public MaterialStatType<STStatlessMaterialStats> getType() {

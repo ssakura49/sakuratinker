@@ -14,10 +14,9 @@ import com.ssakura49.sakuratinker.compat.ExtraBotany.init.ExtraBotanyModifiers;
 import com.ssakura49.sakuratinker.compat.Goety.handler.SpellAttackHandler;
 import com.ssakura49.sakuratinker.compat.Goety.init.GoetyItems;
 import com.ssakura49.sakuratinker.compat.Goety.init.GoetyModifiers;
-import com.ssakura49.sakuratinker.compat.GoetyRevelation.event.GRModifierEventHandler;
-import com.ssakura49.sakuratinker.compat.GoetyRevelation.init.GRModifiers;
 import com.ssakura49.sakuratinker.compat.IceAndFireCompat.IAFCompat;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSCompat;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.ISSMaterialStats;
 import com.ssakura49.sakuratinker.compat.ReAvaritia.ReAvaritiaCompat;
 import com.ssakura49.sakuratinker.compat.TwilightForest.TFCompat;
 import com.ssakura49.sakuratinker.compat.YoukaiHomeComing.YKHCCompat;
@@ -63,8 +62,6 @@ import slimeknights.tconstruct.library.utils.Util;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -77,7 +74,7 @@ public class SakuraTinker {
     public static final Logger LOGGER = LogManager.getLogger("sakuratinker");
     public static StringBuilder stringBuilder = new StringBuilder();
     public static boolean modInitialized = false;
-    public static ResourceLocation location(String string) {
+    public static ResourceLocation getResource(String string) {
         return ResourceLocation.fromNamespaceAndPath(MODID, string);
     }
 
@@ -141,8 +138,6 @@ public class SakuraTinker {
         if (SafeClassUtil.ISSLoaded) {
             ISSCompat.ISS_MODIFIERS.register(modEventBus);
             ISSCompat.TINKER_ISS_ITEMS.register(modEventBus);
-            forgeEventBus.addListener(SpellBookHandler::onSpellDamage);
-            forgeEventBus.addListener(SpellBookHandler::onCastSpell);
             LOGGER.info("[Sakura Tinker]: Found Iron's Spellbooks, integration initializing……");
         }
         if (SafeClassUtil.AvaritiaLoaded) {
@@ -211,14 +206,17 @@ public class SakuraTinker {
 //        if(ModListUtil.Ember) {
 //            ToolCapabilityProvider.register((stack, tool) -> new EmberEnergyCapability.Provider(tool));
 //        }
+        if (SafeClassUtil.ISSLoaded) {
+            event.enqueueWork(ISSMaterialStats::init);
+        }
         event.enqueueWork(STConfig::loadOrCreateTreasureConfig);
         ToolCapabilityProvider.register(((stack, tool) -> new ToolBulletSlotCapability.Provider(tool)));
     }
     @SubscribeEvent
     public void registerSerializers(RegisterEvent event) {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
-            ModifierModule.LOADER.register(location("environmental_adaptation"), EnvironmentalAdaptationModule.LOADER);
-            ModifierModule.LOADER.register(location("multi_curio_attribute"), MultiCurioAttributeModule.LOADER);
+            ModifierModule.LOADER.register(getResource("environmental_adaptation"), EnvironmentalAdaptationModule.LOADER);
+            ModifierModule.LOADER.register(getResource("multi_curio_attribute"), MultiCurioAttributeModule.LOADER);
         }
     }
 
@@ -227,7 +225,7 @@ public class SakuraTinker {
     }
 
     public static String makeTranslationKey(String base, String name) {
-        return Util.makeTranslationKey(base, location(name));
+        return Util.makeTranslationKey(base, getResource(name));
     }
     public static MutableComponent makeTranslation(String base, String name) {
         return Component.translatable(makeTranslationKey(base, name));

@@ -50,7 +50,7 @@ import java.util.stream.Collectors;
 @Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CustomInLevelRendererDispatcher {
     public static VFRBuilders.WorldVFRTrailBuilder normalStarTrailsBuilder;
-    public static final ResourceLocation LOCATION_PARTICLES = SakuraTinker.location("textures/atlas/cil_particles.png");
+    public static final ResourceLocation LOCATION_PARTICLES = SakuraTinker.getResource("textures/atlas/cil_particles.png");
     public static final ResourceLocation CIL_PARTICLE_INFO = ResourceLocation.fromNamespaceAndPath(SakuraTinker.MODID, "cil_particle");
     public static final Object2ObjectOpenHashMap<InLevelRenderType, List<ICustomInLevelRenderTask>> renderersSet = new Object2ObjectOpenHashMap<>();
     public static final List<CustomTextureParticleRenderer> textureParticles = new ArrayList<>();

@@ -17,7 +17,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.List;
 
-public record FletchingMaterialStats(float velocity, float accuracy) implements IRepairableMaterialStats {
+public record FletchingMaterialStats(float velocity, float accuracy) implements IMaterialStats {
     public static final MaterialStatsId ID = new MaterialStatsId(SakuraTinker.MODID, "fletching");
     public static final MaterialStatType<FletchingMaterialStats> TYPE;
     private static final String VELOCITY_BONUS_PREFIX;

@@ -1,6 +1,7 @@
 package com.ssakura49.sakuratinker.data.generator.enums;
 
 import com.ssakura49.sakuratinker.common.tools.stats.*;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMaterialStats;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
 
 public enum EnumTconExtraStat {
@@ -17,7 +18,7 @@ public enum EnumTconExtraStat {
             new CharmChainMaterialStats(0.4f, 18, 0.1f, 0.1f, 0.15f, 0.15f),
             new EnergyUnitMaterialStats(50000, 0.3f),
             new LaserMediumMaterialStats(15, 0.6f, 8),
-            new SpellClothMaterialStats(10.0f,0.25f, 0.25f, 10f),
+            new ManuScriptMaterialStats(10.0f,0.25f, 0.25f, 10f),
             new PhantomCoreMaterialStats(2, 16),
             new AxleMaterialStats(180, 20, 2.5f),
             new YoYoRingMaterialStats(1),
@@ -40,7 +41,7 @@ public enum EnumTconExtraStat {
             new EnergyUnitMaterialStats(80000, 0.6f),
             new LaserMediumMaterialStats(40, 0.4f, 12),
             new PhantomCoreMaterialStats(2, 16),
-            new SpellClothMaterialStats(25.0f,0.25f, 0.15f, 5f),
+            new ManuScriptMaterialStats(25.0f,0.25f, 0.15f, 5f),
             new AxleMaterialStats(280, 15, 4.5f),
             new YoYoRingMaterialStats(1),
             new ChordMaterialStats(8),
@@ -52,7 +53,7 @@ public enum EnumTconExtraStat {
             new CharmChainMaterialStats(0.1f, 8, 0.05f, 0f, 0f, 0f),
             new EnergyUnitMaterialStats(5000, 0.1f),
             new LaserMediumMaterialStats(5, 2.0f, 1),
-            new SpellClothMaterialStats(5.0f,-0.25f, 0.2f, 2f),
+            new ManuScriptMaterialStats(5.0f,-0.25f, 0.2f, 2f),
             new BattleFlagMaterialStats(4, 20, 20, 120),
             new AxleMaterialStats(60, 40, 1.5f),
             new YoYoRingMaterialStats(1),
@@ -75,10 +76,10 @@ public enum EnumTconExtraStat {
             new ChordMaterialStats(8)
     ),
     bamboo(
-            new SpellClothMaterialStats(10.0f, 0.15f, -0.1f, 3.0f)
+            new ManuScriptMaterialStats(10.0f, 0.15f, -0.1f, 3.0f)
     ),
     obsidian(
-            new SpellClothMaterialStats(25.0f, -0.1f, -0.1f, -3.0f)
+            new ManuScriptMaterialStats(25.0f, -0.1f, -0.1f, -3.0f)
     ),
     ;
     public final IMaterialStats[] stats;

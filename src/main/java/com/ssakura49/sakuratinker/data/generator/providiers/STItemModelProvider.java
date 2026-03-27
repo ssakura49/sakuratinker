@@ -141,7 +141,7 @@ public class STItemModelProvider extends ItemModelProvider {
     }
 
     private MaterialModelBuilder<ItemModelBuilder> part(ResourceLocation part, String texture) {
-        return (MaterialModelBuilder)((ItemModelBuilder)((ItemModelBuilder)this.withExistingParent(part.getPath(), "forge:item/default")).texture("texture", SakuraTinker.location("item/tool/" + texture))).customLoader(MaterialModelBuilder::new);
+        return (MaterialModelBuilder)((ItemModelBuilder)((ItemModelBuilder)this.withExistingParent(part.getPath(), "forge:item/default")).texture("texture", SakuraTinker.getResource("item/tool/" + texture))).customLoader(MaterialModelBuilder::new);
     }
 
     private MaterialModelBuilder<ItemModelBuilder> part(Item item, String texture) {

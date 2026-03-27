@@ -3,9 +3,9 @@ Specification-Title: sakuratinker
 Specification-Vendor: ssakura49
 Specification-Version: 1
 Implementation-Title: sakuratinker
-Implementation-Version: 1.4.1
+Implementation-Version: 1.4.2
 Implementation-Vendor: ssakura49
-Implementation-Timestamp: 2026-03-19T12:39:25+0800
+Implementation-Timestamp: 2026-03-21T16:28:41+0800
 MixinConfigs: sakuratinker.mixins.json
 FMLAT: accesstransformer.cfg
 

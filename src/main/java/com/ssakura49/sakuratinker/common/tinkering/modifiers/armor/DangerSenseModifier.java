@@ -30,7 +30,7 @@ import java.util.UUID;
 public class DangerSenseModifier extends EtSTBaseModifier implements VibrationListeningModifierHook {
     public static final UUID DS_UUID = UUID.fromString("f9b61a91-4c18-4686-a6ba-421aa5783d8f");
     public static final String KEY_DS = "resonating";
-    public static final ResourceLocation KEY = SakuraTinker.location(KEY_DS);
+    public static final ResourceLocation KEY = SakuraTinker.getResource(KEY_DS);
     private static final int BASE_RANGE = 10;
     private static final int RANGE_PER_LEVEL = 10;
     private static final int GLOW_DURATION = 100;

@@ -3,11 +3,8 @@ package com.ssakura49.sakuratinker.common.tools.capability;
 import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.api.item.slot.IHasBulletInventory;
 import com.ssakura49.sakuratinker.common.entity.item.BulletItem;
-import com.ssakura49.sakuratinker.common.tools.item.RevolverItem;
-import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableBulletItem;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -15,11 +12,9 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemHandlerHelper;
 import org.jetbrains.annotations.NotNull;
-import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
 import slimeknights.tconstruct.library.tools.capability.ToolCapabilityProvider;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
-import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 import javax.annotation.Nonnull;
 import java.util.function.Supplier;
@@ -28,10 +23,10 @@ public record ToolBulletSlotCapability(Supplier<? extends IToolStackView> tool) 
 
     private static final int DEFAULT_SLOTS = 6;
     private static int stackCount = 1;
-    private static final ResourceLocation BULLET_SLOT_COUNT = SakuraTinker.location("bullet_slots");
+    private static final ResourceLocation BULLET_SLOT_COUNT = SakuraTinker.getResource("bullet_slots");
 
     /** 如果是IModifiable的物品，需要通过addVolatileData将此nbt设为true来让槽位的最大堆叠为1 */
-    public static final ResourceLocation KEY_MODIFIABLE = SakuraTinker.location("is_modifiable");
+    public static final ResourceLocation KEY_MODIFIABLE = SakuraTinker.getResource("is_modifiable");
 
     public ToolBulletSlotCapability(Supplier<? extends IToolStackView> tool) {
         this.tool = tool;
@@ -66,7 +61,7 @@ public record ToolBulletSlotCapability(Supplier<? extends IToolStackView> tool) 
 
 
     private static ResourceLocation makeKey(int slot) {
-        return SakuraTinker.location("bullet_" + slot);
+        return SakuraTinker.getResource("bullet_" + slot);
     }
 
     @Nonnull

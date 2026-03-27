@@ -1,0 +1,28 @@
+package com.ssakura49.sakuratinker.compat.IronSpellBooks;
+
+import com.ssakura49.sakuratinker.SakuraTinker;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.stat.SchoolToolStat;
+import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
+import io.redspace.ironsspellbooks.api.spells.SchoolType;
+import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
+import slimeknights.tconstruct.library.tools.stat.ToolStatId;
+import slimeknights.tconstruct.library.tools.stat.ToolStats;
+
+public class ISSToolStats {
+    public static final SchoolToolStat SCHOOL_STAT = ToolStats.register(new SchoolToolStat(name("bullet_type"), SchoolRegistry.NATURE));
+    public static final FloatToolStat SCHOOL_BONUS = ToolStats.register(new FloatToolStat(name("school_bonus"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
+
+    public static final FloatToolStat SPELL_SLOT = ToolStats.register(new FloatToolStat(name("spell_slot"), -10887823, 1, 1, 15));
+    public static final FloatToolStat PERCENT_BONUS = ToolStats.register(new FloatToolStat(name("percent_bonus"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
+
+    public static final FloatToolStat MANA_REDUCE = ToolStats.register(new FloatToolStat(name("mana_reduce"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
+    public static final FloatToolStat MANA_REGEN = ToolStats.register(new FloatToolStat(name("mana_regen"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
+    public static final FloatToolStat CAST_TIME_REDUCE = ToolStats.register(new FloatToolStat(name("cast_time_reduce"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
+    public static final FloatToolStat SPELL_DAMAGE = ToolStats.register(new FloatToolStat(name("spell_damage"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
+    public static final FloatToolStat MANA_VALUE = ToolStats.register(new FloatToolStat(name("mana_value"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
+
+
+    private static ToolStatId name(String name) {
+        return new ToolStatId(SakuraTinker.getResource(name));
+    }
+}

@@ -11,6 +11,6 @@ public class STArmorDefinitions {
     public static final ModifiableArmorMaterial EMBEDDED;
 
     static {
-        EMBEDDED = ModifiableArmorMaterial.create(SakuraTinker.location("embedded"), Sounds.EQUIP_PLATE.getSound());
+        EMBEDDED = ModifiableArmorMaterial.create(SakuraTinker.getResource("embedded"), Sounds.EQUIP_PLATE.getSound());
     }
 }

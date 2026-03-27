@@ -1,6 +1,7 @@
 package com.ssakura49.sakuratinker.compat.IronSpellBooks.item;
 
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSCompat;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.definitions.ISSToolDefinitions;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
 import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableSpellBookItem;
 import com.ssakura49.sakuratinker.utils.tinker.TooltipUtil;
@@ -22,9 +23,8 @@ import java.util.List;
 
 public class TinkerSpellBook extends ModifiableSpellBookItem {
     private int maxSpellSlots;
-    public static final ToolDefinition TINKER_SPELL_BOOK = ToolDefinition.create(ISSCompat.tinker_spell_book);
     public TinkerSpellBook(int maxSpellSlots ,Item.Properties properties) {
-        super(10 ,properties, TINKER_SPELL_BOOK);
+        super(1 ,properties, ISSToolDefinitions.TINKER_SPELL_BOOK);
         this.maxSpellSlots = maxSpellSlots;
     }
 
@@ -34,10 +34,6 @@ public class TinkerSpellBook extends ModifiableSpellBookItem {
 
     @Override
     public List<Component> getStatInformation(IToolStackView tool, @Nullable Player player, List<Component> tooltips, TooltipKey key, TooltipFlag tooltipFlag) {
-        return this.getSpellBookStats(tool, player, tooltips, key, tooltipFlag);
-    }
-
-    public List<Component> getSpellBookStats(IToolStackView tool, @Nullable Player player, List<Component> tooltips, TooltipKey key, TooltipFlag tooltipFlag) {
         TooltipBuilder builder = new TooltipBuilder(tool, tooltips);
         builder.add(ToolStats.ATTACK_DAMAGE);
         TooltipUtil.addToolStatTooltip(builder, tool, STToolStats.BASE_SPELL_DAMAGE);

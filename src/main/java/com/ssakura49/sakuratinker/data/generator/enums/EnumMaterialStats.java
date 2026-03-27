@@ -2,6 +2,7 @@ package com.ssakura49.sakuratinker.data.generator.enums;
 
 import com.ssakura49.sakuratinker.common.tools.stats.*;
 import com.ssakura49.sakuratinker.common.tools.tiers.DreadSteelTiers;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMaterialStats;
 import net.minecraft.world.item.Tiers;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
 import slimeknights.tconstruct.tools.stats.*;
@@ -309,7 +310,7 @@ public enum EnumMaterialStats {
             armor(30, 3.0f, 4.0f, 3.0f, 2.0f).toughness(2.0f).knockbackResistance(0.05f),
             false,
             StatlessMaterialStats.MAILLE,
-            new SpellClothMaterialStats(20.0f,0.3f,0.15f,0.3f)
+            new ManuScriptMaterialStats(20.0f,0.3f,0.15f,0.3f)
     ),
     orichalcos(
             armor(80, 6.0f, 9.0f, 5.0f, 4.0f).toughness(5.0f).knockbackResistance(0.25f),
@@ -548,7 +549,7 @@ public enum EnumMaterialStats {
             new RangeMaterialStats(18)
     ),
     paper(
-            new SpellClothMaterialStats(5.0f, 5.0f, 0.3f, 15.0f)
+            new ManuScriptMaterialStats(5.0f, 5.0f, 0.3f, 15.0f)
     ),
     nefarious(
             armor(180, 6.0f, 10.0f, 7.0f, 4.0f).toughness(4.5f).knockbackResistance(2.5f),

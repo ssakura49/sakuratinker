@@ -36,11 +36,11 @@ import java.util.stream.Collectors;
 
 public class SoulSakuraSealRecipe implements ITinkerStationRecipe {
     private final ResourceLocation id;
-    public static final ResourceLocation SOUL_SAKURA_KEY = SakuraTinker.location("soul_sakura_seal_modifiable");
-    public static final ResourceLocation SOUL_SAKURA_META_KEY = SakuraTinker.location("soul_sakura_seal_meta");
+    public static final ResourceLocation SOUL_SAKURA_KEY = SakuraTinker.getResource("soul_sakura_seal_modifiable");
+    public static final ResourceLocation SOUL_SAKURA_META_KEY = SakuraTinker.getResource("soul_sakura_seal_meta");
 
-    public static final ResourceLocation SEAL_TOOLTIP_KEY = SakuraTinker.location("seal_tooltip");
-    public static final ResourceLocation SEAL_MODIFIER_LIST = SakuraTinker.location("seal_modifiers");
+    public static final ResourceLocation SEAL_TOOLTIP_KEY = SakuraTinker.getResource("seal_tooltip");
+    public static final ResourceLocation SEAL_MODIFIER_LIST = SakuraTinker.getResource("seal_modifiers");
 
     public SoulSakuraSealRecipe(ResourceLocation id) {
         this.id = id;

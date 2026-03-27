@@ -2,14 +2,16 @@ package com.ssakura49.sakuratinker.compat.IronSpellBooks;
 
 import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.item.TinkerSpellBook;
-import com.ssakura49.sakuratinker.common.tools.stats.SpellClothMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.BookMarkMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.EnvelopeMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ISSStatlessMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMaterialStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.ArcaneConstructModifier;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.ElementalMasteryModifier;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.FountainMagicModifier;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.MagicianModifier;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.attribute.*;
 import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableSpellBookItem;
-import io.redspace.ironsspellbooks.api.spells.SpellRarity;
 import net.minecraft.world.item.Item;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.common.registration.CastItemObject;
@@ -17,7 +19,6 @@ import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
-import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 public class ISSCompat {
     public static ModifierDeferredRegister ISS_MODIFIERS = ModifierDeferredRegister.create(SakuraTinker.MODID);
@@ -27,9 +28,12 @@ public class ISSCompat {
     public static final Item.Properties CastItem = new Item.Properties().stacksTo(64);
     public static final Item.Properties ToolItem = new Item.Properties().stacksTo(1);
 
-    public static final ItemObject<ToolPartItem> book_cover = TINKER_ISS_ITEMS.register("book_cover", () -> new ToolPartItem(PartItem, HeadMaterialStats.ID));
-    public static final ItemObject<ToolPartItem> spell_cloth = TINKER_ISS_ITEMS.register("spell_cloth", () -> new ToolPartItem(PartItem, SpellClothMaterialStats.ID));
-    public static final ItemObject<ModifiableSpellBookItem> tinker_spell_book = TINKER_ISS_ITEMS.register("tinker_spell_book", () -> new TinkerSpellBook(10 ,ToolItem));
+    public static final ItemObject<ToolPartItem> mana_script = TINKER_ISS_ITEMS.register("mana_script", () -> new ToolPartItem(PartItem, ManuScriptMaterialStats.ID));
+    public static final ItemObject<ToolPartItem> envelope = TINKER_ISS_ITEMS.register("envelope", () -> new ToolPartItem(PartItem, EnvelopeMaterialStats.ID));
+    public static final ItemObject<ToolPartItem> book_mark = TINKER_ISS_ITEMS.register("book_mark", () -> new ToolPartItem(PartItem, BookMarkMaterialStats.ID));
+    public static final ItemObject<ToolPartItem> gutter = TINKER_ISS_ITEMS.register("gutter", () -> new ToolPartItem(PartItem, ISSStatlessMaterialStats.GUTTER.getIdentifier()));
+
+    public static final ItemObject<ModifiableSpellBookItem> tinker_spell_book = TINKER_ISS_ITEMS.register("tinker_spell_book", () -> new TinkerSpellBook(1,ToolItem));
 
     public static final CastItemObject bookCoverCast = TINKER_ISS_ITEMS.registerCast("book_cover", CastItem);
     public static final CastItemObject spellClothCast = TINKER_ISS_ITEMS.registerCast("spell_cloth", CastItem);

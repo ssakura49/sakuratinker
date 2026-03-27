@@ -63,11 +63,11 @@ public record SoulGathererMaterialStats(float soulPower, float soulIncrease) imp
                 FloatLoadable.ANY.defaultField("soul_power", 0F, SoulGathererMaterialStats::soulPower),
                 FloatLoadable.ANY.defaultField("soul_increase", 0F, SoulGathererMaterialStats::soulIncrease), SoulGathererMaterialStats::new
         ));
-        SOUL_POWER = IMaterialStats.makeTooltipKey(SakuraTinker.location("soul_power"));
-        SOUL_INCREASE = IMaterialStats.makeTooltipKey(SakuraTinker.location("soul_increase"));
+        SOUL_POWER = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("soul_power"));
+        SOUL_INCREASE = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("soul_increase"));
         DESCRIPTION = ImmutableList.of(
-                IMaterialStats.makeTooltip(SakuraTinker.location("soul_power")),
-                IMaterialStats.makeTooltip(SakuraTinker.location("soul_increase"))
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("soul_power")),
+                IMaterialStats.makeTooltip(SakuraTinker.getResource("soul_increase"))
         );
     }
 }

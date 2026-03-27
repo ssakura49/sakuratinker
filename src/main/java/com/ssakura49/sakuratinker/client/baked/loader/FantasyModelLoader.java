@@ -63,7 +63,7 @@ public class FantasyModelLoader implements IGeometryLoader<FantasyModelLoader.Co
             BakedModel baseBakedModel = this.baseModel.bake(baker, this.baseModel, spriteGetter, modelState, modelLocation, true);
             List<ResourceLocation> textures = new ArrayList<>();
             this.maskTextures.forEach((mask) -> {
-                textures.add(SakuraTinker.location(mask));
+                textures.add(SakuraTinker.getResource(mask));
             });
             return new FantasyCosmicBakedModel(baseBakedModel, textures);
         }

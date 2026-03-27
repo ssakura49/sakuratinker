@@ -36,7 +36,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import java.util.List;
 
 public class Shuriken extends ModifiableItem implements IProjectileBuild {
-    private final ResourceLocation SHURIKEN_CHANCE = SakuraTinker.location("shuriken_chance");
+    private final ResourceLocation SHURIKEN_CHANCE = SakuraTinker.getResource("shuriken_chance");
 
     public Shuriken(Item.Properties properties, ToolDefinition toolDefinition) {
         super(properties, toolDefinition);

@@ -22,8 +22,8 @@ public record RangeMaterialStats(float range) implements IMaterialStats {
             FloatLoadable.ANY.defaultField("range", 1.0f, true, RangeMaterialStats::range),
             RangeMaterialStats::new
     ));
-    private static final String RANGE_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.location("range"));
-    private static final List<Component> DESCRIPTION = ImmutableList.of(IMaterialStats.makeTooltip(SakuraTinker.location("tool.raneg_stats.description")));
+    private static final String RANGE_PREFIX = IMaterialStats.makeTooltipKey(SakuraTinker.getResource("range"));
+    private static final List<Component> DESCRIPTION = ImmutableList.of(IMaterialStats.makeTooltip(SakuraTinker.getResource("tool.raneg_stats.description")));
 
     public @NotNull MaterialStatType<?> getType() {
         return TYPE;

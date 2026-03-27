@@ -171,7 +171,7 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         ToolStack tool = ToolStack.from(stack);
         for (ModifierEntry entry : tool.getModifierList()) {
-            CurioInventoryTickModifierHook hook = (CurioInventoryTickModifierHook) entry.getHook(TCLibHooks.CURIO_TICK);
+            CurioInventoryTickModifierHook hook = entry.getHook(TCLibHooks.CURIO_TICK);
             hook.onCurioTick(tool, entry, slotContext, slotContext.entity(), stack);
         }
     }

@@ -1,6 +1,7 @@
 package com.ssakura49.sakuratinker.data.generator.providiers.tinker;
 
 import com.ssakura49.sakuratinker.common.tools.stats.*;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMaterialStats;
 import com.ssakura49.sakuratinker.data.generator.STMaterialId;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
@@ -106,7 +107,7 @@ public class STMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                 .meleeHarvest()
                 .ranged()
                 .armor()
-                .statType(SpellClothMaterialStats.ID)
+                .statType(ManuScriptMaterialStats.ID)
                 .statType(AxleMaterialStats.ID)
                 .statType(BattleFlagMaterialStats.ID)
                 .statType(CharmChainMaterialStats.ID)
@@ -256,7 +257,7 @@ public class STMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                 .addARGB(178,0xFF6f54b9)
                 .addARGB(216,0xFF9768ed)
                 .addARGB(255,0xFFac8bea).build());
-        this.buildMaterial(STMaterialId.paper).meleeHarvest().armor().statType(SpellClothMaterialStats.ID).ranged().fallbacks("leaf").colorMapper(GreyToColorMapping.builder()
+        this.buildMaterial(STMaterialId.paper).meleeHarvest().armor().statType(ManuScriptMaterialStats.ID).ranged().fallbacks("leaf").colorMapper(GreyToColorMapping.builder()
                 .addARGB(0,0xFF000000)
                 .addARGB(63,0xFF515151)
                 .addARGB(102,0xFF6b6b6b)
@@ -264,7 +265,7 @@ public class STMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                 .addARGB(178,0xFFc4c4c4)
                 .addARGB(216,0xFFd6d6d6)
                 .addARGB(255,0xFFffffff).build());
-        this.buildMaterial(STMaterialId.EnigmaticLegacy.nefarious).meleeHarvest().armor().ranged().statType(SpellClothMaterialStats.ID).ranged().fallbacks("leaf").colorMapper(GreyToColorMapping.builder()
+        this.buildMaterial(STMaterialId.EnigmaticLegacy.nefarious).meleeHarvest().armor().ranged().statType(ManuScriptMaterialStats.ID).ranged().fallbacks("leaf").colorMapper(GreyToColorMapping.builder()
                 .addARGB(0,0xFF000000)
                 .addARGB(63,0xFF0c0538)
                 .addARGB(102,0xFF230069)
