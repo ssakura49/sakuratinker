@@ -1,0 +1,39 @@
+Assets License (All Rights Reserved)
+
+Copyright (c) 2026 ssakura49
+
+All assets included in this project, including but not limited to:
+
+* Textures
+* Models
+* Sounds
+* Music
+* Animations
+* GUI elements
+
+are the exclusive intellectual property of the Author.
+
+All Rights Reserved.
+
+You are NOT permitted to:
+
+* Copy, extract, or reuse these assets
+* Modify or create derivative works based on these assets
+* Redistribute these assets in any form
+* Use these assets in any other project, mod, or media
+
+without explicit prior written permission from the Author.
+
+---
+
+## Modpack Usage
+
+You MAY include this project in modpacks ONLY IF:
+
+* The assets remain inside the original, unmodified mod file
+* Proper credit is given
+* A link to the original download page is provided
+
+You may NOT extract or reuse the assets separately.
+
+---
