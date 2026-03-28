@@ -1,13 +1,10 @@
 package com.ssakura49.sakuratinker.compat.IronSpellBooks.event;
 
-import com.ssakura49.sakuratinker.STConfig;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSCompat;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSHooks;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSToolStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.context.SpellAttackContext;
-import com.ssakura49.sakuratinker.compat.IronSpellBooks.hook.InscribeSpellModifierHook;
-import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
-import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableSpellBookItem;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.item.base.ModifiableSpellBookItem;
 import com.ssakura49.sakuratinker.utils.SafeClassUtil;
 import io.redspace.ironsspellbooks.api.events.InscribeSpellEvent;
 import io.redspace.ironsspellbooks.api.events.SpellDamageEvent;
@@ -16,37 +13,25 @@ import io.redspace.ironsspellbooks.api.events.SpellPreCastEvent;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
 import io.redspace.ironsspellbooks.api.util.Utils;
-import io.redspace.ironsspellbooks.damage.DamageSources;
 import io.redspace.ironsspellbooks.damage.SpellDamageSource;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.eventbus.api.IEventBus;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
-import slimeknights.tconstruct.library.tools.item.IModifiable;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
-import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 
 public class SpellBookHandler {
-    public SpellBookHandler(IEventBus bus) {
-        MinecraftForge.EVENT_BUS.addListener(this::onSpellDamage);
-        MinecraftForge.EVENT_BUS.addListener(this::onPreCast);
-        MinecraftForge.EVENT_BUS.addListener(this::onSpellCast);
-        MinecraftForge.EVENT_BUS.addListener(this::onInscribeSpell);
-        MinecraftForge.EVENT_BUS.addListener(this::addSpellSlots);
+    public SpellBookHandler() {
     }
 
-    public void addSpellSlots(PlayerEvent.ItemCraftedEvent event) {
+
+
+    public static void addSpellSlots(PlayerEvent.ItemCraftedEvent event) {
         ItemStack itemStack = event.getCrafting();
         if (!itemStack.isEmpty() && itemStack.getItem() instanceof ModifiableSpellBookItem) {
             ToolStack toolStack = ToolStack.from(itemStack);
@@ -61,7 +46,7 @@ public class SpellBookHandler {
         }
     }
 
-    public void onSpellDamage(SpellDamageEvent event) {
+    public static void onSpellDamage(SpellDamageEvent event) {
         if (SafeClassUtil.ISSLoaded) {
             if (event.getSpellDamageSource().getEntity() instanceof Player player) {
                 LivingEntity livingTarget = event.getEntity();
@@ -72,7 +57,7 @@ public class SpellBookHandler {
                     if (toolStack.getModifierLevel(ISSCompat.ArcaneTinkering.get()) > 0) {
                         float baseDamage = event.getAmount();
                         float spellDamage = toolStack.getStats().get(ISSToolStats.SPELL_DAMAGE);
-                        float schoolBonus = toolStack.getStats().get(ISSToolStats.SCHOOL_BONUS);
+                        float percentBonus = toolStack.getStats().get(ISSToolStats.PERCENT_BONUS);
 
                         SpellDamageSource source = event.getSpellDamageSource();
                         AbstractSpell spell = source.spell();
@@ -85,7 +70,7 @@ public class SpellBookHandler {
                                 spell.getSpellId(),
                                 spell.getSchoolType()
                         );
-                        float damage;
+                        float damage = (baseDamage + spellDamage) * percentBonus;
                         for (ModifierEntry entry : toolStack.getModifierList()) {
                             damage = entry.getHook(ISSHooks.SPELL_DAMAGE).getSpellDamage(toolStack, entry, spellAttackContext, baseDamage, damage);
                         }
@@ -127,7 +112,7 @@ public class SpellBookHandler {
 //        }
 //    }
 
-    public void onInscribeSpell(InscribeSpellEvent event) {
+    public static void onInscribeSpell(InscribeSpellEvent event) {
         ItemStack bookStack = Utils.getPlayerSpellbookStack(event.getEntity());
         if (bookStack != null && !bookStack.isEmpty() && bookStack.getItem() instanceof ModifiableSpellBookItem) {
             IToolStackView toolStack = ToolStack.from(bookStack);
@@ -137,7 +122,7 @@ public class SpellBookHandler {
         }
     }
 
-    public void onPreCast(SpellPreCastEvent event) {
+    public static void onPreCast(SpellPreCastEvent event) {
         Player player = event.getEntity();
         ItemStack itemStack = Utils.getPlayerSpellbookStack(player);
         if (itemStack != null && !itemStack.isEmpty() && itemStack.getItem() instanceof ModifiableSpellBookItem) {
@@ -156,17 +141,17 @@ public class SpellBookHandler {
         }
     }
 
-    public void onSpellCast(SpellOnCastEvent event) {
+    public static void onSpellCast(SpellOnCastEvent event) {
             ItemStack itemStack = Utils.getPlayerSpellbookStack(event.getEntity());
             if (itemStack != null && !itemStack.isEmpty() && itemStack.getItem() instanceof ModifiableSpellBookItem) {
                 IToolStackView toolStack = ToolStack.from(itemStack);
                 int originalCost = event.getManaCost();
                 int currentCost = originalCost;
-
+                int reduce = toolStack.getStats().getInt(ISSToolStats.MANA_REDUCE);
                 for (ModifierEntry entry : toolStack.getModifierList()) {
                     currentCost = entry.getHook(ISSHooks.MANA_COST).getManaCost(toolStack, entry, originalCost, currentCost);
                 }
-                event.setManaCost(currentCost);
+                event.setManaCost(currentCost-reduce);
             }
     }
 

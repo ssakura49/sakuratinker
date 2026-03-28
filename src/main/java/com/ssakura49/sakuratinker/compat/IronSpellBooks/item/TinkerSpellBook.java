@@ -1,9 +1,8 @@
 package com.ssakura49.sakuratinker.compat.IronSpellBooks.item;
 
-import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSCompat;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.definitions.ISSToolDefinitions;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
-import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableSpellBookItem;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.item.base.ModifiableSpellBookItem;
 import com.ssakura49.sakuratinker.utils.tinker.TooltipUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
@@ -14,7 +13,6 @@ import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
-import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.helper.TooltipBuilder;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;

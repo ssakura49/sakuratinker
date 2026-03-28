@@ -16,30 +16,39 @@
     "sortIndex": 20,
     "input_slots": [
       {
-        "icon": "sakuratinker:book_cover",
-        "translation_key": "item.sakuratinker.book_cover",
+        "icon": "sakuratinker:manu_script",
+        "translation_key": "item.sakuratinker.manu_script",
         "x": 30,
         "y": 50,
         "filter": {
-          "item": "sakuratinker:book_cover"
+          "item": "sakuratinker:manu_script"
         }
       },
       {
-        "icon": "tconstruct:tool_binding",
-        "translation_key": "item.tconstruct.tool_binding",
+        "icon": "sakuratinker:envelope",
+        "translation_key": "item.sakuratinker.envelope",
         "x": 30,
         "y": 30,
         "filter": {
-          "item": "tconstruct:tool_binding"
+          "item": "sakuratinker:tool_binding"
         }
       },
       {
-        "icon": "sakuratinker:spell_cloth",
-        "translation_key": "item.sakuratinker.spell_cloth",
+        "icon": "sakuratinker:book_mark",
+        "translation_key": "item.sakuratinker.book_mark",
         "x": 50,
         "y": 30,
         "filter": {
-          "item": "sakuratinker:spell_cloth"
+          "item": "sakuratinker:book_mark"
+        }
+      },
+      {
+        "icon": "sakuratinker:gutter",
+        "translation_key": "item.sakuratinker.gutter",
+        "x": 50,
+        "y": 50,
+        "filter": {
+          "item": "sakuratinker:gutter"
         }
       }
     ]

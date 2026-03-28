@@ -1,10 +1,11 @@
 {
   "stats": {
-    "sakuratinker:spell_cloth": {
-      "base_spell_damage": 25.0,
-      "cast_time": -3.0,
-      "spell_power": -0.1,
-      "spell_reduce": -0.1
+    "sakuratinker:manu_script": {
+      "cast_time_reduce": -0.1,
+      "mana_reduce": 2.0,
+      "mana_regen": -0.1,
+      "mana_value": 500.0,
+      "spell_damage": 5.0
     }
   }
 }

@@ -30,18 +30,19 @@
       "penetration": 12,
       "range": 40.0
     },
+    "sakuratinker:manu_script": {
+      "cast_time_reduce": 0.15,
+      "mana_reduce": 3.0,
+      "mana_regen": 0.25,
+      "mana_value": 3000.0,
+      "spell_damage": 10.0
+    },
     "sakuratinker:phantom_core": {
       "phantom_amount": 2.0,
       "range": 16.0
     },
     "sakuratinker:range_core": {
       "range": 15.0
-    },
-    "sakuratinker:spell_cloth": {
-      "base_spell_damage": 25.0,
-      "cast_time": 5.0,
-      "spell_power": 0.25,
-      "spell_reduce": 0.15
     },
     "sakuratinker:yoyo_ring": {
       "max_collected": 1.0

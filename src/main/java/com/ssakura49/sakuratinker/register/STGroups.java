@@ -111,8 +111,10 @@ public class STGroups {
         acceptPart(outputPart, fletching);
         acceptPart(outputPart, blade_box);
         if (SafeClassUtil.ISSLoaded) {
-            acceptPart(outputPart, book_cover);
-            acceptPart(outputPart, spell_cloth);
+            acceptPart(outputPart, manu_script);
+            acceptPart(outputPart, envelope);
+            acceptPart(outputPart, book_mark);
+            acceptPart(outputPart, gutter);
         }
         acceptPart(outputPart, great_blade);
         acceptPart(outputPart, shell);
@@ -173,8 +175,10 @@ public class STGroups {
         accept(output, getter, arrowShaftCast);
         accept(output, getter, arrowHeadCast);
         if (SafeClassUtil.ISSLoaded) {
-            accept(output, getter, bookCoverCast);
-            accept(output, getter, spellClothCast);
+            accept(output, getter, manuScriptCast);
+            accept(output, getter, envelopeCast);
+            accept(output, getter, bookMarkCast);
+            accept(output, getter, gutterCast);
         }
         accept(output, getter, greatBladeCast);
         accept(output, getter, flagCast);

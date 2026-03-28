@@ -1,6 +1,7 @@
 package com.ssakura49.sakuratinker.compat.IronSpellBooks;
 
 import com.ssakura49.sakuratinker.SakuraTinker;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.event.SpellBookHandler;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.item.TinkerSpellBook;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.BookMarkMaterialStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.EnvelopeMaterialStats;
@@ -11,8 +12,9 @@ import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.ElementalMaste
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.FountainMagicModifier;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.MagicianModifier;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.attribute.*;
-import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableSpellBookItem;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.item.base.ModifiableSpellBookItem;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.common.MinecraftForge;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
@@ -21,6 +23,14 @@ import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 
 public class ISSCompat {
+    public static void init() {
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onSpellDamage);
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onPreCast);
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onSpellCast);
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onInscribeSpell);
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::addSpellSlots);
+    }
+
     public static ModifierDeferredRegister ISS_MODIFIERS = ModifierDeferredRegister.create(SakuraTinker.MODID);
     public static final ItemDeferredRegisterExtension TINKER_ISS_ITEMS = new ItemDeferredRegisterExtension(SakuraTinker.MODID);
 
@@ -28,16 +38,17 @@ public class ISSCompat {
     public static final Item.Properties CastItem = new Item.Properties().stacksTo(64);
     public static final Item.Properties ToolItem = new Item.Properties().stacksTo(1);
 
-    public static final ItemObject<ToolPartItem> mana_script = TINKER_ISS_ITEMS.register("mana_script", () -> new ToolPartItem(PartItem, ManuScriptMaterialStats.ID));
+    public static final ItemObject<ToolPartItem> manu_script = TINKER_ISS_ITEMS.register("manu_script", () -> new ToolPartItem(PartItem, ManuScriptMaterialStats.ID));
     public static final ItemObject<ToolPartItem> envelope = TINKER_ISS_ITEMS.register("envelope", () -> new ToolPartItem(PartItem, EnvelopeMaterialStats.ID));
     public static final ItemObject<ToolPartItem> book_mark = TINKER_ISS_ITEMS.register("book_mark", () -> new ToolPartItem(PartItem, BookMarkMaterialStats.ID));
     public static final ItemObject<ToolPartItem> gutter = TINKER_ISS_ITEMS.register("gutter", () -> new ToolPartItem(PartItem, ISSStatlessMaterialStats.GUTTER.getIdentifier()));
 
     public static final ItemObject<ModifiableSpellBookItem> tinker_spell_book = TINKER_ISS_ITEMS.register("tinker_spell_book", () -> new TinkerSpellBook(1,ToolItem));
 
-    public static final CastItemObject bookCoverCast = TINKER_ISS_ITEMS.registerCast("book_cover", CastItem);
-    public static final CastItemObject spellClothCast = TINKER_ISS_ITEMS.registerCast("spell_cloth", CastItem);
-
+    public static final CastItemObject manuScriptCast = TINKER_ISS_ITEMS.registerCast("manu_script", CastItem);
+    public static final CastItemObject envelopeCast = TINKER_ISS_ITEMS.registerCast("envelope", CastItem);
+    public static final CastItemObject bookMarkCast = TINKER_ISS_ITEMS.registerCast("book_mark", CastItem);
+    public static final CastItemObject gutterCast = TINKER_ISS_ITEMS.registerCast("gutter", CastItem);
 
     public static StaticModifier<MagicianModifier> Magician;
     public static StaticModifier<FountainMagicModifier> FountainMagic;

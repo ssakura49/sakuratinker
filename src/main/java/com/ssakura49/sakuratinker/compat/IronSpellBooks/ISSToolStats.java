@@ -9,16 +9,23 @@ import slimeknights.tconstruct.library.tools.stat.ToolStatId;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 public class ISSToolStats {
+    //ok
     public static final SchoolToolStat SCHOOL_STAT = ToolStats.register(new SchoolToolStat(name("bullet_type"), SchoolRegistry.NATURE));
+    //ok
     public static final FloatToolStat SCHOOL_BONUS = ToolStats.register(new FloatToolStat(name("school_bonus"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
-
+    //ok
     public static final FloatToolStat SPELL_SLOT = ToolStats.register(new FloatToolStat(name("spell_slot"), -10887823, 1, 1, 15));
+    //ok
     public static final FloatToolStat PERCENT_BONUS = ToolStats.register(new FloatToolStat(name("percent_bonus"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
-
+    //ok
     public static final FloatToolStat MANA_REDUCE = ToolStats.register(new FloatToolStat(name("mana_reduce"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
+    //ok
     public static final FloatToolStat MANA_REGEN = ToolStats.register(new FloatToolStat(name("mana_regen"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
+    //ok
     public static final FloatToolStat CAST_TIME_REDUCE = ToolStats.register(new FloatToolStat(name("cast_time_reduce"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
+    //ok
     public static final FloatToolStat SPELL_DAMAGE = ToolStats.register(new FloatToolStat(name("spell_damage"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
+    //ok
     public static final FloatToolStat MANA_VALUE = ToolStats.register(new FloatToolStat(name("mana_value"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));
 
 

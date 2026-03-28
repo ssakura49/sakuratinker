@@ -138,6 +138,7 @@ public class SakuraTinker {
         if (SafeClassUtil.ISSLoaded) {
             ISSCompat.ISS_MODIFIERS.register(modEventBus);
             ISSCompat.TINKER_ISS_ITEMS.register(modEventBus);
+            ISSCompat.init();
             LOGGER.info("[Sakura Tinker]: Found Iron's Spellbooks, integration initializing……");
         }
         if (SafeClassUtil.AvaritiaLoaded) {

@@ -96,7 +96,7 @@ public enum EnumMaterial {
 
     cold_iron_alloy(STMaterialId.cold_iron_alloy,4,false,false,EnumMaterialStats.cold_iron_alloy,null,cold_iron_alloy_default),
 
-    paper(STMaterialId.paper,1,true,false,EnumMaterialStats.paper,null, paper_default),
+    //paper(STMaterialId.paper,1,true,false,EnumMaterialStats.paper,null, paper_default),
 
     nefarious(STMaterialId.EnigmaticLegacy.nefarious,5, false,false,EnumMaterialStats.nefarious,modLoaded(EnigmaticLegacy), nefarious_default,nefarious_armor),
 

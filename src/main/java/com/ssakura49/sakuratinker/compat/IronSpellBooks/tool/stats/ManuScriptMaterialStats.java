@@ -2,6 +2,7 @@ package com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSToolStats;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
@@ -17,7 +18,7 @@ import java.util.List;
 
 //手稿
 public record ManuScriptMaterialStats(float mana_reduce, float mana_regen, float cast_time_reduce, float spell_damage, float mana_value) implements IMaterialStats {
-    public static final MaterialStatsId ID = new MaterialStatsId(SakuraTinker.MODID, "mana_script");
+    public static final MaterialStatsId ID = new MaterialStatsId(SakuraTinker.MODID, "manu_script");
     public static final MaterialStatType<ManuScriptMaterialStats> TYPE = new MaterialStatType<>(ID,
             new ManuScriptMaterialStats(0,0,0,0,0),
             RecordLoadable.create(

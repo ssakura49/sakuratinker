@@ -1,9 +1,10 @@
-package com.ssakura49.sakuratinker.library.tinkering.tools.item;
+package com.ssakura49.sakuratinker.compat.IronSpellBooks.item.base;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-import com.ssakura49.sakuratinker.library.tinkering.tools.STHooks;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSToolStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.stat.SchoolToolStat;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
 import com.ssakura49.sakuratinker.utils.SafeClassUtil;
 import com.ssakura49.tinkercuriolib.hook.TCLibHooks;
@@ -11,6 +12,7 @@ import com.ssakura49.tinkercuriolib.hook.behavior.CurioAttributeModifierHook;
 import com.ssakura49.tinkercuriolib.hook.interation.CurioInventoryTickModifierHook;
 import io.redspace.ironsspellbooks.api.magic.SpellSelectionManager;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
+import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import io.redspace.ironsspellbooks.api.spells.*;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.compat.Curios;
@@ -39,7 +41,6 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.client.SafeClientAccess;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.behavior.AttributesModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.behavior.EnchantmentModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
@@ -184,7 +185,6 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
         CompoundTag nbt = stack.getTag();
-        // 去掉hand判断
         return nbt != null ? this.getAttributeModifiers((IToolStackView) ToolStack.from(stack), (EquipmentSlot)slot) : ImmutableMultimap.of();
     }
 
@@ -194,16 +194,43 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
         ToolStack toolStack = ToolStack.from(stack);
         StatsNBT toolStats = toolStack.getStats();
         if (SafeClassUtil.ISSLoaded) {
-            map.put(AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier(uuid, "cast_time_reduce_bonus", (double) (Float) toolStats.get(STToolStats.CAST_TIME) * 0.1f, AttributeModifier.Operation.MULTIPLY_BASE));
+            map.put(AttributeRegistry.MAX_MANA.get(), new AttributeModifier(uuid, "max_mana_bonus", (double) (Float) toolStats.get(ISSToolStats.MANA_VALUE), AttributeModifier.Operation.ADDITION));
+            map.put(AttributeRegistry.MANA_REGEN.get(), new AttributeModifier(uuid, "mana_regen_bonus", (double) (Float) toolStats.get(ISSToolStats.MANA_REGEN), AttributeModifier.Operation.MULTIPLY_TOTAL));
+            map.put(AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier(uuid, "cast_time_reduce_bonus", (double) (Float) toolStats.get(ISSToolStats.CAST_TIME_REDUCE), AttributeModifier.Operation.MULTIPLY_TOTAL));
+            float schoolBonus = toolStats.get(ISSToolStats.SCHOOL_BONUS);
+            if(toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.FIRE.getId()) {
+                map.put(AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier(uuid, "fire_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+                map.put(AttributeRegistry.FIRE_MAGIC_RESIST.get(), new AttributeModifier(uuid, "fire_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+            } else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.ICE.getId()) {
+                map.put(AttributeRegistry.ICE_SPELL_POWER.get(), new AttributeModifier(uuid, "ice_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+                map.put(AttributeRegistry.ICE_MAGIC_RESIST.get(), new AttributeModifier(uuid, "ice_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.LIGHTNING.getId()) {
+                map.put(AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier(uuid, "lightning_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+                map.put(AttributeRegistry.LIGHTNING_MAGIC_RESIST.get(), new AttributeModifier(uuid, "lightning_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.HOLY.getId()) {
+                map.put(AttributeRegistry.HOLY_SPELL_POWER.get(), new AttributeModifier(uuid, "holy_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+                map.put(AttributeRegistry.HOLY_MAGIC_RESIST.get(), new AttributeModifier(uuid, "holy_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.ENDER.getId()) {
+                map.put(AttributeRegistry.ENDER_SPELL_POWER.get(), new AttributeModifier(uuid, "ender_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+                map.put(AttributeRegistry.ENDER_MAGIC_RESIST.get(), new AttributeModifier(uuid, "ender_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.BLOOD.getId()) {
+                map.put(AttributeRegistry.BLOOD_SPELL_POWER.get(), new AttributeModifier(uuid, "blood_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+                map.put(AttributeRegistry.BLOOD_MAGIC_RESIST.get(), new AttributeModifier(uuid, "blood_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.EVOCATION.getId()) {
+                map.put(AttributeRegistry.EVOCATION_SPELL_POWER.get(), new AttributeModifier(uuid, "envocation_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+                map.put(AttributeRegistry.EVOCATION_MAGIC_RESIST.get(), new AttributeModifier(uuid, "envocation_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.NATURE.getId()) {
+                map.put(AttributeRegistry.NATURE_SPELL_POWER.get(), new AttributeModifier(uuid, "nature_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+                map.put(AttributeRegistry.NATURE_MAGIC_RESIST.get(), new AttributeModifier(uuid, "nature_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.ELDRITCH.getId()) {
+                map.put(AttributeRegistry.ELDRITCH_SPELL_POWER.get(), new AttributeModifier(uuid, "eldritch_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+                map.put(AttributeRegistry.ELDRITCH_MAGIC_RESIST.get(), new AttributeModifier(uuid, "eldritch_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+            }
         }
         for (ModifierEntry entry : toolStack.getModifierList()) {
             CurioAttributeModifierHook hook = (CurioAttributeModifierHook) entry.getHook(TCLibHooks.CURIO_ATTRIBUTE);
             hook.modifyCurioAttribute(toolStack, entry, slotContext, uuid, map::put);
         }
-//        for (ModifierEntry entry : toolStack.getModifierList()) {
-//            AttributesModifierHook hook = entry.getHook(ModifierHooks.ATTRIBUTES);
-//            hook.addAttributes(toolStack, entry, EquipmentSlot.MAINHAND, map::put);
-//        }
         return map;
     }
 

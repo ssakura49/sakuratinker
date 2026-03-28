@@ -18,7 +18,7 @@ public enum EnumTconExtraStat {
             new CharmChainMaterialStats(0.4f, 18, 0.1f, 0.1f, 0.15f, 0.15f),
             new EnergyUnitMaterialStats(50000, 0.3f),
             new LaserMediumMaterialStats(15, 0.6f, 8),
-            new ManuScriptMaterialStats(10.0f,0.25f, 0.25f, 10f),
+            new ManuScriptMaterialStats(2.5f,0.15f, 0.15f, 15f,1600),
             new PhantomCoreMaterialStats(2, 16),
             new AxleMaterialStats(180, 20, 2.5f),
             new YoYoRingMaterialStats(1),
@@ -41,7 +41,7 @@ public enum EnumTconExtraStat {
             new EnergyUnitMaterialStats(80000, 0.6f),
             new LaserMediumMaterialStats(40, 0.4f, 12),
             new PhantomCoreMaterialStats(2, 16),
-            new ManuScriptMaterialStats(25.0f,0.25f, 0.15f, 5f),
+            new ManuScriptMaterialStats(3f,0.25f, 0.15f, 10f,3000),
             new AxleMaterialStats(280, 15, 4.5f),
             new YoYoRingMaterialStats(1),
             new ChordMaterialStats(8),
@@ -53,7 +53,7 @@ public enum EnumTconExtraStat {
             new CharmChainMaterialStats(0.1f, 8, 0.05f, 0f, 0f, 0f),
             new EnergyUnitMaterialStats(5000, 0.1f),
             new LaserMediumMaterialStats(5, 2.0f, 1),
-            new ManuScriptMaterialStats(5.0f,-0.25f, 0.2f, 2f),
+            new ManuScriptMaterialStats(1f,-0.25f, 0.2f, 2f,1200),
             new BattleFlagMaterialStats(4, 20, 20, 120),
             new AxleMaterialStats(60, 40, 1.5f),
             new YoYoRingMaterialStats(1),
@@ -76,10 +76,10 @@ public enum EnumTconExtraStat {
             new ChordMaterialStats(8)
     ),
     bamboo(
-            new ManuScriptMaterialStats(10.0f, 0.15f, -0.1f, 3.0f)
+            new ManuScriptMaterialStats(1f, 0.15f, -0.1f, 3.0f,1000)
     ),
     obsidian(
-            new ManuScriptMaterialStats(25.0f, -0.1f, -0.1f, -3.0f)
+            new ManuScriptMaterialStats(2f, -0.1f, -0.1f, 5.0f,500)
     ),
     ;
     public final IMaterialStats[] stats;

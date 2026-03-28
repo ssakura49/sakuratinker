@@ -1,7 +1,7 @@
-// 1.20.1	2025-10-10T18:28:59.3986635	Sakura Tinker Material Modifier Provider
+// 1.20.1	2026-03-28T17:42:49.9403704	Sakura Tinker Material Modifier Provider
 6c46b843124cc031fb626e113e61f591a3f6398c data/sakuratinker/tinkering/materials/traits/aerialite.json
 0ae7444b16e2c44c97e8557001669a6b24db98b9 data/sakuratinker/tinkering/materials/traits/amphithere_feather.json
-62bf01c99c795645a3b8deb491e70c59627da493 data/sakuratinker/tinkering/materials/traits/arcane_alloy.json
+391c5f2ff776dd722370dcab4c3a0f394a502288 data/sakuratinker/tinkering/materials/traits/arcane_alloy.json
 932ac95ec19b0ee583d588a58bca106214c326cc data/sakuratinker/tinkering/materials/traits/aurumos.json
 a63c808c10aea82a34f25a977607c20565955683 data/sakuratinker/tinkering/materials/traits/bear_interest.json
 35cbdb557c67832b0acbfbf7e63fa25c1fcb4b88 data/sakuratinker/tinkering/materials/traits/blood_bound_steel.json
@@ -34,7 +34,6 @@ c8d760589e2b27d4d12f37bbb642f5d5b727df9b data/sakuratinker/tinkering/materials/t
 79159813573904968c9712d99372c183f3f2174a data/sakuratinker/tinkering/materials/traits/nihilite.json
 0001078ea43ff08a9ab43e5c4c152ffb145703bc data/sakuratinker/tinkering/materials/traits/orichalcos.json
 a37ef1c5988790aa4e53db35a66c4cf9c890f9f3 data/sakuratinker/tinkering/materials/traits/orichalcum.json
-4d2fc737772780bc456feefd59ae3679c5ace659 data/sakuratinker/tinkering/materials/traits/paper.json
 730ab34548de94dc6e7fee02f4bcd030bb86879a data/sakuratinker/tinkering/materials/traits/perfect_buddysteel.json
 24bd9a59589b1695f03f11b2ed5ff14aa6368df1 data/sakuratinker/tinkering/materials/traits/photonium.json
 eb43857481c73643c4e87034e085d718a5269607 data/sakuratinker/tinkering/materials/traits/prometheum.json

@@ -29,14 +29,15 @@
       "penetration": 1,
       "range": 5.0
     },
+    "sakuratinker:manu_script": {
+      "cast_time_reduce": 0.2,
+      "mana_reduce": 1.0,
+      "mana_regen": -0.25,
+      "mana_value": 1200.0,
+      "spell_damage": 2.0
+    },
     "sakuratinker:soul_gatherer.json": {
       "soul_power": 1.0
-    },
-    "sakuratinker:spell_cloth": {
-      "base_spell_damage": 5.0,
-      "cast_time": 2.0,
-      "spell_power": -0.25,
-      "spell_reduce": 0.2
     },
     "sakuratinker:yoyo_ring": {
       "max_collected": 1.0

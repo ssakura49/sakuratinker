@@ -18,14 +18,16 @@ import slimeknights.tconstruct.library.tools.stat.IToolStat;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 //封皮
 public record EnvelopeMaterialStats(SchoolType stat, float school_bonus) implements IMaterialStats {
     public static final MaterialStatsId ID = new MaterialStatsId(SakuraTinker.MODID, "envelope");
+
     public static final MaterialStatType<EnvelopeMaterialStats> TYPE = new MaterialStatType<>(ID,
-            new EnvelopeMaterialStats(SchoolRegistry.FIRE.get(),0),
+            new EnvelopeMaterialStats(null,0),
             RecordLoadable.create(
-                    SchoolTypeLoadable.SCHOOL.defaultField("school_type", SchoolRegistry.FIRE.get(), true, EnvelopeMaterialStats::stat),
+                    SchoolTypeLoadable.SCHOOL.defaultField("school_type", null, true, EnvelopeMaterialStats::stat),
                     FloatLoadable.ANY.defaultField("school_bonus", 0F, EnvelopeMaterialStats::school_bonus),
                     EnvelopeMaterialStats::new
             ));

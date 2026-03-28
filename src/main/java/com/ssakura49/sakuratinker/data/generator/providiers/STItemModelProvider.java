@@ -93,8 +93,8 @@ public class STItemModelProvider extends ItemModelProvider {
         this.cast(STItems.swiftGuardCast);
         this.cast(STItems.barrelCast);
         this.cast(STItems.bladeCast);
-        this.cast(ISSCompat.bookCoverCast);
-        this.cast(ISSCompat.spellClothCast);
+//        this.cast(ISSCompat.bookCoverCast);
+//        this.cast(ISSCompat.spellClothCast);
         this.cast(STItems.energyUnitCast);
         this.cast(STItems.laserMediumCast);
         this.cast(STItems.barrelCast);
