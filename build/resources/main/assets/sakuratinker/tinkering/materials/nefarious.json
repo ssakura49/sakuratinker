@@ -19,7 +19,7 @@
       "tconstruct:armor_maille",
       "tconstruct:limb",
       "tconstruct:grip",
-      "sakuratinker:spell_cloth"
+      "sakuratinker:manu_script"
     ],
     "transformer": {
       "type": "tconstruct:recolor_sprite",

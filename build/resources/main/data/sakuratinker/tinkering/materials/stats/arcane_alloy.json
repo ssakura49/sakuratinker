@@ -1,10 +1,19 @@
 {
   "stats": {
-    "sakuratinker:spell_cloth": {
-      "base_spell_damage": 20.0,
-      "cast_time": 0.3,
-      "spell_power": 0.3,
-      "spell_reduce": 0.15
+    "sakuratinker:book_mark": {
+      "percent_bonus": 10,
+      "spell_slot": 10
+    },
+    "sakuratinker:envelope": {
+      "school_type": "irons_spellbooks:fire",
+      "school_bonus": 2
+    },
+    "sakuratinker:manu_script": {
+      "mana_reduce": 1,
+      "mana_regen": 1,
+      "cast_time_reduce": 1,
+      "spell_damage": 10,
+      "mana_value": 1000
     },
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {

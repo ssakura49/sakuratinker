@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-10T18:28:59.2759927	Item Models: sakuratinker
+// 1.20.1	2026-03-28T17:42:49.9376247	Item Models: sakuratinker
 666c6f9e0d0cae351116e5a76f4d8f1157e9c2ef assets/sakuratinker/models/item/alchemical_core.json
 03f7a6c792769882cc212f950dd43074de7a2093 assets/sakuratinker/models/item/alchemical_core_cast.json
 6eefb5e3ec3bf132e4efd359745c9494672e925e assets/sakuratinker/models/item/alchemical_core_red_sand_cast.json
@@ -25,9 +25,6 @@ bfd6d7f010c3ed516fb85907dc2736fab6828641 assets/sakuratinker/models/item/blade_c
 cf8afe53fbae68e02886fd312ca0459629e07be1 assets/sakuratinker/models/item/blood_ball.json
 d66e1e09325cee63237ed6043d4d6035860869a5 assets/sakuratinker/models/item/blood_bound_steel.json
 bcb62bdeacaab1adede0ac0cfafea4538c819945 assets/sakuratinker/models/item/blood_drop.json
-63f72d4d518ba42fdb097f2e639dfe1958c706c3 assets/sakuratinker/models/item/book_cover_cast.json
-7c4bead0c0a48c24df655d340f2a3e5153fe1178 assets/sakuratinker/models/item/book_cover_red_sand_cast.json
-ff920fae6be90935e07ca0eaa20e17e97ce86fdb assets/sakuratinker/models/item/book_cover_sand_cast.json
 e18aaf9f0caf97813e05b5a94ccb304e6f8809dc assets/sakuratinker/models/item/charm_chain_cast.json
 0f1d4ba39f1fcadada081b240824d51741c75145 assets/sakuratinker/models/item/charm_chain_red_sand_cast.json
 6a464c5622d1f562d0e080a4fa00a50ecb86d3c0 assets/sakuratinker/models/item/charm_chain_sand_cast.json
@@ -99,9 +96,6 @@ d7a327396e0e8e413238b479022ca3fdc906a6aa assets/sakuratinker/models/item/soul_ga
 168d7a0312b875233717a444f407798415750fe5 assets/sakuratinker/models/item/soul_gatherer_sand_cast.json
 3961a96189b8209c3d0a18986d378c38538b3e17 assets/sakuratinker/models/item/soul_sakura.json
 c5768767d0874020c0ee355a24f2b82e6afdf994 assets/sakuratinker/models/item/south_star.json
-fc3e0d14fbfdb501251bde828caf77b9e0c1b587 assets/sakuratinker/models/item/spell_cloth_cast.json
-ed3d06e40de52b9161ee0ab4b2d5f332efb8e284 assets/sakuratinker/models/item/spell_cloth_red_sand_cast.json
-73cbbf1041efe36bf994cbb91fd89ff9888cf09c assets/sakuratinker/models/item/spell_cloth_sand_cast.json
 42d0212f9c471476c1004e4ef1003cd53cf4c0f1 assets/sakuratinker/models/item/steady_alloy.json
 7192218075a773dc72fe9d05255a7d284ca21129 assets/sakuratinker/models/item/swift_blade_cast.json
 9cc6d598f019a3727518b4bc887367b676a5025f assets/sakuratinker/models/item/swift_blade_red_sand_cast.json
