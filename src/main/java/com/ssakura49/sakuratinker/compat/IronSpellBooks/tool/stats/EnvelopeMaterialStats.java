@@ -5,6 +5,7 @@ import com.google.common.collect.Lists;
 import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSToolStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.helper.SchoolTypeLoadable;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.stat.SchoolToolStat;
 import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import io.redspace.ironsspellbooks.api.spells.SchoolType;
 import net.minecraft.network.chat.Component;
@@ -27,7 +28,7 @@ public record EnvelopeMaterialStats(SchoolType stat, float school_bonus) impleme
     public static final MaterialStatType<EnvelopeMaterialStats> TYPE = new MaterialStatType<>(ID,
             new EnvelopeMaterialStats(null,0),
             RecordLoadable.create(
-                    SchoolTypeLoadable.SCHOOL.defaultField("school_type", null, true, EnvelopeMaterialStats::stat),
+                    SchoolTypeLoadable.SCHOOL.defaultField("school_type", SchoolRegistry.getSchool(SchoolRegistry.FIRE_RESOURCE), true, EnvelopeMaterialStats::stat),
                     FloatLoadable.ANY.defaultField("school_bonus", 0F, EnvelopeMaterialStats::school_bonus),
                     EnvelopeMaterialStats::new
             ));
