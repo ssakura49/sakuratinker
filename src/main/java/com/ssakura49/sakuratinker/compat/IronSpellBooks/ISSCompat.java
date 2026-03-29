@@ -23,13 +23,7 @@ import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 
 public class ISSCompat {
-    public static void init() {
-        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onSpellDamage);
-        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onPreCast);
-        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onSpellCast);
-        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onInscribeSpell);
-        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::addSpellSlots);
-    }
+    
 
     public static ModifierDeferredRegister ISS_MODIFIERS = ModifierDeferredRegister.create(SakuraTinker.MODID);
     public static final ItemDeferredRegisterExtension TINKER_ISS_ITEMS = new ItemDeferredRegisterExtension(SakuraTinker.MODID);
