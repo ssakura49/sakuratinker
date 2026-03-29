@@ -11,7 +11,7 @@ public class STMaterialStats {
     public static final MaterialStatsId CHARM = new MaterialStatsId(SakuraTinker.getResource("charm"));
     public static final MaterialStatsId LASER_GUN = new MaterialStatsId(SakuraTinker.getResource("laser_gun"));
     public static final MaterialStatsId TINKER_ARROW = new MaterialStatsId(SakuraTinker.getResource("tinker_arrow"));
-    public static final MaterialStatsId TINKER_SPELL_BOOK = new MaterialStatsId(SakuraTinker.getResource("tinker_spell_book"));
+    //public static final MaterialStatsId TINKER_SPELL_BOOK = new MaterialStatsId(SakuraTinker.getResource("tinker_spell_book"));
     public static final MaterialStatsId POWER_BANK = new MaterialStatsId(SakuraTinker.getResource("power_bank"));
     public static final MaterialStatsId BATTLE_FLAG = new MaterialStatsId(SakuraTinker.getResource("battle_flag"));
 //    public static final MaterialStatsId FOX_MASK = new MaterialStatsId(SakuraTinker.location("fox_mask"));
@@ -19,7 +19,6 @@ public class STMaterialStats {
     public static final MaterialStatsId YO_YO = new MaterialStatsId(SakuraTinker.getResource("yo_yo"));
     public static final MaterialStatsId TINKER_WAND = new MaterialStatsId(SakuraTinker.getResource("tinker_wand"));
     public static final MaterialStatsId ALCHEMICAL_GLOVES = new MaterialStatsId(SakuraTinker.getResource("alchemical_gloves"));
-
     public static final MaterialStatsId RANGE = new MaterialStatsId(SakuraTinker.getResource("range"));
 
     public STMaterialStats(){}
@@ -31,7 +30,7 @@ public class STMaterialStats {
         registry.registerStatType(LaserMediumMaterialStats.TYPE, LASER_GUN);
         registry.registerStatType(EnergyUnitMaterialStats.TYPE, LASER_GUN);
         registry.registerStatType(FletchingMaterialStats.TYPE, TINKER_ARROW);
-        registry.registerStatType(ManuScriptMaterialStats.TYPE, TINKER_SPELL_BOOK);
+        //registry.registerStatType(ManuScriptMaterialStats.TYPE, TINKER_SPELL_BOOK);
 //        for(MaterialStatType<?> type : EmbeddedArmorMaterialStats.TYPES) {
 //            registry.registerStatType(type, MaterialRegistry.ARMOR);
 //        }
