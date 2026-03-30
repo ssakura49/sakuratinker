@@ -29,7 +29,13 @@ public class SpellBookHandler {
     public SpellBookHandler() {
     }
 
-
+public static void init() {
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onSpellDamage);
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onPreCast);
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onSpellCast);
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onInscribeSpell);
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::addSpellSlots);
+}
 
     public static void addSpellSlots(PlayerEvent.ItemCraftedEvent event) {
         ItemStack itemStack = event.getCrafting();
