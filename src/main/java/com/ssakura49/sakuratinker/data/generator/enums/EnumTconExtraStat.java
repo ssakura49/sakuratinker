@@ -81,6 +81,9 @@ public enum EnumTconExtraStat {
     obsidian(
             new ManuScriptMaterialStats(2f, -0.1f, -0.1f, 5.0f,500)
     ),
+    paper(
+            new ManuScriptMaterialStats(1,1,1,5,200)
+    )
     ;
     public final IMaterialStats[] stats;
 

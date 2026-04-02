@@ -12,8 +12,12 @@
     "sakuratinker:shell_red_sand_cast",
     "sakuratinker:flag_red_sand_cast",
     { "id": "sakuratinker:energy_unit_red_sand_cast", "required":false},
-    {"id" : "sakuratinker:book_cover_red_sand_cast", "required":false},
-    {"id" : "sakuratinker:spell_cloth_red_sand_cast", "required":false},
+
+    {"id" : "sakuratinker:manu_script_red_sand_cast", "required":false},
+    {"id" : "sakuratinker:envelope_red_sand_cast", "required":false},
+    {"id" : "sakuratinker:book_mark_red_sand_cast", "required":false},
+    {"id" : "sakuratinker:gutter_red_sand_cast", "required":false},
+
     "sakuratinker:axle_red_sand_cast",
     "sakuratinker:yoyo_ring_red_sand_cast",
     "sakuratinker:chord_red_sand_cast",

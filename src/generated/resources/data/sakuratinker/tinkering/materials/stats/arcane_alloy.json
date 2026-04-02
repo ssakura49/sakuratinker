@@ -1,5 +1,18 @@
 {
   "stats": {
+    "sakuratinker:envelope": {
+      "school_bonus": {
+        "irons_spellbooks:fire": 0.5,
+        "irons_spellbooks:ice": 0.5
+      }
+    },
+    "sakuratinker:manu_script": {
+      "cast_time_reduce": 0.6,
+      "mana_reduce": 50.0,
+      "mana_regen": 1.0,
+      "mana_value": 2000.0,
+      "spell_damage": 100.0
+    },
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {
       "armor": 2.0,

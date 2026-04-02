@@ -34,7 +34,10 @@ public class STMaterialStats {
 //        for(MaterialStatType<?> type : EmbeddedArmorMaterialStats.TYPES) {
 //            registry.registerStatType(type, MaterialRegistry.ARMOR);
 //        }
+
         registry.registerStatType(STStatlessMaterialStats.SHELL.getType(), POWER_BANK);
+        //registry.registerStatType(STStatlessMaterialStats.GUTTER.getType(), POWER_BANK);
+
         registry.registerStatType(BattleFlagMaterialStats.TYPE, BATTLE_FLAG);
 //        registry.registerStatType(STStatlessMaterialStats.FOX_MASK_MAIN.getType(), FOX_MASK);
 //        registry.registerStatType(STStatlessMaterialStats.FOX_MASK_CORE.getType(), FOX_MASK);

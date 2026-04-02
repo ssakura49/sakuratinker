@@ -86,6 +86,11 @@ public class STItemModelProvider extends ItemModelProvider {
         this.part(GoetyItems.soul_gatherer);
         this.part(STItems.alchemical_core);
         this.part(STItems.range_core);
+
+        this.part(ISSCompat.manu_script);
+        this.part(ISSCompat.envelope);
+        this.part(ISSCompat.book_mark);
+        this.part(ISSCompat.gutter);
         // Generate models for cast items
         this.cast(STItems.charmChainCast);
         this.cast(STItems.charmCoreCast);
@@ -95,6 +100,11 @@ public class STItemModelProvider extends ItemModelProvider {
         this.cast(STItems.bladeCast);
 //        this.cast(ISSCompat.bookCoverCast);
 //        this.cast(ISSCompat.spellClothCast);
+        this.cast(ISSCompat.envelopeCast);
+        this.cast(ISSCompat.bookMarkCast);
+        this.cast(ISSCompat.manuScriptCast);
+        this.cast(ISSCompat.gutterCast);
+
         this.cast(STItems.energyUnitCast);
         this.cast(STItems.laserMediumCast);
         this.cast(STItems.barrelCast);

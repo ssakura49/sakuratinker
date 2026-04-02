@@ -2,10 +2,17 @@ package com.ssakura49.sakuratinker.data.generator.enums;
 
 import com.ssakura49.sakuratinker.common.tools.stats.*;
 import com.ssakura49.sakuratinker.common.tools.tiers.DreadSteelTiers;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.BookMarkMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.EnvelopeMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ISSStatlessMaterialStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMaterialStats;
+import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import net.minecraft.world.item.Tiers;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
 import slimeknights.tconstruct.tools.stats.*;
+
+import java.util.List;
+import java.util.Map;
 
 import static slimeknights.tconstruct.tools.stats.PlatingMaterialStats.Builder;
 
@@ -29,7 +36,15 @@ public enum EnumMaterialStats {
             new YoYoRingMaterialStats(2),
             new ChordMaterialStats(6),
             new SoulGathererMaterialStats(6f, 0.2f),
-            new RangeMaterialStats(20)
+            new RangeMaterialStats(20),
+            new ManuScriptMaterialStats(100, 0.4f,0.15f,50,1000),
+            new BookMarkMaterialStats(0.6f,11),
+            new EnvelopeMaterialStats(Map.of(
+                    SchoolRegistry.FIRE.get(), 0.1f,
+                    SchoolRegistry.BLOOD.get(), 0.25f,
+                    SchoolRegistry.HOLY.get(), 0.3f
+            )),
+            ISSStatlessMaterialStats.GUTTER
     ),
     nihilite(
             armor(100, 4.0f, 5.0f, 3.0f, 2.0f).toughness(3.0f).knockbackResistance(0.15f),
@@ -309,8 +324,12 @@ public enum EnumMaterialStats {
     arcane_alloy(
             armor(30, 3.0f, 4.0f, 3.0f, 2.0f).toughness(2.0f).knockbackResistance(0.05f),
             false,
-            StatlessMaterialStats.MAILLE
-            //new ManuScriptMaterialStats(20.0f,0.3f,0.15f,0.3f)
+            StatlessMaterialStats.MAILLE,
+            new ManuScriptMaterialStats(50, 1, 0.6f, 100, 2000),
+            new EnvelopeMaterialStats(Map.of(
+                    SchoolRegistry.FIRE.get(), 0.5f,
+                    SchoolRegistry.ICE.get(), 0.5f
+            ))
     ),
     orichalcos(
             armor(80, 6.0f, 9.0f, 5.0f, 4.0f).toughness(5.0f).knockbackResistance(0.25f),

@@ -26,7 +26,7 @@ public record BookMarkMaterialStats(float percent_bonus, int spell_slot) impleme
             new MaterialStatType<>(ID,
                     new BookMarkMaterialStats(0F, 0),
                     RecordLoadable.create(
-                            FloatLoadable.PERCENT.defaultField(
+                            FloatLoadable.ANY.defaultField(
                                     "percent_bonus",
                                     0F,
                                     BookMarkMaterialStats::percent_bonus

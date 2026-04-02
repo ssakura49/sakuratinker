@@ -170,6 +170,9 @@ public class STConfig {
         //幻金，饰品，地之精华
         public static final ForgeConfigSpec.DoubleValue ESSENCE_EARTH_MODIFIER_BONUS;
 
+        //goety blacklist
+        public static final ForgeConfigSpec.ConfigValue<List<? extends String>> MODIFIER_BLACKLIST;
+
         //虚金的计算公式
         public enum GrowthMode {
             LINEAR,
@@ -222,7 +225,15 @@ public class STConfig {
             //================== 兼容配置 ==================//
             BUILDER.push("兼容配置");
             {
+                BUILDER.push("modifier");
+                MODIFIER_BLACKLIST = BUILDER
+                        .comment("Blacklist of modifiers (by ID) to skip in damage calculation")
+                        .comment("Modifier黑名单")
+                        .defineList("blacklist",
+                                List.of("cloudertinker:steelbone"),
+                                obj -> obj instanceof String);
 
+                BUILDER.pop();
             }
             BUILDER.pop();
             //================== Recipe 配置 ==================//

@@ -17,7 +17,7 @@ public enum ISSStatlessMaterialStats implements IMaterialStats {
     private static final List<Component> DESCRIPTION = List.of(Component.empty());
     private final MaterialStatType<ISSStatlessMaterialStats> type;
 
-    private ISSStatlessMaterialStats(String name) {
+    ISSStatlessMaterialStats(String name) {
         this.type = MaterialStatType.singleton(new MaterialStatsId(SakuraTinker.getResource(name)), this);
     }
 

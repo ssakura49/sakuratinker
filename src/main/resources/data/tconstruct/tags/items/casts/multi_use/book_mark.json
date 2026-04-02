@@ -1,0 +1,6 @@
+{
+  "replace": false,
+  "values": [
+    {"id" : "sakuratinker:book_mark_cast", "required":false}
+  ]
+}

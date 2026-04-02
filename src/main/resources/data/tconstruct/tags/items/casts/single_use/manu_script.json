@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    {"id" : "sakuratinker:manu_script_sand_cast", "required":false},
+    {"id" : "sakuratinker:manu_script_red_sand_cast", "required":false}
+  ]
+}

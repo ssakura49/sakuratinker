@@ -14,7 +14,7 @@ public enum EnumTconMaterial {
     iron(EnumTconExtraStat.iron, MaterialIds.iron),
     string(EnumTconExtraStat.string, MaterialIds.string),
     bamboo(EnumTconExtraStat.bamboo, MaterialIds.bamboo),
-    obsidian(EnumTconExtraStat.obsidian, MaterialIds.obsidian)
+    obsidian(EnumTconExtraStat.obsidian, MaterialIds.obsidian),
     ;
     public final EnumTconExtraStat stats;
     public final EnumMaterialModifier[] modifiers;

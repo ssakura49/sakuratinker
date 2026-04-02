@@ -2,16 +2,18 @@
   "loader": "tconstruct:tool",
   "parent": "forge:item/default-tool",
   "textures": {
-    "cover": "sakuratinker:item/tool/tinker_spell_book/book_cover",
-    "binding": "sakuratinker:item/tool/tinker_spell_book/binding",
-    "cloth": "sakuratinker:item/tool/tinker_spell_book/spell_cloth"
+    "envelope": "sakuratinker:item/tool/tinker_spell_book/envelope",
+    "book_mark": "sakuratinker:item/tool/tinker_spell_book/book_mark",
+    "manu_script": "sakuratinker:item/tool/tinker_spell_book/manu_script",
+    "gutter": "sakuratinker:item/tool/tinker_spell_book/gutter"
   },
   "modifier_roots": [
     "sakuratinker:item/tool/tinker_spell_book/modifiers/"
   ],
   "parts": [
-    { "name": "cover", "index": 0 },
-    { "name": "binding", "index": 2 },
-    { "name": "cloth", "index": 1 }
+    { "name": "envelope", "index": 0 },
+    { "name": "book_mark", "index": 2 },
+    { "name": "manu_script", "index": 1 },
+    { "name": "gutter", "index": 3 }
   ]
 }

@@ -11,8 +11,12 @@
     "#tconstruct:casts/single_use/blade",
     "#tconstruct:casts/single_use/arrow_head",
     "#tconstruct:casts/single_use/arrow_shaft",
-    "#tconstruct:casts/single_use/book_cover",
-    "#tconstruct:casts/single_use/spell_cloth",
+
+    "#tconstruct:casts/single_use/manu_script",
+    "#tconstruct:casts/single_use/envelope",
+    "#tconstruct:casts/single_use/book_mark",
+    "#tconstruct:casts/single_use/gutter",
+
     "#tconstruct:casts/single_use/great_blade",
     "#tconstruct:casts/single_use/shell",
     "#tconstruct:casts/single_use/flag",

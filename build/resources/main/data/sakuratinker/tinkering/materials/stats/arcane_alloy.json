@@ -1,19 +1,17 @@
 {
   "stats": {
-    "sakuratinker:book_mark": {
-      "percent_bonus": 10,
-      "spell_slot": 10
-    },
     "sakuratinker:envelope": {
-      "school_type": "irons_spellbooks:fire",
-      "school_bonus": 2
+      "school_bonus": {
+        "irons_spellbooks:fire": 0.5,
+        "irons_spellbooks:ice": 0.5
+      }
     },
     "sakuratinker:manu_script": {
-      "mana_reduce": 1,
-      "mana_regen": 1,
-      "cast_time_reduce": 1,
-      "spell_damage": 10,
-      "mana_value": 1000
+      "cast_time_reduce": 0.6,
+      "mana_reduce": 50.0,
+      "mana_regen": 1.0,
+      "mana_value": 2000.0,
+      "spell_damage": 100.0
     },
     "tconstruct:maille": {},
     "tconstruct:plating_boots": {

@@ -16,7 +16,7 @@
     }
   ],
   "ingredient": {
-    "item": "irons_spellbooks:mithril_scrap"
+    "item": "irons_spellbooks:arcane_salvage"
   },
   "result": {
     "amount": 90,

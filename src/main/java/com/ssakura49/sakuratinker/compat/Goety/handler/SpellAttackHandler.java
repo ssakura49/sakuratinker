@@ -1,10 +1,12 @@
 package com.ssakura49.sakuratinker.compat.Goety.handler;
 
 import com.Polarice3.Goety.utils.WandUtil;
+import com.fuyun.cloudertinker.register.CloudertinkerModifiers;
 import com.ssakura49.sakuratinker.STConfig;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
 import com.ssakura49.sakuratinker.library.tinkering.tools.item.ModifiableWandItem;
 import com.ssakura49.sakuratinker.register.STModifiers;
+import com.ssakura49.sakuratinker.utils.tinker.ModifierConfigHelper;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -53,6 +55,9 @@ public class SpellAttackHandler {
                              float modifiedDamage = (eventDamage + (a ? baseDamage : 0) + soulPower) * (1 + soulIncrease);
 
                              for (ModifierEntry entry : tool.getModifierList()) {
+                                 if (ModifierConfigHelper.isBlacklisted(entry)) {
+                                     continue;
+                                 }
                                  modifiedDamage = entry.getHook(ModifierHooks.MELEE_DAMAGE).getMeleeDamage(tool, entry, context, baseDamage, modifiedDamage);
                              }
                              event.setAmount(modifiedDamage);

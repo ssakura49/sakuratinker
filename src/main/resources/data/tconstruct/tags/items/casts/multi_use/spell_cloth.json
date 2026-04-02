@@ -1,6 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {"id" : "sakuratinker:spell_cloth_cast", "required":false}
-  ]
-}

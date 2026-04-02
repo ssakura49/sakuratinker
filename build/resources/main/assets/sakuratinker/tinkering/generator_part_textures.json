@@ -184,25 +184,39 @@
       "path": "sakuratinker:item/tool/tinker_arrow/fletching",
       "stat_type": "sakuratinker:fletching"
     },
+
     {
-      "path": "sakuratinker:item/tool/part/book_cover/book_cover",
-      "stat_type": "tconstruct:head"
+      "path": "sakuratinker:item/tool/part/envelope/envelope",
+      "stat_type": "sakuratinker:envelope"
     },
     {
-      "path": "sakuratinker:item/tool/part/spell_cloth/spell_cloth",
-      "stat_type": "sakuratinker:spell_cloth"
+      "path": "sakuratinker:item/tool/part/book_mark/book_mark",
+      "stat_type": "sakuratinker:book_mark"
     },
     {
-      "path": "sakuratinker:item/tool/tinker_spell_book/book_cover",
-      "stat_type": "tconstruct:head"
+      "path": "sakuratinker:item/tool/part/manu_script/manu_script",
+      "stat_type": "sakuratinker:manu_script"
     },
     {
-      "path": "sakuratinker:item/tool/tinker_spell_book/binding",
-      "stat_type": "tconstruct:binding"
+      "path": "sakuratinker:item/tool/part/gutter/gutter",
+      "stat_type": "sakuratinker:gutter"
+    },
+
+    {
+      "path": "sakuratinker:item/tool/tinker_spell_book/envelope",
+      "stat_type": "sakuratinker:envelope"
     },
     {
-      "path": "sakuratinker:item/tool/tinker_spell_book/spell_cloth",
-      "stat_type": "sakuratinker:spell_cloth"
+      "path": "sakuratinker:item/tool/tinker_spell_book/book_mark",
+      "stat_type": "sakuratinker:book_mark"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_spell_book/manu_script",
+      "stat_type": "sakuratinker:manu_script"
+    },
+    {
+      "path": "sakuratinker:item/tool/tinker_spell_book/gutter",
+      "stat_type": "sakuratinker:gutter"
     },
 
 

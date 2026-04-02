@@ -17,7 +17,7 @@ public class BotanyIsTechModifier extends BaseModifier {
     @Override
     public void modifierOnInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (tool.getDamage() > 0 && modifier.getLevel() > 0 && tool.getModifierLevel(STModifiers.EnergyDisplay.get()) > 0 && holder instanceof Player player) {
-            if (!world.isClientSide && ManaItemHandler.INSTANCE.requestManaExactForTool(new ItemStack(BotaniaItems.terraSword), player, 200, true)) {
+            if (!world.isClientSide && ManaItemHandler.INSTANCE.requestManaExactForTool(new ItemStack(BotaniaItems.terraSword), player, 200, false)) {
                 int energyToAdd = 500 * modifier.getLevel();
                 int currentEnergy = ToolEnergyCapability.getEnergy(tool);
                 int maxEnergy = ToolEnergyCapability.getMaxEnergy(tool);

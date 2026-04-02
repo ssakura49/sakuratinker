@@ -51,6 +51,7 @@ public class STMaterialId {
         public static final MaterialId arcane_alloy = createMaterial("arcane_alloy");
         public static final MaterialId wu_yu = createMaterial("wu_yu");
         public static final MaterialId two_form_mist_star = createMaterial("two_form_mist_star");
+        public static final MaterialId mithril = createMaterial("mithril");
     }
     public static class Botania{
         public static final MaterialId mana_steel = createMaterial("mana_steel");

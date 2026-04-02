@@ -166,7 +166,7 @@ public class LaserProjectileEntity extends Projectile implements IEntityAddition
                 shooter,
                 getStartPos(),
                 getEndPos(),
-                e -> e != shooter && e.isAlive(),
+                e -> e != shooter && e != this && e.isAlive(),
                 1.0
         );
         for (EntityHitResult hit : hits) {

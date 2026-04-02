@@ -55,10 +55,13 @@ import slimeknights.tconstruct.library.tools.item.IModifiableDisplay;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.StatsNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
+import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
+import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import javax.annotation.Nullable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -193,45 +196,78 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
         Multimap<Attribute, AttributeModifier> map = LinkedHashMultimap.create();
         ToolStack toolStack = ToolStack.from(stack);
         StatsNBT toolStats = toolStack.getStats();
+
         if (SafeClassUtil.ISSLoaded) {
-            map.put(AttributeRegistry.MAX_MANA.get(), new AttributeModifier(uuid, "max_mana_bonus", (double) (Float) toolStats.get(ISSToolStats.MANA_VALUE), AttributeModifier.Operation.ADDITION));
-            map.put(AttributeRegistry.MANA_REGEN.get(), new AttributeModifier(uuid, "mana_regen_bonus", (double) (Float) toolStats.get(ISSToolStats.MANA_REGEN), AttributeModifier.Operation.MULTIPLY_TOTAL));
-            map.put(AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier(uuid, "cast_time_reduce_bonus", (double) (Float) toolStats.get(ISSToolStats.CAST_TIME_REDUCE), AttributeModifier.Operation.MULTIPLY_TOTAL));
-            float schoolBonus = toolStats.get(ISSToolStats.SCHOOL_BONUS);
-            if(toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.FIRE.getId()) {
-                map.put(AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier(uuid, "fire_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-                map.put(AttributeRegistry.FIRE_MAGIC_RESIST.get(), new AttributeModifier(uuid, "fire_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-            } else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.ICE.getId()) {
-                map.put(AttributeRegistry.ICE_SPELL_POWER.get(), new AttributeModifier(uuid, "ice_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-                map.put(AttributeRegistry.ICE_MAGIC_RESIST.get(), new AttributeModifier(uuid, "ice_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.LIGHTNING.getId()) {
-                map.put(AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier(uuid, "lightning_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-                map.put(AttributeRegistry.LIGHTNING_MAGIC_RESIST.get(), new AttributeModifier(uuid, "lightning_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.HOLY.getId()) {
-                map.put(AttributeRegistry.HOLY_SPELL_POWER.get(), new AttributeModifier(uuid, "holy_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-                map.put(AttributeRegistry.HOLY_MAGIC_RESIST.get(), new AttributeModifier(uuid, "holy_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.ENDER.getId()) {
-                map.put(AttributeRegistry.ENDER_SPELL_POWER.get(), new AttributeModifier(uuid, "ender_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-                map.put(AttributeRegistry.ENDER_MAGIC_RESIST.get(), new AttributeModifier(uuid, "ender_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.BLOOD.getId()) {
-                map.put(AttributeRegistry.BLOOD_SPELL_POWER.get(), new AttributeModifier(uuid, "blood_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-                map.put(AttributeRegistry.BLOOD_MAGIC_RESIST.get(), new AttributeModifier(uuid, "blood_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.EVOCATION.getId()) {
-                map.put(AttributeRegistry.EVOCATION_SPELL_POWER.get(), new AttributeModifier(uuid, "envocation_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-                map.put(AttributeRegistry.EVOCATION_MAGIC_RESIST.get(), new AttributeModifier(uuid, "envocation_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.NATURE.getId()) {
-                map.put(AttributeRegistry.NATURE_SPELL_POWER.get(), new AttributeModifier(uuid, "nature_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-                map.put(AttributeRegistry.NATURE_MAGIC_RESIST.get(), new AttributeModifier(uuid, "nature_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-            }else if (toolStats.get(ISSToolStats.SCHOOL_STAT).getId() == SchoolRegistry.ELDRITCH.getId()) {
-                map.put(AttributeRegistry.ELDRITCH_SPELL_POWER.get(), new AttributeModifier(uuid, "eldritch_power_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
-                map.put(AttributeRegistry.ELDRITCH_MAGIC_RESIST.get(), new AttributeModifier(uuid, "eldritch_resist_school_bonus", (double) (Float) schoolBonus, AttributeModifier.Operation.ADDITION));
+            map.put(AttributeRegistry.MAX_MANA.get(),
+                    new AttributeModifier(uuid, "max_mana_bonus",
+                            (double) (Float) toolStats.get(ISSToolStats.MANA_VALUE),
+                            AttributeModifier.Operation.ADDITION));
+            map.put(AttributeRegistry.MANA_REGEN.get(),
+                    new AttributeModifier(uuid, "mana_regen_bonus",
+                            (double) (Float) toolStats.get(ISSToolStats.MANA_REGEN),
+                            AttributeModifier.Operation.MULTIPLY_TOTAL));
+            map.put(AttributeRegistry.CAST_TIME_REDUCTION.get(),
+                    new AttributeModifier(uuid, "cast_time_reduce_bonus",
+                            (double) (Float) toolStats.get(ISSToolStats.CAST_TIME_REDUCE),
+                            AttributeModifier.Operation.MULTIPLY_TOTAL));
+
+            for (var entry : ISSToolStats.SCHOOL_BONUS.entrySet()) {
+                SchoolType school = entry.getKey();
+                FloatToolStat stat = entry.getValue();
+                float bonus = toolStats.get(stat);
+                if (school == null || bonus == 0f) continue;
+
+                Attribute spellPower = getSpellPowerForSchool(school);
+                Attribute magicResist = getMagicResistForSchool(school);
+
+                if (spellPower != null) {
+                    map.put(spellPower,
+                            new AttributeModifier(uuid,
+                                    school.getId().getPath() + "_power_bonus",
+                                    bonus,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+                if (magicResist != null) {
+                    map.put(magicResist,
+                            new AttributeModifier(uuid,
+                                    school.getId().getPath() + "_resist_bonus",
+                                    bonus,
+                                    AttributeModifier.Operation.ADDITION));
+                }
             }
         }
         for (ModifierEntry entry : toolStack.getModifierList()) {
             CurioAttributeModifierHook hook = (CurioAttributeModifierHook) entry.getHook(TCLibHooks.CURIO_ATTRIBUTE);
             hook.modifyCurioAttribute(toolStack, entry, slotContext, uuid, map::put);
         }
+
         return map;
+    }
+
+    private Attribute getSpellPowerForSchool(SchoolType school) {
+        if (school == SchoolRegistry.FIRE.get()) return AttributeRegistry.FIRE_SPELL_POWER.get();
+        if (school == SchoolRegistry.ICE.get()) return AttributeRegistry.ICE_SPELL_POWER.get();
+        if (school == SchoolRegistry.LIGHTNING.get()) return AttributeRegistry.LIGHTNING_SPELL_POWER.get();
+        if (school == SchoolRegistry.HOLY.get()) return AttributeRegistry.HOLY_SPELL_POWER.get();
+        if (school == SchoolRegistry.ENDER.get()) return AttributeRegistry.ENDER_SPELL_POWER.get();
+        if (school == SchoolRegistry.BLOOD.get()) return AttributeRegistry.BLOOD_SPELL_POWER.get();
+        if (school == SchoolRegistry.EVOCATION.get()) return AttributeRegistry.EVOCATION_SPELL_POWER.get();
+        if (school == SchoolRegistry.NATURE.get()) return AttributeRegistry.NATURE_SPELL_POWER.get();
+        if (school == SchoolRegistry.ELDRITCH.get()) return AttributeRegistry.ELDRITCH_SPELL_POWER.get();
+        return null;
+    }
+
+    private Attribute getMagicResistForSchool(SchoolType school) {
+        if (school == SchoolRegistry.FIRE.get()) return AttributeRegistry.FIRE_MAGIC_RESIST.get();
+        if (school == SchoolRegistry.ICE.get()) return AttributeRegistry.ICE_MAGIC_RESIST.get();
+        if (school == SchoolRegistry.LIGHTNING.get()) return AttributeRegistry.LIGHTNING_MAGIC_RESIST.get();
+        if (school == SchoolRegistry.HOLY.get()) return AttributeRegistry.HOLY_MAGIC_RESIST.get();
+        if (school == SchoolRegistry.ENDER.get()) return AttributeRegistry.ENDER_MAGIC_RESIST.get();
+        if (school == SchoolRegistry.BLOOD.get()) return AttributeRegistry.BLOOD_MAGIC_RESIST.get();
+        if (school == SchoolRegistry.EVOCATION.get()) return AttributeRegistry.EVOCATION_MAGIC_RESIST.get();
+        if (school == SchoolRegistry.NATURE.get()) return AttributeRegistry.NATURE_MAGIC_RESIST.get();
+        if (school == SchoolRegistry.ELDRITCH.get()) return AttributeRegistry.ELDRITCH_MAGIC_RESIST.get();
+        return null;
     }
 
     @Override

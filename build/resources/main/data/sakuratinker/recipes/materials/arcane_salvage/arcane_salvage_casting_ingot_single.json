@@ -23,5 +23,5 @@
     "amount": 90,
     "fluid": "sakuratinker:molten_arcane_salvage"
   },
-  "result": "irons_spellbooks:mithril_scrap"
+  "result": "irons_spellbooks:arcane_salvage"
 }

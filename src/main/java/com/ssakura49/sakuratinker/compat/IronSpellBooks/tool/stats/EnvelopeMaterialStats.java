@@ -10,6 +10,7 @@ import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import io.redspace.ironsspellbooks.api.spells.SchoolType;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
+import slimeknights.mantle.data.loadable.mapping.MapLoadable;
 import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
@@ -19,19 +20,25 @@ import slimeknights.tconstruct.library.tools.stat.IToolStat;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 
 import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 
 //封皮
-public record EnvelopeMaterialStats(SchoolType stat, float school_bonus) implements IMaterialStats {
+public record EnvelopeMaterialStats(Map<SchoolType, Float> schoolBonuses) implements IMaterialStats {
     public static final MaterialStatsId ID = new MaterialStatsId(SakuraTinker.MODID, "envelope");
 
-    public static final MaterialStatType<EnvelopeMaterialStats> TYPE = new MaterialStatType<>(ID,
-            new EnvelopeMaterialStats(null,0),
-            RecordLoadable.create(
-                    SchoolTypeLoadable.SCHOOL.defaultField("school_type", SchoolRegistry.getSchool(SchoolRegistry.FIRE_RESOURCE), true, EnvelopeMaterialStats::stat),
-                    FloatLoadable.ANY.defaultField("school_bonus", 0F, EnvelopeMaterialStats::school_bonus),
-                    EnvelopeMaterialStats::new
-            ));
+    public static final MaterialStatType<EnvelopeMaterialStats> TYPE =
+            new MaterialStatType<>(ID,
+                    new EnvelopeMaterialStats(Map.of()),
+                    RecordLoadable.create(
+                            SchoolTypeLoadable.SCHOOL_BONUS_MAP.defaultField(
+                                    "school_bonus",
+                                    Map.of(),
+                                    EnvelopeMaterialStats::schoolBonuses
+                            ),
+                            EnvelopeMaterialStats::new
+                    )
+            );
 
     private static final String SCHOOL_BONUS =
             IMaterialStats.makeTooltipKey(SakuraTinker.getResource("school_bonus"));
@@ -48,9 +55,12 @@ public record EnvelopeMaterialStats(SchoolType stat, float school_bonus) impleme
     @Override
     public @NotNull List<Component> getLocalizedInfo() {
         List<Component> info = Lists.newArrayList();
-
-        info.add(Component.literal(stat.getId().toString()));
-        info.add(IToolStat.formatColoredBonus(SCHOOL_BONUS, this.school_bonus));
+        for (var entry : schoolBonuses.entrySet()) {
+            SchoolType school = entry.getKey();
+            float bonus = entry.getValue();
+            info.add(Component.literal(school.getId().toString()));
+            info.add(IToolStat.formatColoredBonus(SCHOOL_BONUS, bonus));
+        }
 
         return info;
     }
@@ -62,14 +72,19 @@ public record EnvelopeMaterialStats(SchoolType stat, float school_bonus) impleme
 
     @Override
     public void apply(@NotNull ModifierStatsBuilder builder, float scale) {
-        ISSToolStats.SCHOOL_BONUS.update(builder, school_bonus * scale);
+        for (var entry : schoolBonuses.entrySet()) {
+            SchoolType school = entry.getKey();
+            float bonus = entry.getValue();
+
+            ISSToolStats.SCHOOL_BONUS.get(school)
+                    .update(builder, bonus * scale);
+        }
+    }
+    public Map<SchoolType, Float> getSchoolBonuses() {
+        return this.schoolBonuses;
     }
 
-
-    public SchoolType getSchool() {
-        return this.stat;
-    }
-    public float school_bonus() {
-        return this.school_bonus;
+    public float getBonus(SchoolType school) {
+        return this.schoolBonuses.getOrDefault(school, 0f);
     }
 }
