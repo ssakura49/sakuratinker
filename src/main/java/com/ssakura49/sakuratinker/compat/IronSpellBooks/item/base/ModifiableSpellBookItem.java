@@ -3,6 +3,7 @@ package com.ssakura49.sakuratinker.compat.IronSpellBooks.item.base;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
+import com.ssakura49.sakuratinker.STConfig;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSToolStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.stat.SchoolToolStat;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STToolStats;
@@ -48,6 +49,7 @@ import slimeknights.tconstruct.library.modifiers.modules.build.RarityModule;
 import slimeknights.tconstruct.library.tools.IndestructibleItemEntity;
 import slimeknights.tconstruct.library.tools.capability.ToolCapabilityProvider;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
+import slimeknights.tconstruct.library.tools.definition.module.display.ToolNameHook;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.helper.ToolBuildHandler;
 import slimeknights.tconstruct.library.tools.helper.TooltipUtil;
@@ -218,7 +220,7 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
                 if (school == null || bonus == 0f) continue;
 
                 Attribute spellPower = getSpellPowerForSchool(school);
-                Attribute magicResist = getMagicResistForSchool(school);
+                //Attribute magicResist = getMagicResistForSchool(school);
 
                 if (spellPower != null) {
                     map.put(spellPower,
@@ -227,13 +229,13 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
                                     bonus,
                                     AttributeModifier.Operation.ADDITION));
                 }
-                if (magicResist != null) {
-                    map.put(magicResist,
-                            new AttributeModifier(uuid,
-                                    school.getId().getPath() + "_resist_bonus",
-                                    bonus,
-                                    AttributeModifier.Operation.ADDITION));
-                }
+//                if (magicResist != null) {
+//                    map.put(magicResist,
+//                            new AttributeModifier(uuid,
+//                                    school.getId().getPath() + "_resist_bonus",
+//                                    bonus,
+//                                    AttributeModifier.Operation.ADDITION));
+//                }
             }
         }
         for (ModifierEntry entry : toolStack.getModifierList()) {
@@ -243,19 +245,21 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
 
         return map;
     }
-
     private Attribute getSpellPowerForSchool(SchoolType school) {
-        if (school == SchoolRegistry.FIRE.get()) return AttributeRegistry.FIRE_SPELL_POWER.get();
-        if (school == SchoolRegistry.ICE.get()) return AttributeRegistry.ICE_SPELL_POWER.get();
-        if (school == SchoolRegistry.LIGHTNING.get()) return AttributeRegistry.LIGHTNING_SPELL_POWER.get();
-        if (school == SchoolRegistry.HOLY.get()) return AttributeRegistry.HOLY_SPELL_POWER.get();
-        if (school == SchoolRegistry.ENDER.get()) return AttributeRegistry.ENDER_SPELL_POWER.get();
-        if (school == SchoolRegistry.BLOOD.get()) return AttributeRegistry.BLOOD_SPELL_POWER.get();
-        if (school == SchoolRegistry.EVOCATION.get()) return AttributeRegistry.EVOCATION_SPELL_POWER.get();
-        if (school == SchoolRegistry.NATURE.get()) return AttributeRegistry.NATURE_SPELL_POWER.get();
-        if (school == SchoolRegistry.ELDRITCH.get()) return AttributeRegistry.ELDRITCH_SPELL_POWER.get();
-        return null;
+        return STConfig.SchoolAttributeManager.getPowerAttribute(school);
     }
+//    private Attribute getSpellPowerForSchool(SchoolType school) {
+//        if (school == SchoolRegistry.FIRE.get()) return AttributeRegistry.FIRE_SPELL_POWER.get();
+//        if (school == SchoolRegistry.ICE.get()) return AttributeRegistry.ICE_SPELL_POWER.get();
+//        if (school == SchoolRegistry.LIGHTNING.get()) return AttributeRegistry.LIGHTNING_SPELL_POWER.get();
+//        if (school == SchoolRegistry.HOLY.get()) return AttributeRegistry.HOLY_SPELL_POWER.get();
+//        if (school == SchoolRegistry.ENDER.get()) return AttributeRegistry.ENDER_SPELL_POWER.get();
+//        if (school == SchoolRegistry.BLOOD.get()) return AttributeRegistry.BLOOD_SPELL_POWER.get();
+//        if (school == SchoolRegistry.EVOCATION.get()) return AttributeRegistry.EVOCATION_SPELL_POWER.get();
+//        if (school == SchoolRegistry.NATURE.get()) return AttributeRegistry.NATURE_SPELL_POWER.get();
+//        if (school == SchoolRegistry.ELDRITCH.get()) return AttributeRegistry.ELDRITCH_SPELL_POWER.get();
+//        return null;
+//    }
 
     private Attribute getMagicResistForSchool(SchoolType school) {
         if (school == SchoolRegistry.FIRE.get()) return AttributeRegistry.FIRE_MAGIC_RESIST.get();
@@ -316,9 +320,10 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
     }
 
     @Override
-    public Component getName(ItemStack stack) {
-        return TooltipUtil.getDisplayName(stack, this.getToolDefinition());
+    public @NotNull Component getName(@NotNull ItemStack stack) {
+        return ToolNameHook.getName(this.getToolDefinition(), stack);
     }
+
 
     @Override
     public int getDefaultTooltipHideFlags(ItemStack stack) {
@@ -336,13 +341,26 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
 
     @Override
     public void initializeSpellContainer(ItemStack itemStack) {
-        if (itemStack != null) {
-            if (!ISpellContainer.isSpellContainer(itemStack)) {
-                ISpellContainer.set(itemStack, ISpellContainer.create(this.getMaxSpellSlots(), true, true));
-            }
-
+        if (itemStack == null) return;
+        if (!ISpellContainer.isSpellContainer(itemStack)) {
+            ToolStack tool = ToolStack.from(itemStack);
+            tool.rebuildStats();
+            int extraSlots = tool.getStats().getInt(ISSToolStats.SPELL_SLOT);
+            //int baseSlots = this.getMaxSpellSlots();
+            //int totalSlots = baseSlots + extraSlots;
+            ISpellContainer.set(itemStack, ISpellContainer.create(extraSlots, true, true));
         }
     }
+
+//    @Override
+//    public void initializeSpellContainer(ItemStack itemStack) {
+//        if (itemStack != null) {
+//            if (!ISpellContainer.isSpellContainer(itemStack)) {
+//                ISpellContainer.set(itemStack, ISpellContainer.create(this.getMaxSpellSlots(), true, true));
+//            }
+//
+//        }
+//    }
 
     @Override
     public @NotNull ToolDefinition getToolDefinition() {

@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-10T18:28:59.4370749	sakuratinker Fluid Bucket Model Provider
+// 1.20.1	2026-04-05T17:04:32.8167898	sakuratinker Fluid Bucket Model Provider
 6a8aef2806b28ea7bf5aa913eabdf293ee1cb833 assets/sakuratinker/models/item/molten_aerialite_bucket.json
 07f75fa4b449b5c557c81498f46d1e031edba749 assets/sakuratinker/models/item/molten_apocalyptium_bucket.json
 d83e6fd6b7ca3cbe543271027eba2f2472b9e02e assets/sakuratinker/models/item/molten_arcane_alloy_bucket.json
@@ -36,6 +36,7 @@ e18f0d82c52d204a126e20d31ee6c210cbbdabdc assets/sakuratinker/models/item/molten_
 debb60faffd00fa148a1c177a27c54211915da52 assets/sakuratinker/models/item/molten_infinity_catalyst_bucket.json
 0cc9ca895c8dd21b9e14bddd58a751c5d283f89e assets/sakuratinker/models/item/molten_lightning_dragon_blood_bucket.json
 f8c5716027ba7ee21659ee82fb167f6bb4429313 assets/sakuratinker/models/item/molten_mana_steel_bucket.json
+deb07f3332e3fa070d416948dccab4789ff452bd assets/sakuratinker/models/item/molten_mithril_bucket.json
 9599d42e869cd002dc84ef90e8833058dfab2d4f assets/sakuratinker/models/item/molten_mycelium_slimesteel_bucket.json
 63b0709dc7c6a979b314a12fef2f7278f125fdd9 assets/sakuratinker/models/item/molten_nefarious_bucket.json
 baf9b2d6f6d1fb836742e199524b782b1f8ad803 assets/sakuratinker/models/item/molten_neutron_bucket.json

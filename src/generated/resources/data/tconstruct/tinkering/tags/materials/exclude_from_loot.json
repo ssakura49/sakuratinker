@@ -215,6 +215,10 @@
     {
       "id": "sakuratinker:apocalyptium",
       "required": false
+    },
+    {
+      "id": "sakuratinker:mithril",
+      "required": false
     }
   ]
 }

@@ -325,11 +325,12 @@ public enum EnumMaterialStats {
             armor(30, 3.0f, 4.0f, 3.0f, 2.0f).toughness(2.0f).knockbackResistance(0.05f),
             false,
             StatlessMaterialStats.MAILLE,
-            new ManuScriptMaterialStats(50, 1, 0.6f, 100, 2000),
+            new ManuScriptMaterialStats(50, 0.7f, 0.6f, 100, 2000),
             new EnvelopeMaterialStats(Map.of(
                     SchoolRegistry.FIRE.get(), 0.5f,
                     SchoolRegistry.ICE.get(), 0.5f
-            ))
+            )),
+            new BookMarkMaterialStats(0.6f, 15)
     ),
     orichalcos(
             armor(80, 6.0f, 9.0f, 5.0f, 4.0f).toughness(5.0f).knockbackResistance(0.25f),
@@ -611,7 +612,16 @@ public enum EnumMaterialStats {
             new HandleMaterialStats(0.8f, 0.8f, 1.0f, 1.0f),
             new HeadMaterialStats(1860, 8f, Tiers.NETHERITE, 9.0f)
     ),
-
+    mithril(
+            armor(120, 3f, 4f, 5f,2f).toughness(2f).knockbackResistance(1f),
+            false,
+            new EnvelopeMaterialStats(Map.of(
+                    SchoolRegistry.HOLY.get(), 0.5f
+            )),
+            new ManuScriptMaterialStats(30, 0.2f, 0.1f, 60, 1600),
+            new BookMarkMaterialStats(0.3f, 10),
+            ISSStatlessMaterialStats.GUTTER
+    )
 
     ;
     private final IMaterialStats[] stats;

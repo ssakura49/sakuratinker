@@ -105,7 +105,7 @@ public enum EnumMaterial {
 
     two_form_mist_star(STMaterialId.IronSpellBook.two_form_mist_star,5,false,false,EnumMaterialStats.two_form_mist_star,modLoaded(ISS),two_form_mist_star_default,two_form_mist_star_armor),
 
-
+    mithril(STMaterialId.IronSpellBook.mithril,4,false,false,EnumMaterialStats.mithril,modLoaded(ISS),mithril_armor,mithril_curio),
 
     ;
     public final MaterialId id;

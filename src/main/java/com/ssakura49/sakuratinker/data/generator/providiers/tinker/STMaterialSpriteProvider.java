@@ -1,6 +1,9 @@
 package com.ssakura49.sakuratinker.data.generator.providiers.tinker;
 
 import com.ssakura49.sakuratinker.common.tools.stats.*;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.BookMarkMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.EnvelopeMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ISSStatlessMaterialStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMaterialStats;
 import com.ssakura49.sakuratinker.data.generator.STMaterialId;
 import org.jetbrains.annotations.NotNull;
@@ -306,5 +309,18 @@ public class STMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
                 .addARGB(178,0xFF89c0df)
                 .addARGB(216,0xFFfff392)
                 .addARGB(255,0xFFffffb5).build());
+        this.buildMaterial(STMaterialId.IronSpellBook.mithril).armor()
+                .statType(EnvelopeMaterialStats.ID)
+                .statType(BookMarkMaterialStats.ID)
+                .statType(ManuScriptMaterialStats.ID)
+                .statType(ISSStatlessMaterialStats.GUTTER.getIdentifier())
+                .fallbacks("metal").colorMapper(GreyToColorMapping.builder()
+                .addARGB(0,0xFF000000)
+                .addARGB(63,0xFFdcfffe)
+                .addARGB(102,0xFFbdf3f3)
+                .addARGB(140,0xFF99cdd9)
+                .addARGB(178,0xFF7dacaf)
+                .addARGB(216,0xFF496c84)
+                .addARGB(255,0xFF335160).build());
     }
 }

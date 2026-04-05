@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-28T17:42:49.9418817	Sakura Tinker Material Data Provider
+// 1.20.1	2026-04-05T17:04:32.8028273	Sakura Tinker Material Data Provider
 dce0ad70acbb9ef823b2ff794a58514ca1a000b9 data/sakuratinker/tinkering/materials/definition/aerialite.json
 e927c872d16f1258d561238dbf7011978214900d data/sakuratinker/tinkering/materials/definition/amphithere_feather.json
 1dc998bc2dd8e6e88cee955ab4c1060dab9c189c data/sakuratinker/tinkering/materials/definition/arcane_alloy.json
@@ -28,6 +28,7 @@ ea3b580fbf8d64e94758b359d12fd9e2e06290b0 data/sakuratinker/tinkering/materials/d
 ea3b580fbf8d64e94758b359d12fd9e2e06290b0 data/sakuratinker/tinkering/materials/definition/living_wood.json
 ca197e1f28f371e209f18996374f8013e36c263f data/sakuratinker/tinkering/materials/definition/mana_steel.json
 ea3b580fbf8d64e94758b359d12fd9e2e06290b0 data/sakuratinker/tinkering/materials/definition/mana_string.json
+1dc998bc2dd8e6e88cee955ab4c1060dab9c189c data/sakuratinker/tinkering/materials/definition/mithril.json
 10143addffad7dcf90dc079e4f53f36845cbd5cd data/sakuratinker/tinkering/materials/definition/mycelium_slimesteel.json
 f9ac39f3353fe796dc4f0817063cf3326c6803f5 data/sakuratinker/tinkering/materials/definition/nefarious.json
 9966a247f2825f234ac591768a8c7f5fff2cb361 data/sakuratinker/tinkering/materials/definition/neutron.json

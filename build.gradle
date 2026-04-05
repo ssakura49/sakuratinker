@@ -173,8 +173,8 @@ dependencies {
     // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:1.20.1-47.4.0"
-    implementation fg.deobf("slimeknights.mantle:Mantle:1.20.1-1.11.81")
-    implementation fg.deobf("slimeknights.tconstruct:TConstruct:1.20.1-3.10.2.98")
+    implementation fg.deobf("slimeknights.mantle:Mantle:1.20.1-1.11.106")
+    implementation fg.deobf("slimeknights.tconstruct:TConstruct:1.20.1-3.11.2.193")
 
     implementation fg.deobf("curse.maven:jei-238222:6075247")
     implementation fg.deobf("curse.maven:etst-lib-1206379:6604304")
@@ -252,7 +252,7 @@ dependencies {
         transitive = false
         jarJar.ranged(it, "[0.3.7,)")
     }
-    implementation fg.deobf(jarJar("com.ssakura49.tinkercuriolib:tinkercuriolib:1.0")) {
+    implementation fg.deobf(jarJar("com.ssakura49.tinkercuriolib:tinkercuriolib:1.0.2")) {
         transitive = false
         jarJar.ranged(it, "[1.0,)")
     }

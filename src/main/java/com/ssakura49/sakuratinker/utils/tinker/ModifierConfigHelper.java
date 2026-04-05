@@ -5,19 +5,21 @@ import net.minecraft.resources.ResourceLocation;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public class ModifierConfigHelper {
-    private static Set<ResourceLocation> cachedBlacklist = new HashSet<>();
-
-    public static void reload() {
-        cachedBlacklist = STConfig.Common.MODIFIER_BLACKLIST.get().stream()
-                .map(ResourceLocation::new)
-                .collect(Collectors.toSet());
-    }
-
     public static boolean isBlacklisted(ModifierEntry entry) {
-        return cachedBlacklist.contains(entry.getId());
+        List<? extends String> list = STConfig.Common.MODIFIER_BLACKLIST.get();
+
+        ResourceLocation id = entry.getId();
+
+        for (String s : list) {
+            if (id.equals(ResourceLocation.parse(s))) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -1,0 +1,45 @@
+{
+  "stats": {
+    "sakuratinker:book_mark": {
+      "percent_bonus": 0.3,
+      "spell_slot": 10
+    },
+    "sakuratinker:envelope": {
+      "school_bonus": {
+        "irons_spellbooks:holy": 0.5
+      }
+    },
+    "sakuratinker:gutter": {},
+    "sakuratinker:manu_script": {
+      "cast_time_reduce": 0.1,
+      "mana_reduce": 30.0,
+      "mana_regen": 0.2,
+      "mana_value": 1600.0,
+      "spell_damage": 60.0
+    },
+    "tconstruct:plating_boots": {
+      "armor": 2.0,
+      "durability": 1560,
+      "knockback_resistance": 1.0,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_chestplate": {
+      "armor": 4.0,
+      "durability": 1920,
+      "knockback_resistance": 1.0,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_helmet": {
+      "armor": 3.0,
+      "durability": 1320,
+      "knockback_resistance": 1.0,
+      "toughness": 2.0
+    },
+    "tconstruct:plating_leggings": {
+      "armor": 5.0,
+      "durability": 1800,
+      "knockback_resistance": 1.0,
+      "toughness": 2.0
+    }
+  }
+}

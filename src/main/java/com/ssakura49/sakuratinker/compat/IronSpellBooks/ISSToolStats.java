@@ -4,6 +4,7 @@ import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.stat.SchoolToolStat;
 import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import io.redspace.ironsspellbooks.api.spells.SchoolType;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
 import slimeknights.tconstruct.library.tools.stat.ToolStatId;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
@@ -39,6 +40,20 @@ public class ISSToolStats {
 
         SCHOOL_BONUS.put(school, stat);
     }
+
+    public static Map<SchoolType, Float> getSchoolBonuses(IToolStackView tool) {
+        Map<SchoolType, Float> map = new HashMap<>();
+
+        for (var entry : SCHOOL_BONUS.entrySet()) {
+            float value = tool.getStats().get(entry.getValue());
+            if (value != 0) {
+                map.put(entry.getKey(), value);
+            }
+        }
+
+        return map;
+    }
+
     public static final FloatToolStat SPELL_SLOT = ToolStats.register(new FloatToolStat(name("spell_slot"), -10887823, 1, 1, 15));
     //ok
     public static final FloatToolStat PERCENT_BONUS = ToolStats.register(new FloatToolStat(name("percent_bonus"), -2661276, 0.0F, 0.0F, Float.MAX_VALUE));

@@ -128,6 +128,7 @@ public class STFluids {
     public static final FluidObject<ForgeFlowingFluid> molten_apocalyptium = registerHotFluid(FLUIDS, "molten_apocalyptium", 4000, 8, 2, 0.5f, false);
     public static final FluidObject<ForgeFlowingFluid> molten_two_form_mist_star = registerHotFluid(FLUIDS, "molten_two_form_mist_star", 3000, 8, 2, 0.5f, false);
     public static final FluidObject<ForgeFlowingFluid> molten_wu_yu = registerHotFluid(FLUIDS, "molten_wu_yu", 2000, 8, 2, 0.5f, false);
+    public static final FluidObject<ForgeFlowingFluid> molten_mithril = registerHotFluid(FLUIDS, "molten_mithril", 2000, 8, 2, 0.5f, false);
 
 
     private static FluidType.Properties hot(String name,int Temp,boolean gas) {

@@ -1,0 +1,13 @@
+{
+  "power_map": {
+    "irons_spellbooks:fire": "irons_spellbooks:fire_spell_power",
+    "irons_spellbooks:ice": "irons_spellbooks:ice_spell_power",
+    "irons_spellbooks:lightning": "irons_spellbooks:lightning_spell_power",
+    "irons_spellbooks:holy": "irons_spellbooks:holy_spell_power",
+    "irons_spellbooks:ender": "irons_spellbooks:ender_spell_power",
+    "irons_spellbooks:blood": "irons_spellbooks:blood_spell_power",
+    "irons_spellbooks:evocation": "irons_spellbooks:evocation_spell_power",
+    "irons_spellbooks:nature": "irons_spellbooks:nature_spell_power",
+    "irons_spellbooks:eldritch": "irons_spellbooks:eldritch_spell_power"
+  }
+}

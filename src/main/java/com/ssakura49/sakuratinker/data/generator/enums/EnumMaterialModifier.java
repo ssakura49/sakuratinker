@@ -2,6 +2,7 @@ package com.ssakura49.sakuratinker.data.generator.enums;
 
 import com.c2h6s.etstlib.register.EtSTLibModifier;
 import com.ssakura49.sakuratinker.common.tools.stats.FletchingMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.ISSMaterialStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMaterialStats;
 import com.ssakura49.sakuratinker.compat.Botania.init.BotaniaModifier;
 import com.ssakura49.sakuratinker.compat.BuddyCards.BuddyCardCompat;
@@ -168,6 +169,9 @@ public enum EnumMaterialModifier {
 
     two_form_mist_star_default(null,entry(STModifiers.BodyImpact.getId()),entry(STModifiers.Mamba.getId()),entry(ISSCompat.Magician.getId()),entry(STModifiers.EnchantedBlade.getId())),
     two_form_mist_star_armor(MaterialRegistry.ARMOR, entry(STModifiers.Mamba.getId()),entry(STModifiers.HardenedSkin.getId()), entry(STModifiers.MagicShield.getId())),
+
+    mithril_armor(MaterialRegistry.ARMOR,entry(ISSCompat.SPELL_CONCENTRATION.getId())),
+    mithril_curio(ISSMaterialStats.TINKER_SPELL_BOOK,entry(ISSCompat.SPELL_CONCENTRATION.getId()))
 
     ;
     public final ModifierEntry[] modifiers;

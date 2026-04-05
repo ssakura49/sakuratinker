@@ -5,6 +5,10 @@
       "time": 200.0,
       "weight": 3.5
     },
+    "sakuratinker:book_mark": {
+      "percent_bonus": 0.6,
+      "spell_slot": 11
+    },
     "sakuratinker:charm_chain": {
       "armor": 0.2,
       "arrow_damage": 0.2,
@@ -21,16 +25,31 @@
       "durability": 0.7,
       "max_energy": 70000
     },
+    "sakuratinker:envelope": {
+      "school_bonus": {
+        "irons_spellbooks:blood": 0.25,
+        "irons_spellbooks:fire": 0.1,
+        "irons_spellbooks:holy": 0.3
+      }
+    },
     "sakuratinker:flag": {
       "attack_buff_time": 600,
       "charge_time": 40,
       "defence_buff_time": 600,
       "range": 15
     },
+    "sakuratinker:gutter": {},
     "sakuratinker:laser_medium": {
       "cooldown": 0.4,
       "penetration": 14,
       "range": 35.0
+    },
+    "sakuratinker:manu_script": {
+      "cast_time_reduce": 0.15,
+      "mana_reduce": 100.0,
+      "mana_regen": 0.4,
+      "mana_value": 1000.0,
+      "spell_damage": 50.0
     },
     "sakuratinker:phantom_core": {
       "phantom_amount": 2.0,

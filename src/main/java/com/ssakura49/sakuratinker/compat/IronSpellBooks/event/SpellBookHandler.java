@@ -22,6 +22,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.Event;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
@@ -35,23 +36,28 @@ public static void init() {
         MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onPreCast);
         MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onSpellCast);
         MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onInscribeSpell);
-        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::addSpellSlots);
+        //MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::addSpellSlots);
 }
 
-    public static void addSpellSlots(PlayerEvent.ItemCraftedEvent event) {
-        ItemStack itemStack = event.getCrafting();
-        if (!itemStack.isEmpty() && itemStack.getItem() instanceof ModifiableSpellBookItem) {
-            ToolStack toolStack = ToolStack.from(itemStack);
-            int spellSlots = toolStack.getStats().getInt(ISSToolStats.SPELL_SLOT);
-            ISpellContainer container = ISpellContainer.get(itemStack);
-            if (container.getMaxSpellCount() < spellSlots) {
-                var result = itemStack.copy();
-                var newBook = ISpellContainer.get(result).mutableCopy();
-                newBook.setMaxSpellCount(spellSlots);
-                ISpellContainer.set(result, newBook.toImmutable());
-            }
-        }
-    }
+//    public static void addSpellSlots(PlayerEvent.ItemCraftedEvent event) {
+//        ItemStack itemStack = event.getCrafting();
+//        if (itemStack.isEmpty() || !(itemStack.getItem() instanceof ModifiableSpellBookItem)) {
+//            return;
+//        }
+//        ToolStack toolStack = ToolStack.from(itemStack);
+//        toolStack.rebuildStats();
+//        int spellSlots = toolStack.getStats().getInt(ISSToolStats.SPELL_SLOT);
+//        ISpellContainer container = ISpellContainer.get(itemStack);
+//        if (container == null) {
+//            container = ISpellContainer.create(1, true, false);
+//        }
+//        int base = container.getMaxSpellCount();
+//        int newSlots = base + spellSlots;
+//        var newContainer = container.mutableCopy();
+//        newContainer.setMaxSpellCount(newSlots);
+//        ISpellContainer.set(itemStack, newContainer.toImmutable());
+//
+//    }
 
     public static void onSpellDamage(SpellDamageEvent event) {
         if (SafeClassUtil.ISSLoaded) {

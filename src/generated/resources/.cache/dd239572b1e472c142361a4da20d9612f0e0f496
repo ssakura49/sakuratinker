@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-28T17:42:49.9403704	Sakura Tinker Material Modifier Provider
+// 1.20.1	2026-04-05T17:04:32.774902	Sakura Tinker Material Modifier Provider
 6c46b843124cc031fb626e113e61f591a3f6398c data/sakuratinker/tinkering/materials/traits/aerialite.json
 0ae7444b16e2c44c97e8557001669a6b24db98b9 data/sakuratinker/tinkering/materials/traits/amphithere_feather.json
 391c5f2ff776dd722370dcab4c3a0f394a502288 data/sakuratinker/tinkering/materials/traits/arcane_alloy.json
@@ -28,6 +28,7 @@ f96207476c32bc699ffa795e02ffe28fc8dd64a4 data/sakuratinker/tinkering/materials/t
 647a6d16626e514ffef9d29e943df032bebe7fc0 data/sakuratinker/tinkering/materials/traits/living_wood.json
 e2fad3d44047df325fe104751bce219da2a35f06 data/sakuratinker/tinkering/materials/traits/mana_steel.json
 efd4ea530bdcf289d5c39d04e931e2b73a0e200f data/sakuratinker/tinkering/materials/traits/mana_string.json
+fc92d82791d9fa84830b65e7553c1a27d7650ac8 data/sakuratinker/tinkering/materials/traits/mithril.json
 0f0d87ca16c6d54929628678144ca87d016c032d data/sakuratinker/tinkering/materials/traits/mycelium_slimesteel.json
 c8d760589e2b27d4d12f37bbb642f5d5b727df9b data/sakuratinker/tinkering/materials/traits/nefarious.json
 1784a8d19fced88e99321aeb20255309c7518425 data/sakuratinker/tinkering/materials/traits/neutron.json

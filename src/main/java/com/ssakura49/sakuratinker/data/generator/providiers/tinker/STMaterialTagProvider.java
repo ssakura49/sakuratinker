@@ -68,7 +68,8 @@ public class STMaterialTagProvider extends AbstractMaterialTagProvider {
                 STMaterialId.BuddyCard.perfect_buddysteel,
                 STMaterialId.BuddyCard.true_perfect_buddysteel,
                 STMaterialId.EnigmaticLegacy.nefarious,
-                STMaterialId.GoetyRevelation.apocalyptium
+                STMaterialId.GoetyRevelation.apocalyptium,
+                STMaterialId.IronSpellBook.mithril
         ).replace(false);
         tag(TinkerTags.Materials.NETHER).replace(false).addOptional(
 

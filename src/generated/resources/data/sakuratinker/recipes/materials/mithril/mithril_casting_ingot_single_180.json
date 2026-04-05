@@ -1,0 +1,27 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "tconstruct:config",
+          "prop": "force_integration_materials"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "irons_spellbooks"
+        }
+      ]
+    }
+  ],
+  "cooling_time": 113,
+  "fluid": {
+    "amount": 180,
+    "fluid": "sakuratinker:molten_mithril"
+  },
+  "result": "irons_spellbooks:mithril_ingot"
+}

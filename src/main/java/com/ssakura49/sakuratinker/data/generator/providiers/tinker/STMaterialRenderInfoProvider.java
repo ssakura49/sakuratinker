@@ -49,6 +49,7 @@ public class STMaterialRenderInfoProvider extends AbstractMaterialRenderInfoProv
         buildRenderInfo(STMaterialId.GoetyRevelation.apocalyptium).color(0xFFffbe2e).fallbacks("metal");
         buildRenderInfo(STMaterialId.IronSpellBook.wu_yu).color(0xFFFFA500).fallbacks("metal");
         buildRenderInfo(STMaterialId.IronSpellBook.two_form_mist_star).color(0xFF7bb7d6).fallbacks("metal");
+        buildRenderInfo(STMaterialId.IronSpellBook.mithril).color(0xFF99cdd9).fallbacks("metal");
     }
 
     @Override

@@ -4,9 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mojang.datafixers.util.Pair;
 import com.ssakura49.sakuratinker.utils.RegisterAccessUtil;
+import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
+import io.redspace.ironsspellbooks.api.spells.SchoolType;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.ForgeConfigSpec;
@@ -642,20 +645,6 @@ public class STConfig {
         return lootTableEnergyCostMap.getOrDefault(lootTable, 0);
     }
 
-
-    public static List<ResourceLocation> getLootTablesFromJson(ResourceLocation dimId) {
-        for (TreasureModifierConfig.DimensionLootTableConfig dimLoot : Common.TREASURE_CONFIG.dimension_loot_tables) {
-            if (dimLoot.dimension.equals(dimId.toString())) {
-                // 加载能量消耗映射
-                for (TreasureModifierConfig.LootTableEntry entry : dimLoot.tables) {
-                    lootTableEnergyCostMap.put(ResourceLocation.parse(entry.id), entry.cost);
-                }
-                // 返回该维度所有表的 ResourceLocation 列表
-                return dimLoot.tables.stream().map(e -> ResourceLocation.parse(e.id)).toList();
-            }
-        }
-        return List.of();
-    }
     public static void rebuildTreasureConfigCache(TreasureModifierConfig config) {
         Common.energyValueCache.clear();
         for (var e : config.entity_energy_values) {
@@ -707,5 +696,75 @@ public class STConfig {
         }
     }
 
+    public static class SchoolAttributeConfig {
+        public Map<String, String> power_map = new HashMap<>();
+    }
 
+    private static final Path SCHOOL_ATTR_PATH = FMLPaths.CONFIGDIR.get().resolve("sakuratinker/school_attributes.json");
+    private static final String DEFAULT_SCHOOL_ATTR_PATH = "/data/sakuratinker/config/school_attributes.json";
+    public static void loadOrCreateSchoolAttrConfig() {
+        Path file = SCHOOL_ATTR_PATH;
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        try {
+            if (!Files.exists(file)) {
+                Files.createDirectories(file.getParent());
+                try (InputStream in = SakuraTinker.class.getResourceAsStream(DEFAULT_SCHOOL_ATTR_PATH)) {
+                    if (in == null) {
+                        System.err.println("[SakuraTinker] 未找到默认 school_attributes.json");
+                        return;
+                    }
+                    Files.copy(in, file);
+                    System.out.println("[SakuraTinker] 已生成 school_attributes.json");
+                }
+            }
+            String json = Files.readString(file);
+            SchoolAttributeConfig config = gson.fromJson(json, SchoolAttributeConfig.class);
+
+            SchoolAttributeManager.clear();
+            if (config != null && config.power_map != null) {
+                config.power_map.forEach((k, v) -> {
+                    try {
+                        ResourceLocation schoolId = ResourceLocation.parse(k);
+                        ResourceLocation attrId = ResourceLocation.parse(v);
+                        SchoolAttributeManager.put(schoolId, attrId);
+                    } catch (Exception e) {
+                        System.err.println("[SakuraTinker] 无效配置: " + k + " -> " + v);
+                    }
+                });
+            }
+            System.out.println("[SakuraTinker] 成功加载 school_attributes.json");
+        } catch (IOException e) {
+            System.err.println("[SakuraTinker] 加载 school_attributes.json 出错");
+            e.printStackTrace();
+        }
+    }
+
+    public static class SchoolAttributeManager {
+        private static final Map<ResourceLocation, ResourceLocation> POWER_MAP = new HashMap<>();
+        public static void clear() {
+            POWER_MAP.clear();
+        }
+        public static void put(ResourceLocation schoolId, ResourceLocation attrId) {
+            POWER_MAP.put(schoolId, attrId);
+        }
+        public static Attribute getPowerAttribute(SchoolType school) {
+            if (school == null) return null;
+            ResourceLocation schoolId = school.getId();
+
+            ResourceLocation attrId = POWER_MAP.get(schoolId);
+            if (attrId != null) {
+                Attribute attr = ForgeRegistries.ATTRIBUTES.getValue(attrId);
+                if (attr != null) return attr;
+            }
+            ResourceLocation autoId = ResourceLocation.fromNamespaceAndPath(
+                    schoolId.getNamespace(),
+                    schoolId.getPath() + "_spell_power"
+            );
+
+            Attribute autoAttr = ForgeRegistries.ATTRIBUTES.getValue(autoId);
+            if (autoAttr != null) return autoAttr;
+            return AttributeRegistry.SPELL_POWER.get();
+        }
+    }
 }

@@ -3,14 +3,11 @@ package com.ssakura49.sakuratinker.compat.IronSpellBooks;
 import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.event.SpellBookHandler;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.item.TinkerSpellBook;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.*;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.BookMarkMaterialStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.EnvelopeMaterialStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ISSStatlessMaterialStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMaterialStats;
-import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.ArcaneConstructModifier;
-import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.ElementalMasteryModifier;
-import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.FountainMagicModifier;
-import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.MagicianModifier;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.attribute.*;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.item.base.ModifiableSpellBookItem;
 import net.minecraft.world.item.Item;
@@ -61,6 +58,7 @@ public class ISSCompat {
     public static StaticModifier<MANA_ATTR> MANA_ATTR;
     public static StaticModifier<SPELL_COOLDOWN_ATTR> SPELL_COOLDOWN_ATTR;
     public static StaticModifier<SPELL_PROTECTION_ATTR> SPELL_PROTECTION_ATTR;
+    public static StaticModifier<SpellConcentration> SPELL_CONCENTRATION;
     static {
         Magician = ISS_MODIFIERS.register("magician", MagicianModifier::new);
         FountainMagic = ISS_MODIFIERS.register("fountain_magic", FountainMagicModifier::new);
@@ -78,5 +76,6 @@ public class ISSCompat {
         MANA_ATTR = ISS_MODIFIERS.register("mana_attr", MANA_ATTR::new);
         SPELL_COOLDOWN_ATTR = ISS_MODIFIERS.register("spell_cooldown_attr", SPELL_COOLDOWN_ATTR::new);
         SPELL_PROTECTION_ATTR = ISS_MODIFIERS.register("spell_protection_attr", SPELL_PROTECTION_ATTR::new);
+        SPELL_CONCENTRATION = ISS_MODIFIERS.register("spell_concentration", SpellConcentration::new);
     }
 }

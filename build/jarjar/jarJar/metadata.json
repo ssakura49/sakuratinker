@@ -55,9 +55,9 @@
       },
       "version": {
         "range": "[1.0,)",
-        "artifactVersion": "1.0"
+        "artifactVersion": "1.0.2"
       },
-      "path": "META-INF/jarjar/tinkercuriolib-1.0.jar",
+      "path": "META-INF/jarjar/tinkercuriolib-1.0.2.jar",
       "isObfuscated": false
     },
     {

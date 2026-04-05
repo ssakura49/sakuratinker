@@ -1,5 +1,7 @@
 package com.ssakura49.sakuratinker.utils.tinker;
 
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSToolStats;
+import io.redspace.ironsspellbooks.api.spells.SchoolType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -12,6 +14,8 @@ import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
 import slimeknights.tconstruct.library.utils.Util;
 
 import java.text.DecimalFormat;
+import java.util.Map;
+import java.util.function.Function;
 
 public class TooltipUtil {
     public static final DecimalFormat VALUE_FORMAT = new DecimalFormat("#.##");
@@ -66,4 +70,6 @@ public class TooltipUtil {
         return Component.translatable(TOOLTIP_PREFIX + comp)
                 .append(Component.literal(String.format("%d, %d, %d", x, y, z)));
     }
+
+
 }

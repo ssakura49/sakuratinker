@@ -1,7 +1,6 @@
 package com.ssakura49.sakuratinker;
 
 import com.ssakura49.sakuratinker.common.tinkering.modules.EnvironmentalAdaptationModule;
-import com.ssakura49.sakuratinker.common.tinkering.modules.MultiCurioAttributeModule;
 import com.ssakura49.sakuratinker.common.tools.capability.ToolBulletSlotCapability;
 import com.ssakura49.sakuratinker.common.tools.tiers.DreadSteelTiers;
 import com.ssakura49.sakuratinker.common.tools.tiers.InfinityTiers;
@@ -32,9 +31,6 @@ import com.ssakura49.sakuratinker.register.*;
 import com.ssakura49.sakuratinker.utils.SafeClassUtil;
 import com.ssakura49.sakuratinker.utils.time.TimeContext;
 import com.ssakura49.sakuratinker.utils.time.TimeStopUtils;
-import com.ssakura49.sakuratinker.utils.tinker.ModifierConfigHelper;
-import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
-import io.redspace.ironsspellbooks.api.spells.SchoolType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -50,7 +46,6 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forgespi.language.ModFileScanData;
@@ -216,20 +211,18 @@ public class SakuraTinker {
             event.enqueueWork(ISSMaterialStats::init);
             event.enqueueWork(ISSToolStats::init);
         }
-        event.enqueueWork(STConfig::loadOrCreateTreasureConfig);
+        event.enqueueWork(()->{
+            STConfig.loadOrCreateSchoolAttrConfig();
+            STConfig.loadOrCreateTreasureConfig();
+        });
         ToolCapabilityProvider.register(((stack, tool) -> new ToolBulletSlotCapability.Provider(tool)));
     }
     @SubscribeEvent
     public void registerSerializers(RegisterEvent event) {
         if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
             ModifierModule.LOADER.register(getResource("environmental_adaptation"), EnvironmentalAdaptationModule.LOADER);
-            ModifierModule.LOADER.register(getResource("multi_curio_attribute"), MultiCurioAttributeModule.LOADER);
+            //ModifierModule.LOADER.register(getResource("multi_curio_attribute"), MultiCurioAttributeModule.LOADER);
         }
-    }
-
-    @SubscribeEvent
-    public static void onConfigLoad(ModConfigEvent event) {
-        ModifierConfigHelper.reload();
     }
 
     public static String makeDescriptionId(String type, String name) {

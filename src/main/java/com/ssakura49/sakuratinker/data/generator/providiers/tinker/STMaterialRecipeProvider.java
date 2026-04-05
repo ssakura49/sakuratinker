@@ -186,10 +186,13 @@ public class STMaterialRecipeProvider extends RecipeProvider implements ISmelter
         meltMaterial(STFluids.molten_arcane_alloy.get(),90,STMaterialId.IronSpellBook.arcane_alloy,1500, conditional,folder);
         AlloyRecipeBuilder.alloy(FluidOutput.fromStack( new FluidStack(STFluids.molten_arcane_alloy.get(),90)),1500)
                 .addInput(FluidIngredient.of(TinkerFluids.moltenGold.get(),360))
-                .addInput(FluidIngredient.of(STFluids.molten_arcane_salvage.get(),360))
+                .addInput(FluidIngredient.of(STFluids.molten_mithril.get(),360))
                 .save(consumer,ResourceLocation.parse(folder+"_alloy"));
-        folder = namedFolder("arcane_salvage");
-        melt1Ingot(STFluids.molten_arcane_salvage.get(), ItemRegistry.ARCANE_SALVAGE.get(),1500, conditional,folder);
+//        folder = namedFolder("arcane_salvage");
+//        melt1Ingot(STFluids.molten_arcane_salvage.get(), ItemRegistry.ARCANE_SALVAGE.get(),1500, conditional,folder);
+        folder = namedFolder("mithril");
+        melt180ml(STFluids.molten_mithril.get(), ItemRegistry.MITHRIL_INGOT.get(),1500, conditional,folder);
+        melt45ml(STFluids.molten_mithril.get(), ItemRegistry.MITHRIL_SCRAP.get(),1500, conditional,folder);
 
         /*
         悚怖钢
@@ -411,6 +414,16 @@ public class STMaterialRecipeProvider extends RecipeProvider implements ISmelter
         MeltingRecipeBuilder.melting(Ingredient.of(ingredient),new FluidStack(fluid,90),temperature, IMeltingRecipe.calcTime(temperature, IMeltingRecipe.calcTimeFactor(90))).save(consumer,ResourceLocation.parse(location+"_melting_ingot"));
         ItemCastingRecipeBuilder.tableRecipe(ingredient).setCoolingTime(temperature,90).setFluid(FluidIngredient.of(new FluidStack(fluid,90))).setCast(INGOT_MULTICAST,false).save(consumer,ResourceLocation.parse(location+"_casting_ingot_single"));
         ItemCastingRecipeBuilder.tableRecipe(ingredient).setCoolingTime(temperature,90).setFluid(FluidIngredient.of(new FluidStack(fluid,90))).setCast(INGOT_SINGLECAST,true).save(consumer,ResourceLocation.parse(location+"_casting_ingot_multi"));
+    }
+    public void melt180ml(Fluid fluid, ItemLike ingredient, int temperature, Consumer<FinishedRecipe> consumer, ResourceLocation location){
+        MeltingRecipeBuilder.melting(Ingredient.of(ingredient),new FluidStack(fluid,180),temperature, IMeltingRecipe.calcTime(temperature, IMeltingRecipe.calcTimeFactor(90))).save(consumer,ResourceLocation.parse(location+"_melting_ingot_180"));
+        ItemCastingRecipeBuilder.tableRecipe(ingredient).setCoolingTime(temperature,180).setFluid(FluidIngredient.of(new FluidStack(fluid,180))).setCast(INGOT_MULTICAST,false).save(consumer,ResourceLocation.parse(location+"_casting_ingot_single_180"));
+        ItemCastingRecipeBuilder.tableRecipe(ingredient).setCoolingTime(temperature,180).setFluid(FluidIngredient.of(new FluidStack(fluid,180))).setCast(INGOT_SINGLECAST,true).save(consumer,ResourceLocation.parse(location+"_casting_ingot_multi_180"));
+    }
+    public void melt45ml(Fluid fluid, ItemLike ingredient, int temperature, Consumer<FinishedRecipe> consumer, ResourceLocation location){
+        MeltingRecipeBuilder.melting(Ingredient.of(ingredient),new FluidStack(fluid,45),temperature, IMeltingRecipe.calcTime(temperature, IMeltingRecipe.calcTimeFactor(90))).save(consumer,ResourceLocation.parse(location+"_melting_ingot_45"));
+        ItemCastingRecipeBuilder.tableRecipe(ingredient).setCoolingTime(temperature,45).setFluid(FluidIngredient.of(new FluidStack(fluid,45))).setCast(INGOT_MULTICAST,false).save(consumer,ResourceLocation.parse(location+"_casting_ingot_single_45"));
+        ItemCastingRecipeBuilder.tableRecipe(ingredient).setCoolingTime(temperature,45).setFluid(FluidIngredient.of(new FluidStack(fluid,45))).setCast(INGOT_SINGLECAST,true).save(consumer,ResourceLocation.parse(location+"_casting_ingot_multi_45"));
     }
     // 熔炼1个板(90mb)并生成单次/多次板铸造配方
     public void melt1Plate(Fluid fluid, ItemLike ingredient, int temperature, Consumer<FinishedRecipe> consumer, ResourceLocation location){

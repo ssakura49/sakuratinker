@@ -1,7 +1,7 @@
-// 1.20.1	2026-04-02T12:32:45.289053	Sakura Tinker Material Stats Data Provider
+// 1.20.1	2026-04-05T17:04:32.7968432	Sakura Tinker Material Stats Data Provider
 d495f5656850eed733e749c1fcd1dff00749a714 data/sakuratinker/tinkering/materials/stats/aerialite.json
 66232b7fd7d1233b40449d88ea191e289c00e9a7 data/sakuratinker/tinkering/materials/stats/amphithere_feather.json
-15f61a12b8feb56797dc9bea9d3b2c83ddddecc4 data/sakuratinker/tinkering/materials/stats/arcane_alloy.json
+129f52377d4c8281cce05026463baa7a7d406eff data/sakuratinker/tinkering/materials/stats/arcane_alloy.json
 a6e64e791dc100896cc2041d722b1dbe49301e6f data/sakuratinker/tinkering/materials/stats/aurumos.json
 25b2bffbfed3ad87f9edf91869a2279ace6c2023 data/sakuratinker/tinkering/materials/stats/bear_interest.json
 0412aeabec62239f863126a75da800fd3afc8723 data/sakuratinker/tinkering/materials/stats/blood_bound_steel.json
@@ -28,6 +28,7 @@ c5d982f720726c37fa29625499d8c6e1ce5beee8 data/sakuratinker/tinkering/materials/s
 02f91160cf4b1c2b2db1a22173f1df5cefa3ebd8 data/sakuratinker/tinkering/materials/stats/living_wood.json
 3eaea2a6072b86e923b453a90614bf0f4fb41f00 data/sakuratinker/tinkering/materials/stats/mana_steel.json
 8aed16acb856c2a5cf35cef3f5ef20d774bc08c3 data/sakuratinker/tinkering/materials/stats/mana_string.json
+ba03a10101428ba29230af4e38f18909eb53d9ef data/sakuratinker/tinkering/materials/stats/mithril.json
 6afc2761a04e51fd899845aef00e19e8a870730c data/sakuratinker/tinkering/materials/stats/mycelium_slimesteel.json
 41f200913e64a9d5ce15efb27fae4eb5ad6474de data/sakuratinker/tinkering/materials/stats/nefarious.json
 c6593add1951b20b86b6ed20db715985c933e503 data/sakuratinker/tinkering/materials/stats/neutron.json

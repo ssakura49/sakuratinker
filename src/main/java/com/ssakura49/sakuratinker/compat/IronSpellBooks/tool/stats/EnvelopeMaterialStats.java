@@ -58,7 +58,7 @@ public record EnvelopeMaterialStats(Map<SchoolType, Float> schoolBonuses) implem
         for (var entry : schoolBonuses.entrySet()) {
             SchoolType school = entry.getKey();
             float bonus = entry.getValue();
-            info.add(Component.literal(school.getId().toString()));
+            info.add(school.getDisplayName());
             info.add(IToolStat.formatColoredBonus(SCHOOL_BONUS, bonus));
         }
 
