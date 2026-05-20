@@ -1,8 +1,13 @@
 package com.ssakura49.sakuratinker.data.generator.enums;
 
 import com.ssakura49.sakuratinker.common.tools.stats.*;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.BookMarkMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.EnvelopeMaterialStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMaterialStats;
+import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
+
+import java.util.Map;
 
 public enum EnumTconExtraStat {
     bone(
@@ -11,7 +16,8 @@ public enum EnumTconExtraStat {
             new PhantomCoreMaterialStats(1, 8),
             new AxleMaterialStats(100, 30, 3.0f),
             new YoYoRingMaterialStats(1),
-            new RangeMaterialStats(5)
+            new RangeMaterialStats(5),
+            new EnvelopeMaterialStats(Map.of(SchoolRegistry.BLOOD.get(),0.1f))
     ),
     cobalt(
             STStatlessMaterialStats.CHARM_CORE,
@@ -23,7 +29,8 @@ public enum EnumTconExtraStat {
             new AxleMaterialStats(180, 20, 2.5f),
             new YoYoRingMaterialStats(1),
             new ChordMaterialStats(6),
-            new RangeMaterialStats(10)
+            new RangeMaterialStats(10),
+            new BookMarkMaterialStats(0.1f,12)
     ),
     copper(
             STStatlessMaterialStats.CHARM_CORE,
@@ -33,7 +40,8 @@ public enum EnumTconExtraStat {
             new PhantomCoreMaterialStats(1, 8),
             new AxleMaterialStats(80, 30, 3.5f),
             new YoYoRingMaterialStats(1),
-            new RangeMaterialStats(5)
+            new RangeMaterialStats(5),
+            new FoxMaskMaterialStats(5)
     ),
     manyullyn(
             STStatlessMaterialStats.CHARM_CORE,
@@ -46,7 +54,9 @@ public enum EnumTconExtraStat {
             new YoYoRingMaterialStats(1),
             new ChordMaterialStats(8),
             new AlchemicalCoreMaterialStats(2f, 0.4f),
-            new RangeMaterialStats(15)
+            new RangeMaterialStats(15),
+            new ManuScriptMaterialStats(5,0.3f, 0.2f,20,1000),
+            new BookMarkMaterialStats(0.15f, 15)
     ),
     wood(
             STStatlessMaterialStats.CHARM_CORE,
@@ -57,7 +67,10 @@ public enum EnumTconExtraStat {
             new BattleFlagMaterialStats(4, 20, 20, 120),
             new AxleMaterialStats(60, 40, 1.5f),
             new YoYoRingMaterialStats(1),
-            new SoulGathererMaterialStats(1, 0.0f)
+            new SoulGathererMaterialStats(1, 0.0f),
+            new ManuScriptMaterialStats(0,0.05f,0,2,100),
+            new EnvelopeMaterialStats(Map.of(SchoolRegistry.NATURE.get(),0.05f)),
+            new BookMarkMaterialStats(0.02f,4)
     ),
     skyslime_vine(
             STStatlessMaterialStats.CHARM_CORE,
@@ -70,7 +83,9 @@ public enum EnumTconExtraStat {
             new PhantomCoreMaterialStats(2, 16)
     ),
     iron(
-            new PhantomCoreMaterialStats(1, 8)
+            new PhantomCoreMaterialStats(1, 8),
+            new FoxMaskMaterialStats(8),
+            new BookMarkMaterialStats(0.01f,8)
     ),
     string(
             new ChordMaterialStats(8)
@@ -82,8 +97,35 @@ public enum EnumTconExtraStat {
             new ManuScriptMaterialStats(2f, -0.1f, -0.1f, 5.0f,500)
     ),
     paper(
-            new ManuScriptMaterialStats(1,1,1,5,200)
-    )
+            new ManuScriptMaterialStats(0,0,0.15f,0,120)
+    ),
+    gold(
+            new FoxMaskMaterialStats(10)
+    ),
+    blazingBone(
+            new EnvelopeMaterialStats(
+                    Map.of(
+                            SchoolRegistry.FIRE.get(),0.15f
+                    )
+            )
+    ),
+    blazewood(
+            new EnvelopeMaterialStats(Map.of(SchoolRegistry.FIRE.get(),0.1f)),
+            new ManuScriptMaterialStats(5,0.05f,0,8,150)
+    ),
+    chorus(
+            new EnvelopeMaterialStats(Map.of(SchoolRegistry.ENDER.get(),0.1f)),
+            new ManuScriptMaterialStats(8,0.05f,0.02f,10,280)
+    ),
+    ice(
+            new EnvelopeMaterialStats(Map.of(SchoolRegistry.ICE.get(),0.05f))
+    ),
+    witherBone(
+            new EnvelopeMaterialStats(Map.of(SchoolRegistry.BLOOD.get(),0.1f))
+    ),
+    venomBone(
+            new EnvelopeMaterialStats(Map.of(SchoolRegistry.NATURE.get(),0.1f))
+    ),
     ;
     public final IMaterialStats[] stats;
 

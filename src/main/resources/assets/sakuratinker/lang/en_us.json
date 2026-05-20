@@ -413,8 +413,6 @@
   "item.sakuratinker.spell_cloth_cast": "Spell Manuscript Cast",
   "item.sakuratinker.spell_cloth_red_sand_cast": "Spell Manuscript Red Sand Cast",
   "item.sakuratinker.spell_cloth_sand_cast": "Spell Manuscript Sand Cast",
-  "item.sakuratinker.tinker_spell_book": "Tinker Tome",
-  "item.sakuratinker.tinker_spell_book.description": "Modular spellbook.",
   "item.sakuratinker.blade_box": "Blade box",
   "stat.sakuratinker.blade_box": "Blade box",
   "item.sakuratinker.embedding": "Armor Embedding",
@@ -583,9 +581,6 @@
   "tool_stat.sakuratinker.phantom_amount": "Phantom Swords:",
   "tool_stat.sakuratinker.phantom_amount.description": "Maximum number of phantom swords generated.",
 
-  "modifier.sakuratinker.relentless": "Relentless",
-  "modifier.sakuratinker.relentless.flavor": "White in, red out!",
-  "modifier.sakuratinker.relentless.description": "Attacks ignore 30% of the target's invincibility frames.",
 
   "modifier.sakuratinker.spell_stone": "Spellstone",
   "modifier.sakuratinker.spell_stone.flavor": " ",
@@ -1387,6 +1382,105 @@
   "item.sakuratinker.molten_two_form_mist_star_bucket": "Bucket of Molten Two-Form Mist Star",
 
   "material.sakuratinker.amphithere_feather": "Amphithere Feather",
-  "material.sakuratinker.amphithere_feather.flavor": ""
+  "material.sakuratinker.amphithere_feather.flavor": "",
+
+  "modifier.sakuratinker.spell_concentration": "Spell Concentration",
+  "modifier.sakuratinker.spell_concentration.flavor": "Focus your mind",
+  "modifier.sakuratinker.spell_concentration.description": "Casting spells will not be interrupted",
+
+  "material.sakuratinker.mithril": "Mithril",
+  "material.sakuratinker.mithril.flavor": "",
+  "fluid.tconstruct.molten_mithril": "Molten Mithril",
+  "fluid.tconstruct.flowing_molten_mithril": "Flowing Molten Mithril",
+  "item.sakuratinker.molten_mithril_bucket": "Molten Mithril Bucket",
+
+  "item.sakuratinker.tinker_spell_book": "Tinker's Grimoire",
+  "item.sakuratinker.tinker_spell_book.description": "A modular spellbook.",
+  "item.sakuratinker.envelope": "Cover",
+  "stat.sakuratinker.envelope": "Cover",
+  "pattern.sakuratinker.envelope": "Cover",
+  "item.sakuratinker.envelope_cast": "Cover Cast",
+  "item.sakuratinker.envelope_red_sand_cast": "Cover Red Sand Cast",
+  "item.sakuratinker.envelope_sand_cast": "Cover Sand Cast",
+
+  "item.sakuratinker.manu_script": "Manuscript",
+  "stat.sakuratinker.manu_script": "Manuscript",
+  "pattern.sakuratinker.manu_script": "Manuscript",
+  "item.sakuratinker.manu_script_cast": "Manuscript Cast",
+  "item.sakuratinker.manu_script_red_sand_cast": "Manuscript Red Sand Cast",
+  "item.sakuratinker.manu_script_sand_cast": "Manuscript Sand Cast",
+
+  "item.sakuratinker.book_mark": "Bookmark",
+  "stat.sakuratinker.book_mark": "Bookmark",
+  "pattern.sakuratinker.book_mark": "Bookmark",
+  "item.sakuratinker.book_mark_cast": "Bookmark Cast",
+  "item.sakuratinker.book_mark_red_sand_cast": "Bookmark Red Sand Cast",
+  "item.sakuratinker.book_mark_sand_cast": "Bookmark Sand Cast",
+
+  "item.sakuratinker.gutter": "Binding Thread",
+  "stat.sakuratinker.gutter": "Binding Thread",
+  "pattern.sakuratinker.gutter": "Binding Thread",
+  "item.sakuratinker.gutter_cast": "Binding Thread Cast",
+  "item.sakuratinker.gutter_red_sand_cast": "Binding Thread Red Sand Cast",
+  "item.sakuratinker.gutter_sand_cast": "Binding Thread Sand Cast",
+
+  "tool_stat.sakuratinker.spell_slot": "Spell Slots: ",
+  "tool_stat.sakuratinker.spell_slot.description": "Increases the number of available spell slots.",
+  "tool_stat.sakuratinker.percent_bonus": "Spell Power: ",
+  "tool_stat.sakuratinker.percent_bonus.description": "Increases spell damage by a percentage.",
+  "tool_stat.sakuratinker.mana_reduce": "Mana Cost Reduction: ",
+  "tool_stat.sakuratinker.mana_reduce.description": "Reduces mana consumption when casting spells.",
+  "tool_stat.sakuratinker.mana_regen": "Mana Regeneration: ",
+  "tool_stat.sakuratinker.mana_regen.description": "Provides additional mana regeneration.",
+  "tool_stat.sakuratinker.cast_time_reduce": "Cast Time Reduction: ",
+  "tool_stat.sakuratinker.cast_time_reduce.description": "Reduces spell casting time.",
+  "tool_stat.sakuratinker.spell_damage": "Spell Damage: ",
+  "tool_stat.sakuratinker.spell_damage.description": "Adds base damage when casting spells.",
+  "tool_stat.sakuratinker.mana_value": "Mana Capacity: ",
+  "tool_stat.sakuratinker.mana_value.description": "Increases total mana capacity.",
+  "tool_stat.sakuratinker.school_bonus": "School Bonus",
+  "modifier.sakuratinker.cobalt_spell": "Cobalt Spellmaster",
+  "modifier.sakuratinker.cobalt_spell.flavor": "GuGu**",
+  "modifier.sakuratinker.cobalt_spell.description": "+10% Spell Power, +10% Cast Time Reduction.",
+
+  "modifier.sakuratinker.holy_hit": "Holy Strike",
+  "modifier.sakuratinker.holy_hit.flavor": "The Light!",
+  "modifier.sakuratinker.holy_hit.description": "Spells have a 15% chance to deal double damage.",
+
+  "modifier.sakuratinker.spell_frozen": "Spellfrost",
+  "modifier.sakuratinker.spell_frozen.flavor": "Halt!",
+  "modifier.sakuratinker.spell_frozen.description": "Ice spells apply Slowness to the target based on the modifier level.",
+
+  "modifier.sakuratinker.spell_level_bonus": "Spell Level Breakthrough",
+  "modifier.sakuratinker.spell_level_bonus.flavor": "Wisdom granted by the Arcane.",
+  "modifier.sakuratinker.spell_level_bonus.description": "Cast spells have a 25% chance to increase their level by 1 (Non-stackable).",
+
+  "modifier.sakuratinker.spell_power_attr": "Spell Power",
+  "modifier.sakuratinker.spell_power_attr.flavor": " ",
+  "modifier.sakuratinker.spell_power_attr.description": "Increases Spell Power by 10% per level.",
+
+  "modifier.sakuratinker.wither_tentacles": "Withering Touch",
+  "modifier.sakuratinker.wither_tentacles.flavor": " ",
+  "modifier.sakuratinker.wither_tentacles.description": "Blood spells apply Wither I to the target.",
+
+  "modifier.sakuratinker.magic_enhancement": "Mana Infusion",
+  "modifier.sakuratinker.magic_enhancement.flavor": "Magic within magic.",
+  "modifier.sakuratinker.magic_enhancement.description": "Consumes extra Mana when dealing spell damage to increase potency. Each 10 Mana consumed increases damage by 10% (Limit of 20 Mana per level).",
+
+  "modifier.sakuratinker.greedy_book": "Greed",
+  "modifier.sakuratinker.greedy_book.flavor": "A taste of power leads to boundless desire!",
+  "modifier.sakuratinker.greedy_book.description": "Stacks 'Greed' on spell hit; each stack increases subsequent spell damage by 2.",
+
+  "modifier.sakuratinker.toxicity_intensification": "Toxicity Intensification",
+  "modifier.sakuratinker.toxicity_intensification.flavor": "Terminally ill.",
+  "modifier.sakuratinker.toxicity_intensification.description": "Dealing damage with Nature spells doubles the Poison effect on the target.",
+
+  "modifier.sakuratinker.umbral_iss": "Umbral",
+  "modifier.sakuratinker.umbral_iss.flavor": " ",
+  "modifier.sakuratinker.umbral_iss.description": "When Eldritch spells hit a Player, apply 10s of Darkness. Against non-players, increase spell damage by 20% (Non-stackable).",
+
+  "modifier.sakuratinker.umbral": "",
+  "modifier.sakuratinker.umbral.flavor": "",
+  "modifier.sakuratinker.umbral.description": ""
 
 }

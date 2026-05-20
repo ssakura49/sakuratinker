@@ -30,15 +30,13 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.ModelEvent;
-import net.minecraftforge.client.event.RegisterShadersEvent;
-import net.minecraftforge.client.event.RenderTooltipEvent;
-import net.minecraftforge.client.event.ScreenEvent;
+import net.minecraftforge.client.event.*;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -188,7 +186,6 @@ public class ClientModHandler {
                 event.register("cosmic_loader", CosmicModelLoader.INSTANCE);
                 event.register("cosmic_st_loader", SeparateTransformsCosmicModelLoader.INSTANCE);
                 event.register("halo", HaloModelLoader.INSTANCE);
-                event.register("cosmic_tool_loader",CosmicToolModelLoader.INSTANCE);
             }
 
             @SubscribeEvent(priority = EventPriority.HIGHEST)
@@ -196,6 +193,19 @@ public class ClientModHandler {
                 CosmicItemShaders.onRegisterShaders(event);
                 VanillaCosmicShaders.onRegisterShaders(event);
                 ModShaders.onRegisterShaders(event);
+            }
+
+            @SubscribeEvent(priority = EventPriority.HIGHEST)
+            public static void onTexturesSwitchPost(TextureStitchEvent.Post event) {
+                if (event.getAtlas().location().equals(InventoryMenu.BLOCK_ATLAS)) {
+                    for (int i = 0; i < VanillaCosmicShaders.COSMIC_SPRITES.length; i++) {
+                        VanillaCosmicShaders.COSMIC_SPRITES[i] = event.getAtlas().getSprite(SakuraTinker.getResource("item/misc/cosmic_" + i));
+                        VanillaCosmicShaders.COSMIC_UVS[i * 4] = VanillaCosmicShaders.COSMIC_SPRITES[i].getU0();
+                        VanillaCosmicShaders.COSMIC_UVS[i * 4 + 1] = VanillaCosmicShaders.COSMIC_SPRITES[i].getV0();
+                        VanillaCosmicShaders.COSMIC_UVS[i * 4 + 2] = VanillaCosmicShaders.COSMIC_SPRITES[i].getU1();
+                        VanillaCosmicShaders.COSMIC_UVS[i * 4 + 3] = VanillaCosmicShaders.COSMIC_SPRITES[i].getV1();
+                    }
+                }
             }
         }
     }

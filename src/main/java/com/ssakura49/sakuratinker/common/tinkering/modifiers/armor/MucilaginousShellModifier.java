@@ -52,10 +52,10 @@ public class MucilaginousShellModifier extends BaseModifier {
                 ItemStack stack = player.getItemBySlot(slot);
                 if (!stack.isEmpty() && stack.getItem() instanceof IModifiable) {
                     IToolStackView tool = ToolStack.from(stack);
-                    float shield = overSlime.getShield(tool);
+                    float shield = overSlime.getAmount(tool);
                     if (shield > 0) {
                         int consumeAmount = -(int)Math.ceil(amount * (shield / totalShield));
-                        overSlime.addOverslime(tool, entry, consumeAmount);
+                        overSlime.addAmount(tool, entry, consumeAmount);
                     }
                 }
             }

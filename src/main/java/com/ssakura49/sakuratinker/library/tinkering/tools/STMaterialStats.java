@@ -14,7 +14,7 @@ public class STMaterialStats {
     //public static final MaterialStatsId TINKER_SPELL_BOOK = new MaterialStatsId(SakuraTinker.getResource("tinker_spell_book"));
     public static final MaterialStatsId POWER_BANK = new MaterialStatsId(SakuraTinker.getResource("power_bank"));
     public static final MaterialStatsId BATTLE_FLAG = new MaterialStatsId(SakuraTinker.getResource("battle_flag"));
-//    public static final MaterialStatsId FOX_MASK = new MaterialStatsId(SakuraTinker.location("fox_mask"));
+    public static final MaterialStatsId FOX_MASK = new MaterialStatsId(SakuraTinker.getResource("fox_mask"));
     public static final MaterialStatsId FIRST_FRACTAL =new MaterialStatsId(SakuraTinker.getResource("first_fractal"));
     public static final MaterialStatsId YO_YO = new MaterialStatsId(SakuraTinker.getResource("yo_yo"));
     public static final MaterialStatsId TINKER_WAND = new MaterialStatsId(SakuraTinker.getResource("tinker_wand"));
@@ -30,17 +30,8 @@ public class STMaterialStats {
         registry.registerStatType(LaserMediumMaterialStats.TYPE, LASER_GUN);
         registry.registerStatType(EnergyUnitMaterialStats.TYPE, LASER_GUN);
         registry.registerStatType(FletchingMaterialStats.TYPE, TINKER_ARROW);
-        //registry.registerStatType(ManuScriptMaterialStats.TYPE, TINKER_SPELL_BOOK);
-//        for(MaterialStatType<?> type : EmbeddedArmorMaterialStats.TYPES) {
-//            registry.registerStatType(type, MaterialRegistry.ARMOR);
-//        }
-
         registry.registerStatType(STStatlessMaterialStats.SHELL.getType(), POWER_BANK);
-        //registry.registerStatType(STStatlessMaterialStats.GUTTER.getType(), POWER_BANK);
-
         registry.registerStatType(BattleFlagMaterialStats.TYPE, BATTLE_FLAG);
-//        registry.registerStatType(STStatlessMaterialStats.FOX_MASK_MAIN.getType(), FOX_MASK);
-//        registry.registerStatType(STStatlessMaterialStats.FOX_MASK_CORE.getType(), FOX_MASK);
         registry.registerStatType(PhantomCoreMaterialStats.TYPE, FIRST_FRACTAL);
         registry.registerStatType(YoYoRingMaterialStats.TYPE, YO_YO);
         registry.registerStatType(AxleMaterialStats.TYPE, YO_YO);
@@ -48,5 +39,6 @@ public class STMaterialStats {
         registry.registerStatType(SoulGathererMaterialStats.TYPE, TINKER_WAND);
         registry.registerStatType(AlchemicalCoreMaterialStats.TYPE, ALCHEMICAL_GLOVES);
         registry.registerStatType(RangeMaterialStats.TYPE, RANGE);
+        registry.registerStatType(FoxMaskMaterialStats.TYPE, FOX_MASK);
     }
 }

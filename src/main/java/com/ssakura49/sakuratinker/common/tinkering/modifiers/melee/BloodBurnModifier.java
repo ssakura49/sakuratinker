@@ -1,7 +1,7 @@
 package com.ssakura49.sakuratinker.common.tinkering.modifiers.melee;
 
+import com.ssakura49.sakura_library.common.event.entity.player.AttackSpeedModifyEvent;
 import com.ssakura49.sakuratinker.generic.BaseModifier;
-import com.ssakura49.sakuratinker.library.events.AttackSpeedModifyEvent;
 import com.ssakura49.sakuratinker.register.STEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

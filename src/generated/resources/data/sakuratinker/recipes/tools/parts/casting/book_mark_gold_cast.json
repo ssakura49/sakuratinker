@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:table_casting_material",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/book_mark"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "item_cost": 3,
+  "result": "sakuratinker:book_mark"
+}

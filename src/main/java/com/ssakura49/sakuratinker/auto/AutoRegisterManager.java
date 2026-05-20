@@ -46,7 +46,7 @@ public class AutoRegisterManager {
             SakuraTinker.pop2();
             SakuraTinker.pop();
         });
-        handlers.forEach(handler -> handler.deferredRegister.register(FMLJavaModLoadingContext.get().getModEventBus()));
+        handlers.forEach(handler -> handler.deferredRegister.register(SakuraTinker.getModEventBus()));
     }
     private static ItemAutoRegisterHandler ITEM_ARH;
     public static ItemAutoRegisterHandler ITEM_ARH() {

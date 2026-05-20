@@ -10,6 +10,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.tools.modifiers.effect.MagneticEffect;
 import slimeknights.tconstruct.tools.modifiers.upgrades.general.MagneticModifier;
 import top.theillusivec4.curios.api.SlotContext;
 
@@ -25,7 +26,7 @@ public class MagneticCurioModifier extends NoLevelsModifier implements CurioInve
     @Override
     public void onCurioTick(IToolStackView curio, ModifierEntry entry, SlotContext context, LivingEntity entity, ItemStack stack) {
         if (entity.tickCount % 20 == 0) {
-            MagneticModifier.applyMagnet(entity, entry.getLevel());
+            MagneticEffect.applyMagnet(entity, entry.getLevel());
         }
     }
 }

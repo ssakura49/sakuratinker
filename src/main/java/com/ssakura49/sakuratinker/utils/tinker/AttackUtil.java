@@ -1,6 +1,5 @@
 package com.ssakura49.sakuratinker.utils.tinker;
 
-import com.ssakura49.sakuratinker.library.damagesource.LegacyDamageSource;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STHooks;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
@@ -43,6 +42,7 @@ import java.util.function.DoubleSupplier;
 import static slimeknights.tconstruct.library.tools.helper.ToolAttackUtil.getAttributeAttackDamage;
 import static slimeknights.tconstruct.library.tools.helper.ToolAttackUtil.getLivingEntity;
 
+@Deprecated
 public class AttackUtil {
     private static final float DEGREE_TO_RADIANS = (float)Math.PI / 180F;
     private static final AttributeModifier ANTI_KNOCKBACK_MODIFIER = new AttributeModifier(TConstruct.MOD_ID + ".anti_knockback", 1f, AttributeModifier.Operation.ADDITION);

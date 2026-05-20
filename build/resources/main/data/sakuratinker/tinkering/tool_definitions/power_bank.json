@@ -74,6 +74,10 @@
           "name": "sakuratinker:energy_surge"
         }
       ]
+    },
+    {
+      "type": "tconstruct:material_name",
+      "filter": "all"
     }
   ]
 }

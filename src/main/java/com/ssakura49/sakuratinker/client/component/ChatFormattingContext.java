@@ -1,6 +1,5 @@
 package com.ssakura49.sakuratinker.client.component;
 
-import com.ssakura49.sakuratinker.coremod.SakuraTinkerCore;
 import com.ssakura49.sakuratinker.utils.java.RuntimeEnumExtender;
 import net.minecraft.ChatFormatting;
 import net.minecraft.util.StringRepresentable;
@@ -33,7 +32,6 @@ public class ChatFormattingContext {
             }
         } catch (Throwable e) {
             e.printStackTrace();
-            e.printStackTrace(SakuraTinkerCore.stream);
             System.exit(-1);
         }
     }

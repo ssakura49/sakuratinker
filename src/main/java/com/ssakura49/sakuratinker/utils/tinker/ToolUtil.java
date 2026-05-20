@@ -194,8 +194,8 @@ public class ToolUtil {
         }
     }
 
-    public static List<IToolStackView> getAllEquippedToolStacks(Player player) {
-        List<IToolStackView> tools = new ArrayList<>();
+    public static List<ToolStack> getAllEquippedToolStacks(Player player) {
+        List<ToolStack> tools = new ArrayList<>();
         for (ItemStack stack : List.of(player.getMainHandItem(), player.getOffhandItem())) {
             ToolStack tool = getTool(stack);
             if (isNotBrokenOrNull(tool)) {

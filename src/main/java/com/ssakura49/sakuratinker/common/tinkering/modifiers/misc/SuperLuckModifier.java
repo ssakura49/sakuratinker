@@ -20,24 +20,24 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SuperLuckModifier extends NoLevelsModifier implements LootingModifierHook, ProcessLootModifierHook {
+public class SuperLuckModifier extends NoLevelsModifier implements LootingModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder builder) {
-        builder.addHook(this, ModifierHooks.WEAPON_LOOTING,ModifierHooks.PROCESS_LOOT);
+        builder.addHook(this, ModifierHooks.WEAPON_LOOTING);
     }
     @Override
     public int updateLooting(IToolStackView tool, ModifierEntry modifier, LootingContext context, int looting) {
         return looting + 10;
     }
 
-    @Override
-    public void processLoot(IToolStackView tool, ModifierEntry modifier, List<ItemStack> loot, LootContext context) {
-        List<ItemStack> copy = new ArrayList<>(loot);
-        for (int i = 0; i < 9; i++) {
-            for (ItemStack stack : copy) {
-                loot.add(stack.copy());
-            }
-        }
-    }
+//    @Override
+//    public void processLoot(IToolStackView tool, ModifierEntry modifier, List<ItemStack> loot, LootContext context) {
+//        List<ItemStack> copy = new ArrayList<>(loot);
+//        for (int i = 0; i < 9; i++) {
+//            for (ItemStack stack : copy) {
+//                loot.add(stack.copy());
+//            }
+//        }
+//    }
 
 }

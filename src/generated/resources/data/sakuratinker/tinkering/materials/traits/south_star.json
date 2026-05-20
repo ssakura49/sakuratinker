@@ -6,6 +6,12 @@
     }
   ],
   "perStat": {
+    "sakuratinker:tinker_spell_book": [
+      {
+        "level": 1,
+        "name": "sakuratinker:magic_enhancement"
+      }
+    ],
     "tconstruct:armor": [
       {
         "level": 1,

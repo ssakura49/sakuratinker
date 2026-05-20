@@ -9,6 +9,7 @@ import com.ssakura49.sakuratinker.compat.IronSpellBooks.stat.SchoolToolStat;
 import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import io.redspace.ironsspellbooks.api.spells.SchoolType;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextColor;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.data.loadable.mapping.MapLoadable;
 import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
@@ -58,8 +59,15 @@ public record EnvelopeMaterialStats(Map<SchoolType, Float> schoolBonuses) implem
         for (var entry : schoolBonuses.entrySet()) {
             SchoolType school = entry.getKey();
             float bonus = entry.getValue();
-            info.add(school.getDisplayName());
-            info.add(IToolStat.formatColoredBonus(SCHOOL_BONUS, bonus));
+            float hue = net.minecraft.util.Mth.positiveModulo(0.5F + bonus, 2.0F);
+            TextColor color = TextColor.fromRgb(net.minecraft.util.Mth.hsvToRgb(hue / 1.5F, 1.0F, 0.75F));
+            Component formattedValue = Component.literal(slimeknights.tconstruct.library.utils.Util.BONUS_FORMAT.format(bonus))
+                    .withStyle(style -> style.withColor(color));
+            Component line = Component.empty()
+                    .append(school.getDisplayName())
+                    .append(Component.literal(": "))
+                    .append(formattedValue);
+            info.add(line);
         }
 
         return info;

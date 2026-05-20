@@ -44,7 +44,9 @@ public class KoboldModifier extends BaseModifier {
             if (entity instanceof Player player && isCorrectSlot) {
                 float max = player.getMaxHealth();
                 if (max > HEALTH_THRESHOLD) {
-                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 0, true, true));
+                    if (player.tickCount % 100 == 0) {
+                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0, true, true));
+                    }
                 }
             }
         }

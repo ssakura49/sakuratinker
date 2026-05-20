@@ -22,7 +22,7 @@ public class ISSHooks {
     );
 
     public static final ModuleHook<SpellHitModifierHook> SPELL_HIT = ModifierHooks.register(
-            SakuraTinker.getResource("spell_damage"),
+            SakuraTinker.getResource("spell_hit"),
             SpellHitModifierHook.class,
             SpellHitModifierHook.AllMerger::new,
             new SpellHitModifierHook() {}
@@ -49,35 +49,41 @@ public class ISSHooks {
             ((tool, modifier, baseCost, currentCost) -> currentCost)
     );
 
-    public static final ModuleHook<SpellCastModifierHook> SPELL_CAST = ModifierHooks.register(
-            SakuraTinker.getResource("spell_cast"),
+    public static final ModuleHook<SpellCastModifierHook> PRE_SPELL_CAST = ModifierHooks.register(
+            SakuraTinker.getResource("pre_spell_cast"),
             SpellCastModifierHook.class,
             SpellCastModifierHook.AllMerger::new,
-            ((tool, modifier, context) -> true)
+            new SpellCastModifierHook() {}
     );
+
+    public static final ModuleHook<SpellCastModifierHook> ON_SPELL_CAST = ModifierHooks.register(
+            SakuraTinker.getResource("on_spell_cast"),
+            SpellCastModifierHook.class,
+            SpellCastModifierHook.AllMerger::new,
+            new SpellCastModifierHook() {}
+    );
+
 
     public static final ModuleHook<SpellHealModifierHook> SPELL_HEAL = ModifierHooks.register(
             SakuraTinker.getResource("spell_heal"),
             SpellHealModifierHook.class,
             SpellHealModifierHook.AllMerger::new,
-            ((tool, modifier, context, baseHeal, currentHeal) -> currentHeal)
+            new SpellHealModifierHook() {}
     );
 
     public static final ModuleHook<SpellLevelModifierHook> SPELL_LEVEL = ModifierHooks.register(
             SakuraTinker.getResource("spell_level"),
             SpellLevelModifierHook.class,
             SpellLevelModifierHook.AllMerger::new,
-            ((tool, modifier, baseLevel, currentLevel) -> currentLevel)
+            ((tool, modifier,context, baseLevel, currentLevel) -> currentLevel)
     );
 
-    public static final ModuleHook<SpellSummonModifierHook> SPELL_SUMMON = ModifierHooks.register(
-            SakuraTinker.getResource("spell_summon"),
-            SpellSummonModifierHook.class,
-            SpellSummonModifierHook.AllMerger::new,
-            ((tool, modifier, summoned) -> {})
+    public static final ModuleHook<SpellSchoolModifierHook> SPELL_SCHOOL = ModifierHooks.register(
+           SakuraTinker.getResource("spell_school"),
+            SpellSchoolModifierHook.class,
+            SpellSchoolModifierHook.AllMerger::new,
+            ((tool, modifier, spell, currentSchool) -> currentSchool)
     );
-
-
 
     public static <T> ModuleHook<T> register(ResourceLocation name, Class<T> filter, @Nullable Function<Collection<T>,T> merger, T defaultInstance) {
         return LOADER.register(new ModuleHook<>(name, filter, merger, defaultInstance));

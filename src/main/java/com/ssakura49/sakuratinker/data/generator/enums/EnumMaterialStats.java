@@ -125,7 +125,8 @@ public enum EnumMaterialStats {
             new EnergyUnitMaterialStats(60000, 0.3f),
             new LaserMediumMaterialStats(25f, 0.6f, 12),
             new BattleFlagMaterialStats(30, 320, 480, 100),
-            new PhantomCoreMaterialStats(2,32)
+            new PhantomCoreMaterialStats(2,32),
+            new ManuScriptMaterialStats(5,0.15f,0.12f,14,1500)
     ),
     terracryst(
             armor(100, 4.0f, 7.0f, 5.0f, 3.0f).toughness(4.0f).knockbackResistance(0.3f),
@@ -181,7 +182,8 @@ public enum EnumMaterialStats {
             new LimbMaterialStats(1000, 0.3f, 0.2f,0.25f),
             new BattleFlagMaterialStats(12, 320, 160, 100),
             new PhantomCoreMaterialStats(1,16),
-            new SoulGathererMaterialStats(4f, 0.15f)
+            new SoulGathererMaterialStats(4f, 0.15f),
+            new EnvelopeMaterialStats(Map.of(SchoolRegistry.HOLY.get(),0.15f))
     ),
     bear_interest(
             null,
@@ -226,7 +228,10 @@ public enum EnumMaterialStats {
             STStatlessMaterialStats.CHARM_CORE,
             new EnergyUnitMaterialStats(80000, 0.7f),
             new LaserMediumMaterialStats(80f, 0.7f, 11),
-            new BattleFlagMaterialStats(50, 360, 80, 120)
+            new BattleFlagMaterialStats(50, 360, 80, 120),
+            new ManuScriptMaterialStats(4,0.08f,0.06f,22,1200),
+            new BookMarkMaterialStats(0.12f,14),
+            new EnvelopeMaterialStats(Map.of(SchoolRegistry.ELDRITCH.get(),0.15f))
     ),
 //    goozma(
 //            armor(120, 35.0f, 60.0f, 50.0f, 30.0f).toughness(40.0f).knockbackResistance(0.5f),
@@ -615,13 +620,13 @@ public enum EnumMaterialStats {
     mithril(
             armor(120, 3f, 4f, 5f,2f).toughness(2f).knockbackResistance(1f),
             false,
-            new EnvelopeMaterialStats(Map.of(
-                    SchoolRegistry.HOLY.get(), 0.5f
-            )),
-            new ManuScriptMaterialStats(30, 0.2f, 0.1f, 60, 1600),
+            new ManuScriptMaterialStats(30, 0.2f, 0.15f, 60, 1600),
             new BookMarkMaterialStats(0.3f, 10),
             ISSStatlessMaterialStats.GUTTER
-    )
+    ),
+    arcane_cloth(
+            new ManuScriptMaterialStats(0,0,0,0,100)
+    ),
 
     ;
     private final IMaterialStats[] stats;

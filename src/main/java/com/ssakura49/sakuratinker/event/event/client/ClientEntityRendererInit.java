@@ -31,7 +31,6 @@ public class ClientEntityRendererInit {
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(STEntities.GHOST_KNIFE.get(), GhostKnifeRenderer::new);
-        event.registerEntityRenderer(STEntities.CELESTIAL_BLADE.get(), CelestialBladeRenderer::new);
         event.registerEntityRenderer(STEntities.SHURIKEN_ENTITY.get(), ShurikenRenderer::new);
         event.registerEntityRenderer(STEntities.TINKER_ARROW_ENTITY.get(), TinkerArrowEntityRenderer::new);
         event.registerEntityRenderer(STEntities.MINI_GRAPPLING_HOOK.get(), MiniGrapplingHookRenderer::new);
@@ -41,6 +40,7 @@ public class ClientEntityRendererInit {
 //        event.registerEntityRenderer(STEntities.TERRA_PRISMA.get(), TerraPrismaRenderer::new);
         event.registerEntityRenderer(STEntities.YOYO.get(), YoyoRenderer::new);
         event.registerEntityRenderer(STEntities.BULLET.get(), BulletRenderer::new);
+        event.registerEntityRenderer(STEntities.CELESTIAL_BLADE_ENTITY.get(), CelestialBladeEntityRenderer::new);
     }
 
     public ClientEntityRendererInit(){

@@ -50,14 +50,6 @@ public interface IYoyo {
      */
     int getMaxCollectedDrops(ItemStack yoyo);
 
-    /**
-     * Should damage the yoyo by amount.
-     * @param yoyo The ItemStack that was used to launch the yoyo.
-     * @param hand The hand the yoyo is held in.
-     * @param amount The amount of damage.
-     * @param entity The entity wielding the yoyo.
-     */
-    <T extends LivingEntity> void damageItem(ItemStack yoyo, InteractionHand hand, int amount, T entity);
 
     /**
      * Actions when the yoyo entity touches another entity.

@@ -1,5 +1,12 @@
 {
   "stats": {
+    "sakuratinker:book_mark": {
+      "percent_bonus": 0.01,
+      "spell_slot": 8
+    },
+    "sakuratinker:fox_mask_part": {
+      "invulnerable_time": 8
+    },
     "sakuratinker:phantom_core": {
       "phantom_amount": 1.0,
       "range": 8.0

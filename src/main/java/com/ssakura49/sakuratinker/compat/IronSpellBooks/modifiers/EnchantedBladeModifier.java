@@ -1,10 +1,10 @@
 package com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers;
 
 import com.ssakura49.sakuratinker.generic.BaseModifier;
-import com.ssakura49.sakuratinker.network.PacketHandler;
-import com.ssakura49.sakuratinker.network.s2c.SyncManaPacket;
 import com.ssakura49.sakuratinker.utils.SafeClassUtil;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
+import io.redspace.ironsspellbooks.network.SyncManaPacket;
+import io.redspace.ironsspellbooks.setup.PacketDistributor;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -33,7 +33,7 @@ public class EnchantedBladeModifier extends BaseModifier {
             if (serverMana >= consumedMana) {
                 int newMana = (int) (serverMana - consumedMana);
                 magicData.setMana(newMana);
-                PacketHandler.sendToPlayer(new SyncManaPacket(newMana), serverPlayer);
+                PacketDistributor.sendToPlayer(serverPlayer, new SyncManaPacket(magicData));
                 actualDamage = baseDamage + bonusDamage;
             }
             return actualDamage;

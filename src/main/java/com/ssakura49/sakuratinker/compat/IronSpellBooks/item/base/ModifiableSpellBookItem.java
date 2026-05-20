@@ -100,23 +100,23 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
     @Override
     public void appendHoverText(@NotNull ItemStack itemStack, Level context, @NotNull List<Component> lines, @NotNull TooltipFlag flag) {
         if (this.isUnique()) {
-            lines.add(Component.translatable("tooltip.irons_spellbooks.spellbook_rarity", new Object[]{Component.translatable("tooltip.irons_spellbooks.spellbook_unique").withStyle(TooltipsUtils.UNIQUE_STYLE)}).withStyle(ChatFormatting.GRAY));
+            lines.add(Component.translatable("tooltip.irons_spellbooks.spellbook_rarity", Component.translatable("tooltip.irons_spellbooks.spellbook_unique").withStyle(TooltipsUtils.UNIQUE_STYLE)).withStyle(ChatFormatting.GRAY));
         }
 
         Player player = MinecraftInstanceHelper.getPlayer();
         if (player != null && ISpellContainer.isSpellContainer(itemStack)) {
             ISpellContainer spellList = ISpellContainer.get(itemStack);
-            lines.add(Component.translatable("tooltip.irons_spellbooks.spellbook_spell_count", new Object[]{spellList.getMaxSpellCount()}).withStyle(ChatFormatting.GRAY));
+            lines.add(Component.translatable("tooltip.irons_spellbooks.spellbook_spell_count", spellList.getMaxSpellCount()).withStyle(ChatFormatting.GRAY));
             List<SpellSlot> activeSpellSlots = spellList.getActiveSpells();
             if (!activeSpellSlots.isEmpty()) {
                 lines.add(Component.empty());
-                lines.add(Component.translatable("tooltip.irons_spellbooks.press_to_cast", new Object[]{Component.keybind("key.irons_spellbooks.spellbook_cast")}).withStyle(ChatFormatting.GOLD));
+                lines.add(Component.translatable("tooltip.irons_spellbooks.press_to_cast", Component.keybind("key.irons_spellbooks.spellbook_cast")).withStyle(ChatFormatting.GOLD));
                 lines.add(Component.empty());
                 lines.add(Component.translatable("tooltip.irons_spellbooks.spellbook_tooltip").withStyle(ChatFormatting.GRAY));
                 SpellSelectionManager spellSelectionManager = ClientMagicData.getSpellSelectionManager();
 
                 for(int i = 0; i < activeSpellSlots.size(); ++i) {
-                    MutableComponent spellText = TooltipsUtils.getTitleComponent(((SpellSlot)activeSpellSlots.get(i)).spellData(), (LocalPlayer)player).setStyle(Style.EMPTY);
+                    MutableComponent spellText = TooltipsUtils.getTitleComponent(activeSpellSlots.get(i).spellData(), (LocalPlayer)player).setStyle(Style.EMPTY);
                     SpellSelectionManager.SelectionOption option = spellSelectionManager.getSpellSlot(spellSelectionManager.getSelectionIndex());
                     if (MinecraftInstanceHelper.getPlayer() != null && Utils.getPlayerSpellbookStack(MinecraftInstanceHelper.getPlayer()) == itemStack && option != null && option.slot.equals(Curios.SPELLBOOK_SLOT) && option.slotIndex == i) {
                         List<MutableComponent> shiftMessage = TooltipsUtils.formatActiveSpellTooltip(itemStack, spellSelectionManager.getSelectedSpellData(), CastSource.SPELLBOOK, (LocalPlayer)player);
@@ -319,10 +319,16 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
         return true;
     }
 
+//    @Override
+//    public @NotNull Component getName(@NotNull ItemStack stack) {
+//        return ToolNameHook.getName(this.getToolDefinition(), stack);
+//    }
+
     @Override
-    public @NotNull Component getName(@NotNull ItemStack stack) {
-        return ToolNameHook.getName(this.getToolDefinition(), stack);
+    public Component getName(ItemStack stack) {
+        return TooltipUtil.getDisplayName(stack, this.getToolDefinition());
     }
+
 
 
     @Override
@@ -346,21 +352,10 @@ public class ModifiableSpellBookItem extends SpellBook implements IModifiableDis
             ToolStack tool = ToolStack.from(itemStack);
             tool.rebuildStats();
             int extraSlots = tool.getStats().getInt(ISSToolStats.SPELL_SLOT);
-            //int baseSlots = this.getMaxSpellSlots();
-            //int totalSlots = baseSlots + extraSlots;
             ISpellContainer.set(itemStack, ISpellContainer.create(extraSlots, true, true));
         }
     }
 
-//    @Override
-//    public void initializeSpellContainer(ItemStack itemStack) {
-//        if (itemStack != null) {
-//            if (!ISpellContainer.isSpellContainer(itemStack)) {
-//                ISpellContainer.set(itemStack, ISpellContainer.create(this.getMaxSpellSlots(), true, true));
-//            }
-//
-//        }
-//    }
 
     @Override
     public @NotNull ToolDefinition getToolDefinition() {

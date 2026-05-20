@@ -1,0 +1,27 @@
+{
+  "modules": [
+    {
+      "type": "tconstruct:part_stats",
+      "primary_part": 0,
+      "stat_types": [
+        "sakuratinker:fox_mask_part"
+      ]
+    },
+    {
+      "type": "tconstruct:default_materials",
+      "materials": [
+        {
+          "type": "tconstruct:random",
+          "allow_hidden": true
+        }
+      ]
+    },
+    {
+      "type": "tconstruct:modifier_slots",
+      "slots": {
+        "defense": 3,
+        "upgrades": 2
+      }
+    }
+  ]
+}

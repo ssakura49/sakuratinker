@@ -1,6 +1,5 @@
 package com.ssakura49.sakuratinker.utils;
 
-import com.ssakura49.sakuratinker.library.damagesource.LegacyDamageSource;
 import com.ssakura49.sakuratinker.library.interfaces.projectile.IProjectileBuild;
 import com.ssakura49.sakuratinker.library.interfaces.projectile.IProjectileCritical;
 import com.ssakura49.sakuratinker.library.interfaces.projectile.IProjectileDamage;

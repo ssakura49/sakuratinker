@@ -3,12 +3,11 @@ package com.ssakura49.sakuratinker.network;
 import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.network.c2s.ModifierKeyPressPacket;
 import com.ssakura49.sakuratinker.network.c2s.PlayerLeftClickEmpty;
+import com.ssakura49.sakuratinker.network.s2c.ClientboundSyncBuffPacket;
 import com.ssakura49.sakuratinker.network.s2c.CollectedDropsSync;
 import com.ssakura49.sakuratinker.network.s2c.SLightningPacket;
-import com.ssakura49.sakuratinker.network.s2c.SyncManaPacket;
 import com.ssakura49.sakuratinker.network.s2c.timestop.TSDimensionSynchedPacket;
 import com.ssakura49.sakuratinker.network.s2c.timestop.TimeStopSkillPacket;
-import com.ssakura49.sakuratinker.utils.SafeClassUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -30,9 +29,6 @@ public class PacketHandler {
 
     public static void init() {
         INSTANCE.messageBuilder(PlayerLeftClickEmpty.class,id++, NetworkDirection.PLAY_TO_SERVER).decoder(PlayerLeftClickEmpty::new).encoder(PlayerLeftClickEmpty::toByte).consumerMainThread(PlayerLeftClickEmpty::handle).add();
-        if (SafeClassUtil.ISSLoaded) {
-            INSTANCE.messageBuilder(SyncManaPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT).decoder(SyncManaPacket::new).encoder(SyncManaPacket::toBytes).consumerMainThread(SyncManaPacket::handle).add();
-        }
         INSTANCE.messageBuilder(ModifierKeyPressPacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
                 .decoder(ModifierKeyPressPacket::new)
                 .encoder(ModifierKeyPressPacket::toBytes)
@@ -46,6 +42,11 @@ public class PacketHandler {
         INSTANCE.registerMessage(id++, TimeStopSkillPacket.class, TimeStopSkillPacket::encode, TimeStopSkillPacket::decode, TimeStopSkillPacket::handle);
         INSTANCE.registerMessage(id++, TSDimensionSynchedPacket.class, TSDimensionSynchedPacket::encode, TSDimensionSynchedPacket::decode, TSDimensionSynchedPacket::handle);
         INSTANCE.registerMessage(id++, SLightningPacket.class, SLightningPacket::encode, SLightningPacket::decode, SLightningPacket::consume);
+
+        INSTANCE.registerMessage(id++, ClientboundSyncBuffPacket.class,
+                ClientboundSyncBuffPacket::encode,
+                ClientboundSyncBuffPacket::decode,
+                ClientboundSyncBuffPacket::handle);
     }
 
     public static <MSG> void sendToServer(MSG msg){

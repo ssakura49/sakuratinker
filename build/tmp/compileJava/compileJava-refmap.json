@@ -11,7 +11,7 @@
       "<init>(ILjava/lang/String;)V": "Lnet/minecraft/network/chat/TextColor;<init>(ILjava/lang/String;)V"
     },
     "com/ssakura49/sakuratinker/mixin/LivingEntityMixin": {
-      "getDamageAfterArmorAbsorb": "Lnet/minecraft/world/entity/LivingEntity;m_21161_(Lnet/minecraft/world/damagesource/DamageSource;F)F"
+      "hurt": "Lnet/minecraft/world/entity/LivingEntity;m_6469_(Lnet/minecraft/world/damagesource/DamageSource;F)Z"
     },
     "com/ssakura49/sakuratinker/mixin/EmptyGlyphAccessor": {
       "left": "f_95205_:F",
@@ -23,6 +23,11 @@
       "up": "f_95207_:F",
       "u1": "f_95202_:F",
       "down": "f_95208_:F"
+    },
+    "com/ssakura49/sakuratinker/mixin/PlayerMixin": {
+      "aiStep": "Lnet/minecraft/world/entity/player/Player;m_8107_()V",
+      "isInvulnerableTo": "Lnet/minecraft/world/entity/player/Player;m_6673_(Lnet/minecraft/world/damagesource/DamageSource;)Z",
+      "hurt": "Lnet/minecraft/world/entity/player/Player;m_6469_(Lnet/minecraft/world/damagesource/DamageSource;F)Z"
     },
     "com/ssakura49/sakuratinker/mixin/ClientTextTooltipAccessor": {
       "text": "f_169936_:Lnet/minecraft/util/FormattedCharSequence;"
@@ -55,6 +60,13 @@
     "com/ssakura49/sakuratinker/mixin/tinker/BulkQuiverModuleMixin": {
       "Lnet/minecraft/world/item/ItemStack;shrink(I)V": "Lnet/minecraft/world/item/ItemStack;m_41774_(I)V"
     },
+    "com/ssakura49/sakuratinker/mixin/damagesource/LivingEntityMixin": {
+      "getDamageAfterArmorAbsorb": "Lnet/minecraft/world/entity/LivingEntity;m_21161_(Lnet/minecraft/world/damagesource/DamageSource;F)F"
+    },
+    "com/ssakura49/sakuratinker/mixin/EntityMixin": {
+      "isInvulnerableTo": "Lnet/minecraft/world/entity/Entity;m_6673_(Lnet/minecraft/world/damagesource/DamageSource;)Z",
+      "hurt": "Lnet/minecraft/world/entity/Entity;m_6469_(Lnet/minecraft/world/damagesource/DamageSource;F)Z"
+    },
     "com/ssakura49/sakuratinker/mixin/tinker/TrickQuiverModuleMixin": {
       "Lnet/minecraft/world/item/ItemStack;shrink(I)V": "Lnet/minecraft/world/item/ItemStack;m_41774_(I)V"
     },
@@ -75,7 +87,7 @@
         "<init>(ILjava/lang/String;)V": "Lnet/minecraft/network/chat/TextColor;<init>(ILjava/lang/String;)V"
       },
       "com/ssakura49/sakuratinker/mixin/LivingEntityMixin": {
-        "getDamageAfterArmorAbsorb": "Lnet/minecraft/world/entity/LivingEntity;m_21161_(Lnet/minecraft/world/damagesource/DamageSource;F)F"
+        "hurt": "Lnet/minecraft/world/entity/LivingEntity;m_6469_(Lnet/minecraft/world/damagesource/DamageSource;F)Z"
       },
       "com/ssakura49/sakuratinker/mixin/EmptyGlyphAccessor": {
         "left": "f_95205_:F",
@@ -87,6 +99,11 @@
         "up": "f_95207_:F",
         "u1": "f_95202_:F",
         "down": "f_95208_:F"
+      },
+      "com/ssakura49/sakuratinker/mixin/PlayerMixin": {
+        "aiStep": "Lnet/minecraft/world/entity/player/Player;m_8107_()V",
+        "isInvulnerableTo": "Lnet/minecraft/world/entity/player/Player;m_6673_(Lnet/minecraft/world/damagesource/DamageSource;)Z",
+        "hurt": "Lnet/minecraft/world/entity/player/Player;m_6469_(Lnet/minecraft/world/damagesource/DamageSource;F)Z"
       },
       "com/ssakura49/sakuratinker/mixin/ClientTextTooltipAccessor": {
         "text": "f_169936_:Lnet/minecraft/util/FormattedCharSequence;"
@@ -118,6 +135,13 @@
       },
       "com/ssakura49/sakuratinker/mixin/tinker/BulkQuiverModuleMixin": {
         "Lnet/minecraft/world/item/ItemStack;shrink(I)V": "Lnet/minecraft/world/item/ItemStack;m_41774_(I)V"
+      },
+      "com/ssakura49/sakuratinker/mixin/damagesource/LivingEntityMixin": {
+        "getDamageAfterArmorAbsorb": "Lnet/minecraft/world/entity/LivingEntity;m_21161_(Lnet/minecraft/world/damagesource/DamageSource;F)F"
+      },
+      "com/ssakura49/sakuratinker/mixin/EntityMixin": {
+        "isInvulnerableTo": "Lnet/minecraft/world/entity/Entity;m_6673_(Lnet/minecraft/world/damagesource/DamageSource;)Z",
+        "hurt": "Lnet/minecraft/world/entity/Entity;m_6469_(Lnet/minecraft/world/damagesource/DamageSource;F)Z"
       },
       "com/ssakura49/sakuratinker/mixin/tinker/TrickQuiverModuleMixin": {
         "Lnet/minecraft/world/item/ItemStack;shrink(I)V": "Lnet/minecraft/world/item/ItemStack;m_41774_(I)V"

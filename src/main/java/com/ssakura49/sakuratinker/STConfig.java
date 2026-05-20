@@ -48,6 +48,8 @@ public class STConfig {
         public static final ForgeConfigSpec.ConfigValue<String> WRAPPED_COSMIC_LOCATION;
         private static final ForgeConfigSpec.ConfigValue<Boolean> ENABLE_TIME_STOP_BALL_RENDERER;
 
+        public static final ForgeConfigSpec.ConfigValue<Boolean> ENABLE_ZENITH_ALL_RANDOM_MATERIALS;
+
         public static boolean no_mod_render;
         public static boolean enable_cosmic_renderer;
         public static double cosmic_scale;
@@ -68,6 +70,17 @@ public class STConfig {
                     COSMIC_SCALE = BUILDER.comment("cosmic shader scale").define("cosmicScale", 1.0D);
                     WRAPPED_COSMIC_LOCATION = BUILDER.comment("cosmic texture covering the item").define("wrappedTextureLocation", "sakuratinker:textures/shader/star2.png");
                     COSMIC_SPEED_MULTIPLIER = BUILDER.comment("cosmic render speed multiplier").defineInRange("cosmicSpeedMultiplier", 1.0F, 0F, 100F);
+                    BUILDER.pop();
+                }
+                BUILDER.pop();
+
+                BUILDER.push("Entity Render");
+                {
+                    BUILDER.push("BladeConvergence Render");
+                    ENABLE_ZENITH_ALL_RANDOM_MATERIALS = BUILDER
+                            .comment("Enable All Materials Render")
+                            .comment("允许完全随机的材料渲染")
+                            .define("enableRandom",true);
                     BUILDER.pop();
                 }
                 BUILDER.pop();
@@ -175,6 +188,10 @@ public class STConfig {
 
         //goety blacklist
         public static final ForgeConfigSpec.ConfigValue<List<? extends String>> MODIFIER_BLACKLIST;
+
+        public static final ForgeConfigSpec.ConfigValue<Boolean> INFINITY_DAMAGE;
+
+        public static final ForgeConfigSpec.ConfigValue<Boolean> BLADE_CONVERGENCE_CAN_TRIGGER_MODIFIER;
 
         //虚金的计算公式
         public enum GrowthMode {
@@ -328,6 +345,11 @@ public class STConfig {
                 TinkerDarkWandTriggerModifier = BUILDER
                         .define("disabled trigger modifier", true);
                 BUILDER.pop();
+
+                BUILDER.comment("万剑归一").push("Blade Convergence Config");
+                BLADE_CONVERGENCE_CAN_TRIGGER_MODIFIER = BUILDER
+                        .define("can trigger modifier,default false", false);
+                BUILDER.pop();
             }
             BUILDER.pop();
 
@@ -469,6 +491,11 @@ public class STConfig {
                         .comment("指数趋近速率（越大越慢）")
                         .comment("Softcap scale (bigger = slower)")
                         .defineInRange("softcap_scale", 5000D, 1D, 1_000_000D);
+
+                BUILDER.comment("全知全能配置").push("Omnipotence Config");
+                INFINITY_DAMAGE = BUILDER
+                        .comment("全知全能造成的最大伤害，默认Float.MAX,为false则是以当前武器攻击力为准")
+                        .define("maxDamage", true);
                 BUILDER.pop();
             }
             BUILDER.pop();

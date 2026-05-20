@@ -27,7 +27,7 @@
       "phantom_amount": 2.0,
       "range": 16.0
     },
-    "sakuratinker:soul_gatherer.json": {
+    "sakuratinker:soul_gatherer": {
       "soul_increase": 0.1,
       "soul_power": 4.0
     },

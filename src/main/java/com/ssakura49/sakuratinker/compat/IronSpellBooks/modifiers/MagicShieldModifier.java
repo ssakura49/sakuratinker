@@ -1,18 +1,16 @@
 package com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers;
 
 import com.ssakura49.sakuratinker.generic.BaseModifier;
-import com.ssakura49.sakuratinker.network.PacketHandler;
-import com.ssakura49.sakuratinker.network.s2c.SyncManaPacket;
 import com.ssakura49.sakuratinker.utils.SafeClassUtil;
 import com.ssakura49.sakuratinker.utils.tinker.ToolUtil;
 import io.redspace.ironsspellbooks.api.events.ChangeManaEvent;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
+import io.redspace.ironsspellbooks.network.SyncManaPacket;
+import io.redspace.ironsspellbooks.setup.PacketDistributor;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.AttributeInstance;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -42,7 +40,7 @@ public class MagicShieldModifier extends BaseModifier {
                 ChangeManaEvent event = new ChangeManaEvent(serverPlayer, magicData, currentMana, currentMana - manaCost);
                 if (actualBlock > 0) {
                     magicData.setMana(event.getNewMana());
-                    PacketHandler.sendToPlayer(new SyncManaPacket((int) (currentMana - manaCost)), serverPlayer);
+                    PacketDistributor.sendToPlayer(serverPlayer, new SyncManaPacket(magicData));
                     amount -= actualBlock;
                 }
                 return amount;

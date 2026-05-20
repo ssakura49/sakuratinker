@@ -58,6 +58,7 @@ public final class STDataGenerator {
         generator.addProvider(server, new STEntityTagsProvider(output,lookupProvider,helper));
         generator.addProvider(server, new STGLMProvider(output));
         generator.addProvider(server, new STFluidContainerTransferProvider(output));
+        generator.addProvider(server, new STToolRecipeProvider(output));
     }
 
     public STDataGenerator(){}

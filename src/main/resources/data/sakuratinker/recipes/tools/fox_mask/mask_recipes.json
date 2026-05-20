@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:table_tool_casting",
+  "cast": {
+    "item": "sakuratinker:fox_mask"
+  },
+  "item_cost": 12,
+  "cast_consumed": true,
+  "result": "sakuratinker:tic_fox_mask"
+}

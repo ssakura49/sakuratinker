@@ -1,6 +1,5 @@
 package com.ssakura49.sakuratinker.common.tinkering.modifiers.curio;
 
-import com.ssakura49.sakuratinker.library.events.LivingCalculateAbsEvent;
 import com.ssakura49.tinkercuriolib.content.ProjectileImpactContent;
 import com.ssakura49.tinkercuriolib.event.LivingDamageCalculationEvent;
 import com.ssakura49.tinkercuriolib.hook.TCLibHooks;

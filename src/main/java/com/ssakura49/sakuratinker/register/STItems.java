@@ -184,6 +184,7 @@ public class STItems {
     public static final ItemObject<ToolPartItem> scythe_blade = TINKER_ITEMS.register("scythe_blade", ()->new ToolPartItem(PartItem, HeadMaterialStats.ID));
     public static final ItemObject<ToolPartItem> alchemical_core = TINKER_ITEMS.register("alchemical_core",()->new ToolPartItem(PartItem,AlchemicalCoreMaterialStats.ID));
     public static final ItemObject<ToolPartItem> range_core = TINKER_ITEMS.register("range_core",()->new ToolPartItem(PartItem,RangeMaterialStats.ID));
+    public static final ItemObject<ToolPartItem> fox_mask_part = TINKER_ITEMS.register("fox_mask_part",()->new ToolPartItem(PartItem,FoxMaskMaterialStats.ID));
 
     public static final ItemObject<ModifiableCurioItem> tinker_charm = TINKER_ITEMS.register("tinker_charm", () -> new TinkerCharm(ToolItem, STToolDefinitions.TINKER_CHARM));
     public static final ItemObject<ModifiableItem> great_sword = TINKER_ITEMS.register("great_sword",() -> new ModifiableItem(ToolItem, STToolDefinitions.GREAT_SWORD));
@@ -202,6 +203,7 @@ public class STItems {
     public static final ItemObject<ModifiableItem> revolver = TINKER_ITEMS.register("revolver", () -> new RevolverItem(ToolItem, STToolDefinitions.TINKER_REVOLVER));
     public static final ItemObject<ModifiableBulletItem> tinker_bullet = TINKER_ITEMS.register("tinker_bullet", () -> new TinkerBullet(ToolItem, STToolDefinitions.TINKER_BULLET));
     public static final ItemObject<ModifiableItem> alchemical_gloves = TINKER_ITEMS.register("alchemical_gloves", () -> new AlchemicalGlovesItem(ToolItem, STToolDefinitions.ALCHEMICAL_GLOVES));
+    public static final ItemObject<ModifiableCurioItem> tic_fox_mask = TINKER_ITEMS.register("tic_fox_mask", ()-> new TicFoxMask(ToolItem, STToolDefinitions.FOX_MASK));
 
 //    public static final RegistryObject<Item> shuriken_ammo = ITEMS.register("shuriken_ammo", () -> new IShuriken(new Item.Properties()));
     public static final RegistryObject<Item> ghost_knife = registerMisc(ITEMS, "ghost_knife", () -> new Item(new Item.Properties()), true);

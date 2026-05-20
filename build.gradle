@@ -160,10 +160,10 @@ repositories {
             includeGroup "curse.maven"
         }
     }
-//    maven {
-//        name = "Modrinth"
-//        url = "https://api.modrinth.com/maven"
-//    }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+    }
 }
 
 dependencies {
@@ -177,7 +177,7 @@ dependencies {
     implementation fg.deobf("slimeknights.tconstruct:TConstruct:1.20.1-3.11.2.193")
 
     implementation fg.deobf("curse.maven:jei-238222:6075247")
-    implementation fg.deobf("curse.maven:etst-lib-1206379:6604304")
+    implementation fg.deobf("curse.maven:etst-lib-1206379:7732390")
     implementation fg.deobf("curse.maven:tconjei-974154:6260922")
 
 //    implementation fg.deobf("curse.maven:curios-309927:6238756")
@@ -230,7 +230,12 @@ dependencies {
     implementation fg.deobf("curse.maven:eeeabs-mobs-921600:6095880")
 
 
+    //implementation fg.deobf("maven.modrinth:endinglibrary:2.1.15")
+    //compileOnly fg.deobf("blank:EndingLibrary-1.20.1:2.1.15")
+
     implementation fg.deobf("com.fuyun.cloudertinker:cloudertinker:1.20.1-1.2.3")
+
+    implementation fg.deobf("com.ssakura49.sakura_library:sakura_library:1.20.1-1.0")
 
     compileOnly fg.deobf(jarJar("com.tterrag.registrate:Registrate:MC1.20-1.3.11")) {
         transitive = false
@@ -287,6 +292,8 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    annotationProcessor 'com.google.auto.service:auto-service:1.1.1'
+    compileOnly 'com.google.auto.service:auto-service-annotations:1.1.1'
 }
 
 

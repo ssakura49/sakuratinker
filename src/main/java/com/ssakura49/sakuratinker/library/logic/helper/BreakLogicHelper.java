@@ -23,6 +23,7 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 import java.util.Objects;
 
+@Deprecated
 public class BreakLogicHelper {
     public BreakLogicHelper() {
     }

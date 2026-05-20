@@ -1,20 +1,20 @@
 package com.ssakura49.sakuratinker.compat.IronSpellBooks.hook;
 
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.context.SpellAttackContext;
+import io.redspace.ironsspellbooks.api.events.SpellHealEvent;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.Collection;
 
 public interface SpellHealModifierHook {
-    float getSpellHeal(IToolStackView tool, ModifierEntry modifier, SpellAttackContext context, float baseHeal, float currentHeal);
+    default void getSpellHeal(IToolStackView tool, ModifierEntry modifier, SpellAttackContext context, SpellHealEvent event){}
     record AllMerger(Collection<SpellHealModifierHook> modules) implements SpellHealModifierHook {
         @Override
-        public float getSpellHeal(IToolStackView tool, ModifierEntry modifier, SpellAttackContext context, float baseHeal, float currentHeal) {
+            public void getSpellHeal(IToolStackView tool, ModifierEntry modifier, SpellAttackContext context, SpellHealEvent event) {
             for (SpellHealModifierHook module : modules) {
-                currentHeal = module.getSpellHeal(tool, modifier, context, baseHeal, currentHeal);
+                module.getSpellHeal(tool, modifier, context, event);
             }
-            return currentHeal;
         }
     }
 

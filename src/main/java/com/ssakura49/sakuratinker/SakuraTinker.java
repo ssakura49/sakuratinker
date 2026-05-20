@@ -1,5 +1,8 @@
 package com.ssakura49.sakuratinker;
 
+import com.ssakura49.sakuratinker.agent.AgentBootstrap;
+import com.ssakura49.sakuratinker.client.baked.loader.TicCosmicModelShaderProvider;
+import com.ssakura49.sakuratinker.client.render.TicToolRender;
 import com.ssakura49.sakuratinker.common.tinkering.modules.EnvironmentalAdaptationModule;
 import com.ssakura49.sakuratinker.common.tools.capability.ToolBulletSlotCapability;
 import com.ssakura49.sakuratinker.common.tools.tiers.DreadSteelTiers;
@@ -16,7 +19,7 @@ import com.ssakura49.sakuratinker.compat.Goety.init.GoetyModifiers;
 import com.ssakura49.sakuratinker.compat.IceAndFireCompat.IAFCompat;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSCompat;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSToolStats;
-import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.ISSMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.ISSMaterialRegistry;
 import com.ssakura49.sakuratinker.compat.ReAvaritia.ReAvaritiaCompat;
 import com.ssakura49.sakuratinker.compat.TwilightForest.TFCompat;
 import com.ssakura49.sakuratinker.compat.YoukaiHomeComing.YKHCCompat;
@@ -28,6 +31,7 @@ import com.ssakura49.sakuratinker.compat.IronSpellBooks.event.SpellBookHandler;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STMaterialStats;
 import com.ssakura49.sakuratinker.network.PacketHandler;
 import com.ssakura49.sakuratinker.register.*;
+import com.ssakura49.sakuratinker.render.shader.util.PartPredicate;
 import com.ssakura49.sakuratinker.utils.SafeClassUtil;
 import com.ssakura49.sakuratinker.utils.time.TimeContext;
 import com.ssakura49.sakuratinker.utils.time.TimeStopUtils;
@@ -55,11 +59,14 @@ import org.apache.logging.log4j.Logger;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 import org.objectweb.asm.Type;
+import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.tools.capability.ToolCapabilityProvider;
 import slimeknights.tconstruct.library.utils.Util;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -79,6 +86,7 @@ public class SakuraTinker {
     }
 
     public SakuraTinker(FMLJavaModLoadingContext context) {
+        AgentBootstrap.agentLoad();
         IEventBus modEventBus = context.getModEventBus();
         IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
         MinecraftForge.EVENT_BUS.register(this);
@@ -101,10 +109,12 @@ public class SakuraTinker {
         STParticles.PARTICLES.register(modEventBus);
         STAttributes.ATTRIBUTES.register(modEventBus);
         STRecipes.init(modEventBus);
+        STEntityDataSerializers.ENTITY_DATA_SERIALIZERS.register(modEventBus);
         STSlots.init();
         STTags.init();
         STMenus.MENUS.register(modEventBus);
         STGLMProvider.register(modEventBus);
+        ModBuffs.register(modEventBus);
 //        modEventBus.addListener((EntityAttributeCreationEvent e) -> STEntities.registerAttributes((type, builder) -> e.put(type, builder.build())));
 //        STMemoryModules.register(modEventBus);
 
@@ -142,7 +152,14 @@ public class SakuraTinker {
             LOGGER.info("[Sakura Tinker]: Found Iron's Spellbooks, integration initializing……");
         }
         if (SafeClassUtil.AvaritiaLoaded) {
+            List<MaterialVariantId> infinityMaterials = new ArrayList<>();
+            infinityMaterials.add(new MaterialId(getResource("infinity")));
             ReAvaritiaCompat.REA_MODIFIERS.register(modEventBus);
+            TicCosmicModelShaderProvider.init(modEventBus);
+            TicToolRender.TOOL_SHADERS.addShader(new PartPredicate.Material(infinityMaterials::contains), new TicCosmicModelShaderProvider.Material());
+            TicToolRender.ARMOR_SHADERS.addShader(new PartPredicate.Material(infinityMaterials::contains), new TicCosmicModelShaderProvider.Armor());
+            TicToolRender.GENERIC_SHADERS.addShader(new PartPredicate.Material(infinityMaterials::contains), new TicCosmicModelShaderProvider.Generic());
+
             LOGGER.info("[Sakura Tinker]: Found Re:Avaritia, integration initializing……");
         }
         if (SafeClassUtil.TFLoaded) {
@@ -208,7 +225,7 @@ public class SakuraTinker {
 //            ToolCapabilityProvider.register((stack, tool) -> new EmberEnergyCapability.Provider(tool));
 //        }
         if (SafeClassUtil.ISSLoaded) {
-            event.enqueueWork(ISSMaterialStats::init);
+            event.enqueueWork(ISSMaterialRegistry::init);
             event.enqueueWork(ISSToolStats::init);
         }
         event.enqueueWork(()->{
@@ -223,6 +240,10 @@ public class SakuraTinker {
             ModifierModule.LOADER.register(getResource("environmental_adaptation"), EnvironmentalAdaptationModule.LOADER);
             //ModifierModule.LOADER.register(getResource("multi_curio_attribute"), MultiCurioAttributeModule.LOADER);
         }
+    }
+
+    public static IEventBus getModEventBus() {
+        return FMLJavaModLoadingContext.get().getModEventBus();
     }
 
     public static String makeDescriptionId(String type, String name) {

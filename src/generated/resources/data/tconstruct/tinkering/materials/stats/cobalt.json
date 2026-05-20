@@ -5,6 +5,10 @@
       "time": 180.0,
       "weight": 2.5
     },
+    "sakuratinker:book_mark": {
+      "percent_bonus": 0.1,
+      "spell_slot": 12
+    },
     "sakuratinker:charm_chain": {
       "armor": 0.1,
       "arrow_damage": 0.15,

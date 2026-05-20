@@ -2,16 +2,30 @@ package com.ssakura49.sakuratinker.event;
 
 import com.ssakura49.sakuratinker.STConfig;
 import com.ssakura49.sakuratinker.SakuraTinker;
+import com.ssakura49.sakuratinker.agent.HealthMethod.AgentHealthMethodHelper;
 import com.ssakura49.sakuratinker.common.tinkering.modifiers.armor.AbsorptionModifier;
 import com.ssakura49.sakuratinker.register.STModifiers;
 import com.ssakura49.sakuratinker.utils.entity.EntityUtil;
+import com.ssakura49.sakuratinker.utils.helper.DropLootHelper;
+import com.ssakura49.sakuratinker.utils.helper.HealthModify;
 import com.ssakura49.sakuratinker.utils.tinker.ToolCooldownManager;
 import com.ssakura49.sakuratinker.utils.tinker.ToolUtil;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraftforge.entity.PartEntity;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -19,6 +33,8 @@ import net.minecraftforge.event.entity.living.LivingKnockBackEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ToolStack;
+import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 @Mod.EventBusSubscriber(modid = SakuraTinker.MODID)
 public class ModifierEvent {
@@ -50,20 +66,7 @@ public class ModifierEvent {
         }
     }
 
-    @SubscribeEvent
-    public static void onOmnipotenceLivingDamage(LivingDamageEvent event) {
-        DamageSource source = event.getSource();
-        LivingEntity target = event.getEntity();
-        if (!(source.getEntity() instanceof Player player)) return;
-        for (IToolStackView tool : ToolUtil.getAllEquippedToolStacks(player)) {
-            if (tool.getModifierLevel(STModifiers.Omnipotence.get()) > 0) {
-                target.setHealth(0.0F);
-                target.dropAllDeathLoot(source);
-                EntityUtil.die(target, source);
-                break;
-            }
-        }
-    }
+
 
     @SubscribeEvent
     public static void onNull_AlmightyKnockback(LivingKnockBackEvent event) {

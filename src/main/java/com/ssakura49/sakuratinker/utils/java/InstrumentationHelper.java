@@ -1,7 +1,5 @@
 package com.ssakura49.sakuratinker.utils.java;
 
-import com.ssakura49.sakuratinker.coremod.SakuraTinkerCore;
-import com.ssakura49.sakuratinker.utils.MinecraftInstHandler;
 import sun.misc.Unsafe;
 
 import java.lang.instrument.Instrumentation;
@@ -41,22 +39,9 @@ public final class InstrumentationHelper {
         }
     }
 
-    public static Instrumentation getInstrumentation() {
-        /*
-        try {
-            PathSetter.appendToClassPathForInstrumentation();
-            Class<?> real = ClassLoader.getSystemClassLoader().loadClass("com.mega.uom.util.java.InstrumentationHelper");
-            allowAttachSelfAndInject();
-            ModSource.out("Agent Attach Task succeeded");
-            times++;
-            VarHandle varHandle = IMPL_LOOKUP().findStaticVarHandle(real, "inst", Instrumentation.class);
-            return (Instrumentation) varHandle.get();
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-         */
-        return MinecraftInstHandler.getInstrumentation();
-    }
+//    public static Instrumentation getInstrumentation() {
+//        return MinecraftInstHandler.getInstrumentation();
+//    }
 
     public static void allowAttachSelf() throws IllegalAccessException, ClassNotFoundException, NoSuchFieldException {
         Field unsafeF = Unsafe.class.getDeclaredField("theUnsafe");
@@ -65,7 +50,6 @@ public final class InstrumentationHelper {
         Class<?> vmClass = Class.forName("sun.tools.attach.HotSpotVirtualMachine");
         Field allowAttachSelf = vmClass.getDeclaredField("ALLOW_ATTACH_SELF");
         unsafe.putObject(unsafe.staticFieldBase(allowAttachSelf), unsafe.staticFieldOffset(allowAttachSelf), Boolean.valueOf(true));
-        SakuraTinkerCore.stream.println("Allowed attach self VM.");
         System.out.println("Allowed attach self VM.");
     }
 

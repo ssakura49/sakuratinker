@@ -52,7 +52,7 @@ public class AutoAttackModifier extends BaseModifier {
 
             player.resetAttackStrengthTicker();
 
-            ToolAttackUtil.attackEntity(tool, player, InteractionHand.MAIN_HAND, target, () -> tool.getStats().get(ToolStats.ATTACK_DAMAGE), true);
+            ToolAttackUtil.attackEntity(tool, player, target);
         }
     }
 

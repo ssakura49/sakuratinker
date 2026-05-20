@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:table_casting_material",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/gutter"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "item_cost": 4,
+  "result": "sakuratinker:gutter"
+}

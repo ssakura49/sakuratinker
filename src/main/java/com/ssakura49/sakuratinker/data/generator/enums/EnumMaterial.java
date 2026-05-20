@@ -24,10 +24,10 @@ public enum EnumMaterial {
     orichalcum(STMaterialId.orichalcum,3,false,false,EnumMaterialStats.orichalcum,null,orichalcum_default),
     aurumos(STMaterialId.aurumos,4,false,false,EnumMaterialStats.aurumos,null,aurumos_default),
     bear_interest(STMaterialId.bear_interest,4,false,false,EnumMaterialStats.bear_interest,null,bear_interest_default),
-    south_star(STMaterialId.south_star,4,false,false,EnumMaterialStats.south_star,modLoaded(ISS),south_star_default,south_star_armor),
+    south_star(STMaterialId.south_star,4,false,false,EnumMaterialStats.south_star,modLoaded(ISS),south_star_default,south_star_armor,south_star_book),
     mycelium_slimesteel(STMaterialId.mycelium_slimesteel,4,false,false,EnumMaterialStats.mycelium_slimesteel,null,mycelium_slimesteel_default,mycelium_slimesteel_armor),
     frost_slimesteel(STMaterialId.frost_slimesteel,4,false,false,EnumMaterialStats.frost_slimesteel,null,frost_slimesteel_default),
-    echo_slimesteel(STMaterialId.echo_slimesteel,4,false,false,EnumMaterialStats.echo_slimesteel,null,echo_slimesteel_default,echo_slimesteel_armor),
+    echo_slimesteel(STMaterialId.echo_slimesteel,4,false,false,EnumMaterialStats.echo_slimesteel,null,echo_slimesteel_default,echo_slimesteel_armor,echo_slimesteel_book),
 //    goozma(STMaterialId.goozma,7,false,false,EnumMaterialStats.goozma,null,goozma_default,goozma_armor),
 
     youkai(STMaterialId.YoukaiHomeComing.youkai, 2,false,false,EnumMaterialStats.youkai,modLoaded(YHKC),youkai_default,youkai_armor,youkai_charm),
@@ -42,6 +42,7 @@ public enum EnumMaterial {
 //    colorful(STMaterialId.ReAvaritia.colorful,7,false,false,EnumMaterialStats.colorful,null,colorful_default,colorful_armor,colorful_charm),
 
     arcane_alloy(STMaterialId.IronSpellBook.arcane_alloy,4,false,false,EnumMaterialStats.arcane_alloy,modLoaded(ISS),arcane_alloy_armor,arcane_alloy_cloth),
+    arcane_cloth(STMaterialId.IronSpellBook.arcane_cloth,2,true,false,EnumMaterialStats.arcane_cloth,modLoaded(ISS),EnumMaterialModifier.arcane_cloth),
 
     orichalcos(STMaterialId.ExtraBotany.orichalcos,4,false,false,EnumMaterialStats.orichalcos,modLoaded(ExtraBotany),orichalcos_default),
 

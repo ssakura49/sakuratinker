@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:part_builder",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "cost": 3,
+  "pattern": "sakuratinker:book_mark",
+  "pattern_item": [
+    {
+      "tag": "tconstruct:patterns/default"
+    },
+    {
+      "item": "sakuratinker:book_mark_cast"
+    }
+  ],
+  "result": {
+    "item": "sakuratinker:book_mark"
+  }
+}

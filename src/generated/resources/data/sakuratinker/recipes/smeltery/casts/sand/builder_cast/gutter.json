@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "pattern": "sakuratinker:gutter",
+  "pattern_item": {
+    "tag": "tconstruct:casts/sand"
+  },
+  "result": "sakuratinker:gutter_sand_cast"
+}

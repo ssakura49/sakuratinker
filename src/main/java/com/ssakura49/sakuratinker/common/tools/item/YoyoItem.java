@@ -143,11 +143,6 @@ public class YoyoItem extends ModifiableItem implements IYoyo {
     }
 
     @Override
-    public <T extends LivingEntity> void damageItem(ItemStack yoyo, InteractionHand hand, int amount, T entity) {
-
-    }
-
-    @Override
     public void entityInteraction(ItemStack yoyoStack, Player player, InteractionHand hand, YoyoEntity yoyo, Entity target) {
         if (target.level().isClientSide) return;
         entityInteractions.forEach(i->i.apply(yoyoStack, player, hand, yoyo, target));
@@ -172,10 +167,6 @@ public class YoyoItem extends ModifiableItem implements IYoyo {
 
     @Override
     public @NotNull List<Component> getStatInformation(IToolStackView tool, @Nullable Player player, List<Component> tooltips, TooltipKey key, TooltipFlag tooltipFlag) {
-        return this.getYoYoStats(tool, player, tooltips, key, tooltipFlag);
-    }
-
-    public List<Component> getYoYoStats(IToolStackView tool, @Nullable Player player, List<Component> tooltips, TooltipKey key, TooltipFlag tooltipFlag) {
         TooltipBuilder builder = new TooltipBuilder(tool, tooltips);
         if (tool.hasTag(TinkerTags.Items.DURABILITY)) {
             builder.addDurability();

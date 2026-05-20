@@ -131,6 +131,7 @@ public class STGroups {
             acceptPart(outputPart, soul_gatherer);
         }
         acceptPart(outputPart, range_core);
+        acceptPart(outputPart, fox_mask_part);
 
         acceptTool(outputTool, tinker_charm);
         acceptTool(outputTool, great_sword);
@@ -156,6 +157,7 @@ public class STGroups {
         }
         acceptTool(outputTool, tinker_bullet);
         acceptTool(outputTool, revolver);
+        acceptTool(outputTool,tic_fox_mask);
 
         acceptTools(outputTool, embeddedArmor);
 

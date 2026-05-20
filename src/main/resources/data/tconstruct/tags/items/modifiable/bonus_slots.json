@@ -23,6 +23,7 @@
     { "id": "sakuratinker:tinker_wand", "required":false},
     "sakuratinker:tinker_bullet",
     "sakuratinker:revolver",
-    "sakuratinker:alchemical_gloves"
+    "sakuratinker:alchemical_gloves",
+    "sakuratinker:tic_fox_mask"
   ]
 }

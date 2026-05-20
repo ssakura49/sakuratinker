@@ -26,6 +26,7 @@ import java.util.Objects;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class VanillaCosmicShaders {
     public static final float[] COSMIC_UVS = new float[40];
+    public static TextureAtlasSprite[] COSMIC_SPRITES = new TextureAtlasSprite[10];
     public static CosmicShaderInstance cosmicShader;
     public static STUniform cosmicTime;
     public static STUniform cosmicYaw;

@@ -26,7 +26,8 @@
     "sakuratinker:scythe_blade",
     { "id": "sakuratinker:soul_gatherer", "required":false},
     "sakuratinker:alchemical_core",
-    "sakuratinker:range_core"
+    "sakuratinker:range_core",
+    "sakuratinker:fox_mask_part"
 
   ]
 }

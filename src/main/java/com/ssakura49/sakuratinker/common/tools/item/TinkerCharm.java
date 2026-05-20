@@ -54,10 +54,6 @@ public class TinkerCharm extends ModifiableCurioItem {
 
     @Override
     public List<Component> getStatInformation(IToolStackView tool, @Nullable Player player, List<Component> tooltips, TooltipKey key, TooltipFlag tooltipFlag) {
-        return this.getCurioStats(tool, player, tooltips, key, tooltipFlag);
-    }
-
-    public List<Component> getCurioStats(IToolStackView tool, @Nullable Player player, List<Component> tooltips, TooltipKey key, TooltipFlag tooltipFlag) {
         TooltipBuilder builder = new TooltipBuilder(tool, tooltips);
         TooltipUtil.addPerToolStatTooltip(builder, tool, STToolStats.MOVEMENT_SPEED);
         TooltipUtil.addToolStatTooltip(builder, tool, STToolStats.MAX_HEALTH);

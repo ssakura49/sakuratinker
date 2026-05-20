@@ -27,6 +27,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
+import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.helper.TooltipBuilder;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
@@ -138,8 +139,8 @@ public class RevolverItem extends ModifiableItem implements IHasBulletInventory 
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return BlockingModifier.blockWhileCharging(ToolStack.from(stack), UseAnim.BOW);
+    public @NotNull UseAnim getUseAnimation(ItemStack stack) {
+        return ModifierUtil.blockWhileCharging(ToolStack.from(stack), UseAnim.BOW);
     }
     @Override
     public int getUseDuration(ItemStack pStack) {

@@ -4,14 +4,9 @@
       "percent_bonus": 0.3,
       "spell_slot": 10
     },
-    "sakuratinker:envelope": {
-      "school_bonus": {
-        "irons_spellbooks:holy": 0.5
-      }
-    },
     "sakuratinker:gutter": {},
     "sakuratinker:manu_script": {
-      "cast_time_reduce": 0.1,
+      "cast_time_reduce": 0.15,
       "mana_reduce": 30.0,
       "mana_regen": 0.2,
       "mana_value": 1600.0,

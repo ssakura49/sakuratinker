@@ -24,6 +24,13 @@
       "penetration": 12,
       "range": 25.0
     },
+    "sakuratinker:manu_script": {
+      "cast_time_reduce": 0.12,
+      "mana_reduce": 5.0,
+      "mana_regen": 0.15,
+      "mana_value": 1500.0,
+      "spell_damage": 14.0
+    },
     "sakuratinker:phantom_core": {
       "phantom_amount": 2.0,
       "range": 32.0

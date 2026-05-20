@@ -28,6 +28,7 @@ public class STMaterialId {
     public static final MaterialId gluttonous = createMaterial("gluttonous");
     public static final MaterialId cold_iron_alloy = createMaterial("cold_iron_alloy");
     public static final MaterialId paper = createMaterial("paper");
+    //public static final MaterialId diamond = createMaterial("diamond");
 
     public static class YoukaiHomeComing {
         public static final MaterialId youkai = createMaterial("youkai");
@@ -52,6 +53,7 @@ public class STMaterialId {
         public static final MaterialId wu_yu = createMaterial("wu_yu");
         public static final MaterialId two_form_mist_star = createMaterial("two_form_mist_star");
         public static final MaterialId mithril = createMaterial("mithril");
+        public static final MaterialId arcane_cloth = createMaterial("arcane_cloth");
     }
     public static class Botania{
         public static final MaterialId mana_steel = createMaterial("mana_steel");

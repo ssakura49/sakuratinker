@@ -3,6 +3,7 @@ package com.ssakura49.sakuratinker.data.generator.providiers.tinker;
 import com.ssakura49.sakuratinker.data.generator.enums.EnumMaterial;
 import com.ssakura49.sakuratinker.data.generator.enums.EnumMaterialModifier;
 import com.ssakura49.sakuratinker.data.generator.enums.EnumTconMaterial;
+import com.ssakura49.sakuratinker.data.generator.enums.EnumTconMaterialModifier;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.tools.data.material.MaterialTraitsDataProvider;
 
@@ -22,7 +23,7 @@ public class STMaterialModifierProvider extends MaterialTraitsDataProvider {
             }
         }
         for (EnumTconMaterial material:EnumTconMaterial.values()){
-            for (EnumMaterialModifier modifier:material.modifiers){
+            for (EnumTconMaterialModifier modifier:material.modifiers){
                 addTraits(material.id,modifier.statType,modifier.modifiers);
             }
         }

@@ -57,6 +57,9 @@
       "toughness": 0.6,
       "damage": 0.6,
       "arrow_damage": 0.6
+    },
+    "sakuratinker:fox_mask_part": {
+      "invulnerable_time": 80
     }
   }
 }

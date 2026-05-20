@@ -27,7 +27,7 @@
     "sakuratinker:range_core": {
       "range": 8.0
     },
-    "sakuratinker:soul_gatherer.json": {
+    "sakuratinker:soul_gatherer": {
       "soul_increase": 0.3,
       "soul_power": 4.0
     },

@@ -1,5 +1,9 @@
 {
   "stats": {
+    "sakuratinker:book_mark": {
+      "percent_bonus": 0.12,
+      "spell_slot": 14
+    },
     "sakuratinker:charm_chain": {
       "armor": 0.3,
       "arrow_damage": 0.25,
@@ -13,6 +17,11 @@
       "durability": 0.7,
       "max_energy": 80000
     },
+    "sakuratinker:envelope": {
+      "school_bonus": {
+        "irons_spellbooks:eldritch": 0.15
+      }
+    },
     "sakuratinker:flag": {
       "attack_buff_time": 360,
       "charge_time": 120,
@@ -23,6 +32,13 @@
       "cooldown": 0.7,
       "penetration": 11,
       "range": 80.0
+    },
+    "sakuratinker:manu_script": {
+      "cast_time_reduce": 0.06,
+      "mana_reduce": 4.0,
+      "mana_regen": 0.08,
+      "mana_value": 1200.0,
+      "spell_damage": 22.0
     },
     "tconstruct:binding": {},
     "tconstruct:grip": {

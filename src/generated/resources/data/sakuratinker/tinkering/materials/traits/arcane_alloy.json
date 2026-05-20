@@ -1,9 +1,9 @@
 {
   "perStat": {
-    "sakuratinker:manu_script": [
+    "sakuratinker:tinker_spell_book": [
       {
         "level": 1,
-        "name": "sakuratinker:spell_power"
+        "name": "sakuratinker:spell_power_attr"
       }
     ],
     "tconstruct:armor": [

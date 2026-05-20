@@ -34,6 +34,7 @@ public class STToolStats {
     public static final FloatToolStat PENETRATION = (FloatToolStat)ToolStats.register(new FloatToolStat(name("penetration"), -2661276, 3.0F, 1.0F, 256.0F));
     public static final FloatToolStat FLUID_DAMAGE = (FloatToolStat)ToolStats.register(new FloatToolStat(name("fluid_damage"), -2661276, 0.0F, 0.0F, 20480.0F));
 
+    public static final FloatToolStat INVULNERABLE_TIME = (FloatToolStat) ToolStats.register(new FloatToolStat(name("invulnerable_time"), -10887823, 0, 0, Integer.MAX_VALUE));
 
     public STToolStats() {
     }

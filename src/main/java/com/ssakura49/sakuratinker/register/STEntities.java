@@ -3,13 +3,9 @@ package com.ssakura49.sakuratinker.register;
 import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.common.entity.*;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraftforge.registries.RegistryObject;
 import slimeknights.mantle.registration.deferred.EntityTypeDeferredRegister;
-
-import java.util.function.BiConsumer;
 
 public class STEntities {
     public static final EntityTypeDeferredRegister ENTITIES = new EntityTypeDeferredRegister(SakuraTinker.MODID);
@@ -21,12 +17,20 @@ public class STEntities {
                     .setTrackingRange(8)
                     .setShouldReceiveVelocityUpdates(true)
                     .setUpdateInterval(-1));
-    public static final RegistryObject<EntityType<CelestialBladeProjectile>> CELESTIAL_BLADE = ENTITIES.register("celestial_blade", () ->
-            EntityType.Builder.<CelestialBladeProjectile>of(CelestialBladeProjectile::new, MobCategory.MISC)
+//    public static final RegistryObject<EntityType<CelestialBladeProjectile>> CELESTIAL_BLADE = ENTITIES.register("celestial_blade", () ->
+//            EntityType.Builder.<CelestialBladeProjectile>of(CelestialBladeProjectile::new, MobCategory.MISC)
+//                    .sized(1.0f, 1.0f)
+//                    .clientTrackingRange(64)
+//                    .setShouldReceiveVelocityUpdates(true)
+//                    .updateInterval(-1));
+
+    public static final RegistryObject<EntityType<CelestialBladeEntity>> CELESTIAL_BLADE_ENTITY = ENTITIES.register("celestial_blade_entity", () ->
+            EntityType.Builder.<CelestialBladeEntity>of(CelestialBladeEntity::new, MobCategory.MISC)
                     .sized(1.0f, 1.0f)
                     .clientTrackingRange(64)
                     .setShouldReceiveVelocityUpdates(true)
                     .updateInterval(-1));
+
     public static final RegistryObject<EntityType<ShurikenEntity>> SHURIKEN_ENTITY = ENTITIES.register("shuriken", () ->
             EntityType.Builder.<ShurikenEntity>of(ShurikenEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f)

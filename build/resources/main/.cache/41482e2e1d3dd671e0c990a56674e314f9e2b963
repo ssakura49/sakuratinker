@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-30T17:43:34.9753794	Item Models: sakuratinker
+// 1.20.1	2026-05-06T20:16:30.300464	Item Models: sakuratinker
 666c6f9e0d0cae351116e5a76f4d8f1157e9c2ef assets/sakuratinker/models/item/alchemical_core.json
 03f7a6c792769882cc212f950dd43074de7a2093 assets/sakuratinker/models/item/alchemical_core_cast.json
 6eefb5e3ec3bf132e4efd359745c9494672e925e assets/sakuratinker/models/item/alchemical_core_red_sand_cast.json
@@ -58,6 +58,7 @@ d9c0a6eeb457edbdc304861f9ba3b5c863400ec2 assets/sakuratinker/models/item/energy_
 4228a2d844028d4fd08eb9d3004145ddcd749626 assets/sakuratinker/models/item/flag_cast.json
 592f08186cbfcd5756bb083b52b000d97ae8042a assets/sakuratinker/models/item/flag_red_sand_cast.json
 40fc67bae93ba88f42bb825c93ef85d6dea83fb7 assets/sakuratinker/models/item/flag_sand_cast.json
+0a454172bc37e9255f884465ed466f0bdf446335 assets/sakuratinker/models/item/fox_mask_part.json
 5896244ca359db1df3281eb5067f2a966b3656bc assets/sakuratinker/models/item/frost_slimesteel.json
 28d4eeca2d11f6c39c4dd1c4933ccae2351b7d90 assets/sakuratinker/models/item/gluttonous.json
 b5103c8c4bfcfd01291859e69f5dfde79bb4f57c assets/sakuratinker/models/item/great_blade_cast.json

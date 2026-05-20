@@ -644,7 +644,7 @@
   "modifier.sakuratinker.magician.description": "吟唱冷却和法术冷却获得提升。",
   "modifier.sakuratinker.kobold": "狗头人",
   "modifier.sakuratinker.kobold.flavor": "更加强壮...",
-  "modifier.sakuratinker.kobold.description": "生命值大于40点时，每级增加4点攻击，获得特性等级的生命再生。",
+  "modifier.sakuratinker.kobold.description": "每级增加4点攻击，生命值大于40点时获得生命再生。",
   "modifier.sakuratinker.storm_veil": "风暴面纱",
   "modifier.sakuratinker.storm_veil.flavor": "绝妙的时机",
   "modifier.sakuratinker.storm_veil.description": "30秒未受到伤害，获得9秒抗性提升4。",
@@ -1420,6 +1420,50 @@
   "tool_stat.sakuratinker.spell_damage.description": "在施放法术时增加此基础伤害值。",
   "tool_stat.sakuratinker.mana_value": "魔力值：",
   "tool_stat.sakuratinker.mana_value.description": "能够提供多少魔力值。",
-  "tool_stat.sakuratinker.school_bonus": "流派：增幅值"
+  "tool_stat.sakuratinker.school_bonus": "流派：增幅值",
+
+  "modifier.sakuratinker.cobalt_spell": "钴之法术精通",
+  "modifier.sakuratinker.cobalt_spell.flavor": "GuGu**",
+  "modifier.sakuratinker.cobalt_spell.description": "法强+10%，吟唱缩减+10%。",
+
+  "modifier.sakuratinker.holy_hit": "神圣打击",
+  "modifier.sakuratinker.holy_hit.flavor": "圣光！",
+  "modifier.sakuratinker.holy_hit.description": "法术有15%的概率伤害翻倍。",
+
+  "modifier.sakuratinker.spell_frozen": "法术冰冻",
+  "modifier.sakuratinker.spell_frozen.flavor": "不许走",
+  "modifier.sakuratinker.spell_frozen.description": "冰霜法术会对目标施加词条等级的缓慢。",
+
+  "modifier.sakuratinker.spell_level_bonus": "法术等级突破",
+  "modifier.sakuratinker.spell_level_bonus.flavor": "这是奥法带给你的智慧",
+  "modifier.sakuratinker.spell_level_bonus.description": "释放的法术有25%概率提高一级（不可叠加）。",
+
+  "modifier.sakuratinker.spell_power_attr": "法术强度",
+  "modifier.sakuratinker.spell_power_attr.flavor": " ",
+  "modifier.sakuratinker.spell_power_attr.description": "每级提高10%法术强度。",
+
+  "modifier.sakuratinker.wither_tentacles": "凋零之触",
+  "modifier.sakuratinker.wither_tentacles.flavor": " ",
+  "modifier.sakuratinker.wither_tentacles.description": "猩红法术会对目标施加1级的凋零效果。",
+
+  "modifier.sakuratinker.magic_enhancement": "魔力附加",
+  "modifier.sakuratinker.magic_enhancement.flavor": "魔中魔",
+  "modifier.sakuratinker.magic_enhancement.description": "法术造成伤害时时会额外消耗法力值并提升其伤害，每消耗10点法力值使其伤害提升10%（消耗上限为每级20点）。",
+
+  "modifier.sakuratinker.greedy_book": "贪婪",
+  "modifier.sakuratinker.greedy_book.flavor": "初识真味，欲望无垠！",
+  "modifier.sakuratinker.greedy_book.description": "每次法术命中时叠加一层“贪婪”，每层使后续法术伤害提升2点。",
+
+  "modifier.sakuratinker.toxicity_intensification": "毒性加剧",
+  "modifier.sakuratinker.toxicity_intensification.flavor": "病入膏肓",
+  "modifier.sakuratinker.toxicity_intensification.description": "使用自然法术对目标造成伤害时使其受到的中毒效果翻倍。",
+
+  "modifier.sakuratinker.umbral_iss": "幽冥",
+  "modifier.sakuratinker.umbral_iss.flavor": "",
+  "modifier.sakuratinker.umbral_iss.description": "若邪术法术命中目标为玩家，则使其获得10秒黑暗，若命中目标为非玩家，则使该次法术伤害提升20%（不可叠加）",
+
+  "modifier.sakuratinker.umbral": "",
+  "modifier.sakuratinker.umbral.flavor": "",
+  "modifier.sakuratinker.umbral.description": ""
 }
 

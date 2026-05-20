@@ -27,6 +27,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
+import slimeknights.tconstruct.library.tools.definition.module.display.ToolNameHook;
 import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.helper.TooltipBuilder;
@@ -68,7 +69,6 @@ public class VampireKnives extends ModifiableItem {
                 STToolStats.COOLDOWN,
                 tool.getStats().get(STToolStats.COOLDOWN) * 30.0F / speed
         );
-
         float baseDamage = ToolAttackUtil.getAttributeAttackDamage(
                 tool,
                 player,

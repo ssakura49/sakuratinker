@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:part_builder",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "cost": 4,
+  "pattern": "sakuratinker:gutter",
+  "pattern_item": [
+    {
+      "tag": "tconstruct:patterns/default"
+    },
+    {
+      "item": "sakuratinker:gutter_cast"
+    }
+  ],
+  "result": {
+    "item": "sakuratinker:gutter"
+  }
+}

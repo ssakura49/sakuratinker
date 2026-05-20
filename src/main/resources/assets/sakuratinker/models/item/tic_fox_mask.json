@@ -1,0 +1,10 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default",
+  "textures": {
+    "fox_mask":  "sakuratinker:item/tool/tic_fox_mask/mask"
+  },
+  "parts": [
+    { "name": "fox_mask",  "index": 0 }
+  ]
+}

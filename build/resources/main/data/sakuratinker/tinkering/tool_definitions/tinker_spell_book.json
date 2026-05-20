@@ -58,6 +58,10 @@
           "name": "sakuratinker:arcane_tinkering"
         }
       ]
+    },
+    {
+      "type": "tconstruct:material_name",
+      "filter": "all"
     }
   ]
 }

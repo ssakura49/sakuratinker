@@ -9,6 +9,11 @@
       "toughness": 0.1
     },
     "sakuratinker:charm_core": {},
+    "sakuratinker:envelope": {
+      "school_bonus": {
+        "irons_spellbooks:holy": 0.15
+      }
+    },
     "sakuratinker:flag": {
       "attack_buff_time": 320,
       "charge_time": 100,
@@ -19,7 +24,7 @@
       "phantom_amount": 1.0,
       "range": 16.0
     },
-    "sakuratinker:soul_gatherer.json": {
+    "sakuratinker:soul_gatherer": {
       "soul_increase": 0.15,
       "soul_power": 4.0
     },

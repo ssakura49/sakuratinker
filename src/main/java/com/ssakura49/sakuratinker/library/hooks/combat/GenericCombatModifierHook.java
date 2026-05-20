@@ -1,6 +1,5 @@
 package com.ssakura49.sakuratinker.library.hooks.combat;
 
-import com.ssakura49.sakuratinker.library.events.LivingCalculateAbsEvent;
 import com.ssakura49.sakuratinker.library.events.TinkerToolCriticalEvent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;

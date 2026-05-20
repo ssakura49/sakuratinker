@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:part_builder",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "cost": 8,
+  "pattern": "sakuratinker:envelope",
+  "pattern_item": [
+    {
+      "tag": "tconstruct:patterns/default"
+    },
+    {
+      "item": "sakuratinker:envelope_cast"
+    }
+  ],
+  "result": {
+    "item": "sakuratinker:envelope"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:table_casting_material",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/manu_script"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "item_cost": 6,
+  "result": "sakuratinker:manu_script"
+}

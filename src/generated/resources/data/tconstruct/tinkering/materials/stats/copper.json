@@ -18,6 +18,9 @@
       "durability": 0.15,
       "max_energy": 15000
     },
+    "sakuratinker:fox_mask_part": {
+      "invulnerable_time": 5
+    },
     "sakuratinker:laser_medium": {
       "cooldown": 1.5,
       "penetration": 2,

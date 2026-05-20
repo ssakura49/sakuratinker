@@ -1,7 +1,8 @@
-// 1.20.1	2026-04-05T17:04:32.774902	Sakura Tinker Material Modifier Provider
+// 1.20.1	2026-05-06T20:16:30.3184168	Sakura Tinker Material Modifier Provider
 6c46b843124cc031fb626e113e61f591a3f6398c data/sakuratinker/tinkering/materials/traits/aerialite.json
 0ae7444b16e2c44c97e8557001669a6b24db98b9 data/sakuratinker/tinkering/materials/traits/amphithere_feather.json
-391c5f2ff776dd722370dcab4c3a0f394a502288 data/sakuratinker/tinkering/materials/traits/arcane_alloy.json
+14cd8acaf4779d3f936b27966467ef4df9080b29 data/sakuratinker/tinkering/materials/traits/arcane_alloy.json
+14efed07a550f24f331af301ed9882d79cdd8c38 data/sakuratinker/tinkering/materials/traits/arcane_cloth.json
 932ac95ec19b0ee583d588a58bca106214c326cc data/sakuratinker/tinkering/materials/traits/aurumos.json
 a63c808c10aea82a34f25a977607c20565955683 data/sakuratinker/tinkering/materials/traits/bear_interest.json
 35cbdb557c67832b0acbfbf7e63fa25c1fcb4b88 data/sakuratinker/tinkering/materials/traits/blood_bound_steel.json
@@ -15,7 +16,7 @@ d49a3305d0c860975d41a1849eb39e700465586b data/sakuratinker/tinkering/materials/t
 1f2178752595854d79355c5576677c90dae1893e data/sakuratinker/tinkering/materials/traits/delusion.json
 be0657d3c49e82fb2ea4777cdb3cb966ba3444a0 data/sakuratinker/tinkering/materials/traits/dragon_sinew.json
 29ce3d44989a5369c566301b41c590e38f18d330 data/sakuratinker/tinkering/materials/traits/dread_steel.json
-567655900d4a25f9b9e3d1b227ce52de6be98247 data/sakuratinker/tinkering/materials/traits/echo_slimesteel.json
+5115ceb8a9f283045ef0a60b1734efcde6e0105e data/sakuratinker/tinkering/materials/traits/echo_slimesteel.json
 c69d6446214a31ca5387327e5ab97bc84d45bd26 data/sakuratinker/tinkering/materials/traits/eezo.json
 5253cf31d674772cfc61beefa5c210fd0401e23b data/sakuratinker/tinkering/materials/traits/elementium.json
 d7d6630c3b760a0992cd23b5b3ceb87847e84762 data/sakuratinker/tinkering/materials/traits/etherium.json
@@ -42,7 +43,7 @@ eb43857481c73643c4e87034e085d718a5269607 data/sakuratinker/tinkering/materials/t
 1e47f214183966570ddcb642de64d7ab2e31ac7a data/sakuratinker/tinkering/materials/traits/raven_feather.json
 97a09dc1d47d9787451d1be46ad709bccfe700c9 data/sakuratinker/tinkering/materials/traits/shadowium.json
 9a0177213d290ac4c6ecf6509a80981c08a9da11 data/sakuratinker/tinkering/materials/traits/soul_sakura.json
-f0e9c262b76f29ae40e58300cb0839924a2c0875 data/sakuratinker/tinkering/materials/traits/south_star.json
+2ceaa1fd7d7d8112920e222c7855f1d1f18bca1e data/sakuratinker/tinkering/materials/traits/south_star.json
 4d0dd3a6b7198cca5b8ca8741373243d1b4ecba0 data/sakuratinker/tinkering/materials/traits/steady_alloy.json
 e6ccee9857b68a82613f32b84f95481a4a68ceef data/sakuratinker/tinkering/materials/traits/terracryst.json
 8b86413015562d304940adda1378f41b9fb67b38 data/sakuratinker/tinkering/materials/traits/terra_steel.json
@@ -53,3 +54,7 @@ e6ccee9857b68a82613f32b84f95481a4a68ceef data/sakuratinker/tinkering/materials/t
 241c9559a88faaea3d7bcb1b12c79cb12220faa2 data/sakuratinker/tinkering/materials/traits/void_buddysteel.json
 b5a4d72700527be5985fbd64e3acf10b26f413e3 data/sakuratinker/tinkering/materials/traits/wu_yu.json
 d42f6f0d775feec06af7a3ddb0b5bdce1944b79e data/sakuratinker/tinkering/materials/traits/youkai.json
+c23f0cf2b86ffad9ad59c52a23ae79a489bd9aa6 data/tconstruct/tinkering/materials/traits/cobalt.json
+154c81264a443cb9ccfa750813c2bd11614dbee4 data/tconstruct/tinkering/materials/traits/ice.json
+76772c064c9a9f2e37287ce3808cf4a19dac4243 data/tconstruct/tinkering/materials/traits/necrotic_bone.json
+247672aa76871bc705c128621e21b44ac5bade48 data/tconstruct/tinkering/materials/traits/venombone.json

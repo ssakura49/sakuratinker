@@ -46,6 +46,10 @@
         "abilities": 1,
         "upgrades": 3
       }
+    },
+    {
+      "type": "tconstruct:material_name",
+      "filter": "all"
     }
   ]
 }

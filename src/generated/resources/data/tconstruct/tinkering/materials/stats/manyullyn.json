@@ -9,6 +9,10 @@
       "time": 280.0,
       "weight": 4.5
     },
+    "sakuratinker:book_mark": {
+      "percent_bonus": 0.15,
+      "spell_slot": 15
+    },
     "sakuratinker:charm_chain": {
       "armor": 0.25,
       "arrow_damage": 0.2,
@@ -31,11 +35,11 @@
       "range": 40.0
     },
     "sakuratinker:manu_script": {
-      "cast_time_reduce": 0.15,
-      "mana_reduce": 3.0,
-      "mana_regen": 0.25,
-      "mana_value": 3000.0,
-      "spell_damage": 10.0
+      "cast_time_reduce": 0.2,
+      "mana_reduce": 5.0,
+      "mana_regen": 0.3,
+      "mana_value": 1000.0,
+      "spell_damage": 20.0
     },
     "sakuratinker:phantom_core": {
       "phantom_amount": 2.0,

@@ -1,7 +1,6 @@
 package com.ssakura49.sakuratinker.utils.java;
 
 import com.ssakura49.sakuratinker.SakuraTinker;
-import com.ssakura49.sakuratinker.coremod.SakuraTinkerCore;
 import io.netty.util.internal.shaded.org.jctools.util.UnsafeAccess;
 import sun.misc.Unsafe;
 
@@ -98,7 +97,6 @@ public class RuntimeEnumExtender<T extends Enum<?>> {
             unsafe.putObject(object, offset, value);
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-            throwable.printStackTrace(SakuraTinkerCore.stream);
             System.exit(-1);
         }
     }

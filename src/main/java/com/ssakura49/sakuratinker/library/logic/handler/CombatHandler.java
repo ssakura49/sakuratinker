@@ -1,8 +1,7 @@
 package com.ssakura49.sakuratinker.library.logic.handler;
 
+import com.ssakura49.sakura_library.common.event.entity.player.AttackSpeedModifyEvent;
 import com.ssakura49.sakuratinker.SakuraTinker;
-import com.ssakura49.sakuratinker.library.events.AttackSpeedModifyEvent;
-import com.ssakura49.sakuratinker.library.events.LivingCalculateAbsEvent;
 import com.ssakura49.sakuratinker.library.events.TinkerToolCriticalEvent;
 import com.ssakura49.sakuratinker.library.hooks.combat.*;
 import com.ssakura49.sakuratinker.library.tinkering.tools.STHooks;

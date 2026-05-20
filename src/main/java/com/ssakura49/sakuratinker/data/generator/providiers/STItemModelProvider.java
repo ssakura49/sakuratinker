@@ -91,6 +91,7 @@ public class STItemModelProvider extends ItemModelProvider {
         this.part(ISSCompat.envelope);
         this.part(ISSCompat.book_mark);
         this.part(ISSCompat.gutter);
+        this.part(STItems.fox_mask_part);
         // Generate models for cast items
         this.cast(STItems.charmChainCast);
         this.cast(STItems.charmCoreCast);

@@ -10,6 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.TooltipFlag;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -37,7 +38,7 @@ public class TinkerSpellBook extends ModifiableSpellBookItem {
     }
 
     @Override
-    public List<Component> getStatInformation(IToolStackView tool, @Nullable Player player, List<Component> tooltips, TooltipKey key, TooltipFlag tooltipFlag) {
+    public @NotNull List<Component> getStatInformation(@NotNull IToolStackView tool, @Nullable Player player, @NotNull List<Component> tooltips, @NotNull TooltipKey key, @NotNull TooltipFlag tooltipFlag) {
         TooltipBuilder builder = new TooltipBuilder(tool, tooltips);
         TooltipUtil.addToolStatTooltip(builder, tool, ISSToolStats.SPELL_DAMAGE);
         TooltipUtil.addToolStatTooltip(builder, tool, ISSToolStats.MANA_VALUE);

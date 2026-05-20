@@ -2,8 +2,7 @@ package com.ssakura49.sakuratinker.data.generator.enums;
 
 import com.c2h6s.etstlib.register.EtSTLibModifier;
 import com.ssakura49.sakuratinker.common.tools.stats.FletchingMaterialStats;
-import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.ISSMaterialStats;
-import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMaterialStats;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.ISSMaterialRegistry;
 import com.ssakura49.sakuratinker.compat.Botania.init.BotaniaModifier;
 import com.ssakura49.sakuratinker.compat.BuddyCards.BuddyCardCompat;
 import com.ssakura49.sakuratinker.compat.DreadSteel.DreadSteelCompat;
@@ -41,6 +40,7 @@ public enum EnumMaterialModifier {
 
     south_star_default(null, entry(STModifiers.EnchantedBlade.getId(),1)),
     south_star_armor(MaterialRegistry.ARMOR, entry(STModifiers.MagicShield.getId(), 1)),
+    south_star_book(ISSMaterialRegistry.TINKER_SPELL_BOOK, entry(ISSCompat.MagicEnhancement.getId())),
 
     terracryst_default(null, entry(STModifiers.HeavyWeight.getId(),1)),
     terracryst_armor(MaterialRegistry.ARMOR, entry(STModifiers.Kobold.getId(), 1)),
@@ -52,6 +52,7 @@ public enum EnumMaterialModifier {
     orichalcum_default(null, entry(STModifiers.Shielding.getId(),1)),
 
     aurumos_default(null, entry(STModifiers.SolarBurning.getId(),1),entry(STModifiers.Polishing.getId(), 2)),
+    aurumos_book(ISSMaterialRegistry.TINKER_SPELL_BOOK,entry(ISSCompat.HolyHit.getId())),
 
     bear_interest_default(null, entry(STModifiers.Rejuvenating.getId(),1)),
 
@@ -62,6 +63,7 @@ public enum EnumMaterialModifier {
 
     echo_slimesteel_default(null, entry(TinkerModifiers.overslime.getId(),1),entry(TinkerModifiers.overworked.getId(),2),entry(STModifiers.PrecisionStrike.getId(),1),entry(EtSTLibModifier.photosynthesis_guide.getId(),2)),
     echo_slimesteel_armor(MaterialRegistry.ARMOR, entry(TinkerModifiers.overslime.getId(),1),entry(TinkerModifiers.overworked.getId(),2),entry(STModifiers.DangerSense.getId(),1)),
+    echo_slimesteel_book(ISSMaterialRegistry.TINKER_SPELL_BOOK,entry(STModifiers.Umbral.getId())),
 
     goozma_default(null, entry(TinkerModifiers.overslime.getId(),1),entry(TinkerModifiers.overworked.getId(),3),entry(STModifiers.GodOfSlime.getId(),1),entry(STModifiers.FusionBurn.getId(),1),entry(STModifiers.IncompleteTransformation.getId(),1)),
     goozma_armor(MaterialRegistry.ARMOR, entry(TinkerModifiers.overslime.getId(),1),entry(TinkerModifiers.overworked.getId(),3),entry(STModifiers.MucilaginousShell.getId(),1),entry(STModifiers.IncompleteTransformation.getId(),1)),
@@ -86,7 +88,9 @@ public enum EnumMaterialModifier {
     colorful_charm(STMaterialStats.CHARM, entry(STModifiers.Colorization.getId(),1)),
 
     arcane_alloy_armor(MaterialRegistry.ARMOR, entry(ISSCompat.Magician.getId(), 1),entry(ISSCompat.FountainMagic.getId(),1),entry(ISSCompat.ElementalMastery.getId(),1)),
-    arcane_alloy_cloth(ManuScriptMaterialStats.ID, entry(STModifiers.SpellPower.getId(),1)),
+    arcane_alloy_cloth(ISSMaterialRegistry.TINKER_SPELL_BOOK, entry(ISSCompat.SPELL_ATTR.getId(),1)),
+
+    arcane_cloth(ISSMaterialRegistry.TINKER_SPELL_BOOK,entry(ISSCompat.SPELL_ATTR.getId())),
 
     orichalcos_default(null,entry(ExtraBotanyModifiers.Body.getId(),1),entry(STModifiers.Mind.getId(),1),entry(STModifiers.Soul.getId(),1)),
 
@@ -171,7 +175,7 @@ public enum EnumMaterialModifier {
     two_form_mist_star_armor(MaterialRegistry.ARMOR, entry(STModifiers.Mamba.getId()),entry(STModifiers.HardenedSkin.getId()), entry(STModifiers.MagicShield.getId())),
 
     mithril_armor(MaterialRegistry.ARMOR,entry(ISSCompat.SPELL_CONCENTRATION.getId())),
-    mithril_curio(ISSMaterialStats.TINKER_SPELL_BOOK,entry(ISSCompat.SPELL_CONCENTRATION.getId()))
+    mithril_curio(ISSMaterialRegistry.TINKER_SPELL_BOOK,entry(ISSCompat.SPELL_CONCENTRATION.getId()))
 
     ;
     public final ModifierEntry[] modifiers;

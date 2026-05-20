@@ -1,6 +1,6 @@
 package com.ssakura49.sakuratinker.library.hooks.combat;
 
-import com.ssakura49.sakuratinker.library.events.AttackSpeedModifyEvent;
+import com.ssakura49.sakura_library.common.event.entity.player.AttackSpeedModifyEvent;
 import net.minecraft.world.entity.player.Player;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;

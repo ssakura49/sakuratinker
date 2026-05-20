@@ -44,6 +44,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.DoubleSupplier;
 
+@Deprecated
 public class AttackLogicHelper {
     private static final float DEGREE_TO_RADIANS = ((float)Math.PI / 180F);
     private static final AttributeModifier ANTI_KNOCKBACK_MODIFIER;

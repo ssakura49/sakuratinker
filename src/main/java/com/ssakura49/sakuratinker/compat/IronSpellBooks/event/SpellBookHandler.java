@@ -4,25 +4,21 @@ import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSCompat;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSHooks;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.ISSToolStats;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.context.SpellAttackContext;
+import com.ssakura49.sakuratinker.compat.IronSpellBooks.hook.InscribeSpellModifierHook;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.item.base.ModifiableSpellBookItem;
 import com.ssakura49.sakuratinker.utils.SafeClassUtil;
-import io.redspace.ironsspellbooks.api.events.InscribeSpellEvent;
-import io.redspace.ironsspellbooks.api.events.SpellDamageEvent;
-import io.redspace.ironsspellbooks.api.events.SpellOnCastEvent;
-import io.redspace.ironsspellbooks.api.events.SpellPreCastEvent;
+import io.redspace.ironsspellbooks.api.events.*;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
-import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.damage.SpellDamageSource;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.Event;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.modifiers.hook.build.ConditionalStatModifierHook;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
@@ -36,6 +32,8 @@ public static void init() {
         MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onPreCast);
         MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onSpellCast);
         MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onInscribeSpell);
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onSpellCooldownPre);
+        MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::onSpellHeal);
         //MinecraftForge.EVENT_BUS.addListener(SpellBookHandler::addSpellSlots);
 }
 
@@ -83,6 +81,8 @@ public static void init() {
                                 spell.getSpellId(),
                                 spell.getSchoolType()
                         );
+
+
                         float damage = (baseDamage + spellDamage) * percentBonus;
                         for (ModifierEntry entry : toolStack.getModifierList()) {
                             damage = entry.getHook(ISSHooks.SPELL_DAMAGE).getSpellDamage(toolStack, entry, spellAttackContext, baseDamage, damage);
@@ -128,9 +128,13 @@ public static void init() {
     public static void onInscribeSpell(InscribeSpellEvent event) {
         ItemStack bookStack = Utils.getPlayerSpellbookStack(event.getEntity());
         if (bookStack != null && !bookStack.isEmpty() && bookStack.getItem() instanceof ModifiableSpellBookItem) {
-            IToolStackView toolStack = ToolStack.from(bookStack);
+            ToolStack toolStack = ToolStack.from(bookStack);
             for (ModifierEntry entry : toolStack.getModifierList()) {
-                entry.getHook(ISSHooks.INSCRIBE_SPELL).onInscribeSpell(toolStack, entry, event);
+                InscribeSpellModifierHook hook = entry.getHook(ISSHooks.INSCRIBE_SPELL);
+                hook.onInscribeSpell(toolStack, entry, event);
+                if (event.isCanceled()) {
+                    break;
+                }
             }
         }
     }
@@ -146,27 +150,70 @@ public static void init() {
                     .build();
 
             for (ModifierEntry entry : toolStack.getModifierList()) {
-                if (!entry.getHook(ISSHooks.SPELL_CAST).onPreCast(toolStack, entry, context)) {
-                    event.setCanceled(true);
-                    return;
-                }
+                entry.getHook(ISSHooks.PRE_SPELL_CAST).onPreCast(toolStack,entry,context,event.getCastSource(), entry.getLevel());
             }
         }
     }
 
     public static void onSpellCast(SpellOnCastEvent event) {
-            ItemStack itemStack = Utils.getPlayerSpellbookStack(event.getEntity());
-            if (itemStack != null && !itemStack.isEmpty() && itemStack.getItem() instanceof ModifiableSpellBookItem) {
-                IToolStackView toolStack = ToolStack.from(itemStack);
-                int originalCost = event.getManaCost();
-                int currentCost = originalCost;
-                int reduce = toolStack.getStats().getInt(ISSToolStats.MANA_REDUCE);
-                for (ModifierEntry entry : toolStack.getModifierList()) {
-                    currentCost = entry.getHook(ISSHooks.MANA_COST).getManaCost(toolStack, entry, originalCost, currentCost);
-                }
-                event.setManaCost(currentCost-reduce);
+        ItemStack itemStack = Utils.getPlayerSpellbookStack(event.getEntity());
+        if (itemStack != null && !itemStack.isEmpty() && itemStack.getItem() instanceof ModifiableSpellBookItem) {
+            IToolStackView toolStack = ToolStack.from(itemStack);
+            SpellAttackContext context = new  SpellAttackContext.Builder()
+                    .caster(event.getEntity())
+                    .spell(event.getSpellId(), event.getSchoolType(), event.getSpellLevel())
+                    .build();
+            int baseMana = event.getManaCost();
+            int originalMana = event.getOriginalManaCost();
+            int currentMana = baseMana;
+
+            int baseLevel = event.getSpellLevel();
+            int originalLevel = event.getOriginalSpellLevel();
+            int currentLevel = baseLevel;
+
+            for (ModifierEntry entry : toolStack.getModifierList()) {
+                currentMana = entry.getHook(ISSHooks.MANA_COST)
+                        .getManaCost(toolStack, entry, originalMana, currentMana);
+                currentLevel = entry.getHook(ISSHooks.SPELL_LEVEL)
+                        .getSpellLevel(toolStack, entry,context, originalLevel, currentLevel);
+                entry.getHook(ISSHooks.ON_SPELL_CAST).onCast(toolStack,entry,context,event.getCastSource());
             }
+            int statManaReduce = toolStack.getStats().getInt(ISSToolStats.MANA_REDUCE);
+            event.setManaCost(Math.max(0, currentMana - statManaReduce));
+            event.setSpellLevel(Math.max(1, currentLevel));
+        }
     }
 
+    public static void onSpellCooldownPre(SpellCooldownAddedEvent.Pre event) {
+        if (!(event.getEntity() instanceof ServerPlayer player)) return;
+        ItemStack stack = Utils.getPlayerSpellbookStack(player);
+        if (stack != null && !stack.isEmpty() && stack.getItem() instanceof ModifiableSpellBookItem) {
+            ToolStack tool = ToolStack.from(stack);
+            int original = event.getEffectiveCooldown();
+            int current = original;
+            for (ModifierEntry entry : tool.getModifierList()) {
+                current = entry.getHook(ISSHooks.COOLDOWN).getCooldown(tool, entry, original, current);
+            }
+            if (current <= 0) {
+                event.setEffectiveCooldown(0);
+                event.setCanceled(true);
+            } else {
+                event.setEffectiveCooldown(current);
+            }
+        }
+    }
 
+    public static void onSpellHeal(SpellHealEvent event) {
+        LivingEntity caster = event.getEntity();
+        if (caster instanceof Player player) {
+            ItemStack bookStack = Utils.getPlayerSpellbookStack(player);
+            if (bookStack != null && bookStack.getItem() instanceof ModifiableSpellBookItem) {
+                ToolStack toolStack = ToolStack.from(bookStack);
+                SpellAttackContext context = new SpellAttackContext.Builder().caster(player).build();
+                for (ModifierEntry entry : toolStack.getModifierList()) {
+                    entry.getHook(ISSHooks.SPELL_HEAL).getSpellHeal(toolStack, entry, context, event);
+                }
+            }
+        }
+    }
 }

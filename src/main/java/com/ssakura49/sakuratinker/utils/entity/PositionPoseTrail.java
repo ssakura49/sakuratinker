@@ -271,4 +271,5 @@ public abstract class PositionPoseTrail<T> implements ITrail<T> {
         poseStack.popPose();
     }
 
+
 }

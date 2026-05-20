@@ -1,6 +1,7 @@
 package com.ssakura49.sakuratinker.common.tinkering.modifiers.misc;
 
 import com.ssakura49.sakuratinker.SakuraTinker;
+import com.ssakura49.sakuratinker.agent.HealthMethod.AgentHealthMethodHelper;
 import com.ssakura49.sakuratinker.generic.BaseModifier;
 import com.ssakura49.sakuratinker.library.damagesource.LegacyDamageSource;
 import com.ssakura49.sakuratinker.utils.entity.EntityUtil;
@@ -56,6 +57,30 @@ public class HeavenHasFallenModifier extends BaseModifier {
         }
         return actualDamage;
     }
+//    @Override
+//    public float getMeleeDamage(IToolStackView tool, ModifierEntry modifierEntry, ToolAttackContext context, float baseDamage, float actualDamage) {
+//        if (!context.isExtraAttack() && !tool.getPersistentData().getBoolean(HEAVEN_FALLEN)) {
+//            LivingEntity target = context.getLivingTarget();
+//            LivingEntity attacker = context.getAttacker();
+//
+//            if (target != null) {
+//                float maxHealth = target.getMaxHealth();
+//                float nextHealth = target.getHealth() - actualDamage;
+//
+//                if (nextHealth <= 0) {
+//                    AgentHealthMethodHelper.forceSetHealth(target, 0.0F, maxHealth);
+//                    if (target.level() instanceof ServerLevel) {
+//                        target.die(attacker.damageSources().generic());
+//                        //System.out.println("[SakuraAgent] 审判已至，目标被强制抹除。");
+//                    }
+//                } else {
+//                    AgentHealthMethodHelper.forceSetHealth(target, nextHealth, maxHealth);
+//                }
+//                return 0;
+//            }
+//        }
+//        return actualDamage;
+//    }
 
     @Override
     public boolean onProjectileHitEntity(ModifierNBT modifiers, ModDataNBT persistentData, ModifierEntry modifier, Projectile projectile, EntityHitResult hit, LivingEntity attacker, LivingEntity target) {

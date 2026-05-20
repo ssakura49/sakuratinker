@@ -1,0 +1,15 @@
+{
+  "stats": {
+    "sakuratinker:envelope": {
+      "school_bonus": {
+        "irons_spellbooks:fire": 0.1
+      }
+    },
+    "sakuratinker:manu_script": {
+      "mana_reduce": 5.0,
+      "mana_regen": 0.05,
+      "mana_value": 150.0,
+      "spell_damage": 8.0
+    }
+  }
+}

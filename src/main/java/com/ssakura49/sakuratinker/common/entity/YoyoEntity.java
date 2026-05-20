@@ -74,6 +74,7 @@ public class YoyoEntity extends Entity implements IEntityAdditionalSpawnData, It
     protected boolean needCollectedSync = false;
 
     private Player thrower;
+    private UUID throwerUUID;
     private boolean isThrowerInitialized = false;
 
     protected ItemStack yoyoStackLastTick = ItemStack.EMPTY;
@@ -224,6 +225,11 @@ public class YoyoEntity extends Entity implements IEntityAdditionalSpawnData, It
         tag.put("Tool", yoyoStack.serializeNBT());
         tag.putFloat("BonusDamage", bonusDamage);
         tag.putBoolean("Critical", critical);
+        if (this.thrower != null) {
+            tag.putUUID("ThrowerUUID", this.thrower.getUUID());
+        } else if (this.throwerUUID != null) {
+            tag.putUUID("ThrowerUUID", this.throwerUUID);
+        }
     }
     @Override
     protected void readAdditionalSaveData(CompoundTag tag) {
@@ -241,6 +247,9 @@ public class YoyoEntity extends Entity implements IEntityAdditionalSpawnData, It
         this.setTool(ItemStack.of(tag.getCompound("Tool")));
         this.bonusDamage = tag.getFloat("BonusDamage");
         this.critical = tag.getBoolean("Critical");
+        if (this.thrower != null) {
+            tag.putUUID("ThrowerUUID", this.thrower.getUUID());
+        }
     }
 
 
@@ -395,11 +404,18 @@ public class YoyoEntity extends Entity implements IEntityAdditionalSpawnData, It
     @Override
     public void tick() {
         super.tick();
+        ensureThrowerIsSet();
+        if (this.thrower == null) {
+            if (!level().isClientSide) {
+                this.discard();
+            }
+            return;
+        }
         this.xOld = this.getX();
         this.yOld = this.getY();
         this.zOld = this.getZ();
-
         if (hasThrower() /*&& thrower.isAlive()*/){
+
             // 添加死亡检查
             if (!thrower.isAlive()) {
                 if (!level().isClientSide) {
@@ -771,7 +787,7 @@ public class YoyoEntity extends Entity implements IEntityAdditionalSpawnData, It
 
         ItemStack otherHand = getThrower().getItemInHand(hand == InteractionHand.MAIN_HAND ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND);
 
-        if (!CASTERS.containsKey(getThrower().getUUID()) || !(stack.getItem() instanceof IYoyo) || tickCount > 1 && (lastSlot != -1 && lastSlot != currentSlot || otherHand == yoyoStackLastTick)){
+        if (!CASTERS.containsKey(getThrower().getUUID()) || !(stack.getItem() instanceof IYoyo yoyo) || tickCount > 1 && (lastSlot != -1 && lastSlot != currentSlot || otherHand == yoyoStackLastTick)){
             remove(RemovalReason.KILLED);
             return null;
         }
@@ -786,8 +802,6 @@ public class YoyoEntity extends Entity implements IEntityAdditionalSpawnData, It
         if (!level().isClientSide && CASTERS.get(getThrower().getUUID()) != this){
             CASTERS.put(getThrower().getUUID(),this);
         }
-
-        IYoyo yoyo = (IYoyo) stack.getItem();
 
         if (!level().isClientSide && shouldGetStats) {
             if (toolStack != null && !toolStack.isBroken()) {
@@ -805,8 +819,7 @@ public class YoyoEntity extends Entity implements IEntityAdditionalSpawnData, It
                 int maxCollected = stats.getInt(STToolStats.MAX_COLLECTED);
                 setMaxCollectedDrops(maxCollected);
 
-                int attack_Interval = stats.getInt(STToolStats.ATTACK_INTERVAL);
-                attackInterval = attack_Interval;
+                attackInterval = stats.getInt(STToolStats.ATTACK_INTERVAL);
 
                 float weight = stats.get(STToolStats.WEIGHT);
                 setWeight(weight);
@@ -888,11 +901,14 @@ public class YoyoEntity extends Entity implements IEntityAdditionalSpawnData, It
     }
 
     public boolean hasThrower() {
+        ensureThrowerIsSet();
         return isThrowerInitialized;
     }
 
-    protected void setThrower(Player thrower) {
+
+    public void setThrower(Player thrower) {
         this.thrower = thrower;
+        this.throwerUUID = thrower.getUUID();
         this.isThrowerInitialized = true;
     }
 
@@ -901,6 +917,16 @@ public class YoyoEntity extends Entity implements IEntityAdditionalSpawnData, It
             throw new IllegalStateException("Thrower is not initialized");
         }
         return thrower;
+    }
+
+
+    private void ensureThrowerIsSet() {
+        if ((this.thrower == null || !isThrowerInitialized) && this.throwerUUID != null) {
+            Player found = level().getPlayerByUUID(this.throwerUUID);
+            if (found != null) {
+                setThrower(found);
+            }
+        }
     }
 
     public boolean hasYoyo() {

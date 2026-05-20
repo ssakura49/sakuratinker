@@ -18,6 +18,12 @@
     }
   ],
   "perStat": {
+    "sakuratinker:tinker_spell_book": [
+      {
+        "level": 1,
+        "name": "sakuratinker:umbral"
+      }
+    ],
     "tconstruct:armor": [
       {
         "level": 1,

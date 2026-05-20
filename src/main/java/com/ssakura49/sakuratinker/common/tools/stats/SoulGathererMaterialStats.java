@@ -16,7 +16,7 @@ import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import java.util.List;
 
 public record SoulGathererMaterialStats(float soulPower, float soulIncrease) implements IMaterialStats {
-    public static final MaterialStatsId ID = new MaterialStatsId(SakuraTinker.MODID, "soul_gatherer.json");
+    public static final MaterialStatsId ID = new MaterialStatsId(SakuraTinker.MODID, "soul_gatherer");
     public static final MaterialStatType<SoulGathererMaterialStats> TYPE;
     private static final String SOUL_POWER;
     private static final String SOUL_INCREASE;

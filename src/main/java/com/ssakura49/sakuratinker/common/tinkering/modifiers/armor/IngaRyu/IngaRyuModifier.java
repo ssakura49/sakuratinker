@@ -66,10 +66,13 @@ public class IngaRyuModifier extends BaseModifier {
             for (LivingEntity target : monsters) {
                 if (!target.isAlive() || target.equals(wearer)) continue;
 
-                ToolAttackContext context = new ToolAttackContext(
-                        player, player, InteractionHand.MAIN_HAND,
-                        target, target, false, 0, true
-                );
+                ToolAttackContext.Builder builder = ToolAttackContext.attacker(player);
+                builder.hand(InteractionHand.MAIN_HAND);
+                builder.target(target);
+                builder.extraAttack();
+                builder.cooldown(0f);
+                ToolAttackContext context = builder.build();
+
 
                 float damage = finalDamage;
                 for (ModifierEntry entry1 : traits) {

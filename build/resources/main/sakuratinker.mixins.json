@@ -5,13 +5,16 @@
   "refmap": "sakuratinker.refmap.json",
   "mixins": [
     "ChatFormattingMixin",
+    "EntityMixin",
     "ForgeEventFactoryMixin",
     "LivingEntityAccessor",
     "LivingEntityMixin",
+    "PlayerMixin",
     "StyleMixin",
     "TextColorMixin",
-    "tinker.BulkQuiverModuleMixin",
-    "tinker.TrickQuiverModuleMixin"
+    "damagesource.DamageSourceMixin",
+    "damagesource.LivingEntityMixin",
+    "tinker.BulkQuiverModuleMixin"
   ],
   "client": [
     "ClientTextTooltipAccessor",

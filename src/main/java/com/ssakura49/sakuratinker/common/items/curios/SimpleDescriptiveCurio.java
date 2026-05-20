@@ -5,7 +5,6 @@ import com.google.common.collect.Multimap;
 import com.ssakura49.sakuratinker.client.component.CuriosMutableComponent;
 import com.ssakura49.sakuratinker.client.component.LoreHelper;
 import com.ssakura49.sakuratinker.client.component.LoreStyle;
-import com.ssakura49.sakuratinker.coremod.SakuraTinkerCore;
 import com.ssakura49.sakuratinker.utils.STUtils;
 import com.ssakura49.sakuratinker.utils.time.TimeContext;
 import net.minecraft.ChatFormatting;
@@ -143,7 +142,6 @@ public class  SimpleDescriptiveCurio extends CuriosBaseItem {
             return super.getAttributesTooltip(  toArg, stack);
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-            throwable.printStackTrace(SakuraTinkerCore.stream);
         }
 
         return tooltips;

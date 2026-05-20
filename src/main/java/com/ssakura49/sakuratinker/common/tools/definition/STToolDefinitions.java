@@ -20,7 +20,7 @@ public class STToolDefinitions {
     public static final ToolDefinition TINKER_BULLET = ToolDefinition.create(STItems.tinker_bullet);
     public static final ToolDefinition TINKER_REVOLVER = ToolDefinition.create(STItems.revolver);
     public static final ToolDefinition ALCHEMICAL_GLOVES = ToolDefinition.create(STItems.alchemical_gloves);
-
+    public static final ToolDefinition FOX_MASK = ToolDefinition.create(STItems.fox_mask);
 
     public STToolDefinitions(){}
 }

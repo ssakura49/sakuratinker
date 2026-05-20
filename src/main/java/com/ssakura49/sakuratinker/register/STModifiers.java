@@ -3,6 +3,7 @@ package com.ssakura49.sakuratinker.register;
 import com.ssakura49.sakuratinker.SakuraTinker;
 import com.ssakura49.sakuratinker.common.tinkering.modifiers.armor.*;
 import com.ssakura49.sakuratinker.common.tinkering.modifiers.armor.IngaRyu.IngaRyuModifier;
+import com.ssakura49.sakuratinker.common.tinkering.modifiers.compat.UmbralModifier;
 import com.ssakura49.sakuratinker.common.tinkering.modifiers.curio.*;
 import com.ssakura49.sakuratinker.common.tinkering.modifiers.melee.*;
 import com.ssakura49.sakuratinker.common.tinkering.modifiers.melee.soulDevourerModifier.SoulDevourerModifier;
@@ -93,7 +94,6 @@ public class STModifiers {
     public static StaticModifier<EssenceEarthModifier> EssenceEarth;
     public static StaticModifier<HeavyWeightModifier> HeavyWeight;
     public static StaticModifier<MagicBladeModifier> MagicBlade;
-    public static StaticModifier<SpellPowerModifier> SpellPower;
     public static StaticModifier<SolarBurningModifier> SolarBurning;
     public static StaticModifier<RejuvenatingModifier> Rejuvenating;
     public static StaticModifier<SealTooltipModifier> SealTooltip;
@@ -150,6 +150,9 @@ public class STModifiers {
     public static StaticModifier<AlchemicalModifier> Alchemical;
 
     public static StaticModifier<RevolverBulletModifier> RevolverBullet;
+
+    public static StaticModifier<InvulnerableModifier> Invulnerable;
+    public static StaticModifier<UmbralModifier> Umbral;
 
     static {
         Solid = MODIFIERS.register("solid", SolidModifier::new);
@@ -213,7 +216,6 @@ public class STModifiers {
         EssenceEarth = MODIFIERS.register("essence_earth", EssenceEarthModifier::new);
         HeavyWeight = MODIFIERS.register("heavy_weight", HeavyWeightModifier::new);
         MagicBlade = MODIFIERS.register("magic_blade", MagicBladeModifier::new);
-        SpellPower = MODIFIERS.register("spell_power", SpellPowerModifier::new);
         SolarBurning = MODIFIERS.register("solar_burning", SolarBurningModifier::new);
         Rejuvenating = MODIFIERS.register("rejuvenating", RejuvenatingModifier::new);
         SealTooltip = MODIFIERS.register("seal_tooltip", SealTooltipModifier::new);
@@ -265,5 +267,7 @@ public class STModifiers {
         DeadlyBullet = MODIFIERS.register("deadly_bullet", DeadlyBulletModifier::new);
         Alchemical = MODIFIERS.register("alchemical",AlchemicalModifier::new);
         RevolverBullet = MODIFIERS.register("revolver_bullet",RevolverBulletModifier::new);
+        Invulnerable = MODIFIERS.register("invulnerable_time", InvulnerableModifier::new);
+        Umbral = MODIFIERS.register("umbral",UmbralModifier::new);
     }
 }

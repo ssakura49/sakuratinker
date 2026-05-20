@@ -1,7 +1,6 @@
 package com.ssakura49.sakuratinker.compat.IronSpellBooks;
 
 import com.ssakura49.sakuratinker.SakuraTinker;
-import com.ssakura49.sakuratinker.compat.IronSpellBooks.event.SpellBookHandler;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.item.TinkerSpellBook;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.*;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.BookMarkMaterialStats;
@@ -11,7 +10,6 @@ import com.ssakura49.sakuratinker.compat.IronSpellBooks.tool.stats.ManuScriptMat
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.modifiers.attribute.*;
 import com.ssakura49.sakuratinker.compat.IronSpellBooks.item.base.ModifiableSpellBookItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.common.MinecraftForge;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;
@@ -45,7 +43,7 @@ public class ISSCompat {
     public static StaticModifier<FountainMagicModifier> FountainMagic;
     public static StaticModifier<ElementalMasteryModifier> ElementalMastery;
     public static StaticModifier<ArcaneConstructModifier> ArcaneTinkering;
-
+    public static StaticModifier<CobaltSpellModifier> cobaltSpell;
 
     public static StaticModifier<ENDER_ATTR> ENDER_ATTR;
     public static StaticModifier<FIRE_ATTR> FIRE_ATTR;
@@ -59,6 +57,15 @@ public class ISSCompat {
     public static StaticModifier<SPELL_COOLDOWN_ATTR> SPELL_COOLDOWN_ATTR;
     public static StaticModifier<SPELL_PROTECTION_ATTR> SPELL_PROTECTION_ATTR;
     public static StaticModifier<SpellConcentration> SPELL_CONCENTRATION;
+    public static StaticModifier<SPELL_ATTR> SPELL_ATTR;
+    public static StaticModifier<HolyHitModifier> HolyHit;
+    public static StaticModifier<SpellFrozenModifier> SpellFrozen;
+    public static StaticModifier<SpellLevelBonusModifier> SpellLevelBonus;
+    public static StaticModifier<WitherTentaclesModifier> WitherTentacles;
+    public static StaticModifier<MagicEnhancementModifier> MagicEnhancement;
+    public static StaticModifier<GreedyBookModifier> GreedyBook;
+    public static StaticModifier<ToxicityIntensificationModifier> ToxicityIntensification;
+    public static StaticModifier<UmbralISSModifier> UmbralISSModifier;
     static {
         Magician = ISS_MODIFIERS.register("magician", MagicianModifier::new);
         FountainMagic = ISS_MODIFIERS.register("fountain_magic", FountainMagicModifier::new);
@@ -77,5 +84,15 @@ public class ISSCompat {
         SPELL_COOLDOWN_ATTR = ISS_MODIFIERS.register("spell_cooldown_attr", SPELL_COOLDOWN_ATTR::new);
         SPELL_PROTECTION_ATTR = ISS_MODIFIERS.register("spell_protection_attr", SPELL_PROTECTION_ATTR::new);
         SPELL_CONCENTRATION = ISS_MODIFIERS.register("spell_concentration", SpellConcentration::new);
+        SPELL_ATTR = ISS_MODIFIERS.register("spell_power_attr",SPELL_ATTR::new);
+        cobaltSpell = ISS_MODIFIERS.register("cobalt_spell", CobaltSpellModifier::new);
+        HolyHit = ISS_MODIFIERS.register("holy_hit", HolyHitModifier::new);
+        SpellFrozen = ISS_MODIFIERS.register("spell_frozen",SpellFrozenModifier::new);
+        SpellLevelBonus = ISS_MODIFIERS.register("spell_level_bonus",SpellLevelBonusModifier::new);
+        WitherTentacles = ISS_MODIFIERS.register("wither_tentacles",WitherTentaclesModifier::new);
+        MagicEnhancement = ISS_MODIFIERS.register("magic_enhancement",MagicEnhancementModifier::new);
+        GreedyBook = ISS_MODIFIERS.register("greedy_book",GreedyBookModifier::new);
+        ToxicityIntensification = ISS_MODIFIERS.register("toxicity_intensification",ToxicityIntensificationModifier::new);
+        UmbralISSModifier = ISS_MODIFIERS.register("umbral_iss",UmbralISSModifier::new);
     }
 }

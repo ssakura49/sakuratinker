@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "pattern": "sakuratinker:book_mark",
+  "pattern_item": {
+    "tag": "forge:sand/red"
+  },
+  "result": {
+    "count": 4,
+    "item": "sakuratinker:book_mark_red_sand_cast"
+  }
+}
